@@ -37,16 +37,23 @@ export default function Contact() { // export Contact component function
                     
                     <ScrollReveal delay={0.3} direction="left" className="h-full"> {/* right side scroll reveal */}
                         <div className="h-full flex flex-col justify-center space-y-10 p-4"> {/* contact info column */}
-                            <div> {/* company address block */}
-                                <h4 className="text-xl font-bold text-white font-display mb-3">Sídlo</h4> {/* title */}
-                                <p className="text-gray-400">Bratislava, Slovensko</p> {/* address description */}
-                            </div> {/* company address block end */}
-                            
-                            <div> {/* direct contact block */}
-                                <h4 className="text-xl font-bold text-white font-display mb-3">Priamy kontakt</h4> {/* title */}
-                                <p className="text-gray-400 text-lg mb-2">Email: <a href="mailto:info@elysiotech.com" className="text-white hover:text-aurora-purple transition-colors">info@elysiotech.com</a></p> {/* email */}
-                                <p className="text-gray-500 text-sm">Telefón: +421 903 406 406</p> {/* smaller phone number */}
-                            </div> {/* direct contact block end */}
+                            <div> {/* support section */}
+                                <h4 className="text-xl font-bold text-white font-display mb-4">Podpora & Komunikácia</h4> {/* title */}
+                                <ul className="space-y-4 text-gray-400 text-sm leading-relaxed">
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-aurora-green mt-0.5">•</span>
+                                        <span>WhatsApp / SMS / Mail: Odpovedáme <strong className="text-white">priebežne počas celého dňa</strong> (hneď, ako odbehneme od práce).</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-aurora-purple mt-0.5">•</span>
+                                        <span>Telefonáty: Naplno k dispozícii v pracovné dni <strong className="text-white">16:15 – 21:00 + víkendy</strong>.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-aurora-indigo mt-0.5">•</span>
+                                        <span>Dron & Stretnutia: Štandardne po 16:30 a víkendy. <strong className="text-white">Lety dronom možné aj doobeda po dohode</strong> (kvôli svetlu).</span>
+                                    </li>
+                                </ul>
+                            </div> {/* support section end */}
                             
                             <div> {/* social links block */}
                                 <h4 className="text-xl font-bold text-white font-display mb-4">Rýchla správa</h4> {/* social title */}

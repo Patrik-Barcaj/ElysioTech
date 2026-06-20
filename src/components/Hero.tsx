@@ -24,14 +24,15 @@ export default function Hero() { // export Hero component function
                         </div> {/* pre-heading end */}
                         
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white tracking-tight leading-[1.1] mb-6"> {/* main headline */}
-                            Kompletné <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple via-aurora-green to-white">digitálne riešenia</span> <br />
-                            pre váš biznis.
+                            <strong>Digitálne riešenia</strong> <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple via-aurora-green to-white">pre váš biznis.</span> <br />
+                            <span className="text-3xl md:text-4xl text-gray-300 font-normal">Bez vstupných nákladov a zbytočných zmlúv.</span>
                         </h1> {/* main headline end */}
                         
-                        <p className="text-xl md:text-2xl text-gray-400 font-light mb-8 max-w-2xl leading-relaxed"> {/* subheadline */}
-                            Bez vstupných nákladov a zbytočných zmlúv. Tvorba webov v čistom kóde, profi zábery z drona, grafika a tlač. Vy podnikáte, my riešime zvyšok.
-                        </p> {/* subheadline end */}
+                        <ul className="text-xl md:text-2xl text-gray-400 font-light mb-8 max-w-2xl leading-relaxed space-y-4 text-left mx-auto md:mx-0"> {/* subheadline */}
+                            <li className="flex items-start gap-3"><span className="text-aurora-green mt-1">•</span> <span><strong>Čo robíme:</strong> Rýchle weby v čistom kóde, profi zábery z drona, grafika a tlač.</span></li>
+                            <li className="flex items-start gap-3"><span className="text-aurora-purple mt-1">•</span> <span><strong>Filozofia:</strong> Vy podnikáte, my riešime zvyšok.</span></li>
+                        </ul> {/* subheadline end */}
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"> {/* cta group */}
                             <Link href="#services" className="px-8 py-4 bg-white text-black rounded-xl font-bold font-display hover:bg-gray-200 transition-colors shadow-[0_0_30px_rgba(191,90,242,0.3)] hover:shadow-[0_0_40px_rgba(191,90,242,0.5)] flex items-center justify-center gap-2"> {/* primary cta */}

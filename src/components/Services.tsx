@@ -21,7 +21,11 @@ export default function Services() { // export Services component
                                     <svg className="w-6 h-6 text-white group-hover:text-aurora-purple transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg> {/* web icon */}
                                 </div> {/* icon wrapper end */}
                                 <h4 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-aurora-purple transition-colors duration-500">Tvorba webov & Aplikácií</h4> {/* title */}
-                                <p className="text-gray-400 text-sm leading-relaxed">Špičkové weby postavené na čistom kóde bez pomalých pluginov. Od jednoduchých pristávacích stránok (Landing Pages) až po zložité interné aplikácie. Všetko s extrémnou rýchlosťou načítania.</p> {/* desc */}
+                                <ul className="text-gray-400 text-sm leading-relaxed space-y-2"> {/* desc list */}
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Čistý kód:</strong> Bez pomalých pluginov a šablón.</li>
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Rýchlosť:</strong> Extrémne rýchle načítanie.</li>
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Rozsah:</strong> Od Landing Page až po zložité interné aplikácie.</li>
+                                </ul> {/* desc list end */}
                             </div> {/* text content end */}
                             <div className="w-full md:w-1/2 h-48 rounded-xl overflow-hidden relative border border-white/5 group-hover:border-white/10 transition-colors duration-500 shrink-0"> {/* image content */}
                                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Web Development" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" /> {/* img */}
@@ -38,7 +42,10 @@ export default function Services() { // export Services component
                                     <svg className="w-6 h-6 text-white group-hover:text-aurora-green transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg> {/* drone icon */}
                                 </div> {/* icon wrapper end */}
                                 <h4 className="text-xl font-display font-bold text-white mb-3 group-hover:text-aurora-green transition-colors duration-500">Letecké zábery</h4> {/* title */}
-                                <p className="text-gray-400 text-sm leading-relaxed mb-6">Profesionálne 4K video a fotografie z výšky pre vaše nehnuteľnosti a pozemky.</p> {/* desc */}
+                                <ul className="text-gray-400 text-sm leading-relaxed mb-6 space-y-2"> {/* desc list */}
+                                    <li><span className="text-aurora-green mr-2">•</span><strong>4K kvalita:</strong> Profesionálne video a fotografie z výšky.</li>
+                                    <li><span className="text-aurora-green mr-2">•</span><strong>Zameranie:</strong> Ideálne pre nehnuteľnosti a pozemky.</li>
+                                </ul> {/* desc list end */}
                             </div> {/* content end */}
                             <div className="w-full h-32 rounded-xl overflow-hidden relative border border-white/5 shrink-0"> {/* image */}
                                 <img src="https://images.unsplash.com/photo-1506469717960-433cebe3f181?q=80&w=600&auto=format&fit=crop" alt="Drones" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" /> {/* img element */}
@@ -54,7 +61,11 @@ export default function Services() { // export Services component
                                     <svg className="w-6 h-6 text-white group-hover:text-pink-500 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg> {/* pen icon */}
                                 </div> {/* icon wrapper end */}
                                 <h4 className="text-xl font-display font-bold text-white mb-3 group-hover:text-pink-500 transition-colors duration-500">Grafický dizajn</h4> {/* title */}
-                                <p className="text-gray-400 text-sm leading-relaxed mb-6">Tvorba minimalistických lôg v krivkách, návrhy vizitiek, letákov a digitálnych assetov.</p> {/* desc */}
+                                <ul className="text-gray-400 text-sm leading-relaxed mb-6 space-y-2"> {/* desc list */}
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Logá:</strong> Minimalistický dizajn v krivkách.</li>
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Tlačoviny:</strong> Návrhy vizitiek a letákov.</li>
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Digitál:</strong> Assety pre branding.</li>
+                                </ul> {/* desc list end */}
                             </div> {/* content end */}
                         </div> {/* bento item card end */}
                     </ScrollReveal> {/* bento item 3 wrapper end */}
@@ -71,7 +82,11 @@ export default function Services() { // export Services component
                                     <svg className="w-6 h-6 text-white group-hover:text-blue-400 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg> {/* printer icon */}
                                 </div> {/* icon wrapper end */}
                                 <h4 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-500">Sprostredkovanie tlače</h4> {/* title */}
-                                <p className="text-gray-400 text-sm leading-relaxed">Kompletná predtlačová príprava a zverenie tlače overeným partnerom. Vy sa nestaráte o farby ani spadávky, my doručíme hotový produkt priamo k vám.</p> {/* desc */}
+                                <ul className="text-gray-400 text-sm leading-relaxed space-y-2"> {/* desc list */}
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Bez starostí:</strong> Neriešite farby ani spadávky.</li>
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Príprava:</strong> Kompletná predtlačová kontrola.</li>
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Doručenie:</strong> Hotový produkt priamo k vám.</li>
+                                </ul> {/* desc list end */}
                             </div> {/* text content end */}
                         </div> {/* bento item card end */}
                     </ScrollReveal> {/* bento item 4 wrapper end */}

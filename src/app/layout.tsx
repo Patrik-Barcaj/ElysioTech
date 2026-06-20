@@ -14,8 +14,8 @@ const inter = Inter({ // start inter font config
 }); // end inter font config
 
 export const metadata: Metadata = { // export metadata object
-  title: "ElysioTech | Professional Drone Services", // set page title
-  description: "ElysioTech provides high-quality drone video production, 3D scanning, and construction sensing.", // set description
+  title: "ELYSIO | Kompletné digitálne riešenia", // set page title
+  description: "Tvorba webov na mieru v čistom kóde, profi zábery z drona, grafika a sprostredkovanie tlače.", // set description
 }; // close metadata object
 
 export default function RootLayout({ // export root layout component

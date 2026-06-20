@@ -47,7 +47,7 @@ export default function FAQ() { // export FAQ component function
                         {digitalFaqs.map((faq, i) => { // map digital faqs
                             return ( // return digital card JSX
                                 <ScrollReveal key={i} delay={i * 0.1}> {/* scroll reveal wrap */}
-                                    <div className="bg-aurora-glass border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-aurora-purple/50 hover:shadow-[0_10px_30px_-10px_rgba(191,90,242,0.3)] group relative"> {/* faq card container */}
+                                    <div className="bg-aurora-glass border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:border-aurora-purple/50 hover:shadow-[0_10px_30px_-10px_rgba(191,90,242,0.3)] group relative"> {/* faq card container */}
                                         <div className="absolute inset-0 bg-gradient-to-r from-aurora-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
                                         <button onClick={() => toggleDigital(i)} className="w-full flex justify-between items-center p-6 text-left text-white hover:bg-white/5 transition-colors focus:outline-none relative z-10"> {/* button toggle */}
                                             <span className="text-lg font-bold font-display">{faq.q}</span> {/* question text */}
@@ -70,7 +70,7 @@ export default function FAQ() { // export FAQ component function
                         {droneFaqs.map((faq, i) => { // map drone faqs
                             return ( // return drone card JSX
                                 <ScrollReveal key={i} delay={i * 0.1}> {/* scroll reveal wrap */}
-                                    <div className="bg-aurora-glass border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-aurora-green/50 hover:shadow-[0_10px_30px_-10px_rgba(48,209,88,0.3)] group relative"> {/* faq card container */}
+                                    <div className="bg-aurora-glass border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:border-aurora-green/50 hover:shadow-[0_10px_30px_-10px_rgba(48,209,88,0.3)] group relative"> {/* faq card container */}
                                         <div className="absolute inset-0 bg-gradient-to-r from-aurora-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
                                         <button onClick={() => toggleDrone(i)} className="w-full flex justify-between items-center p-6 text-left text-white hover:bg-white/5 transition-colors focus:outline-none relative z-10"> {/* button toggle */}
                                             <span className="text-lg font-bold font-display">{faq.q}</span> {/* question text */}

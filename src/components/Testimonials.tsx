@@ -23,14 +23,16 @@ export default function Testimonials() { // export Testimonials component functi
     }
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false); // state for hover pause
 
     // Auto-advance logic
     useEffect(() => {
+        if (isHovered) return; // pause if hovered
         const timer = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % allReviews.length);
         }, 5000); // 5 seconds per slide
         return () => clearInterval(timer);
-    }, [allReviews.length]);
+    }, [allReviews.length, isHovered]);
 
     const next = () => setCurrentIndex((prev) => (prev + 1) % allReviews.length);
     const prev = () => setCurrentIndex((prev) => (prev - 1 + allReviews.length) % allReviews.length);
@@ -43,7 +45,11 @@ export default function Testimonials() { // export Testimonials component functi
                     <h3 className="text-4xl md:text-5xl font-extrabold text-white font-display">Čo Hovoria Naši Klienti</h3> {/* title */}
                 </div> {/* header block end */}
 
-                <div className="relative group/carousel max-w-2xl mx-auto"> {/* carousel container with constrained width */}
+                <div 
+                    className="relative group/carousel max-w-2xl mx-auto"
+                    onMouseEnter={() => setIsHovered(true)} // set hover true
+                    onMouseLeave={() => setIsHovered(false)} // set hover false
+                > {/* carousel container with constrained width */}
                     <div className="overflow-hidden"> {/* mask */}
                         <div 
                             className="flex transition-transform duration-700 ease-in-out" 
@@ -52,12 +58,12 @@ export default function Testimonials() { // export Testimonials component functi
                             {allReviews.map((r, i) => ( // map all reviews
                                 <div key={i} className="w-full shrink-0 px-4 py-4"> {/* slide wrapper */}
                                     {/* Presný štýl pôvodnej karty */}
-                                    <div className="max-w-md mx-auto bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors shadow-lg"> {/* card */}
-                                        <div className={`flex mb-3 ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>★ ★ ★ ★ ★</div> {/* stars rating */}
-                                        <p className="text-gray-300 text-sm italic mb-4">"{r.text}"</p> {/* testimonial text */}
+                                    <div className={`max-w-md mx-auto bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.05] transition-all duration-500 shadow-lg ${r.type === 'digital' ? 'hover:border-aurora-purple/40 hover:shadow-[0_0_30px_rgba(191,90,242,0.15)]' : 'hover:border-aurora-green/40 hover:shadow-[0_0_30px_rgba(161,255,206,0.15)]'}`}> {/* card */}
+                                        <div className={`flex mb-4 text-xl ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>★ ★ ★ ★ ★</div> {/* stars rating */}
+                                        <p className="text-gray-300 text-base italic mb-6 leading-relaxed">"{r.text}"</p> {/* testimonial text */}
                                         <div> {/* author wrapper */}
-                                            <p className="text-white font-bold font-display text-sm">{r.name}</p> {/* author name */}
-                                            <p className={`text-xs font-light ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>{r.proj}</p> {/* author project */}
+                                            <p className="text-white font-bold font-display text-base">{r.name}</p> {/* author name */}
+                                            <p className={`text-sm font-light mt-1 ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>{r.proj}</p> {/* author project */}
                                         </div> {/* author wrapper end */}
                                     </div> {/* card end */}
                                 </div> // slide wrapper end

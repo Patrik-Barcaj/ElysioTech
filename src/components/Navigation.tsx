@@ -10,25 +10,23 @@ export default function Navigation() { // export default Navigation block
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> {/* container grid */}
                 <div className="flex items-center justify-between h-20"> {/* flex alignment row */}
                     <div className="flex-shrink-0"> {/* logo flex item */}
-                        <Link href="/" className="text-2xl font-display font-bold text-white tracking-widest"> {/* logo link */}
-                            ELYS<span className="text-aurora-green">I</span>OTECH {/* logo inner text with green I */}
+                        <Link href="/" className="flex items-center gap-2 group"> {/* logo link */}
+                            <svg className="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 10L5 30H15L25 10H15Z" fill="white" fillOpacity="0.1"/>
+                                <path d="M20 10L10 30H20L30 10H20Z" fill="white"/>
+                                <text x="40" y="28" fill="white" className="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
+                            </svg>
                         </Link> {/* end link */}
                     </div> {/* end logo */}
                     <div className="hidden md:block"> {/* desktop menu wrapping */}
                         <div className="ml-10 flex items-baseline space-x-8 font-display"> {/* nav items row */}
-                            <Link href="/#services" className="text-gray-300 hover:text-aurora-green px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item service with home anchor */}
+                            <Link href="/#services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item service with home anchor */}
                                 Služby {/* item text */}
                             </Link> {/* end link service */}
-                            <Link href="/#print" className="text-gray-300 hover:text-aurora-green px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item print with home anchor */}
-                                Tlač {/* item text */}
-                            </Link> {/* end link print */}
-                            <Link href="/#portfolio" className="text-gray-300 hover:text-aurora-green px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item portfolio with home anchor */}
-                                Portfólio {/* item text */}
-                            </Link> {/* end link portfolio */}
-                            <Link href="/cennik" className="text-gray-300 hover:text-aurora-green px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item pricing page */}
+                            <Link href="/cennik" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item pricing page */}
                                 Cenník {/* item text */}
                             </Link> {/* end link pricing page */}
-                            <Link href="/#contact" className="text-gray-300 hover:text-aurora-green px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item contact with home anchor */}
+                            <Link href="/#contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item contact with home anchor */}
                                 Kontakt {/* item text */}
                             </Link> {/* end link contact */}
                         </div> {/* nav row */}
@@ -53,19 +51,13 @@ export default function Navigation() { // export default Navigation block
             {isOpen && ( // open conditional for mobile drop
                 <div className="md:hidden bg-aurora-dark/95 border-b border-white/10"> {/* wrapper for mobile panel */}
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-display text-center"> {/* inside mobile container */}
-                        <Link href="/#services" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-aurora-green block px-3 py-4 rounded-md text-base font-medium"> {/* service mobile with absolute path */}
+                        <Link href="/#services" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium"> {/* service mobile with absolute path */}
                             Služby {/* service title */}
                         </Link> {/* l */}
-                        <Link href="/#print" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-aurora-green block px-3 py-4 rounded-md text-base font-medium"> {/* print mobile with absolute path */}
-                            Tlač {/* print title */}
-                        </Link> {/* l */}
-                        <Link href="/#portfolio" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-aurora-green block px-3 py-4 rounded-md text-base font-medium"> {/* portfolio mobile with absolute path */}
-                            Portfólio {/* portfolio title */}
-                        </Link> {/* l */}
-                        <Link href="/cennik" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-aurora-green block px-3 py-4 rounded-md text-base font-medium"> {/* pricing page mobile */}
+                        <Link href="/cennik" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium"> {/* pricing page mobile */}
                             Cenník {/* pricing page title */}
                         </Link> {/* l */}
-                        <Link href="/#contact" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-aurora-green block px-3 py-4 rounded-md text-base font-medium"> {/* contact mobile with absolute path */}
+                        <Link href="/#contact" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium"> {/* contact mobile with absolute path */}
                             Kontakt {/* contact title */}
                         </Link> {/* l */}
                     </div> {/* in */}

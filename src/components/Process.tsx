@@ -40,7 +40,7 @@ export default function Process() { // export Process component function
                                         <div className="relative z-10 text-4xl font-extrabold text-aurora-purple font-display group-hover:scale-110 transition-transform duration-300 shrink-0 w-16">{step.num}</div> {/* step number */}
                                         <div>
                                             <h5 className="relative z-10 text-lg font-bold text-white mb-1 font-display group-hover:text-aurora-purple transition-colors duration-300">{step.title}</h5> {/* step title */}
-                                            <p className="relative z-10 text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{step.desc}</p> {/* step desc */}
+                                            <p className="relative z-10 text-gray-400 text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{step.desc}</p> {/* step desc */}
                                         </div>
                                     </div>
                                 </ScrollReveal> // scroll reveal end
@@ -61,7 +61,7 @@ export default function Process() { // export Process component function
                                         <div className="relative z-10 text-4xl font-extrabold text-aurora-green font-display group-hover:scale-110 transition-transform duration-300 shrink-0 w-16">{step.num}</div> {/* step number */}
                                         <div>
                                             <h5 className="relative z-10 text-lg font-bold text-white mb-1 font-display group-hover:text-aurora-green transition-colors duration-300">{step.title}</h5> {/* step title */}
-                                            <p className="relative z-10 text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{step.desc}</p> {/* step desc */}
+                                            <p className="relative z-10 text-gray-400 text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{step.desc}</p> {/* step desc */}
                                         </div>
                                     </div>
                                 </ScrollReveal> // scroll reveal end

@@ -54,7 +54,7 @@ export default function FAQ() { // export FAQ component function
                                             <span className="text-2xl font-bold text-aurora-purple ml-4 shrink-0">{openDigital === i ? '−' : '+'}</span> {/* state icon */}
                                         </button> {/* button closing tag */}
                                         <div className={`transition-all duration-350 ease-in-out overflow-hidden ${openDigital === i ? 'max-h-80 border-t border-white/5 p-6 bg-white/[0.02]' : 'max-h-0'}`}> {/* panel container with expanded height limit */}
-                                            <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p> {/* answer text block */}
+                                            <p className="text-gray-400 text-base leading-relaxed">{faq.a}</p> {/* answer text block */}
                                         </div> {/* panel closing tag element */}
                                     </div>
                                 </ScrollReveal> // scroll reveal end
@@ -77,7 +77,7 @@ export default function FAQ() { // export FAQ component function
                                             <span className="text-2xl font-bold text-aurora-green ml-4 shrink-0">{openDrone === i ? '−' : '+'}</span> {/* state icon */}
                                         </button> {/* button closing tag */}
                                         <div className={`transition-all duration-350 ease-in-out overflow-hidden ${openDrone === i ? 'max-h-80 border-t border-white/5 p-6 bg-white/[0.02]' : 'max-h-0'}`}> {/* panel container with expanded height limit */}
-                                            <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p> {/* answer text block */}
+                                            <p className="text-gray-400 text-base leading-relaxed">{faq.a}</p> {/* answer text block */}
                                         </div> {/* panel closing tag element */}
                                     </div>
                                 </ScrollReveal> // scroll reveal end

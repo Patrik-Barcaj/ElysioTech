@@ -31,7 +31,6 @@ export default function Hero() { // export Hero component function
                         
                         <ul className="text-xl md:text-2xl text-gray-400 font-light mb-8 max-w-2xl leading-relaxed space-y-4 text-left mx-auto md:mx-0"> {/* subheadline */}
                             <li className="flex items-start gap-3"><span className="text-aurora-green mt-1">•</span> <span><strong>Čo robíme:</strong> Rýchle weby v čistom kóde, profi zábery z drona, grafika a tlač.</span></li>
-                            <li className="flex items-start gap-3"><span className="text-aurora-purple mt-1">•</span> <span><strong>Filozofia:</strong> Vy podnikáte, my riešime zvyšok.</span></li>
                         </ul> {/* subheadline end */}
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"> {/* cta group */}

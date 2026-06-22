@@ -15,7 +15,7 @@ const inter = Inter({ // start inter font config
 
 export const metadata: Metadata = { // export metadata object
   title: "ELYSIO | Kompletné digitálne riešenia", // set page title
-  description: "Tvorba webov na mieru v čistom kóde, profi zábery z drona, grafika a sprostredkovanie tlače.", // set description
+  description: "Tvorba webov na mieru v čistom kóde, profesionálne zábery z drona, grafika a sprostredkovanie tlače.", // set description
 }; // close metadata object
 
 export default function RootLayout({ // export root layout component

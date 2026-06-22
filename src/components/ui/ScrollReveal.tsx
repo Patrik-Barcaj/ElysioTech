@@ -28,9 +28,9 @@ export default function ScrollReveal({ children, delay = 0, direction = 'up', cl
     const initialTransform = getInitialTransform(); // get initial state
 
     return ( // return JSX layout
-        <div ref={ref} className={className}> {/* wrapper with ref */}
+        <div ref={ref} className={className} style={className?.includes('h-full') ? { display: 'flex', flexDirection: 'column', height: '100%' } : undefined}> {/* wrapper with ref */}
             <motion.div // animated container
-                className="h-full" // ensure inner container stretches
+                className={className?.includes('h-full') ? "flex-1 flex flex-col w-full" : "w-full"} // ensure inner container stretches
                 initial={{ opacity: 0, ...initialTransform }} // starting state
                 animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...initialTransform }} // target state
                 transition={{ // animation config

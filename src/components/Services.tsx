@@ -14,7 +14,7 @@ export default function Services() { // export Services component
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"> {/* bento grid container */}
                     
                     {/* Big cell: Web Development */}
-                    <ScrollReveal delay={0.1} className="md:col-span-2 md:row-span-1"> {/* bento item 1 wrapper */}
+                    <ScrollReveal delay={0.1} className="md:col-span-2 md:row-span-1 h-full"> {/* bento item 1 wrapper */}
                         <div className="h-full bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:bg-white/[0.05] hover:border-aurora-purple/40 hover:shadow-[0_0_30px_rgba(191,90,242,0.15)] transition-all duration-500 group relative overflow-hidden flex flex-col md:flex-row items-center gap-6"> {/* bento item card */}
                             <div className="flex-1 z-10"> {/* text content */}
                                 <div className="flex items-center gap-4 mb-4">
@@ -24,9 +24,10 @@ export default function Services() { // export Services component
                                     <h4 className="text-xl font-display font-bold text-white group-hover:text-aurora-purple transition-colors duration-500">Tvorba webov & Aplikácií</h4> {/* title */}
                                 </div>
                                 <ul className="text-gray-400 text-base leading-relaxed space-y-2"> {/* desc list */}
-                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Čistý kód:</strong> Bez pomalých pluginov a šablón.</li>
-                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Rýchlosť:</strong> Extrémne rýchle načítanie.</li>
-                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Rozsah:</strong> Od Landing Page až po zložité interné aplikácie.</li>
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Dostupnosť:</strong> Mesačné predplatné ALEBO jednorazový projekt.</li> {/* item 1 */}
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Čistý kód:</strong> Bez pomalých pluginov a šablón.</li> {/* item 2 */}
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Rýchlosť:</strong> Extrémne rýchle načítanie.</li> {/* item 3 */}
+                                    <li><span className="text-aurora-purple mr-2">•</span><strong>Rozsah:</strong> Od Landing Page až po zložité interné aplikácie.</li> {/* item 4 */}
                                 </ul> {/* desc list end */}
                             </div> {/* text content end */}
                             <div className="w-full md:w-1/2 h-40 rounded-xl overflow-hidden relative border border-white/5 group-hover:border-white/10 transition-colors duration-500 shrink-0"> {/* image content */}
@@ -37,7 +38,7 @@ export default function Services() { // export Services component
                     </ScrollReveal> {/* bento item 1 wrapper end */}
 
                     {/* Small cell: Air Drones */}
-                    <ScrollReveal delay={0.2} className="md:col-span-1 md:row-span-1"> {/* bento item 2 wrapper */}
+                    <ScrollReveal delay={0.2} className="md:col-span-1 md:row-span-1 h-full"> {/* bento item 2 wrapper */}
                         <div className="h-full bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:bg-white/[0.05] hover:border-aurora-green/40 hover:shadow-[0_0_30px_rgba(161,255,206,0.15)] transition-all duration-500 group relative overflow-hidden flex flex-col justify-center"> {/* bento item card */}
                             <div className="z-10 relative"> {/* content */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -47,15 +48,16 @@ export default function Services() { // export Services component
                                     <h4 className="text-lg font-display font-bold text-white group-hover:text-aurora-green transition-colors duration-500">Letecké zábery</h4> {/* title */}
                                 </div>
                                 <ul className="text-gray-400 text-base leading-relaxed space-y-2"> {/* desc list */}
-                                    <li><span className="text-aurora-green mr-2">•</span><strong>4K kvalita:</strong> Profesionálne video a fotografie z výšky.</li>
-                                    <li><span className="text-aurora-green mr-2">•</span><strong>Zameranie:</strong> Ideálne pre nehnuteľnosti a pozemky.</li>
+                                    <li><span className="text-aurora-green mr-2">•</span><strong>4K kvalita:</strong> Profesionálne video a fotografie z výšky.</li> {/* item 1 */}
+                                    <li><span className="text-aurora-green mr-2">•</span><strong>Individuálne:</strong> Lety možné aj doobeda po dohode.</li> {/* item 2 */}
+                                    <li><span className="text-aurora-green mr-2">•</span><strong>Zameranie:</strong> Ideálne pre nehnuteľnosti a pozemky.</li> {/* item 3 */}
                                 </ul> {/* desc list end */}
                             </div> {/* content end */}
                         </div> {/* bento item card end */}
                     </ScrollReveal> {/* bento item 2 wrapper end */}
 
                     {/* Small cell: Graphic Design */}
-                    <ScrollReveal delay={0.3} className="md:col-span-1 md:row-span-1"> {/* bento item 3 wrapper */}
+                    <ScrollReveal delay={0.3} className="md:col-span-1 md:row-span-1 h-full"> {/* bento item 3 wrapper */}
                         <div className="h-full bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:bg-white/[0.05] hover:border-pink-500/40 hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] transition-all duration-500 group relative overflow-hidden flex flex-col justify-center"> {/* bento item card */}
                             <div className="z-10 relative"> {/* content */}
                                 <div className="flex items-center gap-3 mb-4">
@@ -65,16 +67,17 @@ export default function Services() { // export Services component
                                     <h4 className="text-lg font-display font-bold text-white group-hover:text-pink-500 transition-colors duration-500">Grafický dizajn</h4> {/* title */}
                                 </div>
                                 <ul className="text-gray-400 text-base leading-relaxed space-y-2"> {/* desc list */}
-                                    <li><span className="text-pink-500 mr-2">•</span><strong>Logá:</strong> Minimalistický dizajn v krivkách.</li>
-                                    <li><span className="text-pink-500 mr-2">•</span><strong>Tlačoviny:</strong> Návrhy vizitiek a letákov.</li>
-                                    <li><span className="text-pink-500 mr-2">•</span><strong>Digitál:</strong> Assety pre branding.</li>
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Dostupnosť:</strong> Mesačné predplatné ALEBO jednorazový projekt.</li> {/* item 1 */}
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Logá:</strong> Minimalistický dizajn v krivkách.</li> {/* item 2 */}
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Tlačoviny:</strong> Návrhy vizitiek a letákov.</li> {/* item 3 */}
+                                    <li><span className="text-pink-500 mr-2">•</span><strong>Digitál:</strong> Assety pre branding.</li> {/* item 4 */}
                                 </ul> {/* desc list end */}
                             </div> {/* content end */}
                         </div> {/* bento item card end */}
                     </ScrollReveal> {/* bento item 3 wrapper end */}
 
                     {/* Medium cell: Print Production */}
-                    <ScrollReveal delay={0.4} className="md:col-span-2 md:row-span-1"> {/* bento item 4 wrapper */}
+                    <ScrollReveal delay={0.4} className="md:col-span-2 md:row-span-1 h-full"> {/* bento item 4 wrapper */}
                         <div className="h-full bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:bg-white/[0.05] hover:border-blue-400/40 hover:shadow-[0_0_30px_rgba(96,165,250,0.15)] transition-all duration-500 group relative overflow-hidden flex flex-col md:flex-row items-center gap-6"> {/* bento item card */}
                             <div className="w-full md:w-5/12 h-36 rounded-xl overflow-hidden relative border border-white/5 group-hover:border-blue-400/30 transition-colors duration-500 shrink-0 order-2 md:order-1"> {/* image content */}
                                 <img src="/print-production.png" alt="Print Mediation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60" /> {/* img */}
@@ -88,9 +91,10 @@ export default function Services() { // export Services component
                                     <h4 className="text-xl font-display font-bold text-white group-hover:text-blue-400 transition-colors duration-500">Sprostredkovanie tlače</h4> {/* title */}
                                 </div>
                                 <ul className="text-gray-400 text-base leading-relaxed space-y-2"> {/* desc list */}
-                                    <li><span className="text-blue-400 mr-2">•</span><strong>Bez starostí:</strong> Neriešite farby ani spadávky.</li>
-                                    <li><span className="text-blue-400 mr-2">•</span><strong>Príprava:</strong> Kompletná predtlačová kontrola.</li>
-                                    <li><span className="text-blue-400 mr-2">•</span><strong>Doručenie:</strong> Hotový produkt priamo k vám.</li>
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Dostupnosť:</strong> Mesačné predplatné ALEBO jednorazový projekt.</li> {/* item 1 */}
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Bez starostí:</strong> Neriešite farby ani spadávky.</li> {/* item 2 */}
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Príprava:</strong> Kompletná predtlačová kontrola.</li> {/* item 3 */}
+                                    <li><span className="text-blue-400 mr-2">•</span><strong>Doručenie:</strong> Hotový produkt priamo k vám.</li> {/* item 4 */}
                                 </ul> {/* desc list end */}
                             </div> {/* text content end */}
                         </div> {/* bento item card end */}

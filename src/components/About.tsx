@@ -17,7 +17,7 @@ export default function About() { // export About component function
                         <div className="h-full bg-aurora-glass border border-white/10 rounded-3xl p-8 hover:border-aurora-purple/50 hover:bg-gradient-to-br hover:from-white/5 hover:to-aurora-purple/10 hover:-translate-y-3 hover:shadow-[0_15px_40px_-10px_rgba(191,90,242,0.4)] transition-all duration-500 flex flex-col justify-between group cursor-pointer relative overflow-hidden"> {/* digital box */}
                             <div className="absolute inset-0 bg-gradient-to-b from-aurora-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
                             <div className="relative z-10"> {/* text block wrapper */}
-                                <h4 className="text-2xl font-bold font-display text-white mb-4 group-hover:text-aurora-purple transition-colors duration-300">Digital <span className="text-aurora-purple">Studio</span></h4> {/* digital title */}
+                                <h4 className="text-2xl font-bold font-display text-white mb-4 group-hover:text-aurora-purple transition-colors duration-300">Vývoj & <span className="text-aurora-purple">Technológie</span></h4> {/* digital title */}
                                 <p className="text-gray-400 mb-6 leading-relaxed"> {/* desc */}
                                     Zameriavame sa na tvorbu jednoduchých, funkčných webov a menších aplikácií presne podľa potrieb klientov. Taktiež navrhujeme vizuálnu grafiku (bannery, letáky, vizitky, logá), ktorú po dohode kompletne zadáme a objednáme v tlačiarni. {/* text */}
                                 </p> {/* desc end */}
@@ -48,7 +48,7 @@ export default function About() { // export About component function
                         <div className="h-full bg-aurora-glass border border-white/10 rounded-3xl p-8 hover:border-aurora-green/50 hover:bg-gradient-to-br hover:from-white/5 hover:to-aurora-green/10 hover:-translate-y-3 hover:shadow-[0_15px_40px_-10px_rgba(48,209,88,0.4)] transition-all duration-500 flex flex-col justify-between group cursor-pointer relative overflow-hidden"> {/* air box */}
                             <div className="absolute inset-0 bg-gradient-to-b from-aurora-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
                             <div className="relative z-10"> {/* text block wrapper */}
-                                <h4 className="text-2xl font-bold font-display text-white mb-4 group-hover:text-aurora-green transition-colors duration-300">Air <span className="text-aurora-green">Drones</span></h4> {/* air title */}
+                                <h4 className="text-2xl font-bold font-display text-white mb-4 group-hover:text-aurora-green transition-colors duration-300">Kreatíva & <span className="text-aurora-green">Dizajn</span></h4> {/* air title */}
                                 <p className="text-gray-400 mb-6 leading-relaxed"> {/* desc */}
                                     Ponúkame letecké zábery a fotografie realizované našimi dronmi. Sústredíme sa na pekné prezentačné zábery prírody, pozemkov, domov alebo chát z vtáčej perspektívy. {/* text */}
                                 </p> {/* desc end */}

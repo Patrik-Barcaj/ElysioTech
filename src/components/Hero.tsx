@@ -47,23 +47,23 @@ export default function Hero() { // export Hero component function
                     {/* Right: Image Collage */}
                     <div className="flex-1 relative w-full max-w-lg hidden md:block mt-10 md:mt-0"> {/* image collage wrapper */}
                         <div className="relative w-full aspect-square"> {/* aspect ratio box */}
-                            {/* Photo 2: Air Drones (now in background position) */}
+                            {/* Photo 2: Creative & Production */}
                             <div className="absolute top-0 right-0 w-[80%] h-[75%] border border-aurora-purple/30 rounded-3xl transform rotate-3 hover:rotate-6 hover:scale-105 transition-all duration-700 bg-black overflow-hidden shadow-[0_0_40px_rgba(191,90,242,0.15)] z-10 hover:z-30 group cursor-pointer"> {/* background card rotated */}
-                                <Image src="/drone-bg.png" alt="Air Drones" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* drone image */}
+                                <Image src="/drone-bg.png" alt="Kreatíva a Dizajn" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* drone image */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"></div> {/* gradient overlay */}
                                 <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* text content */}
-                                    <h3 className="text-2xl font-display font-bold text-white mb-1 drop-shadow-lg">Air <span className="text-aurora-green">Drones</span></h3> {/* title */}
-                                    <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Letecké zábery a fotografie</p> {/* description */}
+                                    <h3 className="text-2xl font-display font-bold text-white mb-1 drop-shadow-lg">Kreatíva & <span className="text-aurora-green">Dizajn</span></h3> {/* title */}
+                                    <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Letecké zábery, grafika a tlač</p> {/* description */}
                                 </div> {/* text content end */}
                             </div> {/* background card rotated end */}
 
-                            {/* Photo 1: Digital Studio (now in foreground position) */}
+                            {/* Photo 1: Tech & Dev */}
                             <div className="absolute bottom-0 left-0 w-[80%] h-[75%] border border-aurora-green/30 rounded-3xl transform -rotate-3 hover:-rotate-6 hover:scale-105 transition-all duration-700 bg-black overflow-hidden shadow-[0_0_50px_rgba(161,255,206,0.15)] z-20 hover:z-30 group cursor-pointer"> {/* foreground card rotated */}
-                                <Image src="/digital-bg.png" alt="Digital Studio" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* digital image */}
+                                <Image src="/digital-bg.png" alt="Vývoj a Technológie" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* digital image */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"></div> {/* gradient overlay */}
                                 <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* text content */}
-                                    <h3 className="text-2xl font-display font-bold text-white mb-1 drop-shadow-lg">Digital <span className="text-aurora-purple">Studio</span></h3> {/* title */}
-                                    <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Weby, aplikácie a grafika</p> {/* description */}
+                                    <h3 className="text-2xl font-display font-bold text-white mb-1 drop-shadow-lg">Vývoj & <span className="text-aurora-purple">Technológie</span></h3> {/* title */}
+                                    <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Weby, systémy a aplikácie</p> {/* description */}
                                 </div> {/* text content end */}
                             </div> {/* foreground card rotated end */}
                             

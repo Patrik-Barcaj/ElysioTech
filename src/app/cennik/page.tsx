@@ -15,15 +15,10 @@ export default function PricingPage() { // export pricing page component
                     <div className="text-center mb-20 group"> {/* header block */}
                         <h1 className="text-sm font-bold text-aurora-indigo tracking-widest uppercase mb-3 font-display hover:text-aurora-purple transition-colors duration-300">Cenník & Model Služieb</h1> {/* subtitle label */}
                         <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple via-aurora-indigo to-aurora-green font-display mb-6 tracking-tight hover:scale-105 transition-transform duration-500">Vyberte si prístup, ktorý vám vyhovuje</h2> {/* main title */}
-                        <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed group-hover:text-gray-300 transition-colors duration-300">Vy podnikáte, my riešime technológie. Ponúkame moderný SaaS prístup k webe (všetko v jednom) alebo samostatné jednorazové služby bez viazanosti.</p> {/* description */}
+                        <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed group-hover:text-gray-300 transition-colors duration-300">Vy podnikáte, my riešime technológie. Ponúkame jasný <strong>HYBRIDNÝ MODEL</strong>: Vyberte si bezstarostný mesačný paušál, alebo zvoľte klasické jednorazové odkúpenie projektu do vlastných rúk.</p> {/* description */}
                     </div> {/* header block end */}
 
-                    {/* VETVA A: Web ako služba (SaaS predplatné) */}
-                    <div className="mb-24"> {/* branch a wrapper */}
-                        <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4"> {/* subsection header flex */}
-                            <div className="w-3 h-8 bg-gradient-to-b from-aurora-purple to-aurora-indigo rounded-full"></div> {/* accent bar */}
-                            <h3 className="text-3xl font-bold font-display text-white">Weby a aplikácie</h3> {/* subsection title */}
-                        </div> {/* subsection header end */}
+                    <div className="mb-24"> {/* main pricing wrapper */}
 
                         <p className="text-gray-400 mb-8 px-4 text-lg"><span className="text-aurora-purple">•</span> <strong>Pravidlo:</strong> Žiadna viazanosť. 0 € akontácia pri mesačnej alternatíve.</p> {/* rule description */}
 
@@ -36,15 +31,14 @@ export default function PricingPage() { // export pricing page component
                                         <h4 className="text-xl font-bold font-display text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-aurora-purple transition-all duration-300">ŠTART</h4> {/* pack name */}
 
                                         <div className="flex flex-col gap-2 mb-8 border-b border-white/5 pb-8 group-hover:border-aurora-purple/30 transition-colors duration-300 w-full"> {/* price block */}
-                                            <div className="text-2xl font-display text-white"><span className="text-sm text-gray-500 font-normal">Jednorazovo: </span><strong>250 €</strong><span className="text-xs text-white/40 font-normal tracking-wider ml-1 uppercase">s DPH</span></div> {/* price */}
-                                            <div className="text-xl font-display text-aurora-purple drop-shadow-[0_0_8px_rgba(191,90,242,0.5)]"><span className="text-sm text-gray-500 font-normal">Alternatíva: </span><strong>25 € / mesiac</strong><span className="text-xs text-white/40 font-normal tracking-wider ml-1 uppercase">s DPH</span></div> {/* price */}
+                                            <div className="text-4xl font-display text-white drop-shadow-[0_0_8px_rgba(191,90,242,0.5)]"><strong>29 €</strong><span className="text-xl text-white/50 font-normal ml-1">/ mes.</span></div> {/* price */}
                                         </div> {/* price block end */}
 
                                         <ul className="space-y-4 mb-8 text-sm text-gray-300 w-full"> {/* features list */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Jednostránkový web</span></li> {/* feature 1 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Doména a hosting</span></li> {/* feature 2 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Pravidelná správa</span></li> {/* feature 3 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Drobné úpravy</span></li> {/* feature 4 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Prenájom webu</span></li> {/* feature 1 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Hosting a doména</span></li> {/* feature 2 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Drobná grafika</span></li> {/* feature 3 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Pravidelná správa</span></li> {/* feature 4 */}
                                         </ul> {/* features list end */}
                                     </div> {/* content wrapper end */}
                                 </div> {/* saas container end */}
@@ -60,15 +54,13 @@ export default function PricingPage() { // export pricing page component
                                         <h4 className="text-xl font-bold font-display text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-aurora-indigo transition-all duration-300">PRO</h4> {/* pack name */}
 
                                         <div className="flex flex-col gap-2 mb-8 border-b border-white/10 pb-8 group-hover:border-aurora-indigo/30 transition-colors duration-300 w-full"> {/* price block */}
-                                            <div className="text-2xl font-display text-white"><span className="text-sm text-gray-500 font-normal">Jednorazovo: </span><strong>490 €</strong><span className="text-xs text-white/40 font-normal tracking-wider ml-1 uppercase">s DPH</span></div> {/* price */}
-                                            <div className="text-xl font-display text-aurora-indigo drop-shadow-[0_0_12px_rgba(94,92,230,0.6)]"><span className="text-sm text-gray-500 font-normal">Alternatíva: </span><strong>49 € / mesiac</strong><span className="text-xs text-white/40 font-normal tracking-wider ml-1 uppercase">s DPH</span></div> {/* price */}
+                                            <div className="text-4xl font-display text-white drop-shadow-[0_0_12px_rgba(94,92,230,0.6)]"><strong>49 €</strong><span className="text-xl text-white/50 font-normal ml-1">/ mes.</span></div> {/* price */}
                                         </div> {/* price block end */}
 
                                         <ul className="space-y-4 mb-8 text-sm text-gray-300 w-full"> {/* features list */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span><strong>+ Všetko z balíka ŠTART</strong></span></li> {/* feature 1 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>Viacstránkový web/app (do 5 podstránok)</span></li> {/* feature 2 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>SEO optimalizácia</span></li> {/* feature 3 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>Kompletná digitálna grafika</span></li> {/* feature 4 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>Prenájom interných systémov a aplikácií</span></li> {/* feature 1 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>Prioritná správa a vývoj</span></li> {/* feature 2 */}
+                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span><strong>+ Všetko z balíka ŠTART</strong></span></li> {/* feature 3 */}
                                         </ul> {/* features list end */}
                                     </div> {/* content wrapper end */}
                                 </div> {/* saas container end */}
@@ -80,21 +72,19 @@ export default function PricingPage() { // export pricing page component
                                     <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-aurora-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
                                     <div className="relative z-10 w-full flex flex-col md:flex-row gap-8 md:gap-12 md:items-center"> {/* flex content wrapper */}
                                         <div className="md:w-1/3 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5 pb-8 md:pb-0 md:pr-8 group-hover:border-aurora-green/30 transition-colors duration-300"> {/* left block */}
-                                            <h4 className="text-xl font-bold font-display text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-aurora-green transition-all duration-300">INDIVIDUÁL</h4> {/* pack name */}
+                                            <h4 className="text-xl font-bold font-display text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-aurora-green transition-all duration-300">JEDNORAZOVO</h4> {/* pack name */}
 
                                             <div className="flex flex-col gap-2"> {/* price block */}
-                                                <div className="text-2xl font-display text-white"><span className="text-sm text-gray-500 font-normal">Cena: </span><strong>Individuálne</strong></div> {/* price */}
-                                                <div className="text-xl font-display text-aurora-green drop-shadow-[0_0_8px_rgba(48,209,88,0.5)]"><strong>Mesačne dohodou</strong></div> {/* price */}
+                                                <div className="text-3xl font-display text-white drop-shadow-[0_0_8px_rgba(48,209,88,0.5)]"><strong>Individuálne</strong></div> {/* price */}
                                             </div> {/* price block end */}
                                         </div> {/* left block end */}
 
                                         <div className="md:w-2/3"> {/* right block */}
                                             <ul className="space-y-4 text-sm text-gray-300 w-full"> {/* features list */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Komplexné weby a e-shopy:</strong> Rozsiahle platformy navrhnuté pre vysokú záťaž a rast.</span></li> {/* feature 1 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Interné systémy a appky:</strong> Digitalizácia firemných procesov (napr. CRM, ERP, rezervačné systémy).</span></li> {/* feature 2 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Riešenia na mieru:</strong> Plne customizovaný vývoj aplikácií presne podľa vašich špecifických potrieb.</span></li> {/* feature 3 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>API integrácie:</strong> Prepojenie s fakturačnými, platobnými alebo inými externými systémami.</span></li> {/* feature 4 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Prioritná podpora:</strong> Garancia rýchlej odozvy a neustály technologický rozvoj vášho produktu.</span></li> {/* feature 5 */}
+                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Odkúpenie webu/aplikácie:</strong> Klasické odkúpenie bez paušálu do vášho vlastníctva.</span></li> {/* feature 1 */}
+                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Rozsiahlejšie systémy:</strong> Komplexné platformy navrhnuté na mieru.</span></li> {/* feature 2 */}
+                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Tlačové služby:</strong> Kompletná grafika a tlačoviny realizované jednorazovo.</span></li> {/* feature 3 */}
+                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Drony:</strong> Profesionálne letecké zábery a videá (lety možné aj doobeda po dohode).</span></li> {/* feature 4 */}
                                             </ul> {/* features list end */}
                                         </div> {/* right block end */}
                                     </div> {/* flex content wrapper end */}
@@ -103,12 +93,7 @@ export default function PricingPage() { // export pricing page component
                         </div> {/* saas grid layout end */}
                     </div> {/* branch a wrapper end */}
 
-                    {/* VETVA B: Samostatné Služby */}
-                    <div className="mb-16"> {/* branch b wrapper */}
-                        <div className="flex items-center gap-4 mb-10 border-b border-white/10 pb-4"> {/* subsection header flex */}
-                            <div className="w-3 h-8 bg-gradient-to-b from-aurora-green to-aurora-purple rounded-full"></div> {/* accent bar */}
-                            <h3 className="text-3xl font-bold font-display text-white">Samostatné služby bez webu</h3> {/* subsection title */}
-                        </div> {/* subsection header end */}
+                    <div className="mb-16 mt-8"> {/* secondary services wrapper */}
 
                         <div className="flex flex-col gap-6 w-full max-w-full px-4"> {/* standalone stack layout (no horizontal scroll) */}
                             <ScrollReveal delay={0.1}> {/* standalone item */}

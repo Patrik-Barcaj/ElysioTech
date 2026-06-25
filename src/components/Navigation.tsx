@@ -1,9 +1,52 @@
 "use client"; // use client directive
-import { useState } from "react"; // import useState hook
+import { useState, useEffect } from "react"; // import hooks
 import Link from "next/link"; // import Link component
+import { usePathname } from "next/navigation"; // import usePathname
 
 export default function Navigation() { // export default Navigation block
     const [isOpen, setIsOpen] = useState(false); // set state for mobile menu
+    const [activeSection, setActiveSection] = useState(""); // state for active section
+    const pathname = usePathname(); // get current pathname
+
+    useEffect(() => { // scrollspy effect
+        if (pathname !== "/") return; // only track on homepage
+        
+        const sections = document.querySelectorAll("section[id]"); // get all sections
+        
+        const observer = new IntersectionObserver((entries) => { // create observer
+            entries.forEach((entry) => { // loop entries
+                if (entry.isIntersecting) { // if intersecting
+                    setActiveSection(entry.target.id); // set active id
+                } // end if
+            }); // end loop
+        }, { // options
+            rootMargin: "-40% 0px -60% 0px" // trigger when element is in upper half
+        }); // end observer
+
+        sections.forEach((section) => { // loop sections
+            observer.observe(section); // observe
+        }); // end loop
+
+        return () => { // cleanup
+            sections.forEach((section) => observer.unobserve(section)); // unobserve
+        }; // end cleanup
+    }, [pathname]); // dependencies
+
+    const navLinks = [ // array of navigation links
+        { name: 'Služby', href: '/#services', id: 'services' }, // item
+        { name: 'Postup', href: '/#process', id: 'process' }, // item
+        { name: 'Portfólio', href: '/#portfolio', id: 'portfolio' }, // item
+        { name: 'Cenník', href: '/cennik', id: '' }, // item
+        { name: 'FAQ', href: '/#faq', id: 'faq' }, // item
+        { name: 'Kontakt', href: '/#contact', id: 'contact' }, // item
+    ]; // end array
+
+    const checkActive = (link: { href: string, id: string }) => { // helper function to check active state
+        if (link.href.startsWith('/#')) { // if hash link
+            return pathname === '/' && activeSection === link.id; // true if home and section matches
+        } // end if
+        return pathname === link.href; // true if pathname matches exact href
+    }; // end helper function
 
     return ( // start return block
         <header className="fixed top-0 w-full z-50 bg-aurora-dark/80 backdrop-blur-md border-b border-white/10 transition-all duration-300"> {/* header element */}
@@ -20,15 +63,15 @@ export default function Navigation() { // export default Navigation block
                     </div> {/* end logo */}
                     <div className="hidden md:block"> {/* desktop menu wrapping */}
                         <div className="ml-10 flex items-baseline space-x-8 font-display"> {/* nav items row */}
-                            <Link href="/#services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item service with home anchor */}
-                                Služby {/* item text */}
-                            </Link> {/* end link service */}
-                            <Link href="/cennik" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item pricing page */}
-                                Cenník {/* item text */}
-                            </Link> {/* end link pricing page */}
-                            <Link href="/#contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"> {/* link item contact with home anchor */}
-                                Kontakt {/* item text */}
-                            </Link> {/* end link contact */}
+                            {navLinks.map((link) => { // map nav links
+                                const isActive = checkActive(link); // check if active
+                                return ( // return link
+                                    <Link key={link.name} href={link.href} className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative ${isActive ? 'text-white' : 'text-gray-300 hover:text-white'}`}> {/* link item */}
+                                        {link.name} {/* item text */}
+                                        {isActive && <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-aurora-purple rounded-full shadow-[0_0_8px_rgba(191,90,242,0.6)]"></span>} {/* active indicator */}
+                                    </Link> // end link
+                                ); // end return
+                            })} {/* end map */}
                         </div> {/* nav row */}
                     </div> {/* desktop nav */}
                     <div className="-mr-2 flex md:hidden"> {/* mobile hamburger wrapping */}
@@ -51,15 +94,14 @@ export default function Navigation() { // export default Navigation block
             {isOpen && ( // open conditional for mobile drop
                 <div className="md:hidden bg-aurora-dark/95 border-b border-white/10"> {/* wrapper for mobile panel */}
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-display text-center"> {/* inside mobile container */}
-                        <Link href="/#services" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium"> {/* service mobile with absolute path */}
-                            Služby {/* service title */}
-                        </Link> {/* l */}
-                        <Link href="/cennik" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium"> {/* pricing page mobile */}
-                            Cenník {/* pricing page title */}
-                        </Link> {/* l */}
-                        <Link href="/#contact" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium"> {/* contact mobile with absolute path */}
-                            Kontakt {/* contact title */}
-                        </Link> {/* l */}
+                        {navLinks.map((link) => { // map mobile links
+                            const isActive = checkActive(link); // check active
+                            return ( // return link
+                                <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className={`block px-3 py-4 text-base font-medium transition-colors ${isActive ? 'text-white bg-white/5 border-l-4 border-aurora-purple' : 'text-gray-300 hover:text-white hover:bg-white/5 border-l-4 border-transparent'}`}> {/* link item */}
+                                    {link.name} {/* item text */}
+                                </Link> // end link
+                            ); // end return
+                        })} {/* end map */}
                     </div> {/* in */}
                 </div> // wrap
             )} {/* end conditional check */}

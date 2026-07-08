@@ -38,11 +38,11 @@ export default function Testimonials() { // export Testimonials component functi
     const prev = () => setCurrentIndex((prev) => (prev - 1 + allReviews.length) % allReviews.length);
 
     return ( // return JSX layout
-        <section id="testimonials" className="py-24 bg-aurora-dark relative border-t border-white/5"> {/* section wrapper */}
+        <section id="testimonials" className="py-24 dark:bg-aurora-dark relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
                     <h2 className="text-sm font-bold text-aurora-green tracking-widest uppercase mb-3 font-display">Hodnotenia</h2> {/* subtitle label */}
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-white font-display">Čo Hovoria Naši Klienti</h3> {/* title */}
+                    <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Čo Hovoria Naši Klienti</h3> {/* title */}
                 </div> {/* header block end */}
 
                 <div 
@@ -58,11 +58,11 @@ export default function Testimonials() { // export Testimonials component functi
                             {allReviews.map((r, i) => ( // map all reviews
                                 <div key={i} className="w-full shrink-0 px-4 py-4"> {/* slide wrapper */}
                                     {/* Presný štýl pôvodnej karty */}
-                                    <div className={`max-w-md mx-auto bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.05] transition-all duration-500 shadow-lg ${r.type === 'digital' ? 'hover:border-aurora-purple/40 hover:shadow-[0_0_30px_rgba(191,90,242,0.15)]' : 'hover:border-aurora-green/40 hover:shadow-[0_0_30px_rgba(161,255,206,0.15)]'}`}> {/* card */}
+                                    <div className={`max-w-md mx-auto bg-white shadow-sm dark:shadow-none dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:bg-black/[0.05] dark:bg-white/[0.05] transition-all duration-500 shadow-lg ${r.type === 'digital' ? 'hover:border-aurora-purple/40 hover:shadow-[0_0_30px_rgba(191,90,242,0.38)] dark:hover:shadow-[0_0_30px_rgba(191,90,242,0.15)]' : 'hover:border-aurora-green/40 hover:shadow-[0_0_30px_rgba(161,255,206,0.38)] dark:hover:shadow-[0_0_30px_rgba(161,255,206,0.15)]'}`}> {/* card */}
                                         <div className={`flex mb-4 text-xl ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>★ ★ ★ ★ ★</div> {/* stars rating */}
-                                        <p className="text-gray-300 text-base italic mb-6 leading-relaxed">"{r.text}"</p> {/* testimonial text */}
+                                        <p className="text-gray-800 dark:text-gray-300 text-base italic mb-6 leading-relaxed">"{r.text}"</p> {/* testimonial text */}
                                         <div> {/* author wrapper */}
-                                            <p className="text-white font-bold font-display text-base">{r.name}</p> {/* author name */}
+                                            <p className="text-gray-900 dark:text-white font-bold font-display text-base">{r.name}</p> {/* author name */}
                                             <p className={`text-sm font-light mt-1 ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>{r.proj}</p> {/* author project */}
                                         </div> {/* author wrapper end */}
                                     </div> {/* card end */}
@@ -72,10 +72,10 @@ export default function Testimonials() { // export Testimonials component functi
                     </div> {/* mask end */}
 
                     {/* Navigation Buttons */}
-                    <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 sm:-ml-12 p-3 bg-[#0a0715]/90 text-white rounded-full border border-white/10 hover:bg-white/10 transition-colors z-10 backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 hover:scale-110 shadow-xl"> {/* prev button */}
+                    <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 sm:-ml-12 p-3 bg-gray-100 dark:bg-[#0a0715]/90 text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:bg-black/10 dark:bg-white/10 transition-colors z-10 backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 hover:scale-110 shadow-xl"> {/* prev button */}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg> {/* icon */}
                     </button> {/* prev button end */}
-                    <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 sm:-mr-12 p-3 bg-[#0a0715]/90 text-white rounded-full border border-white/10 hover:bg-white/10 transition-colors z-10 backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 hover:scale-110 shadow-xl"> {/* next button */}
+                    <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 sm:-mr-12 p-3 bg-gray-100 dark:bg-[#0a0715]/90 text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:bg-black/10 dark:bg-white/10 transition-colors z-10 backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 hover:scale-110 shadow-xl"> {/* next button */}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg> {/* icon */}
                     </button> {/* next button end */}
 
@@ -85,7 +85,7 @@ export default function Testimonials() { // export Testimonials component functi
                             <button 
                                 key={i} 
                                 onClick={() => setCurrentIndex(i)} 
-                                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-white w-6' : 'bg-white/30 hover:bg-white/50 w-2'}`}
+                                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-white w-6' : 'bg-black/30 dark:bg-white/30 hover:bg-black/50 dark:bg-white/50 w-2'}`}
                             /> // dot
                         ))}
                     </div> {/* dots container end */}

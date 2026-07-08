@@ -1,8 +1,9 @@
 @import "tailwindcss"; /* import standard tailwind */
+@custom-variant dark (&:where(.dark, .dark *)); /* enable class strategy for dark mode */
 
 @theme { /* define main theme */
   --color-aurora-purple: #BF5AF2; /* set lighter vibrant purple color */
-  --color-aurora-green: #A1FFCE; /* set green color */
+  --color-aurora-green: var(--theme-green); /* set adaptive green color */
   --color-aurora-indigo: #4F46E5; /* set indigo color */
   --color-aurora-dark: #0f0a1f; /* set dark base color */
   --color-aurora-glass: rgba(255, 255, 255, 0.05); /* glass color */
@@ -15,9 +16,16 @@ html { /* open html selector */
 } /* close html selector */
 
 :root { /* open root selector */
+  --background: #f8fafc; /* light background variable */
+  --foreground: #0f0a1f; /* dark text variable */
+  --theme-green: #059669; /* darker emerald green for light mode readability */
+} /* close root selector */
+
+.dark { /* dark theme variables */
   --background: #0f0a1f; /* dark background variable */
   --foreground: #f8fafc; /* light text variable */
-} /* close root selector */
+  --theme-green: #A1FFCE; /* original neon green for dark mode */
+} /* close dark selector */
 
 body { /* open body selector */
   background-color: var(--background); /* apply background */

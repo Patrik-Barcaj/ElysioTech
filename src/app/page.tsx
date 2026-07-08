@@ -11,7 +11,7 @@ import Marquee from '@/components/ui/Marquee'; // import Marquee component
 
 export default function Home() { // export default Home component function
   return ( // return JSX layout
-    <main className="min-h-screen text-white relative"> {/* main container wrapper */}
+    <main className="min-h-screen text-gray-900 dark:text-white relative"> {/* main container wrapper */}
       <Navigation /> {/* render navigation header */}
       <Hero /> {/* render asymmetric minimalist hero */}
       <Marquee items={['Next.js', 'React', 'Tailwind CSS', '4K Letecké Video', 'Branding', 'Webové Aplikácie na Mieru', 'Drony', 'SaaS Model']} /> {/* render infinite marquee */}

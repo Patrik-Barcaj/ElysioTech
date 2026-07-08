@@ -51,33 +51,33 @@ export default function FAQ() { // export FAQ component function
     }; // toggle question end
 
     return ( // return JSX layout
-        <section id="faq" className="py-24 bg-[#0a0715] relative border-t border-white/5"> {/* section wrapper */}
+        <section id="faq" className="py-24 bg-gray-100 dark:bg-[#0a0715] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
                     <h2 className="text-sm font-bold text-aurora-indigo tracking-widest uppercase mb-3 font-display">Otázky a odpovede</h2> {/* subtitle label */}
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-white font-display">Často Kladené Otázky</h3> {/* title */}
+                    <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Často Kladené Otázky</h3> {/* title */}
                 </div> {/* header block end */}
 
                 <div className="mb-12"> {/* unified faq block */}
                     <div className="space-y-6"> {/* categories wrapper */}
                         {faqCategories.map((category, catIndex) => ( // map categories
                             <ScrollReveal key={catIndex} delay={catIndex * 0.1}> {/* scroll reveal wrap */}
-                                <div className={`border rounded-3xl overflow-hidden transition-all duration-500 ${openCategory === catIndex ? 'bg-aurora-glass border-aurora-purple/40 shadow-[0_10px_30px_-10px_rgba(191,90,242,0.2)]' : 'bg-white/[0.02] border-white/10 hover:border-white/20'}`}> {/* category card container */}
+                                <div className={`border rounded-3xl overflow-hidden transition-all duration-500 ${openCategory === catIndex ? 'bg-aurora-glass border-aurora-purple/40 shadow-[0_10px_30px_-10px_rgba(191,90,242,0.5)] dark:shadow-[0_10px_30px_-10px_rgba(191,90,242,0.2)]' : 'bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 hover:border-black/20 dark:border-white/20'}`}> {/* category card container */}
                                     <button onClick={() => toggleCategory(catIndex)} className="w-full flex justify-between items-center p-6 md:p-8 transition-colors focus:outline-none"> {/* category toggle */}
-                                        <span className={`text-xl md:text-2xl font-bold font-display transition-colors ${openCategory === catIndex ? 'text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-indigo' : 'text-white'}`}>{category.title}</span> {/* category title */}
-                                        <span className={`text-3xl font-bold transition-transform duration-300 ${openCategory === catIndex ? 'text-aurora-purple rotate-180' : 'text-gray-500 hover:text-white'}`}>{openCategory === catIndex ? '−' : '+'}</span> {/* state icon */}
+                                        <span className={`text-xl md:text-2xl font-bold font-display transition-colors ${openCategory === catIndex ? 'text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-indigo' : 'text-gray-900 dark:text-white'}`}>{category.title}</span> {/* category title */}
+                                        <span className={`text-3xl font-bold transition-transform duration-300 ${openCategory === catIndex ? 'text-aurora-purple rotate-180' : 'text-gray-500 hover:text-gray-900 dark:text-white'}`}>{openCategory === catIndex ? '−' : '+'}</span> {/* state icon */}
                                     </button> {/* category button end */}
                                     
-                                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${openCategory === catIndex ? 'max-h-[2000px] border-t border-white/10 opacity-100' : 'max-h-0 opacity-0'}`}> {/* category content panel */}
-                                        <div className="p-4 md:p-6 space-y-4 bg-black/20"> {/* questions wrapper */}
+                                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${openCategory === catIndex ? 'max-h-[2000px] border-t border-black/10 dark:border-white/10 opacity-100' : 'max-h-0 opacity-0'}`}> {/* category content panel */}
+                                        <div className="p-4 md:p-6 space-y-4 bg-gray-200 dark:bg-black/20"> {/* questions wrapper */}
                                             {category.faqs.map((faq, qIndex) => ( // map questions
-                                                <div key={qIndex} className="bg-white/[0.03] border border-white/5 rounded-2xl overflow-hidden hover:border-aurora-green/30 transition-all duration-300"> {/* question container */}
+                                                <div key={qIndex} className="bg-white shadow-sm dark:shadow-none dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-2xl overflow-hidden hover:border-aurora-green/30 transition-all duration-300"> {/* question container */}
                                                     <button onClick={(e) => toggleQuestion(qIndex, e)} className="w-full flex justify-between items-center p-5 text-left transition-colors focus:outline-none group"> {/* question toggle */}
-                                                        <span className={`text-base font-bold font-display pr-4 transition-colors ${openQuestion === qIndex ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>{faq.q}</span> {/* question text */}
-                                                        <span className={`text-2xl font-bold shrink-0 transition-colors ${openQuestion === qIndex ? 'text-aurora-green' : 'text-gray-600 group-hover:text-gray-400'}`}>{openQuestion === qIndex ? '−' : '+'}</span> {/* question state icon */}
+                                                        <span className={`text-base font-bold font-display pr-4 transition-colors ${openQuestion === qIndex ? 'text-gray-900 dark:text-white' : 'text-gray-800 dark:text-gray-300 group-hover:text-gray-900 dark:text-white'}`}>{faq.q}</span> {/* question text */}
+                                                        <span className={`text-2xl font-bold shrink-0 transition-colors ${openQuestion === qIndex ? 'text-aurora-green' : 'text-gray-600 group-hover:text-gray-700 dark:text-gray-400'}`}>{openQuestion === qIndex ? '−' : '+'}</span> {/* question state icon */}
                                                     </button> {/* question toggle end */}
-                                                    <div className={`transition-all duration-350 ease-in-out overflow-hidden ${openQuestion === qIndex ? 'max-h-96 border-t border-white/5 p-5 bg-white/[0.02] opacity-100' : 'max-h-0 opacity-0'}`}> {/* answer panel */}
-                                                        <p className="text-gray-400 text-sm md:text-base leading-relaxed">{faq.a}</p> {/* answer text */}
+                                                    <div className={`transition-all duration-350 ease-in-out overflow-hidden ${openQuestion === qIndex ? 'max-h-96 border-t border-black/5 dark:border-white/5 p-5 bg-black/[0.02] dark:bg-white/[0.02] opacity-100' : 'max-h-0 opacity-0'}`}> {/* answer panel */}
+                                                        <p className="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-relaxed">{faq.a}</p> {/* answer text */}
                                                     </div> {/* answer panel end */}
                                                 </div> // question container end
                                             ))} {/* map questions end */}

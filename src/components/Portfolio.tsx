@@ -6,7 +6,7 @@ import droneImg3 from '../assets/drone pics/DJI_0235.jpg'; // import drone image
 import droneImg4 from '../assets/drone pics/DJI_0236.jpg'; // import drone image 4
 import pixelcraftLogo from '../assets/websites/PixelCraft.logo.png'; // import pixelcraft logo
 import zenPierceLogo from '../assets/websites/zen-pierce.png'; // import zen pierce logo
-import echoLogo from '../assets/websites/Echo_noBG.png'; // import echo logo
+import echoLogo from '../assets/websites/logo2.0.png'; // import echo logo
 
 export default function Portfolio() { // export Portfolio component function
     const projects = [ // array of web/app projects

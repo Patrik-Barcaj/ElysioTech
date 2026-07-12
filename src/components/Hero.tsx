@@ -3,7 +3,7 @@ import Image from 'next/image'; // import Image component
 
 export default function Hero() { // export Hero component function
     return ( // return JSX markup
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"> {/* base full screen wrapper */}
+        <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20"> {/* base full screen wrapper */}
             {/* Dark background grid and gradients */}
             <div className="absolute inset-0 z-0 pointer-events-none"> {/* background glow graphics */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-aurora-purple/[0.1] via-transparent to-transparent"></div> {/* radial center highlight */}

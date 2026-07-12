@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal'; // import scroll reveal
 
 export default function PricingPage() { // export pricing page component
     return ( // return jsx layout
-        <main className="bg-gray-100 dark:bg-[#0a0715] min-h-screen text-gray-900 dark:text-white relative"> {/* main container */}
+        <main className="bg-gray-100 dark:bg-[#0a0715] min-h-[100dvh] text-gray-900 dark:text-white relative"> {/* main container */}
             <Navigation /> {/* render navigation header */}
 
             <section className="pt-32 pb-24 relative overflow-hidden"> {/* hero section */}

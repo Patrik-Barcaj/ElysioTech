@@ -3,7 +3,7 @@ import ScrollReveal from './ui/ScrollReveal'; // import ScrollReveal
 
 export default function Services() { // export Services component
     return ( // start return block
-        <section id="services" className="py-20 min-h-screen flex items-center relative"> {/* main services section */}
+        <section id="services" className="py-20 min-h-[100dvh] flex items-center relative"> {/* main services section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"> {/* container */}
                 <div className="text-center mb-10"> {/* header wrapper */}
                     <h2 className="text-sm font-bold text-gray-700 dark:text-gray-400 tracking-widest uppercase mb-3 font-display">Naše Zameranie</h2> {/* subtitle label */}

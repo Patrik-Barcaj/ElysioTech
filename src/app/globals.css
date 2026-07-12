@@ -27,11 +27,12 @@ html { /* open html selector */
   --theme-green: #A1FFCE; /* original neon green for dark mode */
 } /* close dark selector */
 
-body { /* open body selector */
+html, body { /* open body selector */
   background-color: var(--background); /* apply background */
   color: var(--foreground); /* apply text color */
   margin: 0; /* reset margin */
   padding: 0; /* reset padding */
+  max-width: 100vw; /* limit width to viewport */
   overflow-x: hidden; /* prevent horizontal scroll */
 } /* close body selector */
 

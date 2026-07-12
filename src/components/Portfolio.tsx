@@ -11,7 +11,7 @@ export default function Portfolio() { // export Portfolio component function
     const projects = [ // array of web/app projects
         { title: 'PixelCraft', category: 'Webová Aplikácia & Branding', src: pixelcraftLogo.src, link: 'https://pixelcraft.elysiotech.com', bgClass: 'bg-gray-200 dark:bg-black' }, // project 1
         { title: 'Zen Pierce', category: 'Vizuálny & Systémový Návrh', src: zenPierceLogo.src, link: 'https://zenpierce.elysiotech.com', bgClass: 'bg-gray-200 dark:bg-black' }, // project 2
-        { title: 'Fintech Mobilná Appka', category: 'UI/UX & App Vývoj', src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop', link: '#', bgClass: '' }, // project 3
+        { title: 'Echo', category: 'Fyzická Zbierka & Spotify', src: 'https://images.unsplash.com/photo-1611339555312-e607c83ce0a3?q=80&w=600&auto=format&fit=crop', link: 'https://echo.elysiotech.com', bgClass: 'bg-gray-200 dark:bg-black' }, // project 3
         { title: 'Rebranding pre Smart Značku', category: 'Brand Identita', src: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=600&auto=format&fit=crop', link: '#', bgClass: '' } // project 4
     ]; // projects end
 

@@ -8,8 +8,8 @@ export default function Testimonials() { // export Testimonials component functi
 
     const allReviews = [
         { id: 'rev-1', type: 'drone', name: 'Marek T. (Bratislava)', proj: 'Letecké ortofoto & grafika pozemku', text: 'Veľmi profesionálne a presné zábery nášho stavebného pozemku na predaj. Vektorové zakreslenie inžinierskych sietí nám ušetrilo množstvo času pri komunikácii so záujemcami.' },
-        { id: 'rev-2', type: 'print', name: 'Peter K. (Senec)', proj: 'Veľkoformátový PVC banner na plot', text: 'Banner na oplotenie areálu bol vytlačený a dodaný v priebehu 3 dní. Špičková odolnosť voči počasiu a ostré farby priamej UV tlače.' },
-        { id: 'rev-3', type: 'web', name: 'Michaela C. (Pezinok)', proj: 'One-Page prezentačný web', text: 'Blesková realizácia webu pre developerský projekt. Načítanie stránky je okamžité a zábery z dronu pôsobia na klientov maximálne reprezentatívne.' },
+        { id: 'rev-2', type: 'print', name: 'Peter K. (Senec)', proj: 'Veľkoformátový PVC banner', text: 'Banner na oplotenie areálu bol vytlačený a dodaný v priebehu 3 dní. Vysoká odolnosť voči poveternostným vplyvom a presné farby priamej UV tlače.' },
+        { id: 'rev-3', type: 'web', name: 'Michaela C. (Pezinok)', proj: 'One-Page prezentačný web', text: 'Rýchla realizácia webu pre developerský projekt. Načítanie stránky je okamžité a zábery z dronu pôsobia na klientov maximálne reprezentatívne.' },
         { id: 'rev-4', type: 'drone', name: 'Jozef M. (Dunajská Lužná)', proj: '4K video & fotodokumentácia', text: 'Skvelá spolupráca, rýchly výjazd a výborná kvalita výstupov. Všetko prebehlo samostatne bez nutnosti mojej osobnej prítomnosti na pozemku.' }
     ];
 

@@ -24,87 +24,121 @@ export default function PricingPage() { // export pricing page component
                         </p> {/* description */}
                     </div> {/* header block end */}
 
-                    {/* 4 Core B2B Pricing Packages Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 items-stretch">
+                    {/* 3 Core Technical Pillars Pricing Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16 items-stretch">
                         
-                        {/* Package 1: Letecké zábery */}
+                        {/* Pillar 1: Vývoj softvéru & Webové aplikácie */}
                         <ScrollReveal delay={0.1} className="h-full">
                             <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-amber-500/50 hover:shadow-[0_10px_35px_rgba(245,158,11,0.15)] transition-all duration-300 flex flex-col justify-between group">
                                 <div>
                                     <div className="flex items-center justify-between mb-4">
                                         <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors">
-                                            Letecké zábery & Grafika
+                                            Softvér & Webové aplikácie
                                         </h2>
                                         <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                                            Do 48 hodín
+                                            Next.js & React
                                         </span>
                                     </div>
                                     <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 150 €</span>
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 290 €</span>
                                         <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ projekt</span>
                                     </div>
                                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">
                                             <span className="text-amber-500 font-bold">•</span>
-                                            <span>Ortofotomapa kolmo dole (90°) a šikmé panorámy.</span>
+                                            <span><strong>Prezentačné weby (od 290 €):</strong> Rýchly Next.js kód, mobilná responzivita a optimalizácia.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <span className="text-amber-500 font-bold">•</span>
-                                            <span>Vektorové zakreslenie parcelných hraníc, výmer a sietí.</span>
+                                            <span><strong>GIS a mapové aplikácie:</strong> Zákazkové mapové zobrazenia (MapLibre / MapTiler).</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <span className="text-amber-500 font-bold">•</span>
-                                            <span>Podklady v plnom tlačovom aj webovom rozlíšení.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-amber-500 font-bold">•</span>
-                                            <span>Licencovaný pilot EASA (A1/A3) v cene.</span>
+                                            <span><strong>Aplikácie na mieru:</strong> Interné nástroje, klientske zóny a administrácia podľa špecifikácie.</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <a
-                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20leteckych%20zaberov%20a%20grafiky"
+                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20vyvoja%20webu/softveru"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full py-3.5 text-center rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-600 dark:text-amber-400 hover:text-black font-bold font-display text-sm transition-all"
+                                >
+                                    Konzultovať vývoj cez WhatsApp
+                                </a>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* Pillar 2: Letecká vizualizácia & Zber dát */}
+                        <ScrollReveal delay={0.2} className="h-full">
+                            <div className="h-full bg-white dark:bg-[#151C2C] border-2 border-emerald-500/40 rounded-3xl p-8 shadow-[0_0_35px_rgba(16,185,129,0.12)] flex flex-col justify-between group relative overflow-hidden">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                                            Letecké dáta & Vizuál
+                                        </h2>
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                            Do 48 hodín
+                                        </span>
+                                    </div>
+                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 150 €</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ výjazd</span>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span><strong>Ortofotomapy a snímky:</strong> Kolmé a šikmé zábery vo vysokom rozlíšení.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span><strong>Vektorové zakreslenie:</strong> Kótovanie hraníc, výmer a inžinierskych sietí.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span><strong>Certifikácia EASA (A1/A3):</strong> Bezpečná a plne legálna prevádzka.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a
+                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20leteckych%20zaberov"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-3.5 text-center rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold font-display text-sm transition-all shadow-md"
                                 >
                                     Objednať zábery cez WhatsApp
                                 </a>
                             </div>
                         </ScrollReveal>
 
-                        {/* Package 2: Veľkoformátová tlač */}
-                        <ScrollReveal delay={0.2} className="h-full">
-                            <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_10px_35px_rgba(16,185,129,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                        {/* Pillar 3: Priemyselná veľkoformátová tlač */}
+                        <ScrollReveal delay={0.3} className="h-full">
+                            <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-amber-500/50 hover:shadow-[0_10px_35px_rgba(245,158,11,0.15)] transition-all duration-300 flex flex-col justify-between group">
                                 <div>
                                     <div className="flex items-center justify-between mb-4">
-                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-emerald-500 transition-colors">
-                                            Priama UV tlač & Pútače
+                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors">
+                                            Veľkoformátová UV tlač
                                         </h2>
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                                            Do 3 dní
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                                            Priama výroba
                                         </span>
                                     </div>
                                     <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 50 €</span>
-                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ kus</span>
+                                        <span className="text-2xl sm:text-3xl font-extrabold font-display text-gray-900 dark:text-white">Podľa formátu</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ m²</span>
                                     </div>
                                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Odolné PVC bannery s kovovými očkami na ploty.</span>
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span><strong>Hliníkový Dibond:</strong> Kompozitné panely s dlhodobou stálosťou.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Pevné tabule Komatex a prémiový hliníkový Dibond.</span>
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span><strong>PVC dosky Komatex:</strong> Ľahké panely s priamou UV potlačou.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Priama priemyselná UV potlač odolná voči slnku a vode.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Kompletná predtlačová grafická príprava bez starostí.</span>
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span><strong>Spevnené PVC bannery:</strong> Opatrené kovovými očkami pre uchytenie na ploty a konštrukcie.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -112,101 +146,9 @@ export default function PricingPage() { // export pricing page component
                                     href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20velkoformatovej%20tlace"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full py-3.5 text-center rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-600 dark:text-emerald-400 hover:text-white font-bold font-display text-sm transition-all"
+                                    className="w-full py-3.5 text-center rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-600 dark:text-amber-400 hover:text-black font-bold font-display text-sm transition-all"
                                 >
                                     Naceniť tlač cez WhatsApp
-                                </a>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Package 3: One-Page Web */}
-                        <ScrollReveal delay={0.3} className="h-full">
-                            <div className="h-full bg-white dark:bg-[#151C2C] border-2 border-amber-500/40 rounded-3xl p-8 shadow-[0_0_35px_rgba(245,158,11,0.12)] flex flex-col justify-between group relative overflow-hidden">
-                                <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500 text-black text-xs font-bold font-display uppercase tracking-wider rounded-bl-2xl">
-                                    Najžiadanejšie
-                                </div>
-                                <div>
-                                    <div className="flex items-center justify-between mb-4 mt-2">
-                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white">
-                                            Bleskový One-Page Web
-                                        </h2>
-                                    </div>
-                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 290 €</span>
-                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ jednorazovo</span>
-                                    </div>
-                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-amber-500 font-bold">•</span>
-                                            <span>Čistý Next.js / Tailwind kód s načítaním pod 0,5s.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-amber-500 font-bold">•</span>
-                                            <span>Galéria záberov z dronu, interaktívna mapa a priame volanie.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-amber-500 font-bold">•</span>
-                                            <span>100 % mobilná responzivita a optimalizácia pre Google.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-amber-500 font-bold">•</span>
-                                            <span>Spustenie do 3 pracovných dní od dodania textov.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a
-                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20one-page%20webu"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full py-3.5 text-center rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold font-display text-sm transition-all shadow-md"
-                                >
-                                    Spustiť web cez WhatsApp
-                                </a>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Package 4: Zákazkový softvér & GIS */}
-                        <ScrollReveal delay={0.4} className="h-full">
-                            <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_10px_35px_rgba(16,185,129,0.15)] transition-all duration-300 flex flex-col justify-between group">
-                                <div>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-emerald-500 transition-colors">
-                                            Zákazkový softvér & GIS
-                                        </h2>
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                                            Na mieru
-                                        </span>
-                                    </div>
-                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 490 €</span>
-                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ projekt</span>
-                                    </div>
-                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Interaktívne parcelné mapy (voľný / rezervovaný / predaný).</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Zákaznícke portály, cenové kalkulačky a administrácia.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Integrácie databáz, API prepojenia a CRM systémy.</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <span className="text-emerald-500 font-bold">•</span>
-                                            <span>Odovzdanie kompletného zdrojového kódu bez závislostí.</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a
-                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20zakazkoveho%20softveru"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full py-3.5 text-center rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-600 dark:text-emerald-400 hover:text-white font-bold font-display text-sm transition-all"
-                                >
-                                    Konzultovať systém cez WhatsApp
                                 </a>
                             </div>
                         </ScrollReveal>
@@ -216,14 +158,14 @@ export default function PricingPage() { // export pricing page component
                     {/* Direct Contact CTA Banner */}
                     <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-amber-500/10 border border-amber-500/30 text-center max-w-4xl mx-auto">
                         <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-gray-900 dark:text-white mb-3">
-                            Potrebujete individuálnu kombináciu služieb?
+                            Potrebujete komplexné riešenie na mieru?
                         </h2>
                         <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-6">
-                            Napríklad nálet dronom + grafické zakreslenie + tlač 2 tabúľ na plot + one-page web. Pripravíme vám zvýhodnený balík na mieru do 2 hodín.
+                            Letecký zber dát, grafické spracovanie, tlač prezentačných médií a softvérový vývoj pod jednou strechou.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20kombinovaneho%20balika"
+                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-bold font-display tracking-wide shadow-md flex items-center justify-center gap-2"

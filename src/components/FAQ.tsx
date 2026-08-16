@@ -8,23 +8,23 @@ export default function FAQ() { // export FAQ component function
     const faqs = [
         {
             id: 'faq-easa',
-            q: 'Je lietanie dronom legálne a bezpečné?',
-            a: 'Áno. Disponujeme oficiálnou registráciou a pilotnou certifikáciou EASA pre kategórie Open A1/A3. Lety realizujeme bezpečne a v plnom súlade s leteckou legislatívou SR.'
+            q: 'Je prevádzka dronu legálna a certifikovaná?',
+            a: 'Áno. Disponujeme oficiálnou registráciou a pilotnou certifikáciou EASA pre kategórie Open A1/A3. Lety realizujeme bezpečne a v plnom súlade s platnou leteckou legislatívou SR.'
         },
         {
             id: 'faq-presence',
-            q: 'Musím byť prítomný pri fotení pozemku?',
-            a: 'Nie, vaša prítomnosť nie je nutná. Stačí zadať parcelné číslo alebo GPS body. Let a zber dát zrealizujeme samostatne a náhľady vám pošleme online.'
+            q: 'Je nutná osobná prítomnosť pri zbere leteckých dát?',
+            a: 'Nie. Zber dát realizujeme samostatne na základe parcelného čísla alebo GPS súradníc. Digitálne náhľady a spracované dáta odovzdávame elektronicky.'
         },
         {
             id: 'faq-materials',
-            q: 'Aký materiál zvoliť na označenie pozemku?',
-            a: 'Na drôtené pletivo a dočasné oplotenia odporúčame PVC banner s kovovými očkami. Pre pevnú montáž na stĺpy a drevené konštrukcie dodávame ľahké a odolné dosky Komatex alebo prémiový hliníkový Dibond s priamou UV tlačou.'
+            q: 'Aké materiály využívate pri veľkoformátovej tlači?',
+            a: 'Používame kompozitné hliníkové panely (Dibond) s dlhodobou stálosťou, ľahké PVC dosky (Komatex) a spevnené PVC bannery s kovovými očkami. Všetko s priamou UV technológiou tlače.'
         },
         {
-            id: 'faq-delivery',
-            q: 'Ako rýchlo prebieha dodanie?',
-            a: 'Grafické a digitálne podklady dodávame štandardne do 48 hodín. Fyzická tlač a expedícia tabúľ trvá 2 až 3 pracovné dni.'
+            id: 'faq-software',
+            q: 'V akom technologickom stacku vyvíjate webové aplikácie?',
+            a: 'Vyvíjame v modernom full-stack ekosystéme Next.js, React a TypeScript s integráciou GIS mapových vrstiev (MapLibre / MapTiler). Zabezpečujeme čistý kód, vysokú rýchlosť a odovzdanie zdrojových súborov.'
         }
     ];
 

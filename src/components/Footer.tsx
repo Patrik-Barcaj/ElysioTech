@@ -50,22 +50,22 @@ export default function Footer() { // export Footer component function
                 {/* Trust Badges Bar */}
                 <div className="py-4 px-6 rounded-2xl bg-gray-50 dark:bg-[#111827] border border-black/5 dark:border-white/5 flex flex-wrap items-center justify-between gap-4 mb-8 text-xs font-semibold text-gray-700 dark:text-gray-300">
                     <span className="flex items-center gap-2">
-                        <span className="text-emerald-500">✓</span> Pilotná certifikácia EASA A1/A3
+                        <span className="text-emerald-500">✓</span> Certifikácia EASA A1/A3
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="text-emerald-500">✓</span> Vlastná priemyselná UV tlač
+                        <span className="text-emerald-500">✓</span> In-house UV tlač
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="text-emerald-500">✓</span> Full-Stack Next.js vývoj
+                        <span className="text-emerald-500">✓</span> Full-Stack Development
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="text-emerald-500">✓</span> Dodanie grafiky do 48h
+                        <span className="text-emerald-500">✓</span> Lokalita Petržalka / Bratislava
                     </span>
                 </div>
 
                 <div className="border-t border-black/10 dark:border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400"> {/* copyright row */}
                     <p>&copy; {new Date().getFullYear()} ELYSIO TECH. Všetky práva vyhradené.</p> {/* copyright text */}
-                    <p className="mt-2 sm:mt-0">Solo Operator & Production Studio • Bratislava</p> {/* credit text */}
+                    <p className="mt-2 sm:mt-0">Technické štúdio • Bratislava</p> {/* credit text */}
                 </div> {/* copyright row end */}
             </div> {/* wrapper container end */}
         </footer> // footer element end

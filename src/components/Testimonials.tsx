@@ -7,10 +7,12 @@ export default function Testimonials() { // export Testimonials component functi
     const [isHovered, setIsHovered] = useState(false); // state for hover pause
 
     const allReviews = [
-        { id: 'rev-1', type: 'drone', name: 'Marek T. (Bratislava)', proj: 'Letecké ortofoto & grafika pozemku', text: 'Veľmi profesionálne a presné zábery nášho stavebného pozemku na predaj. Vektorové zakreslenie inžinierskych sietí nám ušetrilo množstvo času pri komunikácii so záujemcami.' },
-        { id: 'rev-2', type: 'print', name: 'Peter K. (Senec)', proj: 'Veľkoformátový PVC banner', text: 'Banner na oplotenie areálu bol vytlačený a dodaný v priebehu 3 dní. Vysoká odolnosť voči poveternostným vplyvom a presné farby priamej UV tlače.' },
-        { id: 'rev-3', type: 'web', name: 'Michaela C. (Pezinok)', proj: 'One-Page prezentačný web', text: 'Rýchla realizácia webu pre developerský projekt. Načítanie stránky je okamžité a zábery z dronu pôsobia na klientov maximálne reprezentatívne.' },
-        { id: 'rev-4', type: 'drone', name: 'Jozef M. (Dunajská Lužná)', proj: '4K video & fotodokumentácia', text: 'Skvelá spolupráca, rýchly výjazd a výborná kvalita výstupov. Všetko prebehlo samostatne bez nutnosti mojej osobnej prítomnosti na pozemku.' }
+        { id: 'rev-violet-f', type: 'digital', name: 'Violet F.', proj: 'Úprava reklamného banneru', text: 'Veľmi rýchla a bezproblémová úprava fotiek na našom reklamnom banneri. Výmena fotky budovy a doplnenie loga prebehlo obratom a profesionálne.' },
+        { id: 'rev-marek-t', type: 'drone', name: 'Marek T.', proj: 'Zábery rodinného domu', text: 'Veľmi pekné fotky nášho domu a pozemku na predaj. Komunikácia bola rýchla, cena priateľská a zábery z výšky nám veľmi pomohli pri inzercii.' },
+        { id: 'rev-lucia-g', type: 'digital', name: 'Lucia G.', proj: 'Dizajn produktových etikiet', text: 'Ďakujem za skvelú prácu a veľmi príjemnú komunikáciu. Grafické podklady boli dodané precízne a navyše za férovú cenu.' },
+        { id: 'rev-jozef-m', type: 'drone', name: 'Jozef M.', proj: 'Video & foto vinohradu', text: 'Skvelé letecké video a fotky nášho vinohradu na web. Výborná komunikácia a výsledné 4K zábery vyzerajú naozaj reprezentatívne.' },
+        { id: 'rev-michaela-c', type: 'digital', name: 'Michaela C.', proj: 'Úprava webstránky', text: 'Veľmi oceňujem rýchlosť a ochotu pri úprave webovej stránky. Všetky požadované zmeny boli zapracované presne podľa predstáv a fungujú super.' },
+        { id: 'rev-anonym', type: 'drone', name: 'Anonymný klient', proj: 'Fotenie záhrady & statku', text: 'Naozaj nádherná práca, výsledné letecké fotky našej záhrady a statku vyzerajú úplne super a kvalitne. Odporúčam.' }
     ];
 
     // Auto-advance logic

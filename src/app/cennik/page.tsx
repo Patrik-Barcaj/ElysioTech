@@ -6,153 +6,239 @@ import ScrollReveal from '@/components/ui/ScrollReveal'; // import scroll reveal
 
 export default function PricingPage() { // export pricing page component
     return ( // return jsx layout
-        <main className="bg-gray-100 dark:bg-[#0a0715] min-h-[100dvh] text-gray-900 dark:text-white relative"> {/* main container */}
+        <main className="bg-gray-50 dark:bg-[#0B0F17] min-h-[100dvh] text-gray-900 dark:text-white relative"> {/* main container */}
             <Navigation /> {/* render navigation header */}
 
             <section className="pt-32 pb-24 relative overflow-hidden"> {/* hero section */}
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* max width container */}
-                    <div className="text-center mb-20 group"> {/* header block */}
-                        <h1 className="text-sm font-bold text-aurora-indigo tracking-widest uppercase mb-3 font-display hover:text-aurora-purple transition-colors duration-300">Cenník & Model Služieb</h1> {/* subtitle label */}
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple via-aurora-indigo to-aurora-purple dark:to-aurora-green font-display mb-6 tracking-tight hover:scale-105 transition-transform duration-500">Vyberte si prístup, ktorý vám vyhovuje</h2> {/* main title */}
-                        <p className="text-gray-700 dark:text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed group-hover:text-gray-800 dark:text-gray-300 transition-colors duration-300">Vy podnikáte, my riešime technológie. Ponúkame jasný <strong>HYBRIDNÝ MODEL</strong>: Vyberte si bezstarostný mesačný paušál, alebo zvoľte klasické jednorazové odkúpenie projektu do vlastných rúk.</p> {/* description */}
+                    <div className="text-center mb-16"> {/* header block */}
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-4 uppercase">
+                            Transparentné ceny bez agentúrnych prirážok
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display mb-4 tracking-tight">
+                            Cenník a balíky <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400">služieb</span>
+                        </h1> {/* main title */}
+                        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+                            Jasné jednorazové ceny za reálne dodanú prácu. Žiadne skryté poplatky, viazanosti ani zbytočná agentúrna réžia.
+                        </p> {/* description */}
                     </div> {/* header block end */}
 
-                    <div className="mb-24"> {/* main pricing wrapper */}
+                    {/* 4 Core B2B Pricing Packages Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 items-stretch">
+                        
+                        {/* Package 1: Letecké zábery */}
+                        <ScrollReveal delay={0.1} className="h-full">
+                            <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-amber-500/50 hover:shadow-[0_10px_35px_rgba(245,158,11,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors">
+                                            Letecké zábery & Grafika
+                                        </h2>
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                                            Do 48 hodín
+                                        </span>
+                                    </div>
+                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 150 €</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ projekt</span>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Ortofotomapa kolmo dole (90°) a šikmé panorámy.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Vektorové zakreslenie parcelných hraníc, výmer a sietí.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Podklady v plnom tlačovom aj webovom rozlíšení.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Licencovaný pilot EASA (A1/A3) v cene.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a
+                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20leteckych%20zaberov%20a%20grafiky"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-3.5 text-center rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-600 dark:text-amber-400 hover:text-black font-bold font-display text-sm transition-all"
+                                >
+                                    Objednať zábery cez WhatsApp
+                                </a>
+                            </div>
+                        </ScrollReveal>
 
-                        <p className="text-gray-700 dark:text-gray-400 mb-8 px-4 text-lg"><span className="text-aurora-purple">•</span> <strong>Pravidlo:</strong> Žiadna viazanosť. 0 € akontácia pri mesačnej alternatíve.</p> {/* rule description */}
+                        {/* Package 2: Veľkoformátová tlač */}
+                        <ScrollReveal delay={0.2} className="h-full">
+                            <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_10px_35px_rgba(16,185,129,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                                            Priama UV tlač & Pútače
+                                        </h2>
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                            Do 3 dní
+                                        </span>
+                                    </div>
+                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 50 €</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ kus</span>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Odolné PVC bannery s kovovými očkami na ploty.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Pevné tabule Komatex a prémiový hliníkový Dibond.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Priama priemyselná UV potlač odolná voči slnku a vode.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Kompletná predtlačová grafická príprava bez starostí.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a
+                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20velkoformatovej%20tlace"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-3.5 text-center rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-600 dark:text-emerald-400 hover:text-white font-bold font-display text-sm transition-all"
+                                >
+                                    Naceniť tlač cez WhatsApp
+                                </a>
+                            </div>
+                        </ScrollReveal>
 
-                        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto px-4 relative group/grid md:items-stretch"> {/* saas grid layout */}
-                            {/* Starter Pack */}
-                            <ScrollReveal delay={0.1} className="h-full w-full"> {/* scroll reveal item */}
-                                <div className="flex-1 w-full bg-white shadow-sm dark:shadow-none dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-aurora-purple/50 hover:bg-gradient-to-br hover:from-white/5 hover:to-aurora-purple/10 hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_15px_40px_-10px_rgba(191,90,242,0.85)] dark:hover:shadow-[0_15px_40px_-10px_rgba(191,90,242,0.4)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden cursor-pointer"> {/* saas pricing container */}
-                                    <div className="absolute inset-0 bg-gradient-to-b from-aurora-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
-                                    <div className="relative z-10 w-full"> {/* content wrapper */}
-                                        <h4 className="text-xl font-bold font-display text-gray-900 dark:text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-aurora-purple group-hover:to-aurora-indigo dark:group-hover:from-white dark:group-hover:to-aurora-purple transition-all duration-300">ŠTART</h4> {/* pack name */}
+                        {/* Package 3: One-Page Web */}
+                        <ScrollReveal delay={0.3} className="h-full">
+                            <div className="h-full bg-white dark:bg-[#151C2C] border-2 border-amber-500/40 rounded-3xl p-8 shadow-[0_0_35px_rgba(245,158,11,0.12)] flex flex-col justify-between group relative overflow-hidden">
+                                <div className="absolute top-0 right-0 px-4 py-1 bg-amber-500 text-black text-xs font-bold font-display uppercase tracking-wider rounded-bl-2xl">
+                                    Najžiadanejšie
+                                </div>
+                                <div>
+                                    <div className="flex items-center justify-between mb-4 mt-2">
+                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white">
+                                            Bleskový One-Page Web
+                                        </h2>
+                                    </div>
+                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 290 €</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ jednorazovo</span>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Čistý Next.js / Tailwind kód s načítaním pod 0,5s.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Galéria záberov z dronu, interaktívna mapa a priame volanie.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>100 % mobilná responzivita a optimalizácia pre Google.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-amber-500 font-bold">•</span>
+                                            <span>Spustenie do 3 pracovných dní od dodania textov.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a
+                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20one-page%20webu"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-3.5 text-center rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold font-display text-sm transition-all shadow-md"
+                                >
+                                    Spustiť web cez WhatsApp
+                                </a>
+                            </div>
+                        </ScrollReveal>
 
-                                        <div className="flex flex-col gap-2 mb-8 border-b border-black/5 dark:border-white/5 pb-8 group-hover:border-aurora-purple/30 transition-colors duration-300 w-full"> {/* price block */}
-                                            <div className="text-4xl font-display text-gray-900 dark:text-white drop-shadow-[0_0_8px_rgba(191,90,242,0.85)] dark:drop-shadow-[0_0_8px_rgba(191,90,242,0.5)]"><strong>29 €</strong><span className="text-xl text-gray-900 dark:text-white/50 font-normal ml-1">/ mes.</span></div> {/* price */}
-                                        </div> {/* price block end */}
+                        {/* Package 4: Zákazkový softvér & GIS */}
+                        <ScrollReveal delay={0.4} className="h-full">
+                            <div className="h-full bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_10px_35px_rgba(16,185,129,0.15)] transition-all duration-300 flex flex-col justify-between group">
+                                <div>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h2 className="text-xl font-bold font-display text-gray-900 dark:text-white group-hover:text-emerald-500 transition-colors">
+                                            Zákazkový softvér & GIS
+                                        </h2>
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                            Na mieru
+                                        </span>
+                                    </div>
+                                    <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 490 €</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ projekt</span>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Interaktívne parcelné mapy (voľný / rezervovaný / predaný).</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Zákaznícke portály, cenové kalkulačky a administrácia.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Integrácie databáz, API prepojenia a CRM systémy.</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5">
+                                            <span className="text-emerald-500 font-bold">•</span>
+                                            <span>Odovzdanie kompletného zdrojového kódu bez závislostí.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a
+                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20zakazkoveho%20softveru"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-3.5 text-center rounded-xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-600 dark:text-emerald-400 hover:text-white font-bold font-display text-sm transition-all"
+                                >
+                                    Konzultovať systém cez WhatsApp
+                                </a>
+                            </div>
+                        </ScrollReveal>
 
-                                        <ul className="space-y-4 mb-8 text-sm text-gray-800 dark:text-gray-300 w-full"> {/* features list */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Prenájom webu</span></li> {/* feature 1 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Hosting a doména</span></li> {/* feature 2 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Drobná grafika</span></li> {/* feature 3 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-purple mt-0.5 shrink-0">•</span> <span>Pravidelná správa</span></li> {/* feature 4 */}
-                                        </ul> {/* features list end */}
-                                    </div> {/* content wrapper end */}
-                                </div> {/* saas container end */}
-                            </ScrollReveal> {/* scroll reveal end */}
+                    </div>
 
-                            {/* Pro Pack */}
-                            <ScrollReveal delay={0.2} className="h-full w-full"> {/* scroll reveal item */}
-                                <div className="flex-1 w-full bg-black/[0.05] dark:bg-white/[0.05] border border-aurora-indigo/30 rounded-3xl p-8 shadow-[0_0_40px_rgba(94,92,230,0.38)] dark:shadow-[0_0_40px_rgba(94,92,230,0.15)] transform hover:border-aurora-indigo/60 hover:bg-gradient-to-br hover:from-white/5 hover:to-aurora-indigo/15 hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_15px_40px_-10px_rgba(94,92,230,0.85)] dark:hover:shadow-[0_15px_40px_-10px_rgba(94,92,230,0.5)] transition-all duration-500 flex flex-col justify-between group relative cursor-pointer"> {/* saas pricing container highlight */}
-                                    <div className="absolute inset-0 bg-gradient-to-b from-aurora-indigo/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div> {/* hover background glow */}
-                                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-aurora-indigo to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl"></div> {/* top highlight border */}
-                                    <div className="absolute -top-4 right-8 bg-gradient-to-r from-aurora-indigo to-aurora-purple text-gray-900 dark:text-white shadow-[0_0_15px_rgba(94,92,230,0.85)] dark:shadow-[0_0_15px_rgba(94,92,230,0.5)] text-xs font-bold px-4 py-1.5 rounded-full font-display z-20 transition-all duration-300 group-hover:scale-110">ODPORÚČANÉ</div> {/* badge */}
-                                    <div className="relative z-10 mt-4 w-full"> {/* content wrapper */}
-                                        <h4 className="text-xl font-bold font-display text-gray-900 dark:text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-aurora-purple group-hover:to-aurora-indigo dark:group-hover:from-white dark:group-hover:to-aurora-indigo transition-all duration-300">PRO</h4> {/* pack name */}
-
-                                        <div className="flex flex-col gap-2 mb-8 border-b border-black/10 dark:border-white/10 pb-8 group-hover:border-aurora-indigo/30 transition-colors duration-300 w-full"> {/* price block */}
-                                            <div className="text-4xl font-display text-gray-900 dark:text-white drop-shadow-[0_0_12px_rgba(94,92,230,0.85)] dark:drop-shadow-[0_0_12px_rgba(94,92,230,0.6)]"><strong>49 €</strong><span className="text-xl text-gray-900 dark:text-white/50 font-normal ml-1">/ mes.</span></div> {/* price */}
-                                        </div> {/* price block end */}
-
-                                        <ul className="space-y-4 mb-8 text-sm text-gray-800 dark:text-gray-300 w-full"> {/* features list */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>Prenájom interných systémov a aplikácií</span></li> {/* feature 1 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span>Prioritná správa a vývoj</span></li> {/* feature 2 */}
-                                            <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-indigo mt-0.5 shrink-0">•</span> <span><strong>+ Všetko z balíka ŠTART</strong></span></li> {/* feature 3 */}
-                                        </ul> {/* features list end */}
-                                    </div> {/* content wrapper end */}
-                                </div> {/* saas container end */}
-                            </ScrollReveal> {/* scroll reveal end */}
-
-                            {/* Premium Pack */}
-                            <ScrollReveal delay={0.3} className="w-full md:col-span-2 mt-4"> {/* scroll reveal item */}
-                                <div className="w-full bg-white shadow-sm dark:shadow-none dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:border-aurora-green/50 hover:bg-gradient-to-br hover:from-white/5 hover:to-aurora-green/10 hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_40px_-10px_rgba(48,209,88,0.85)] dark:hover:shadow-[0_15px_40px_-10px_rgba(48,209,88,0.4)] transition-all duration-500 group relative overflow-hidden cursor-pointer"> {/* saas pricing container */}
-                                    <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-aurora-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div> {/* hover background glow */}
-                                    <div className="relative z-10 w-full flex flex-col md:flex-row gap-8 md:gap-12 md:items-center"> {/* flex content wrapper */}
-                                        <div className="md:w-1/3 flex flex-col justify-center border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5 pb-8 md:pb-0 md:pr-8 group-hover:border-aurora-green/30 transition-colors duration-300"> {/* left block */}
-                                            <h4 className="text-xl font-bold font-display text-gray-900 dark:text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-aurora-purple group-hover:to-aurora-green dark:group-hover:from-white dark:group-hover:to-aurora-green transition-all duration-300">JEDNORAZOVO</h4> {/* pack name */}
-
-                                            <div className="flex flex-col gap-2"> {/* price block */}
-                                                <div className="text-3xl font-display text-gray-900 dark:text-white drop-shadow-[0_0_8px_rgba(48,209,88,0.85)] dark:drop-shadow-[0_0_8px_rgba(48,209,88,0.5)]"><strong>Individuálne</strong></div> {/* price */}
-                                            </div> {/* price block end */}
-                                        </div> {/* left block end */}
-
-                                        <div className="md:w-2/3"> {/* right block */}
-                                            <ul className="space-y-4 text-sm text-gray-800 dark:text-gray-300 w-full"> {/* features list */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Odkúpenie webu/aplikácie:</strong> Klasické odkúpenie bez paušálu do vášho vlastníctva.</span></li> {/* feature 1 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Rozsiahlejšie systémy:</strong> Komplexné platformy navrhnuté na mieru.</span></li> {/* feature 2 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Tlačové služby:</strong> Kompletná grafika a tlačoviny realizované jednorazovo.</span></li> {/* feature 3 */}
-                                                <li className="flex items-start gap-3 w-full break-words"><span className="text-aurora-green mt-0.5 shrink-0">•</span> <span><strong>Drony:</strong> Profesionálne letecké zábery a videá (lety možné aj doobeda po dohode).</span></li> {/* feature 4 */}
-                                            </ul> {/* features list end */}
-                                        </div> {/* right block end */}
-                                    </div> {/* flex content wrapper end */}
-                                </div> {/* saas container end */}
-                            </ScrollReveal> {/* scroll reveal end */}
-                        </div> {/* saas grid layout end */}
-                    </div> {/* branch a wrapper end */}
-
-                    <div className="mb-16 mt-8"> {/* secondary services wrapper */}
-
-                        <div className="flex flex-col gap-6 w-full max-w-full px-4"> {/* standalone stack layout (no horizontal scroll) */}
-                            <ScrollReveal delay={0.1}> {/* standalone item */}
-                                <div className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-black/[0.02] dark:bg-white/[0.02] hover:border-aurora-purple/30 hover:shadow-[0_10px_30px_-15px_rgba(191,90,242,0.75)] dark:hover:shadow-[0_10px_30px_-15px_rgba(191,90,242,0.3)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer relative overflow-hidden"> {/* item card row */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-aurora-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                                    <div className="flex-1 relative z-10 w-full"> {/* details block */}
-                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white font-display mb-2 group-hover:text-aurora-purple transition-colors duration-300">Grafický dizajn</h4> {/* name */}
-                                        <ul className="text-gray-700 dark:text-gray-400 text-sm group-hover:text-gray-800 dark:text-gray-300 transition-colors duration-300 space-y-1 w-full break-words"> {/* desc list */}
-                                            <li className="flex items-start gap-2"><span className="text-aurora-purple shrink-0 mt-0.5">•</span> <span>vector logá, vizitky, letáky.</span></li>
-                                        </ul> {/* desc list end */}
-                                    </div> {/* details block end */}
-                                    <div className="md:text-right shrink-0 relative z-10"> {/* price block */}
-                                        <span className="text-3xl font-display font-bold text-gray-900 dark:text-white group-hover:text-aurora-purple transition-colors duration-300 drop-shadow-[0_0_8px_rgba(191,90,242,0.85)] dark:drop-shadow-[0_0_8px_rgba(191,90,242,0.5)]"><strong>40 €</strong><span className="text-sm text-gray-900 dark:text-white/40 font-normal tracking-wider ml-2 uppercase">s DPH</span></span> {/* price */}
-                                        <p className="text-gray-500 text-sm">/ úkon</p> {/* metric */}
-                                    </div> {/* price block end */}
-                                </div> {/* item card row end */}
-                            </ScrollReveal> {/* standalone item end */}
-
-                            <ScrollReveal delay={0.2}> {/* standalone item */}
-                                <div className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-black/[0.02] dark:bg-white/[0.02] hover:border-aurora-indigo/30 hover:shadow-[0_10px_30px_-15px_rgba(94,92,230,0.75)] dark:hover:shadow-[0_10px_30px_-15px_rgba(94,92,230,0.3)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer relative overflow-hidden"> {/* item card row */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-aurora-indigo/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                                    <div className="flex-1 relative z-10 w-full"> {/* details block */}
-                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white font-display mb-2 group-hover:text-aurora-indigo transition-colors duration-300">Sprostredkovanie tlače</h4> {/* name */}
-                                        <ul className="text-gray-700 dark:text-gray-400 text-sm group-hover:text-gray-800 dark:text-gray-300 transition-colors duration-300 space-y-1 w-full break-words"> {/* desc list */}
-                                            <li className="flex items-start gap-2"><span className="text-aurora-indigo shrink-0 mt-0.5">•</span> <span>CMYK, spadávky, dodanie kuriérom.</span></li>
-                                        </ul> {/* desc list end */}
-                                    </div> {/* details block end */}
-                                    <div className="md:text-right shrink-0 relative z-10"> {/* price block */}
-                                        <span className="text-3xl font-display font-bold text-gray-900 dark:text-white group-hover:text-aurora-indigo transition-colors duration-300 drop-shadow-[0_0_8px_rgba(94,92,230,0.85)] dark:drop-shadow-[0_0_8px_rgba(94,92,230,0.5)]"><strong>Cena tlače + 20 €</strong><span className="text-sm text-gray-900 dark:text-white/40 font-normal tracking-wider ml-2 uppercase">s DPH</span></span> {/* price */}
-                                        <p className="text-gray-500 text-sm">servis</p> {/* metric */}
-                                    </div> {/* price block end */}
-                                </div> {/* item card row end */}
-                            </ScrollReveal> {/* standalone item end */}
-
-                            <ScrollReveal delay={0.3}> {/* standalone item */}
-                                <div className="bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-black/[0.02] dark:bg-white/[0.02] hover:border-aurora-green/30 hover:shadow-[0_10px_30px_-15px_rgba(48,209,88,0.75)] dark:hover:shadow-[0_10px_30px_-15px_rgba(48,209,88,0.3)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer relative overflow-hidden"> {/* item card row */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-aurora-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                                    <div className="flex-1 relative z-10 w-full"> {/* details block */}
-                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white font-display mb-2 group-hover:text-aurora-green transition-colors duration-300">Dron (Foto / Video)</h4> {/* name */}
-                                        <ul className="text-gray-700 dark:text-gray-400 text-sm group-hover:text-gray-800 dark:text-gray-300 transition-colors duration-300 space-y-1 w-full break-words"> {/* desc list */}
-                                            <li className="flex items-start gap-2"><span className="text-aurora-green shrink-0 mt-0.5">•</span> <span>4K, úprava, zakreslenie pozemku, <strong>aj doobeda po dohode</strong>.</span></li>
-                                        </ul> {/* desc list end */}
-                                    </div> {/* details block end */}
-                                    <div className="md:text-right shrink-0 relative z-10"> {/* price block */}
-                                        <span className="text-3xl font-display font-bold text-gray-900 dark:text-white group-hover:text-aurora-green transition-colors duration-300 drop-shadow-[0_0_8px_rgba(48,209,88,0.85)] dark:drop-shadow-[0_0_8px_rgba(48,209,88,0.5)]"><strong>od 60 €</strong><span className="text-sm text-gray-900 dark:text-white/40 font-normal tracking-wider ml-2 uppercase">s DPH</span></span> {/* price */}
-                                        <p className="text-gray-500 text-sm">/ výjazd</p> {/* metric */}
-                                    </div> {/* price block end */}
-                                </div> {/* item card row end */}
-                            </ScrollReveal> {/* standalone item end */}
-                        </div> {/* standalone stack layout end */}
-                    </div> {/* branch b wrapper end */}
-
-                    {/* CTA section */}
-                    <div className="text-center mt-20 group"> {/* cta container */}
-                        <h3 className="text-xl text-gray-800 dark:text-gray-300 font-display mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-aurora-purple group-hover:to-aurora-indigo transition-all duration-300">Máte záujem o spoluprácu ?</h3> {/* cta header */}
-                        <Link href="/#contact" className="inline-block py-4 px-10 bg-gradient-to-r from-aurora-purple via-aurora-indigo to-aurora-purple dark:to-aurora-green bg-[length:200%_auto] text-gray-900 dark:text-white rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(191,90,242,0.85)] dark:hover:shadow-[0_0_40px_rgba(191,90,242,0.8)] transition-all duration-500 transform hover:-translate-y-2 hover:bg-[position:100%_center] hover:scale-105 active:scale-95"> {/* cta button */}
-                            Kontaktovať ELYSIO {/* button text */}
-                        </Link> {/* cta link end */}
-                    </div> {/* cta container end */}
+                    {/* Direct Contact CTA Banner */}
+                    <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-amber-500/10 border border-amber-500/30 text-center max-w-4xl mx-auto">
+                        <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-gray-900 dark:text-white mb-3">
+                            Potrebujete individuálnu kombináciu služieb?
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-6">
+                            Napríklad nálet dronom + grafické zakreslenie + tlač 2 tabúľ na plot + one-page web. Pripravíme vám zvýhodnený balík na mieru do 2 hodín.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a
+                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20kombinovaneho%20balika"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-bold font-display tracking-wide shadow-md flex items-center justify-center gap-2"
+                            >
+                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+                                Rýchly dopyt na WhatsApp
+                            </a>
+                            <Link
+                                href="/#contact"
+                                className="px-8 py-4 bg-white dark:bg-[#151C2C] border border-black/10 dark:border-white/10 hover:border-amber-500/50 text-gray-900 dark:text-white rounded-xl font-bold font-display transition-all flex items-center justify-center"
+                            >
+                                Kontaktný formulár
+                            </Link>
+                        </div>
+                    </div>
 
                 </div> {/* max width container end */}
             </section> {/* pricing section end */}

@@ -3,91 +3,74 @@ import React, { useState } from 'react'; // import react and useState
 import ScrollReveal from './ui/ScrollReveal'; // import scroll reveal
 
 export default function FAQ() { // export FAQ component function
-    const [openCategory, setOpenCategory] = useState<number | null>(0); // state for open category index, default 0
-    const [openQuestion, setOpenQuestion] = useState<number | null>(null); // state for open question index
+    const [openIndex, setOpenIndex] = useState<number | null>(0); // state for open question index
 
-    const faqCategories = [ // categorized FAQ array
-        { // category item 1
-            title: 'Model spolupráce a Ceny', // cat title
-            faqs: [ // cat faqs
-                { q: 'Musím platiť mesačný paušál?', a: 'Nie. Ak preferujete vlastniť kód, radi vám web, systém alebo grafiku naceníme a odpredáme jednorazovo. Na paušály zároveň platí 3-mesačná garancia a nulový vstupný poplatok pre balíky ŠTART a PRO.' }, // faq 1
-                { q: 'Aká je cena za letecké zábery?', a: 'Cena je individuálna a závisí od rozsahu fotenia/natáčania, miesta a postprodukcie. Radi vám pripravíme cenovú ponuku na mieru po krátkej konzultácii.' } // faq 2
-            ] // cat faqs end
-        }, // category item 1 end
-        { // category item 2
-            title: 'Weby a Systémy', // cat title
-            faqs: [ // cat faqs
-                { q: 'Aké technológie využívate pri vývoji?', a: 'Pre weby a menšie aplikácie využívame moderné technológie ako Next.js, React a klasické HTML/CSS. Vždy sa prispôsobíme tomu, čo konkrétny projekt vyžaduje.' }, // faq 1
-                { q: 'Ako dlho trvá dodanie webovej stránky?', a: ' Vyhotovenie závisí na náročnosti projektu a schválení grafického návrhu s dodaním všetkých podkladov. Jednoduchú prezentačnú webstránku zvyčajne dodáme už do 4 pracovných dní.' }, // faq 2
-                { q: 'Poskytujete aj webhosting a správu domény?', a: 'Áno, vieme vám pomôcť s kúpou domény, nastavením webhostingu a následnou technickou správou webu, aby ste sa nemuseli o nič starať.' }, // faq 3
-                { q: 'Robíte aj optimalizáciu pre vyhľadávače (SEO)?', a: 'Základnú on-page optimalizáciu pre vyhľadávače (správna štruktúra webu, meta popisky, rýchlosť načítania) robíme automaticky pri každom webe.' } // faq 4
-            ] // cat faqs end
-        }, // category item 2 end
-        { // category item 3
-            title: 'Drony a Letecké zábery', // cat title
-            faqs: [ // cat faqs
-                { q: 'Aké drony používate na zábery?', a: 'Používame moderné kompaktné drony, ktoré sú ideálne na tvorbu kvalitných leteckých fotografií a plynulých 4K videosekvencií s ohľadom na bezpečnosť a pravidlá letu.' }, // faq 1
-                { q: 'Čo ak bude v deň natáčania nepriaznivé počasie?', a: 'V prípade zlého počasia (silný vietor, dážď, husté sneženie) let z bezpečnostných dôvodov presunieme na najbližší možný náhradný termín bez dodatočných poplatkov.' }, // faq 2
-                { q: 'Potrebujem na natáčanie dronom nejaké povolenie?', a: 'My zabezpečujeme kompletné legislatívne krytie vrátane povolení a poistenia. Ak sa let realizuje v chránenej oblasti, môže to vyžadovať dlhšiu prípravu.' }, // faq 3
-                { q: 'Ponúkate aj 3D mapovanie alebo inšpekčné práce?', a: 'Nie, zameriavame sa čisto na vizuálne letecké fotografie a videá (napr. zábery pozemkov, chát, prírody či rodinných udalostí). Technické inšpekcie a 3D skenovanie neponúkame.' } // faq 4
-            ] // cat faqs end
-        }, // category item 3 end
-        { // category item 4
-            title: 'Grafika a Tlač', // cat title
-            faqs: [ // cat faqs
-                { q: 'Ako to funguje s tlačou grafiky?', a: 'Všetko, čo pre vás graficky navrhneme (vizitky, letáky, bannery), vieme po vzájomnej dohode dať vytlačiť u našich partnerských tlačiarní a doručiť hotové až k vám.' } // faq 1
-            ] // cat faqs end
-        } // category item 4 end
-    ]; // categorized faq array end
+    const faqs = [
+        {
+            id: 'faq-easa',
+            q: 'Je lietanie dronom legálne a bezpečné?',
+            a: 'Áno. Disponujeme oficiálnou registráciou a pilotnou certifikáciou EASA pre kategórie Open A1/A3. Lety realizujeme bezpečne a v plnom súlade s leteckou legislatívou SR.'
+        },
+        {
+            id: 'faq-presence',
+            q: 'Musím byť prítomný pri fotení pozemku?',
+            a: 'Nie, vaša prítomnosť nie je nutná. Stačí zadať parcelné číslo alebo GPS body. Let a zber dát zrealizujeme samostatne a náhľady vám pošleme online.'
+        },
+        {
+            id: 'faq-materials',
+            q: 'Aký materiál zvoliť na označenie pozemku?',
+            a: 'Na drôtené pletivo a dočasné oplotenia odporúčame PVC banner s kovovými očkami. Pre pevnú montáž na stĺpy a drevené konštrukcie dodávame ľahké a odolné dosky Komatex alebo prémiový hliníkový Dibond s priamou UV tlačou.'
+        },
+        {
+            id: 'faq-delivery',
+            q: 'Ako rýchlo prebieha dodanie?',
+            a: 'Grafické a digitálne podklady dodávame štandardne do 48 hodín. Fyzická tlač a expedícia tabúľ trvá 2 až 3 pracovné dni.'
+        }
+    ];
 
-    const toggleCategory = (index: number) => { // function to toggle category
-        setOpenCategory(openCategory === index ? null : index); // close if open, open if closed
-        setOpenQuestion(null); // always reset question when switching category
-    }; // toggle category end
-
-    const toggleQuestion = (index: number, e: React.MouseEvent) => { // function to toggle question
-        e.stopPropagation(); // prevent bubbling to category
-        setOpenQuestion(openQuestion === index ? null : index); // close if open, open if closed
-    }; // toggle question end
+    const toggleFaq = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
 
     return ( // return JSX layout
-        <section id="faq" className="py-24 bg-gray-100 dark:bg-[#0a0715] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
+        <section id="faq" className="py-24 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <h2 className="text-sm font-bold text-aurora-indigo tracking-widest uppercase mb-3 font-display">Otázky a odpovede</h2> {/* subtitle label */}
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Často Kladené Otázky</h3> {/* title */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-3 uppercase">
+                        Otázky a odpovede
+                    </div>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Často kladené otázky</h2> {/* title */}
+                    <p className="text-gray-600 dark:text-gray-400 mt-3 text-base sm:text-lg">Všetko, čo potrebujete vedieť pred začiatkom spolupráce.</p>
                 </div> {/* header block end */}
 
-                <div className="mb-12"> {/* unified faq block */}
-                    <div className="space-y-6"> {/* categories wrapper */}
-                        {faqCategories.map((category, catIndex) => ( // map categories
-                            <ScrollReveal key={catIndex} delay={catIndex * 0.1}> {/* scroll reveal wrap */}
-                                <div className={`border rounded-3xl overflow-hidden transition-all duration-500 ${openCategory === catIndex ? 'bg-aurora-glass border-aurora-purple/40 shadow-[0_10px_30px_-10px_rgba(191,90,242,0.5)] dark:shadow-[0_10px_30px_-10px_rgba(191,90,242,0.2)]' : 'bg-black/[0.02] dark:bg-white/[0.02] border-black/10 dark:border-white/10 hover:border-black/20 dark:border-white/20'}`}> {/* category card container */}
-                                    <button onClick={() => toggleCategory(catIndex)} className="w-full flex justify-between items-center p-6 md:p-8 transition-colors focus:outline-none"> {/* category toggle */}
-                                        <span className={`text-xl md:text-2xl font-bold font-display transition-colors ${openCategory === catIndex ? 'text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-indigo' : 'text-gray-900 dark:text-white'}`}>{category.title}</span> {/* category title */}
-                                        <span className={`text-3xl font-bold transition-transform duration-300 ${openCategory === catIndex ? 'text-aurora-purple rotate-180' : 'text-gray-500 hover:text-gray-900 dark:text-white'}`}>{openCategory === catIndex ? '−' : '+'}</span> {/* state icon */}
-                                    </button> {/* category button end */}
+                <div className="space-y-4">
+                    {faqs.map((faq, index) => {
+                        const isOpen = openIndex === index;
+                        return (
+                            <ScrollReveal key={faq.id} delay={index * 0.08}>
+                                <div className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-white dark:bg-[#151C2C] border-amber-500/50 shadow-[0_10px_25px_rgba(245,158,11,0.1)]' : 'bg-white/70 dark:bg-[#151C2C]/50 border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'}`}>
+                                    <button
+                                        onClick={() => toggleFaq(index)}
+                                        className="w-full flex justify-between items-center p-6 text-left focus:outline-none gap-4"
+                                    >
+                                        <span className={`text-base sm:text-lg font-bold font-display transition-colors ${isOpen ? 'text-amber-500 dark:text-amber-400' : 'text-gray-900 dark:text-white'}`}>
+                                            {faq.q}
+                                        </span>
+                                        <span className={`text-2xl font-bold transition-transform duration-300 shrink-0 ${isOpen ? 'text-amber-500 rotate-45' : 'text-gray-400'}`}>
+                                            +
+                                        </span>
+                                    </button>
                                     
-                                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${openCategory === catIndex ? 'max-h-[2000px] border-t border-black/10 dark:border-white/10 opacity-100' : 'max-h-0 opacity-0'}`}> {/* category content panel */}
-                                        <div className="p-4 md:p-6 space-y-4 bg-gray-200 dark:bg-black/20"> {/* questions wrapper */}
-                                            {category.faqs.map((faq, qIndex) => ( // map questions
-                                                <div key={qIndex} className="bg-white shadow-sm dark:shadow-none dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-2xl overflow-hidden hover:border-aurora-green/30 transition-all duration-300"> {/* question container */}
-                                                    <button onClick={(e) => toggleQuestion(qIndex, e)} className="w-full flex justify-between items-center p-5 text-left transition-colors focus:outline-none group"> {/* question toggle */}
-                                                        <span className={`text-base font-bold font-display pr-4 transition-colors ${openQuestion === qIndex ? 'text-gray-900 dark:text-white' : 'text-gray-800 dark:text-gray-300 group-hover:text-gray-900 dark:text-white'}`}>{faq.q}</span> {/* question text */}
-                                                        <span className={`text-2xl font-bold shrink-0 transition-colors ${openQuestion === qIndex ? 'text-aurora-green' : 'text-gray-600 group-hover:text-gray-700 dark:text-gray-400'}`}>{openQuestion === qIndex ? '−' : '+'}</span> {/* question state icon */}
-                                                    </button> {/* question toggle end */}
-                                                    <div className={`transition-all duration-350 ease-in-out overflow-hidden ${openQuestion === qIndex ? 'max-h-96 border-t border-black/5 dark:border-white/5 p-5 bg-black/[0.02] dark:bg-white/[0.02] opacity-100' : 'max-h-0 opacity-0'}`}> {/* answer panel */}
-                                                        <p className="text-gray-700 dark:text-gray-400 text-sm md:text-base leading-relaxed">{faq.a}</p> {/* answer text */}
-                                                    </div> {/* answer panel end */}
-                                                </div> // question container end
-                                            ))} {/* map questions end */}
-                                        </div> {/* questions wrapper end */}
-                                    </div> {/* category content panel end */}
-                                </div> {/* category card container end */}
-                            </ScrollReveal> // scroll reveal end
-                        ))} {/* map categories end */}
-                    </div> {/* categories wrapper end */}
-                </div> {/* unified faq block end */}
+                                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 border-t border-black/5 dark:border-white/10 p-6 pt-2 opacity-100' : 'max-h-0 p-0 opacity-0'}`}>
+                                        <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                                            {faq.a}
+                                        </p>
+                                    </div>
+                                </div>
+                            </ScrollReveal>
+                        );
+                    })}
+                </div>
 
             </div> {/* container block end */}
         </section> // section wrapper end

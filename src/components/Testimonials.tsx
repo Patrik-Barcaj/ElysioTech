@@ -3,27 +3,15 @@
 import React, { useState, useEffect } from 'react'; // import react and hooks
 
 export default function Testimonials() { // export Testimonials component function
-    const digitalReviews = [ // array of digital studio reviews
-        { type: 'digital', name: 'Violet F.', proj: 'Úprava reklamného banneru', text: 'Veľmi rýchla a bezproblémová úprava fotiek na našom reklamnom banneri. Výmena fotky budovy a doplnenie loga prebehlo obratom a profesionálne.' }, // review 1 with custom banner modification summary
-        { type: 'digital', name: 'Lucia G.', proj: 'Dizajn produktových etikiet', text: 'Ďakujem za skvelú prácu a veľmi príjemnú komunikáciu. Grafické podklady boli dodané precízne a navyše za férovú cenu.' }, // review 2 with custom label graphics work summary
-        { type: 'digital', name: 'Michaela C.', proj: 'Úprava webstránky', text: 'Veľmi oceňujem rýchlosť a ochotu pri úprave webovej stránky. Všetky požadované zmeny boli zapracované presne podľa predstáv a fungujú super.' } // review 3 with custom web modification summary
-    ]; // digital reviews end
-
-    const droneReviews = [ // array of drone services reviews
-        { type: 'drone', name: 'Marek T.', proj: 'Zábery rodinného domu', text: 'Veľmi pekné fotky nášho domu a pozemku na predaj. Komunikácia bola rýchla, cena priateľská a zábery z výšky nám veľmi pomohli pri inzercii.' }, // review 1 with custom realistic family home shoot summary
-        { type: 'drone', name: 'Jozef M.', proj: 'Video & foto vinohradu', text: 'Skvelé letecké video a fotky nášho vinohradu na web. Výborná komunikácia a výsledné 4K zábery vyzerajú naozaj reprezentatívne.' }, // review 2 with shortened vineyard shoot summary
-        { type: 'drone', name: 'Anonymný klient', proj: 'Fotenie záhrady & statku', text: 'Naozaj nádherná práca, výsledné letecké fotky našej záhrady a statku vyzerajú úplne super a kvalitne. Odporúčam.' } // review 3 with custom drone garden work summary
-    ]; // drone reviews end
-
-    // Mix reviews by alternating them to keep it dynamic
-    const allReviews = [];
-    for (let i = 0; i < Math.max(digitalReviews.length, droneReviews.length); i++) {
-        if (digitalReviews[i]) allReviews.push(digitalReviews[i]);
-        if (droneReviews[i]) allReviews.push(droneReviews[i]);
-    }
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false); // state for hover pause
+
+    const allReviews = [
+        { id: 'rev-1', type: 'drone', name: 'Marek T. (Bratislava)', proj: 'Letecké ortofoto & grafika pozemku', text: 'Veľmi profesionálne a presné zábery nášho stavebného pozemku na predaj. Vektorové zakreslenie inžinierskych sietí nám ušetrilo množstvo času pri komunikácii so záujemcami.' },
+        { id: 'rev-2', type: 'print', name: 'Peter K. (Senec)', proj: 'Veľkoformátový PVC banner na plot', text: 'Banner na oplotenie areálu bol vytlačený a dodaný v priebehu 3 dní. Špičková odolnosť voči počasiu a ostré farby priamej UV tlače.' },
+        { id: 'rev-3', type: 'web', name: 'Michaela C. (Pezinok)', proj: 'One-Page prezentačný web', text: 'Blesková realizácia webu pre developerský projekt. Načítanie stránky je okamžité a zábery z dronu pôsobia na klientov maximálne reprezentatívne.' },
+        { id: 'rev-4', type: 'drone', name: 'Jozef M. (Dunajská Lužná)', proj: '4K video & fotodokumentácia', text: 'Skvelá spolupráca, rýchly výjazd a výborná kvalita výstupov. Všetko prebehlo samostatne bez nutnosti mojej osobnej prítomnosti na pozemku.' }
+    ];
 
     // Auto-advance logic
     useEffect(() => {
@@ -38,11 +26,13 @@ export default function Testimonials() { // export Testimonials component functi
     const prev = () => setCurrentIndex((prev) => (prev - 1 + allReviews.length) % allReviews.length);
 
     return ( // return JSX layout
-        <section id="testimonials" className="py-24 dark:bg-aurora-dark relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
+        <section id="testimonials" className="py-24 bg-gray-50 dark:bg-[#0f1420] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <h2 className="text-sm font-bold text-aurora-green tracking-widest uppercase mb-3 font-display">Hodnotenia</h2> {/* subtitle label */}
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Čo Hovoria Naši Klienti</h3> {/* title */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-3 uppercase">
+                        Hodnotenia
+                    </div>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Čo hovoria naši klienti</h2> {/* title */}
                 </div> {/* header block end */}
 
                 <div 
@@ -55,15 +45,16 @@ export default function Testimonials() { // export Testimonials component functi
                             className="flex transition-transform duration-700 ease-in-out" 
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                         > {/* slider flex container */}
-                            {allReviews.map((r, i) => ( // map all reviews
-                                <div key={i} className="w-full shrink-0 px-4 py-4"> {/* slide wrapper */}
-                                    {/* Presný štýl pôvodnej karty */}
-                                    <div className={`max-w-md mx-auto bg-white shadow-sm dark:shadow-none dark:bg-white/[0.03] border border-black/10 dark:border-white/10 rounded-3xl p-8 hover:bg-black/[0.05] dark:bg-white/[0.05] transition-all duration-500 shadow-lg ${r.type === 'digital' ? 'hover:border-aurora-purple/40 hover:shadow-[0_0_30px_rgba(191,90,242,0.38)] dark:hover:shadow-[0_0_30px_rgba(191,90,242,0.15)]' : 'hover:border-aurora-green/40 hover:shadow-[0_0_30px_rgba(161,255,206,0.38)] dark:hover:shadow-[0_0_30px_rgba(161,255,206,0.15)]'}`}> {/* card */}
-                                        <div className={`flex mb-4 text-xl ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>★ ★ ★ ★ ★</div> {/* stars rating */}
-                                        <p className="text-gray-800 dark:text-gray-300 text-base italic mb-6 leading-relaxed">"{r.text}"</p> {/* testimonial text */}
+                            {allReviews.map((r) => ( // map all reviews
+                                <div key={r.id} className="w-full shrink-0 px-4 py-4"> {/* slide wrapper */}
+                                    <div className="max-w-md mx-auto bg-white shadow-sm dark:shadow-none dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 transition-all duration-300 hover:border-amber-500/40 shadow-lg"> {/* card */}
+                                        <div className="flex mb-4 text-lg text-amber-500">
+                                            ★★★★★
+                                        </div> {/* stars rating */}
+                                        <p className="text-gray-800 dark:text-gray-200 text-sm sm:text-base italic mb-6 leading-relaxed">&ldquo;{r.text}&rdquo;</p> {/* testimonial text */}
                                         <div> {/* author wrapper */}
                                             <p className="text-gray-900 dark:text-white font-bold font-display text-base">{r.name}</p> {/* author name */}
-                                            <p className={`text-sm font-light mt-1 ${r.type === 'digital' ? 'text-aurora-purple' : 'text-aurora-green'}`}>{r.proj}</p> {/* author project */}
+                                            <p className="text-xs sm:text-sm font-medium mt-1 text-emerald-600 dark:text-emerald-400">{r.proj}</p> {/* author project */}
                                         </div> {/* author wrapper end */}
                                     </div> {/* card end */}
                                 </div> // slide wrapper end
@@ -72,20 +63,21 @@ export default function Testimonials() { // export Testimonials component functi
                     </div> {/* mask end */}
 
                     {/* Navigation Buttons */}
-                    <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 sm:-ml-12 p-3 bg-gray-100 dark:bg-[#0a0715]/90 text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:bg-black/10 dark:bg-white/10 transition-colors z-10 backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 hover:scale-110 shadow-xl"> {/* prev button */}
+                    <button onClick={prev} aria-label="Predchádzajúce hodnotenie" className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 sm:-ml-12 p-3 bg-white dark:bg-[#151C2C] text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 transition-colors z-10 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 shadow-xl"> {/* prev button */}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg> {/* icon */}
                     </button> {/* prev button end */}
-                    <button onClick={next} className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 sm:-mr-12 p-3 bg-gray-100 dark:bg-[#0a0715]/90 text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:bg-black/10 dark:bg-white/10 transition-colors z-10 backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 hover:scale-110 shadow-xl"> {/* next button */}
+                    <button onClick={next} aria-label="Ďalšie hodnotenie" className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 sm:-mr-12 p-3 bg-white dark:bg-[#151C2C] text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 transition-colors z-10 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 shadow-xl"> {/* next button */}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg> {/* icon */}
                     </button> {/* next button end */}
 
                     {/* Dots Navigation */}
                     <div className="flex justify-center mt-6 gap-2"> {/* dots container */}
-                        {allReviews.map((_, i) => ( // map dots
+                        {allReviews.map((r, i) => ( // map dots
                             <button 
-                                key={i} 
+                                key={`dot-${r.id}`} 
                                 onClick={() => setCurrentIndex(i)} 
-                                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-white w-6' : 'bg-black/30 dark:bg-white/30 hover:bg-black/50 dark:bg-white/50 w-2'}`}
+                                aria-label={`Prejsť na hodnotenie ${i + 1}`}
+                                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-amber-500 w-6' : 'bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 w-2'}`}
                             /> // dot
                         ))}
                     </div> {/* dots container end */}

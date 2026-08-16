@@ -26,16 +26,16 @@ export default function RootLayout({ // export root layout component
   children: React.ReactNode; // define typed children node
 }>) { // open function body
   return ( /* start component return */
-    <html lang="sk" suppressHydrationWarning className={`${orbitron.variable} ${inter.variable} h-full antialiased`} /* open html tag with language, styles, and font variables */ >
-      <body className="min-h-full flex flex-col font-sans selection:bg-amber-500 selection:text-black bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-[#f8fafc] relative transition-colors duration-300" /* open body tag with styling */ >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}> {/* wrap in theme provider */}
+    <html lang="sk" suppressHydrationWarning className={`${orbitron.variable} ${inter.variable} dark h-full antialiased`} /* open html tag with language, styles, and font variables */ >
+      <body className="min-h-full flex flex-col font-sans selection:bg-amber-500 selection:text-black bg-[#0B0F17] text-[#f8fafc] relative transition-colors duration-300" /* open body tag with styling */ >
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}> {/* wrap in theme provider locked to dark */}
         <AnimatedBackground /> {/* render animated background globally */}
         <div className="relative z-10 flex-grow flex flex-col"> {/* layout wrapper to keep content above background */}
           {children} {/* render layout children */}
         </div> {/* end layout wrapper */}
         <FloatingWhatsApp /> {/* render floating lead whatsapp button */}
         </ThemeProvider> {/* close theme provider */}
-      </body /* close body tag */>
+      </body>
     </html /* close html tag */>
   ); /* close return statement */
 } // close roots layout component

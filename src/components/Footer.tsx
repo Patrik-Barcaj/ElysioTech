@@ -36,10 +36,9 @@ export default function Footer() { // export Footer component function
                     <div> {/* legal & trust column */}
                         <h4 className="text-gray-900 dark:text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Fakturačné údaje</h4> {/* header */}
                         <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1.5 leading-relaxed">
-                            <p className="font-semibold text-gray-900 dark:text-white">ELYSIO TECH s. r. o.</p>
+                            <p className="font-semibold text-gray-900 dark:text-white">Patrik Barcaj - Elysio</p>
                             <p>Bratislava, Slovenská republika</p>
-                            <p>IČO: 56 421 891</p>
-                            <p>DIČ: 2122304918</p>
+                            <p>IČO: 56 802 544</p>
                             <p className="pt-2 text-emerald-600 dark:text-emerald-400 font-medium">
                                 Certifikácia pilota EASA A1/A3
                             </p>

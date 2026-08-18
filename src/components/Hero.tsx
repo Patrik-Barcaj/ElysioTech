@@ -20,7 +20,7 @@ export default function Hero() { // export Hero component function
                     <div className="flex-1 text-center lg:text-left mt-10 lg:mt-0"> {/* text content wrapper */}
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-6"> {/* pre-heading badge */}
                             <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.85)]"></span> {/* glowing dot */}
-                            TECHNICKÉ ŠTÚDIO • BRATISLAVA
+                            TECHNICKÉ ŠTÚDIO • BRATISLAVSKÝ KRAJ
                         </div> {/* pre-heading end */}
                         
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}
@@ -34,7 +34,7 @@ export default function Hero() { // export Hero component function
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10"> {/* cta group */}
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace"
+                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-bold font-display tracking-wide transition-all shadow-[0_0_25px_rgba(37,211,102,0.45)] hover:shadow-[0_0_35px_rgba(37,211,102,0.65)] flex items-center justify-center gap-3 transform hover:-translate-y-0.5"

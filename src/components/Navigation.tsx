@@ -36,7 +36,7 @@ export default function Navigation() { // export default Navigation block
         { name: 'Služby', href: '/#services', id: 'services' }, // item
         { name: 'Ako pracujeme', href: '/#process', id: 'process' }, // item
         { name: 'Prečo Elysio', href: '/#why-elysio', id: 'why-elysio' }, // item
-        { name: 'Portfólio', href: '/#portfolio', id: 'portfolio' }, // item
+        { name: 'Naše projekty', href: '/#portfolio', id: 'portfolio' }, // item
         { name: 'Cenník', href: '/cennik', id: '' }, // item
         { name: 'FAQ', href: '/#faq', id: 'faq' }, // item
         { name: 'Kontakt', href: '/#contact', id: 'contact' }, // item
@@ -76,7 +76,7 @@ export default function Navigation() { // export default Navigation block
                         </div> {/* nav row */}
                         <div className="ml-4 pl-4 border-l border-gray-200 dark:border-white/10 flex items-center gap-3"> {/* Action CTA wrapper */}
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20vizualu/tlace/webu"
+                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-display uppercase tracking-wider bg-[#25D366] hover:bg-[#20ba59] text-white shadow-[0_0_15px_rgba(37,211,102,0.35)] hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-all transform hover:-translate-y-0.5"
@@ -88,7 +88,7 @@ export default function Navigation() { // export default Navigation block
                     </div> {/* desktop nav */}
                     <div className="-mr-2 flex items-center gap-2 lg:hidden"> {/* mobile hamburger wrapping */}
                         <a
-                            href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20vizualu/tlace/webu"
+                            href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 rounded-lg bg-[#25D366] text-white"
@@ -125,7 +125,7 @@ export default function Navigation() { // export default Navigation block
                         })} {/* end map */}
                         <div className="pt-2">
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20vizualu/tlace/webu"
+                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => setIsOpen(false)}

@@ -17,7 +17,7 @@ export default function Footer() { // export Footer component function
                             Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, priama priemyselná UV tlač bannerov a zákazkový softvérový vývoj.
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-400">
-                            <strong>Lokalita pôsobenia:</strong> Petržalka, Bratislava & Bratislavský kraj (Senec, Pezinok, Dunajská Lužná, Malacky).
+                            <strong>Lokalita pôsobenia:</strong> Bratislavský kraj (Bratislava, Senec, Pezinok, Dunajská Lužná, Malacky a okolie).
                         </p>
                     </div> {/* main details column end */}
                     
@@ -27,6 +27,7 @@ export default function Footer() { // export Footer component function
                             <li><Link href="/#services" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Služby</Link></li>
                             <li><Link href="/#process" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Ako pracujeme</Link></li>
                             <li><Link href="/#why-elysio" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Prečo Elysio</Link></li>
+                            <li><Link href="/#portfolio" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Naše projekty</Link></li>
                             <li><Link href="/cennik" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Cenník</Link></li>
                             <li><Link href="/#faq" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">FAQ</Link></li>
                             <li><Link href="/#contact" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Kontakt</Link></li>
@@ -58,13 +59,13 @@ export default function Footer() { // export Footer component function
                         <span className="text-emerald-500">✓</span> Full-Stack Development
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="text-emerald-500">✓</span> Lokalita Petržalka / Bratislava
+                        <span className="text-emerald-500">✓</span> Lokalita: Bratislavský kraj
                     </span>
                 </div>
 
                 <div className="border-t border-black/10 dark:border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400"> {/* copyright row */}
                     <p>&copy; {new Date().getFullYear()} ELYSIO TECH. Všetky práva vyhradené.</p> {/* copyright text */}
-                    <p className="mt-2 sm:mt-0">Technické štúdio • Bratislava</p> {/* credit text */}
+                    <p className="mt-2 sm:mt-0">Technické štúdio • Bratislavský kraj</p> {/* credit text */}
                 </div> {/* copyright row end */}
             </div> {/* wrapper container end */}
         </footer> // footer element end

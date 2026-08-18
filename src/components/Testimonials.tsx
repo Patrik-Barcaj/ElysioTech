@@ -27,6 +27,34 @@ export default function Testimonials() { // export Testimonials component functi
     const next = () => setCurrentIndex((prev) => (prev + 1) % allReviews.length);
     const prev = () => setCurrentIndex((prev) => (prev - 1 + allReviews.length) % allReviews.length);
 
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    // Minimum swipe distance threshold (in px)
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            next();
+        } else if (isRightSwipe) {
+            prev();
+        }
+    };
+
     return ( // return JSX layout
         <section id="testimonials" className="py-24 bg-gray-50 dark:bg-[#0f1420] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
@@ -41,15 +69,18 @@ export default function Testimonials() { // export Testimonials component functi
                     className="relative group/carousel max-w-2xl mx-auto"
                     onMouseEnter={() => setIsHovered(true)} // set hover true
                     onMouseLeave={() => setIsHovered(false)} // set hover false
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
                 > {/* carousel container with constrained width */}
                     <div className="overflow-hidden"> {/* mask */}
                         <div 
-                            className="flex transition-transform duration-700 ease-in-out" 
+                            className="flex transition-transform duration-700 ease-in-out cursor-grab active:cursor-grabbing" 
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                         > {/* slider flex container */}
                             {allReviews.map((r) => ( // map all reviews
-                                <div key={r.id} className="w-full shrink-0 px-4 py-4"> {/* slide wrapper */}
-                                    <div className="max-w-md mx-auto bg-white shadow-sm dark:shadow-none dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-8 transition-all duration-300 hover:border-amber-500/40 shadow-lg"> {/* card */}
+                                <div key={r.id} className="w-full shrink-0 px-2 sm:px-4 py-4 select-none"> {/* slide wrapper */}
+                                    <div className="max-w-md mx-auto bg-white shadow-sm dark:shadow-none dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-amber-500/40 shadow-lg"> {/* card */}
                                         <div className="flex mb-4 text-lg text-amber-500">
                                             ★★★★★
                                         </div> {/* stars rating */}
@@ -64,24 +95,37 @@ export default function Testimonials() { // export Testimonials component functi
                         </div> {/* slider flex container end */}
                     </div> {/* mask end */}
 
-                    {/* Navigation Buttons */}
-                    <button onClick={prev} aria-label="Predchádzajúce hodnotenie" className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 sm:-ml-12 p-3 bg-white dark:bg-[#151C2C] text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 transition-colors z-10 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 shadow-xl"> {/* prev button */}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg> {/* icon */}
-                    </button> {/* prev button end */}
-                    <button onClick={next} aria-label="Ďalšie hodnotenie" className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 sm:-mr-12 p-3 bg-white dark:bg-[#151C2C] text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 transition-colors z-10 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 shadow-xl"> {/* next button */}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg> {/* icon */}
-                    </button> {/* next button end */}
+                    {/* Navigation Buttons (Visible on mobile & desktop) */}
+                    <button
+                        onClick={prev}
+                        aria-label="Predchádzajúce hodnotenie"
+                        className="absolute left-1 sm:left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-12 p-3 bg-white/90 dark:bg-[#151C2C]/90 backdrop-blur-sm text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 hover:text-amber-500 transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
+                    >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button
+                        onClick={next}
+                        aria-label="Ďalšie hodnotenie"
+                        className="absolute right-1 sm:right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-12 p-3 bg-white/90 dark:bg-[#151C2C]/90 backdrop-blur-sm text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 hover:text-amber-500 transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
+                    >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
 
-                    {/* Dots Navigation */}
-                    <div className="flex justify-center mt-6 gap-2"> {/* dots container */}
-                        {allReviews.map((r, i) => ( // map dots
-                            <button 
-                                key={`dot-${r.id}`} 
-                                onClick={() => setCurrentIndex(i)} 
-                                aria-label={`Prejsť na hodnotenie ${i + 1}`}
-                                className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-amber-500 w-6' : 'bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 w-2'}`}
-                            /> // dot
-                        ))}
+                    {/* Dots Navigation & Swipe hint on mobile */}
+                    <div className="flex flex-col items-center mt-6 gap-3">
+                        <div className="flex justify-center gap-2"> {/* dots container */}
+                            {allReviews.map((r, i) => ( // map dots
+                                <button 
+                                    key={`dot-${r.id}`} 
+                                    onClick={() => setCurrentIndex(i)} 
+                                    aria-label={`Prejsť na hodnotenie ${i + 1}`}
+                                    className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-amber-500 w-6' : 'bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 w-2'}`}
+                                /> // dot
+                            ))}
+                        </div>
+                        <span className="text-[11px] text-gray-500 dark:text-gray-400 sm:hidden">
+                            Potiahnite prstom (swipe) alebo použite šípky
+                        </span>
                     </div> {/* dots container end */}
 
                 </div> {/* carousel container end */}

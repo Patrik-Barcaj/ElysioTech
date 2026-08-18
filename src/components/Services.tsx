@@ -1,5 +1,4 @@
 import React from 'react'; // import react
-import Image from 'next/image'; // import next/image
 import ScrollReveal from './ui/ScrollReveal'; // import ScrollReveal
 
 export default function Services() { // export Services component

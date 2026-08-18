@@ -4,20 +4,11 @@ import droneImg1 from '../assets/drone pics/DJI_0228.jpg'; // import drone image
 import droneImg2 from '../assets/drone pics/DJI_0234.jpg'; // import drone image 2
 import droneImg3 from '../assets/drone pics/DJI_0235.jpg'; // import drone image 3
 import droneImg4 from '../assets/drone pics/DJI_0236.jpg'; // import drone image 4
-import pixelcraftLogo from '../assets/websites/PixelCraft.logo.png'; // import pixelcraft logo
-import zenPierceLogo from '../assets/websites/zen-pierce.png'; // import zen pierce logo
-import echoLogo from '../assets/websites/logo2.0.png'; // import echo logo
-
+import Link from 'next/link';
 import Image from 'next/image';
+import { projectsData } from '@/data/projects';
 
 export default function Portfolio() { // export Portfolio component function
-    const projects = [ // array of web/app projects
-        { id: 'proj-pixelcraft', title: 'PixelCraft', category: 'Webová Aplikácia & Systém', src: pixelcraftLogo.src, link: 'https://pixelcraft.elysiotech.com', bgClass: 'bg-gray-200 dark:bg-black' }, // project 1
-        { id: 'proj-zenpierce', title: 'Zen Pierce', category: 'Vizuálny & Katalógový Web', src: zenPierceLogo.src, link: 'https://zenpierce.elysiotech.com', bgClass: 'bg-gray-200 dark:bg-black' }, // project 2
-        { id: 'proj-echo', title: 'Echo', category: 'Fyzická Zbierka & Prehrávač', src: echoLogo.src, link: 'https://echo.elysiotech.com', bgClass: 'bg-gray-200 dark:bg-black' }, // project 3
-        { id: 'proj-gis-demo', title: 'Real Estate GIS Portál', category: 'Zákazkový GIS & Mapy', src: 'https://images.unsplash.com/photo-1524813686514-a57563d77d61?q=80&w=600&auto=format&fit=crop', link: '#', bgClass: '' } // project 4
-    ]; // projects end
-
     const gallery = [ // array of gallery images
         { id: 'gal-drone-1', title: 'Letecké Zábery Pozemkov pre Developerov', category: 'Letecké Ortofoto & Video', src: droneImg1.src }, // gal 1
         { id: 'gal-drone-2', title: 'Zameranie Parciálnych Hraníc', category: 'Vektorové Kóty & Siete', src: droneImg2.src }, // gal 2
@@ -54,9 +45,9 @@ export default function Portfolio() { // export Portfolio component function
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-3 uppercase">
-                        Ukážky práce
+                        Portfólio realizácií
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Naše referencie & zábery</h2> {/* title */}
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Naše projekty</h2> {/* title */}
                 </div> {/* header block end */}
 
                 {/* Unified Portfolio */}
@@ -67,31 +58,31 @@ export default function Portfolio() { // export Portfolio component function
                     </h3> {/* projects title */}
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"> {/* projects layout */}
-                        {projects.map((proj) => ( // map projects
-                            <a
+                        {projectsData.map((proj) => ( // map projects
+                            <Link
                                 key={proj.id}
-                                href={proj.link}
-                                target={proj.link !== '#' ? "_blank" : undefined}
-                                rel={proj.link !== '#' ? "noopener noreferrer" : undefined}
+                                href={`/projekty/${proj.slug}`}
                                 className={`group relative aspect-square overflow-hidden rounded-2xl ${proj.bgClass || 'bg-black/5 dark:bg-white/5'} border border-black/10 dark:border-white/10 cursor-pointer block shadow-sm hover:shadow-xl transition-all`}
                             >
-                                <div className="relative w-full h-full">
+                                <div className="relative w-full h-full p-4 flex items-center justify-center">
                                     <Image
-                                        src={proj.src}
+                                        src={proj.image}
                                         alt={proj.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                                        className="object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                        className="object-contain transform transition-transform duration-700 group-hover:scale-105"
                                     />
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"> {/* overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"> {/* overlay */}
                                     <div className="p-5 w-full"> {/* padding wrapper */}
                                         <p className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">{proj.category}</p> {/* category label */}
                                         <h4 className="text-white font-bold font-display drop-shadow-md text-sm sm:text-base leading-tight">{proj.title}</h4> {/* title */}
-                                        {proj.link !== '#' && <span className="text-xs text-white/80 mt-1 block">Zobraziť web ↗</span>} {/* link hint */}
+                                        <span className="text-xs text-amber-300 font-semibold mt-2 inline-flex items-center gap-1">
+                                            Zobraziť detail projektu ↗
+                                        </span>
                                     </div> {/* padding end */}
                                 </div> {/* overlay end */}
-                            </a> // project card end
+                            </Link> // project card end
                         ))} {/* map projects end */}
                     </div> {/* projects layout end */}
 

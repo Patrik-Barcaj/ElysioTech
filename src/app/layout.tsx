@@ -16,7 +16,7 @@ const inter = Inter({ // start inter font config
 }); // end inter font config
 
 export const metadata: Metadata = { // export metadata object
-  title: "ELYSIO TECH | Dronové zábery pozemkov, veľkoformátová tlač a softvér na mieru (Bratislava)", // set page title
+  title: "ELYSIO TECH | Dronové zábery pozemkov, veľkoformátová tlač a softvér na mieru (Bratislavský kraj)", // set page title
   description: "Prezentácia nehnuteľností, stavebných projektov a firiem. Letecké snímky dronom, vektorové zakreslenie inžinierskych sietí, výroba reklamných bannerov a tabúľ, bleskový webový vývoj. Bez agentúrnych prirážok.", // set description
 }; // close metadata object
 

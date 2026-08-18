@@ -42,14 +42,14 @@ export default function Contact() { // export Contact component function
                                 </div> {/* name wrapper end */}
                                 <div> {/* email wrapper */}
                                     <label htmlFor="email" className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1.5">Emailová adresa alebo telefón</label> {/* label email */}
-                                    <input type="text" id="email" required className="w-full bg-gray-50 dark:bg-black/20 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" placeholder="+421 9XX XXX XXX / email@firma.sk" /> {/* email input field */}
+                                    <input type="text" id="email" required className="w-full bg-gray-50 dark:bg-black/20 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" placeholder="+421 9XX... / email@domena.sk" /> {/* email input field */}
                                 </div> {/* email wrapper end */}
                                 <div> {/* message wrapper */}
                                     <label htmlFor="msg" className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1.5">Popis projektu alebo parcelné číslo</label> {/* label message */}
-                                    <textarea id="msg" rows={4} required className="w-full bg-gray-50 dark:bg-black/20 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" placeholder="Zábery pozemku v Senci / UV tlač tabule 2x1m / One-page web"></textarea> {/* message textarea field */}
+                                    <textarea id="msg" rows={4} required className="w-full min-h-[140px] resize-y bg-gray-50 dark:bg-black/20 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" placeholder="Zábery pozemku v Senci / UV tlač tabule 2x1m / One-page web"></textarea> {/* message textarea field with min height */}
                                 </div> {/* message wrapper end */}
                                 <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold font-display rounded-xl text-base tracking-wide transition-all shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"> {/* submit button */}
-                                    {isSubmitting ? 'Odosielam...' : 'Odoslať dopyt'} {/* button label */}
+                                    {isSubmitting ? 'Odosielam...' : 'Odoslať'} {/* button label */}
                                 </button> {/* submit button end */}
                             </form> {/* form wrapper end */}
                         </div> {/* form card container end */}
@@ -70,7 +70,7 @@ export default function Contact() { // export Contact component function
                                     </li>
                                     <li className="flex items-start gap-3 p-3 rounded-2xl bg-slate-500/5 border border-black/10 dark:border-white/10">
                                         <span className="text-gray-400 font-bold mt-0.5">•</span>
-                                        <span><strong className="text-gray-900 dark:text-white">Osobné stretnutia & Obhliadky:</strong> Bratislava, Senec, Pezinok, Dunajská Lužná a okolie.</span>
+                                        <span><strong className="text-gray-900 dark:text-white">Osobné stretnutia & Obhliadky:</strong> Bratislavský kraj (Bratislava, Senec, Pezinok, Malacky a okolie).</span>
                                     </li>
                                 </ul>
                             </div> {/* support section end */}
@@ -78,7 +78,7 @@ export default function Contact() { // export Contact component function
                             <div> {/* direct action buttons block */}
                                 <h3 className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider font-display mb-3">Rýchle spojenie</h3> {/* social title */}
                                 <div className="flex flex-col sm:flex-row gap-3"> {/* flex container */}
-                                    <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20vizualu/tlace/webu" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold transition-all shadow-md"> {/* whatsapp button */}
+                                    <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold transition-all shadow-md"> {/* whatsapp button */}
                                         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
                                         <span>WhatsApp Správa</span>
                                     </a>
@@ -102,7 +102,7 @@ export default function Contact() { // export Contact component function
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> {/* success icon */}
                             </div> {/* icon container end */}
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Správa odoslaná!</h3> {/* title */}
-                            <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm">Ďakujeme za váš dopyt. Budeme vás kontaktovať obratom.</p> {/* text */}
+                            <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm">Ďakujeme za vašu správu. Budeme vás kontaktovať obratom.</p> {/* text */}
                             <button onClick={() => setIsSubmitted(false)} className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-black rounded-xl font-bold transition-all"> {/* close button */}
                                 Zavrieť {/* button text */}
                             </button> {/* close button end */}

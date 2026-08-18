@@ -3,7 +3,7 @@
 import React from 'react';
 
 export default function FloatingWhatsApp() {
-  const whatsappUrl = "https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20vizualu/tlace/webu";
+  const whatsappUrl = "https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb";
 
   return (
     <aside aria-label="WhatsApp kontakt" className="fixed bottom-6 right-6 z-50 flex items-center group">
@@ -24,7 +24,7 @@ export default function FloatingWhatsApp() {
         </svg>
 
         <span className="font-semibold text-sm tracking-wide hidden sm:inline-block">
-          WhatsApp Ponuka
+          WhatsApp Správa
         </span>
       </a>
     </aside>

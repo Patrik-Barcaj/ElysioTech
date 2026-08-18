@@ -8,6 +8,7 @@ export function ThemeToggle() { // export component
   const { theme, setTheme } = useTheme(); // get theme properties
 
   useEffect(() => { // hydration fix
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true); // component mounted
   }, []); // deps
 

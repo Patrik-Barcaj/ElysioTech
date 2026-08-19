@@ -1,7 +1,6 @@
 import Navigation from '@/components/Navigation'; // import Navigation component
 import Hero from '@/components/Hero'; // import Hero component
 import Services from '@/components/Services'; // import Services component
-import Process from '@/components/Process'; // import Process component
 import WhyElysio from '@/components/WhyElysio'; // import WhyElysio component
 import Portfolio from '@/components/Portfolio'; // import Portfolio component
 import Testimonials from '@/components/Testimonials'; // import Testimonials component
@@ -17,7 +16,6 @@ export default function Home() { // export default Home component function
       <Hero /> {/* render asymmetric minimalist hero */}
       <Marquee items={['Letecké Ortofotomapy', 'Vektorové GIS Siete', 'Priama UV Tlač Dibond & Komatex', 'Veľkoformátové Bannery', 'Next.js & TypeScript Vývoj', 'MapLibre GIS Integrácia', 'Certifikácia EASA A1/A3', 'Expresná Realizácia']} /> {/* render infinite marquee */}
       <Services /> {/* render services bento grid */}
-      <Process /> {/* render process section */}
       <WhyElysio /> {/* render solo operator advantage section */}
       <Portfolio /> {/* render portfolio section */}
       <Testimonials /> {/* render testimonials section */}

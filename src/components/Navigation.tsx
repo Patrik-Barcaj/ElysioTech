@@ -34,7 +34,6 @@ export default function Navigation() { // export default Navigation block
 
     const navLinks = [ // array of navigation links
         { name: 'Služby', href: '/#services', id: 'services' }, // item
-        { name: 'Ako pracujeme', href: '/#process', id: 'process' }, // item
         { name: 'Prečo Elysio', href: '/#why-elysio', id: 'why-elysio' }, // item
         { name: 'Naše projekty', href: '/#portfolio', id: 'portfolio' }, // item
         { name: 'Cenník', href: '/cennik', id: '' }, // item

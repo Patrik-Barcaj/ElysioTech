@@ -25,7 +25,6 @@ export default function Footer() { // export Footer component function
                         <h4 className="text-gray-900 dark:text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Navigácia</h4> {/* header */}
                         <ul className="space-y-2 text-sm"> {/* list element */}
                             <li><Link href="/#services" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Služby</Link></li>
-                            <li><Link href="/#process" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Ako pracujeme</Link></li>
                             <li><Link href="/#why-elysio" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Prečo Elysio</Link></li>
                             <li><Link href="/#portfolio" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Naše projekty</Link></li>
                             <li><Link href="/cennik" className="text-gray-600 dark:text-gray-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Cenník</Link></li>

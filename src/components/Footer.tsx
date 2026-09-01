@@ -17,7 +17,7 @@ export default function Footer() { // export Footer component function
                             Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, priama priemyselná UV tlač bannerov a zákazkový softvérový vývoj.
                         </p>
                         <p className="text-xs text-gray-500 dark:text-gray-400">
-                            <strong>Lokalita pôsobenia:</strong> Bratislavský kraj (Bratislava, Senec, Pezinok, Dunajská Lužná, Malacky a okolie).
+                            <strong>Lokalita pôsobenia:</strong> Oblasť západného Slovenska.
                         </p>
                     </div> {/* main details column end */}
                     
@@ -39,9 +39,6 @@ export default function Footer() { // export Footer component function
                             <p className="font-semibold text-gray-900 dark:text-white">Patrik Barcaj - Elysio</p>
                             <p>Bratislava, Slovenská republika</p>
                             <p>IČO: 56 802 544</p>
-                            <p className="pt-2 text-emerald-600 dark:text-emerald-400 font-medium">
-                                Certifikácia pilota EASA A1/A3
-                            </p>
                         </div>
                     </div> {/* legal column end */}
                 </div> {/* layout grid end */}
@@ -58,13 +55,13 @@ export default function Footer() { // export Footer component function
                         <span className="text-emerald-500">✓</span> Full-Stack Development
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="text-emerald-500">✓</span> Lokalita: Bratislavský kraj
+                        <span className="text-emerald-500">✓</span> Lokalita: Oblasť západného Slovenska
                     </span>
                 </div>
 
                 <div className="border-t border-black/10 dark:border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400"> {/* copyright row */}
                     <p>&copy; {new Date().getFullYear()} ELYSIO TECH. Všetky práva vyhradené.</p> {/* copyright text */}
-                    <p className="mt-2 sm:mt-0">Technické štúdio • Bratislavský kraj</p> {/* credit text */}
+                    <p className="mt-2 sm:mt-0">Digitálne a technické štúdio • Bratislavský kraj</p> {/* credit text */}
                 </div> {/* copyright row end */}
             </div> {/* wrapper container end */}
         </footer> // footer element end

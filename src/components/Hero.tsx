@@ -20,7 +20,7 @@ export default function Hero() { // export Hero component function
                     <div className="flex-1 text-center lg:text-left mt-10 lg:mt-0"> {/* text content wrapper */}
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-6"> {/* pre-heading badge */}
                             <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.85)]"></span> {/* glowing dot */}
-                            TECHNICKÉ ŠTÚDIO • BRATISLAVSKÝ KRAJ
+                            DIGITÁLNE A TECHNICKÉ ŠTÚDIO • BRATISLAVSKÝ KRAJ
                         </div> {/* pre-heading end */}
                         
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}

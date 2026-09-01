@@ -46,7 +46,7 @@ export default function Contact() { // export Contact component function
                                 </div> {/* email wrapper end */}
                                 <div> {/* message wrapper */}
                                     <label htmlFor="msg" className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1.5">Popis projektu alebo parcelné číslo</label> {/* label message */}
-                                    <textarea id="msg" rows={4} required className="w-full min-h-[140px] resize-y bg-gray-50 dark:bg-black/20 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" placeholder="Zábery pozemku v Senci / UV tlač tabule 2x1m / One-page web"></textarea> {/* message textarea field with min height */}
+                                    <textarea id="msg" rows={4} required className="w-full min-h-[140px] resize-y bg-gray-50 dark:bg-black/20 border border-black/10 dark:border-white/10 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all" placeholder="Zábery pozemku / UV tlač tabule 2x1m / One-page web"></textarea> {/* message textarea field with min height */}
                                 </div> {/* message wrapper end */}
                                 <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold font-display rounded-xl text-base tracking-wide transition-all shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"> {/* submit button */}
                                     {isSubmitting ? 'Odosielam...' : 'Odoslať'} {/* button label */}
@@ -70,7 +70,7 @@ export default function Contact() { // export Contact component function
                                     </li>
                                     <li className="flex items-start gap-3 p-3 rounded-2xl bg-slate-500/5 border border-black/10 dark:border-white/10">
                                         <span className="text-gray-400 font-bold mt-0.5">•</span>
-                                        <span><strong className="text-gray-900 dark:text-white">Osobné stretnutia & Obhliadky:</strong> Bratislavský kraj (Bratislava, Senec, Pezinok, Malacky a okolie).</span>
+                                        <span><strong className="text-gray-900 dark:text-white">Osobné stretnutia & Obhliadky:</strong> Oblasť západného Slovenska.</span>
                                     </li>
                                 </ul>
                             </div> {/* support section end */}

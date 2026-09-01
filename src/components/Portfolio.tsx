@@ -7,8 +7,45 @@ import droneImg4 from '../assets/drone pics/DJI_0236.jpg'; // import drone image
 import Link from 'next/link';
 import Image from 'next/image';
 import { projectsData } from '@/data/projects';
+import setDriftLogo from '@/assets/apps/SetDrift.png';
 
 export default function Portfolio() { // export Portfolio component function
+    const otherProjects = projectsData.filter((p) => p.slug !== 'setdrift');
+    const highlights = [
+        {
+            id: 'hl-prediction',
+            title: 'Intelligent Setlist Prediction',
+            desc: 'Aggregates recent tour dates, cleans metadata with fuzzy regex matching, and structures sets into Main Set and Encores.',
+            accent: 'amber'
+        },
+        {
+            id: 'hl-festival',
+            title: 'Festival Timetable Merge',
+            desc: 'Multi-artist engine that merges whole festival schedules into a single chronological warmup playlist.',
+            accent: 'emerald'
+        },
+        {
+            id: 'hl-pwa',
+            title: 'PWA & Offline Resilience',
+            desc: 'Fully installable mobile PWA with client-side caching (IndexedDB) for network-constrained stadium/festival environments.',
+            accent: 'emerald'
+        },
+        {
+            id: 'hl-spotify',
+            title: 'Direct Spotify OAuth & Deep Linking',
+            desc: 'Frictionless 1-click export directly into native mobile Spotify apps.',
+            accent: 'amber'
+        }
+    ];
+    const techBadges = [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Spotify Web API',
+        'Setlist.fm API',
+        'Upstash Redis',
+        'PWA'
+    ];
     const gallery = [ // array of gallery images
         { id: 'gal-drone-1', title: 'Letecké Zábery Pozemkov pre Developerov', category: 'Letecké Ortofoto & Video', src: droneImg1.src }, // gal 1
         { id: 'gal-drone-2', title: 'Zameranie Parciálnych Hraníc', category: 'Vektorové Kóty & Siete', src: droneImg2.src }, // gal 2
@@ -57,8 +94,170 @@ export default function Portfolio() { // export Portfolio component function
                         Weby & <span className="text-amber-500">Aplikácie</span>
                     </h3> {/* projects title */}
                     
+                    {/* Featured Case Study: SetDrift */}
+                    <div className="relative overflow-hidden rounded-3xl bg-white/70 dark:bg-[#151C2C]/90 border border-amber-500/30 dark:border-white/10 hover:border-amber-500/50 transition-all duration-500 shadow-xl hover:shadow-[0_0_40px_rgba(245,158,11,0.18)] mb-12 p-6 sm:p-8 lg:p-10 group">
+                        {/* Ambient glow */}
+                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-amber-500/15 transition-colors"></div>
+                        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/15 transition-colors"></div>
+
+                        {/* Top Metadata Header */}
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-8 relative z-10 border-b border-black/5 dark:border-white/10 pb-5">
+                            <div className="flex flex-wrap items-center gap-2.5">
+                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-display tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold uppercase">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    Vlajkový Projekt • Case Study
+                                </span>
+                                <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-wider text-amber-600 dark:text-amber-400 font-medium">
+                                    Web Application / Music Tech & Automation / PWA
+                                </span>
+                            </div>
+
+                            <div className="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+                                <span className="text-amber-500 font-bold uppercase tracking-wider font-display">Role:</span>
+                                <span className="text-gray-800 dark:text-gray-200 font-medium">Full-Stack Architecture, UI/UX Design, API Integration</span>
+                            </div>
+                        </div>
+
+                        {/* Main Grid: Info + Visual */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                            
+                            {/* Left Column (7 cols): Descriptions, Highlights, Badges & CTAs */}
+                            <div className="lg:col-span-7 space-y-6">
+                                <div>
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <h4 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white font-display tracking-tight">
+                                            SetDrift
+                                        </h4>
+                                        <span className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                                            LIVE PWA
+                                        </span>
+                                    </div>
+                                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                                        Data-driven concert warm-up aggregator that analyzes real-time live tour setlists from Setlist.fm and instantly compiles accurate, ready-to-play playlists into Spotify via automated track matching and tour-cycle analytics.
+                                    </p>
+                                </div>
+
+                                {/* Key Highlights */}
+                                <div className="space-y-3">
+                                    <div className="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 font-display flex items-center gap-2">
+                                        <span>Kľúčové inovácie & technické riešenie</span>
+                                        <div className="h-[1px] flex-1 bg-amber-500/20"></div>
+                                    </div>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        {highlights.map((hl) => (
+                                            <div
+                                                key={hl.id}
+                                                className={`p-3.5 rounded-2xl bg-black/5 dark:bg-white/[0.03] border border-black/5 dark:border-white/10 ${
+                                                    hl.accent === 'amber' ? 'hover:border-amber-500/40' : 'hover:border-emerald-500/40'
+                                                } transition-colors`}
+                                            >
+                                                <div className="flex items-start gap-2.5">
+                                                    <span
+                                                        className={`w-5 h-5 rounded-full ${
+                                                            hl.accent === 'amber'
+                                                                ? 'bg-amber-500/15 text-amber-500 border border-amber-500/30'
+                                                                : 'bg-emerald-500/15 text-emerald-500 border border-emerald-500/30'
+                                                        } text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5`}
+                                                    >
+                                                        ✓
+                                                    </span>
+                                                    <div className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+                                                        <strong className="text-gray-900 dark:text-white font-display block mb-0.5">
+                                                            {hl.title}
+                                                        </strong>
+                                                        {hl.desc}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Tech Stack Badges */}
+                                <div>
+                                    <span className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 font-display block mb-2.5">
+                                        Tech Stack Badges
+                                    </span>
+                                    <div className="flex flex-wrap gap-2">
+                                        {techBadges.map((tech) => (
+                                            <span
+                                                key={`tech-${tech}`}
+                                                className="px-2.5 py-1 rounded-lg text-xs font-medium bg-black/5 dark:bg-white/5 text-gray-800 dark:text-gray-200 border border-black/10 dark:border-white/10"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Action Buttons */}
+                                <div className="flex flex-wrap items-center gap-4 pt-2">
+                                    <a
+                                        href="https://setdrift.elysiotech.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="py-3.5 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold font-display rounded-xl text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_35px_rgba(245,158,11,0.55)] flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                                    >
+                                        <span>Launch App →</span>
+                                    </a>
+                                    <Link
+                                        href="/projekty/setdrift"
+                                        className="py-3.5 px-6 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-gray-900 dark:text-white border border-black/10 dark:border-white/15 rounded-xl font-bold font-display text-sm tracking-wide transition-all flex items-center justify-center gap-2"
+                                    >
+                                        <span>Detail prípadovej štúdie</span>
+                                        <span className="text-amber-500 font-semibold">↗</span>
+                                    </Link>
+                                </div>
+
+                            </div>
+
+                            {/* Right Column (5 cols): SetDrift Logo & Live Card */}
+                            <div className="lg:col-span-5 flex flex-col items-center justify-center">
+                                <a
+                                    href="https://setdrift.elysiotech.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full relative aspect-square max-w-[360px] rounded-3xl overflow-hidden bg-gradient-to-b from-[#0e1626] to-[#070b12] border border-black/10 dark:border-white/10 p-6 flex flex-col items-center justify-between group/visual shadow-2xl hover:border-amber-500/50 transition-all duration-500"
+                                >
+                                    <div className="w-full flex items-center justify-between text-xs text-gray-400 font-mono">
+                                        <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                                            setdrift.elysiotech.com
+                                        </span>
+                                        <span className="text-[10px] uppercase tracking-widest text-amber-500 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">PWA Ready</span>
+                                    </div>
+
+                                    <div className="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center my-auto">
+                                        <div className="absolute inset-0 bg-emerald-500/10 rounded-full filter blur-2xl group-hover/visual:bg-amber-500/20 transition-all duration-500"></div>
+                                        <Image
+                                            src={setDriftLogo}
+                                            alt="SetDrift Logo"
+                                            width={208}
+                                            height={208}
+                                            className="object-contain relative z-10 drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)] transform transition-transform duration-500 group-hover/visual:scale-105"
+                                        />
+                                    </div>
+
+                                    <div className="w-full pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-gray-400 font-mono">
+                                        <span>Spotify Web API + OAuth</span>
+                                        <span className="text-amber-400 font-semibold group-hover/visual:translate-x-1 transition-transform inline-flex items-center gap-1">
+                                            Launch App <span>→</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="flex items-center justify-between mb-6">
+                        <h4 className="text-lg sm:text-xl font-bold font-display text-gray-900 dark:text-white border-l-4 border-amber-500/50 pl-3">
+                            Ďalšie webové projekty
+                        </h4>
+                    </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"> {/* projects layout */}
-                        {projectsData.map((proj) => ( // map projects
+                        {otherProjects.map((proj) => ( // map projects
                             <Link
                                 key={proj.id}
                                 href={`/projekty/${proj.slug}`}

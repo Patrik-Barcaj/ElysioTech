@@ -90,6 +90,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl">
               {project.tagline}
             </p>
+            {project.role && (
+              <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-300">
+                <span className="text-amber-500 font-bold uppercase tracking-wider font-display">Rola:</span>
+                <span className="font-medium text-gray-200">{project.role}</span>
+              </div>
+            )}
           </div>
 
           {/* Main Grid: Content & Sidebar */}
@@ -168,7 +174,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   rel={isExternalLink ? 'noopener noreferrer' : undefined}
                   className="w-full py-4 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold font-display rounded-xl text-base tracking-wide transition-all shadow-[0_0_20px_rgba(245,158,11,0.35)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
                 >
-                  <span>{isExternalLink ? 'Navštíviť živý web' : 'Zobraziť v portfóliu'}</span>
+                  <span>{project.ctaText || (isExternalLink ? 'Navštíviť živý web' : 'Zobraziť v portfóliu')}</span>
                   <span className="text-lg">↗</span>
                 </a>
               </div>

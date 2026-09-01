@@ -1,6 +1,7 @@
 import pixelcraftLogo from '@/assets/websites/PixelCraft.logo.png';
 import zenPierceLogo from '@/assets/websites/zen-pierce.png';
 import echoLogo from '@/assets/websites/logo2.0.png';
+import setDriftLogo from '@/assets/apps/SetDrift.png';
 
 export interface ProjectItem {
   id: string;
@@ -17,9 +18,47 @@ export interface ProjectItem {
   image: string;
   bgClass?: string;
   deliverables: string[];
+  role?: string;
+  ctaText?: string;
 }
 
 export const projectsData: ProjectItem[] = [
+  {
+    id: 'proj-setdrift',
+    slug: 'setdrift',
+    title: 'SetDrift',
+    subtitle: 'Data-driven concert warm-up aggregator & Spotify playlist compiler',
+    category: 'Web Application / Music Tech & Automation / PWA',
+    tagline: 'Data-driven concert warm-up aggregator that analyzes real-time live tour setlists from Setlist.fm and instantly compiles accurate, ready-to-play playlists into Spotify via automated track matching and tour-cycle analytics.',
+    description: 'SetDrift je pokročilý dátovo riadený agregátor koncertných setlistov, ktorý analyzuje živé turné v reálnom čase a okamžite kompiluje presné playlisty do Spotify prostredníctvom inteligentného párovania skladieb.',
+    longDescription: [
+      'SetDrift je vysoko optimalizovaná webová a PWA aplikácia navrhnutá pre hudobných fanúšikov a návštevníkov koncertov a festivalov. Prepája komunitnú databázu Setlist.fm s oficiálnym Spotify Web API pre bleskovú tvorbu warm-up playlistov.',
+      'Intelligent Setlist Prediction: Srdcom systému je analytický algoritmus, ktorý agreguje nedávne zastávky turné, odstraňuje šum fuzzy regex matchingom a rekonštruuje pravdepodobný setlist rozdelený na Main Set a Encores.',
+      'Festival Timetable Merge: Multi-artist engine zlučujúci kompletné časové harmonogramy festivalov do jedného uceleného chronologického playlistu.',
+      'PWA & Offline Resilience: Plne inštalovateľná mobilná Progressive Web App s klientskym cachovaním (IndexedDB), vďaka čomu spoľahlivo funguje v preťažených sieťach festivalov a štadiónov.',
+      'Direct Spotify OAuth & Deep Linking: Frictionless 1-klikový export a okamžité otvorenie vytvoreného playlistu v natívnej mobilnej aplikácii Spotify.'
+    ],
+    features: [
+      'Intelligent Setlist Prediction: Aggregates recent tour dates, cleans metadata with fuzzy regex matching, and structures sets into Main Set and Encores.',
+      'Festival Timetable Merge: Multi-artist engine that merges whole festival schedules into a single chronological warmup playlist.',
+      'PWA & Offline Resilience: Fully installable mobile PWA with client-side caching (IndexedDB) for network-constrained stadium/festival environments.',
+      'Direct Spotify OAuth & Deep Linking: Frictionless 1-click export directly into native mobile Spotify apps.'
+    ],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spotify Web API', 'Setlist.fm API', 'Upstash Redis', 'PWA'],
+    liveUrl: 'https://setdrift.elysiotech.com',
+    image: setDriftLogo.src,
+    bgClass: 'bg-[#0a0f18]',
+    deliverables: [
+      'Full-Stack Architecture',
+      'UI/UX Design & Branding',
+      'Spotify Web API & OAuth Integration',
+      'Setlist.fm API & Regex Parser',
+      'PWA Engine & IndexedDB Cache',
+      'Upstash Redis Caching'
+    ],
+    role: 'Full-Stack Architecture, UI/UX Design, API Integration',
+    ctaText: 'Launch App →'
+  },
   {
     id: 'proj-pixelcraft',
     slug: 'pixelcraft',

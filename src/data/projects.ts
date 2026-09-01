@@ -47,7 +47,8 @@ export const projectsData: ProjectItem[] = [
     liveUrl: 'https://pixelcraft.elysiotech.com',
     image: pixelcraftLogo.src,
     bgClass: 'bg-black/90',
-    deliverables: ['Webová aplikácia', 'UI/UX návrh', 'Canvas Engine', 'Mobilná optimalizácia']
+    deliverables: ['Webová aplikácia', 'UI/UX návrh', 'Canvas Engine', 'Mobilná optimalizácia'],
+    ctaText: 'Spustiť appku →'
   },
   {
     id: 'proj-zenpierce',
@@ -73,7 +74,8 @@ export const projectsData: ProjectItem[] = [
     liveUrl: 'https://zenpierce.elysiotech.com',
     image: zenPierceLogo.src,
     bgClass: 'bg-[#111111]',
-    deliverables: ['Prezentačný web', 'Katalóg šperkov', 'SEO optimalizácia', 'Responzívny dizajn']
+    deliverables: ['Prezentačný web', 'Katalóg šperkov', 'SEO optimalizácia', 'Responzívny dizajn'],
+    ctaText: 'Navštíviť web →'
   },
   {
     id: 'proj-echo',
@@ -99,42 +101,43 @@ export const projectsData: ProjectItem[] = [
     liveUrl: 'https://echo.elysiotech.com',
     image: echoLogo.src,
     bgClass: 'bg-[#0f172a]',
-    deliverables: ['Audio Web Aplikácia', 'Web Audio Engine', 'UI/UX Archív', 'Databázová štruktúra']
+    deliverables: ['Audio Web Aplikácia', 'Web Audio Engine', 'UI/UX Archív', 'Databázová štruktúra'],
+    ctaText: 'Spustiť prehrávač →'
   },
   {
     id: 'proj-setdrift',
     slug: 'setdrift',
     title: 'SetDrift',
-    subtitle: 'Data-driven concert warm-up aggregator & Spotify playlist compiler',
-    category: 'Web Application / Music Tech & Automation / PWA',
-    tagline: 'Data-driven concert warm-up aggregator that analyzes real-time live tour setlists from Setlist.fm and instantly compiles accurate, ready-to-play playlists into Spotify via automated track matching and tour-cycle analytics.',
-    description: 'SetDrift je inovatívny webový nástroj a PWA aplikácia prepájajúca reálne živé setlisty zo Setlist.fm so Spotify. Analyzuje prebiehajúce turné v reálnom čase a automaticky generuje presné warm-up playlisty.',
+    subtitle: 'Dátovo riadený agregátor koncertných setlistov & Spotify kompilátor',
+    category: 'Webová Aplikácia & Music Tech',
+    tagline: 'Dátovo riadený agregátor koncertných setlistov, ktorý v reálnom čase analyzuje turné zo Setlist.fm a okamžite zostavuje presné playlisty do Spotify prostredníctvom automatizovaného párovania skladieb.',
+    description: 'SetDrift je inovatívna webová aplikácia a PWA prepájajúca reálne živé setlisty zo Setlist.fm so službou Spotify. Analyzuje prebiehajúce turné v reálnom čase a automaticky generuje presné warm-up playlisty.',
     longDescription: [
-      'SetDrift vznikol ako odpoveď na potrebu moderných fanúšikov hudby a návštevníkov festivalov prísť na koncerty dokonale pripravený. Aplikácia prepája komunitnú databázu Setlist.fm s oficiálnym Spotify Web API.',
-      'Srdcom architektúry je pokročilý dátový parser a predikčný algoritmus, ktorý agreguje setlisty z posledných zastávok prebiehajúceho turné, odstraňuje duplicity a nezrovnalosti v názvoch skladieb fuzzy regex matchingom a rekonštruuje set rozdelený na hlavnú časť a prídavky.',
-      'Unikátnou inováciou je Festival Timetable Merge: engine schopný spracovať kompletný časový rozpis viacdňového festivalu a vygenerovať chronologický playlist interpretov.',
-      'Aplikácia je postavená ako plnohodnotná Progressive Web App (PWA) s lokálnym IndexedDB úložiskom, vďaka čomu funguje spoľahlivo aj v preťažených sieťach festivalových arén a štadiónov.'
+      'SetDrift vznikol ako odpoveď na potrebu hudobných fanúšikov a návštevníkov festivalov prísť na koncerty dokonale pripravení. Aplikácia inteligentne prepája komunitnú databázu Setlist.fm s oficiálnym Spotify Web API.',
+      'Srdcom architektúry je pokročilý dátový parser a predikčný algoritmus, ktorý agreguje setlisty z posledných zastávok prebiehajúceho turné, odstraňuje duplicity a nezrovnalosti v názvoch skladieb pomocou fuzzy regex matching a rekonštruuje pravdepodobný koncertný set rozdelený na hlavnú časť a prídavky (Encores).',
+      'Unikátnou inováciou je Festival Timetable Merge: inteligentný engine schopný spracovať kompletný časový harmonogram viacdňového festivalu a vygenerovať ucelený chronologický warm-up playlist všetkých vystupujúcich interpretov.',
+      'Aplikácia je vyvinutá ako plnohodnotná Progressive Web App (PWA) s lokálnym IndexedDB úložiskom, vďaka čomu funguje spoľahlivo aj v sieťovo preťažených prostrediach festivalových areálov a štadiónov.'
     ],
     features: [
-      'Intelligent Setlist Prediction: Aggregates recent tour dates, cleans metadata with fuzzy regex matching, and structures sets into Main Set and Encores.',
-      'Festival Timetable Merge: Multi-artist engine that merges whole festival schedules into a single chronological warmup playlist.',
-      'PWA & Offline Resilience: Fully installable mobile PWA with client-side caching (IndexedDB) for network-constrained stadium/festival environments.',
-      'Direct Spotify OAuth & Deep Linking: Frictionless 1-click export directly into native mobile Spotify apps.'
+      'Inteligentná predikcia setlistov: Agregácia nedávnych dátumov turné, čistenie metadát fuzzy regex matchingom a štruktúrovanie na hlavný set a prídavky (Encores)',
+      'Zlúčenie festivalových harmonogramov: Multi-artist engine pre zlúčenie celého festivalového harmonogramu do jedného chronologického warm-up playlistu',
+      'PWA & offline odolnosť: Plne inštalovateľná mobilná PWA s klientskym cachovaním (IndexedDB) pre festivalové areály so slabým internetovým pripojením',
+      'Priame Spotify prepojenie & deep linking: 1-klikový OAuth export a okamžité otvorenie vytvoreného playlistu v natívnej mobilnej aplikácii Spotify'
     ],
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spotify Web API', 'Setlist.fm API', 'Upstash Redis', 'PWA'],
     liveUrl: 'https://setdrift.elysiotech.com',
     image: setDriftLogo.src,
     bgClass: 'bg-[#0a0f18]',
     deliverables: [
-      'Full-Stack Architecture',
-      'UI/UX Design & Branding',
-      'Spotify Web API & OAuth Integration',
-      'Setlist.fm API & Regex Parser',
-      'Mobile PWA & IndexedDB Offline Cache',
-      'Upstash Redis Rate-Limiting & Caching'
+      'Full-Stack architektúra',
+      'UI/UX návrh & branding',
+      'Integrácia Spotify Web API & OAuth',
+      'Setlist.fm API & dátový parser',
+      'Mobilná PWA & IndexedDB offline cache',
+      'Upstash Redis rate-limiting & cache'
     ],
-    role: 'Full-Stack Architecture, UI/UX Design, API Integration',
-    ctaText: 'Launch App →'
+    role: 'Full-Stack architektúra, UI/UX dizajn, API integrácia',
+    ctaText: 'Spustiť aplikáciu →'
   }
 ];
 

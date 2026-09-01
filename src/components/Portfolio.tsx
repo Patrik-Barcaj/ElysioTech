@@ -91,7 +91,7 @@ export default function Portfolio() { // export Portfolio component function
                                                     rel="noopener noreferrer"
                                                     className="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold font-display text-xs tracking-wide transition-all shadow-[0_0_10px_rgba(245,158,11,0.3)] flex items-center gap-1"
                                                 >
-                                                    <span>{proj.slug === 'setdrift' ? 'Launch App →' : (proj.ctaText || 'Navštíviť ↗')}</span>
+                                                    <span>{proj.ctaText || 'Navštíviť ↗'}</span>
                                                 </a>
                                             )}
                                             <Link

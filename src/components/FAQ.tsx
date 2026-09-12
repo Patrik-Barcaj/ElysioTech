@@ -96,7 +96,7 @@ export default function FAQ() { // export FAQ component function
         <section id="faq" className="py-24 bg-zinc-950 relative border-t border-zinc-800"> {/* section wrapper */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-12"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-800/50 text-xs font-display tracking-widest text-emerald-400 mb-3 uppercase">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-display tracking-widest text-amber-400 mb-3 uppercase">
                         Otázky a odpovede
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-50 font-display">Často kladené otázky</h2> {/* title */}
@@ -113,8 +113,8 @@ export default function FAQ() { // export FAQ component function
                                 onClick={() => setActiveCategory(cat.id)}
                                 className={`px-4 py-2.5 rounded-xl font-display text-xs sm:text-sm font-semibold transition-all duration-300 ${
                                     isActive
-                                        ? 'bg-emerald-500 hover:bg-emerald-400 text-zinc-950 shadow-[0_0_15px_rgba(16,185,129,0.25)] scale-105'
-                                        : 'bg-zinc-900/70 text-zinc-300 border border-zinc-800 hover:border-zinc-700 hover:text-zinc-100'
+                                        ? 'bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold shadow-lg shadow-emerald-950/40 scale-105'
+                                        : 'bg-zinc-900/80 text-zinc-300 border border-zinc-800 hover:border-zinc-700 hover:text-zinc-100 backdrop-blur-sm'
                                 }`}
                             >
                                 {cat.name}
@@ -129,13 +129,13 @@ export default function FAQ() { // export FAQ component function
                         const isOpen = openId === faq.id;
                         return (
                             <ScrollReveal key={faq.id} delay={index * 0.05}>
-                                <div className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-zinc-900/70 border-emerald-500/40 shadow-[0_10px_25px_rgba(16,185,129,0.06)]' : 'bg-zinc-900/40 border-zinc-800 hover:border-zinc-700'}`}>
+                                <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-300 ${isOpen ? 'bg-zinc-900/80 border-emerald-500/40 shadow-lg shadow-emerald-950/20' : 'bg-zinc-900/80 border-zinc-800 hover:border-zinc-700'}`}>
                                     <button
                                         onClick={() => toggleFaq(faq.id)}
                                         className="w-full flex justify-between items-center p-6 text-left focus:outline-none gap-4"
                                     >
                                         <div>
-                                            <span className="text-[11px] font-bold font-display uppercase tracking-wider text-emerald-400 block mb-1">
+                                            <span className="text-[11px] font-bold font-display uppercase tracking-wider text-amber-400 block mb-1">
                                                 {faq.categoryName}
                                             </span>
                                             <span className={`text-base sm:text-lg font-bold font-display transition-colors ${isOpen ? 'text-emerald-400' : 'text-zinc-50'}`}>

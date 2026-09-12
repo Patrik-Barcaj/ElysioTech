@@ -59,7 +59,7 @@ export default function Testimonials() { // export Testimonials component functi
         <section id="testimonials" className="py-24 bg-zinc-950 relative border-t border-zinc-800"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-800/50 text-xs font-display tracking-widest text-emerald-400 mb-3 uppercase">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-display tracking-widest text-amber-400 mb-3 uppercase">
                         Hodnotenia
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-50 font-display">Čo hovoria naši klienti</h2> {/* title */}
@@ -80,8 +80,8 @@ export default function Testimonials() { // export Testimonials component functi
                         > {/* slider flex container */}
                             {allReviews.map((r) => ( // map all reviews
                                 <div key={r.id} className="w-full shrink-0 px-2 sm:px-4 py-4 select-none"> {/* slide wrapper */}
-                                    <div className="max-w-md mx-auto bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700 shadow-lg"> {/* card */}
-                                        <div className="flex mb-4 text-lg text-emerald-400">
+                                    <div className="max-w-md mx-auto bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700 shadow-lg"> {/* card */}
+                                        <div className="flex mb-4 text-lg text-amber-400">
                                             ★★★★★
                                         </div> {/* stars rating */}
                                         <p className="text-zinc-300 text-sm sm:text-base italic mb-6 leading-relaxed">&ldquo;{r.text}&rdquo;</p> {/* testimonial text */}

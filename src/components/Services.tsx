@@ -6,7 +6,7 @@ export default function Services() { // export Services component
         <section id="services" className="py-24 min-h-[100dvh] flex items-center relative border-t border-zinc-800"> {/* main services section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"> {/* container */}
                 <div className="text-center mb-16"> {/* header wrapper */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/50 border border-emerald-800/50 text-xs font-display tracking-widest text-emerald-400 mb-3 uppercase">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-display tracking-widest text-amber-400 mb-3 uppercase">
                         Technické služby
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-50 font-display tracking-tight">
@@ -22,7 +22,7 @@ export default function Services() { // export Services component
                     
                     {/* Pillar 1: Vývoj softvéru & Webové aplikácie */}
                     <ScrollReveal delay={0.1} className="h-full">
-                        <div className="h-full bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                        <div className="h-full bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-colors"></div>
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
@@ -57,7 +57,7 @@ export default function Services() { // export Services component
                                     <span className="text-xs text-zinc-500 block uppercase tracking-wider">Cena a rozsah</span>
                                     <span className="text-xl font-display font-bold text-zinc-50">od 250 €</span>
                                 </div>
-                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/50 text-emerald-400 border border-emerald-800/50">
+                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold text-amber-400 bg-amber-950/30 border border-amber-800/40">
                                     Next.js & React
                                 </span>
                             </div>
@@ -66,7 +66,7 @@ export default function Services() { // export Services component
 
                     {/* Pillar 2: Letecká vizualizácia & Zber dát */}
                     <ScrollReveal delay={0.2} className="h-full">
-                        <div className="h-full bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                        <div className="h-full bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-colors"></div>
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
@@ -101,8 +101,8 @@ export default function Services() { // export Services component
                                     <span className="text-xs text-zinc-500 block uppercase tracking-wider">Cena a rozsah</span>
                                     <span className="text-xl font-display font-bold text-zinc-50">od 75 €</span>
                                 </div>
-                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/50 text-emerald-400 border border-emerald-800/50">
-                                    Licencia EASA
+                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold text-amber-400 bg-amber-950/30 border border-amber-800/40">
+                                    Licencia EASA A1/A3
                                 </span>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ export default function Services() { // export Services component
 
                     {/* Pillar 3: Priemyselná veľkoformátová tlač */}
                     <ScrollReveal delay={0.3} className="h-full">
-                        <div className="h-full bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                        <div className="h-full bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/50 hover:shadow-[0_0_35px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-colors"></div>
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
@@ -145,7 +145,7 @@ export default function Services() { // export Services component
                                     <span className="text-xs text-zinc-500 block uppercase tracking-wider">Cena a rozsah</span>
                                     <span className="text-xl font-display font-bold text-zinc-50">od 25 € / hod.</span>
                                 </div>
-                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/50 text-emerald-400 border border-emerald-800/50">
+                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold text-amber-400 bg-amber-950/30 border border-amber-800/40">
                                     Priama UV tlač
                                 </span>
                             </div>

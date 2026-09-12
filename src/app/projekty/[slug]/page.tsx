@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* Project Header */}
           <div className="mb-12 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/50 border border-emerald-800/50 text-xs font-display tracking-widest text-emerald-400 mb-4 uppercase">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-display tracking-widest text-amber-400 mb-4 uppercase">
               {project.category}
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-zinc-50 font-display tracking-tight leading-tight mb-4">
@@ -92,7 +92,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </p>
             {project.role && (
               <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-zinc-900/60 border border-zinc-800 text-xs text-zinc-400">
-                <span className="text-emerald-400 font-bold uppercase tracking-wider font-display">Rola:</span>
+                <span className="text-amber-400 font-bold uppercase tracking-wider font-display">Rola:</span>
                 <span className="font-medium text-zinc-200">{project.role}</span>
               </div>
             )}
@@ -105,7 +105,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="lg:col-span-2 space-y-10">
               
               {/* Detailed Description */}
-              <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-sm">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-sm">
                 <h2 className="text-2xl font-bold font-display text-zinc-50 mb-6 border-l-4 border-emerald-500 pl-4">
                   O projekte & Riešenie
                 </h2>
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Key Features */}
-              <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-sm">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-sm">
                 <h2 className="text-2xl font-bold font-display text-zinc-50 mb-6 border-l-4 border-emerald-500 pl-4">
                   Kľúčové funkcie & Vlastnosti
                 </h2>
@@ -134,7 +134,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Deliverables */}
-              <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-sm">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 sm:p-10 shadow-sm">
                 <h2 className="text-xl font-bold font-display text-zinc-50 mb-4">
                   Rozsah dodávky
                 </h2>
@@ -154,7 +154,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="space-y-8 sticky top-28">
               
               {/* Visual Card */}
-              <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 shadow-sm overflow-hidden group">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 shadow-sm overflow-hidden group">
                 <div className={`relative aspect-video sm:aspect-square w-full rounded-2xl overflow-hidden ${project.bgClass || 'bg-zinc-950/60'} border border-zinc-800 mb-6 flex items-center justify-center p-4`}>
                   <div className="relative w-full h-full">
                     <Image
@@ -172,7 +172,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   href={project.liveUrl}
                   target={isExternalLink ? '_blank' : undefined}
                   rel={isExternalLink ? 'noopener noreferrer' : undefined}
-                  className="w-full py-4 px-6 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold font-display rounded-xl text-base tracking-wide transition-all shadow-[0_0_20px_rgba(16,185,129,0.25)] hover:shadow-[0_0_30px_rgba(16,185,129,0.35)] flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
+                  className="w-full py-4 px-6 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold font-display rounded-xl text-base tracking-wide transition-all shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
                 >
                   <span>{project.ctaText || (isExternalLink ? 'Navštíviť živý web' : 'Zobraziť v portfóliu')}</span>
                   <span className="text-lg">↗</span>
@@ -180,7 +180,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Technology Stack Card */}
-              <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
                 <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-wider font-display mb-4">
                   Použité technológie
                 </h3>
@@ -188,7 +188,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   {project.technologies.map((tech) => (
                     <span
                       key={`tech-${tech}`}
-                      className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-zinc-800/60 text-zinc-300 border border-zinc-700/50"
+                      className="px-3 py-1.5 rounded-xl text-xs font-semibold text-amber-400 bg-amber-950/30 border border-amber-800/40"
                     >
                       {tech}
                     </span>
@@ -197,7 +197,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Consultation CTA Card */}
-              <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-sm">
                 <h3 className="text-lg font-bold font-display text-zinc-50 mb-2">
                   Máte záujem o podobné riešenie?
                 </h3>
@@ -209,7 +209,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-bold font-display text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2"
+                    className="w-full py-3 px-4 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold font-display text-xs sm:text-sm transition-all shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2"
                   >
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
                     <span>Napísať na WhatsApp</span>
@@ -237,10 +237,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <Link
                   key={other.id}
                   href={`/projekty/${other.slug}`}
-                  className="group bg-zinc-900/70 backdrop-blur-sm border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:shadow-lg transition-all flex flex-col justify-between"
+                  className="group bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:shadow-lg transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider block mb-2">{other.category}</span>
+                    <span className="text-xs text-amber-400 font-bold uppercase tracking-wider block mb-2">{other.category}</span>
                     <h3 className="text-lg font-bold font-display text-zinc-100 group-hover:text-emerald-400 transition-colors mb-2">
                       {other.title}
                     </h3>

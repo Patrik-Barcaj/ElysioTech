@@ -155,14 +155,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               
               {/* Visual Card */}
               <div className="bg-[#121214] border border-neutral-800 rounded-3xl p-6 shadow-sm overflow-hidden group">
-                <div className={`relative aspect-video sm:aspect-square w-full rounded-2xl overflow-hidden ${project.bgClass || 'bg-black/40'} border border-neutral-800 mb-6 flex items-center justify-center p-4`}>
+                <div className={`relative aspect-video sm:aspect-square w-full rounded-2xl overflow-hidden ${project.bgClass || 'bg-black/40'} border border-neutral-800 mb-6 flex items-center justify-center ${project.imageFit === 'cover' ? 'p-0' : 'p-4'}`}>
                   <div className="relative w-full h-full">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-contain transform transition-transform duration-500 group-hover:scale-105"
+                      className={`${project.imageFit === 'cover' ? 'object-cover object-center' : 'object-contain'} transform transition-transform duration-500 group-hover:scale-105`}
                     />
                   </div>
                 </div>

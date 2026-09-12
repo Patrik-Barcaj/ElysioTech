@@ -16,6 +16,7 @@ export interface ProjectItem {
   technologies: string[];
   liveUrl: string;
   image: string;
+  imageFit?: 'contain' | 'cover';
   bgClass?: string;
   deliverables: string[];
   role?: string;
@@ -73,6 +74,7 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
     liveUrl: 'https://zenpierce.elysiotech.com',
     image: zenPierceLogo.src,
+    imageFit: 'cover',
     bgClass: 'bg-[#111111]',
     deliverables: ['Prezentačný web', 'Katalóg šperkov', 'SEO optimalizácia', 'Responzívny dizajn'],
     ctaText: 'Navštíviť web →'

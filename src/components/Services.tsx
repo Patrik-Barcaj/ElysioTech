@@ -4,6 +4,7 @@ import ScrollReveal from './ui/ScrollReveal'; // import ScrollReveal
 export default function Services() { // export Services component
     return ( // start return block
         <section id="services" className="py-24 min-h-[100dvh] flex items-center relative border-t border-neutral-800 bg-[#080808]"> {/* main services section */}
+            <div id="cennik" className="absolute -top-12 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"> {/* container */}
                 <div className="text-center mb-16"> {/* header wrapper */}
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">

@@ -24,45 +24,58 @@ export default function Hero() { // export Hero component function
                         </div> {/* pre-heading end */}
                         
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}
-                            Zákazkový softvér, <br className="hidden sm:inline" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">letecké dáta a veľkoformátová tlač.</span>
+                            Technické služby bez agentúrnej prirážky: <br className="hidden sm:inline" />
+                            <span className="text-[#FFB800]">Letecké dáta</span>, Tlač a <span className="text-[#00D26A]">Weby</span>.
                         </h1> {/* main headline end */}
                         
                         <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"> {/* subheadline */}
-                            Vyvíjame moderné webové aplikácie a prezentačné weby, spracovávame letecké snímky dronom a zabezpečujeme priamu priemyselnú tlač. Všetko pod priamym technickým dohľadom od návrhu po finálny výstup.
+                            Potrebujete zamerať pozemok dronom, vyrobiť pevnú reklamnú tabuľu alebo spustiť bleskový web? Priama realizácia od špecialistu bez sprostredkovateľov, s dodaním do 48 hodín.
                         </p> {/* subheadline end */}
                         
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10"> {/* cta group */}
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3"> {/* cta group */}
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
+                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-8 py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5"
+                                className="px-8 py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
                             >
-                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
-                                Kontaktovať cez WhatsApp
+                                <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+                                <span>Rýchla kalkulácia cez WhatsApp</span>
                             </a>
                             <Link
-                                href="/#services"
-                                className="px-8 py-4 bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 rounded-xl font-bold font-display hover:bg-[#18181b] transition-all flex items-center justify-center"
+                                href="/#cennik"
+                                className="px-8 py-4 bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 rounded-xl font-bold font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
                             >
-                                Prehľad služieb a riešení
+                                Zobraziť cenník služieb
                             </Link>
                         </div> {/* cta group end */}
 
-                        {/* Trust Points */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-neutral-800 text-left">
-                            <div className="flex items-start gap-2.5">
-                                <span className="text-[#00D26A] font-bold shrink-0">✓</span>
-                                <span className="text-xs sm:text-sm text-zinc-300 font-medium">Full-Stack softvérový vývoj</span>
-                            </div>
-                            <div className="flex items-start gap-2.5">
-                                <span className="text-[#00D26A] font-bold shrink-0">✓</span>
-                                <span className="text-xs sm:text-sm text-zinc-300 font-medium">Certifikovaná prevádzka <strong className="text-[#FFB800]">EASA A1/A3</strong></span>
-                            </div>
-                            <div className="flex items-start gap-2.5">
-                                <span className="text-[#00D26A] font-bold shrink-0">✓</span>
-                                <span className="text-xs sm:text-sm text-zinc-300 font-medium">Priama priemyselná UV tlač</span>
+                        {/* Microcopy reassurance under buttons */}
+                        <p className="font-mono text-xs text-zinc-400 mt-2 mb-8 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
+                            <span className="text-[#00D26A] font-bold">●</span> Odpovedáme do 15 minút • Stačí poslať lokalitu alebo zadanie
+                        </p>
+
+                        {/* Interactive Service Router */}
+                        <div className="pt-6 border-t border-neutral-800 text-left">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+                                <Link
+                                    href="/#cennik"
+                                    className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                                >
+                                    <span>✈️</span> Dron od 75 €
+                                </Link>
+                                <Link
+                                    href="/#cennik"
+                                    className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                                >
+                                    <span>🖨️</span> Priemyselná tlač od 25 €/h
+                                </Link>
+                                <Link
+                                    href="/#cennik"
+                                    className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                                >
+                                    <span>💻</span> Bleskový Web od 250 €
+                                </Link>
                             </div>
                         </div>
                     </div> {/* text content wrapper end */}

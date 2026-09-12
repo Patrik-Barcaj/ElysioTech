@@ -11,7 +11,7 @@ import Marquee from '@/components/ui/Marquee'; // import Marquee component
 
 export default function Home() { // export default Home component function
   return ( // return JSX layout
-    <main className="min-h-[100dvh] text-gray-900 dark:text-white relative"> {/* main container wrapper */}
+    <main className="min-h-[100dvh] bg-[#080808] text-zinc-300 relative"> {/* main container wrapper */}
       <Navigation /> {/* render navigation header */}
       <Hero /> {/* render asymmetric minimalist hero */}
       <Marquee items={['Letecké Ortofotomapy', 'Vektorové GIS Siete', 'Priama UV Tlač Dibond & Komatex', 'Veľkoformátové Bannery', 'Next.js & TypeScript Vývoj', 'MapLibre GIS Integrácia', 'Certifikácia EASA A1/A3', 'Expresná Realizácia']} /> {/* render infinite marquee */}

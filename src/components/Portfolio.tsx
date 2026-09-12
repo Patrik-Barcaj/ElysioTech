@@ -37,27 +37,27 @@ export default function Portfolio() { // export Portfolio component function
     }; // prev function end
 
     return ( // return JSX layout
-        <section id="portfolio" className="py-24 bg-white dark:bg-[#0B0F17] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
+        <section id="portfolio" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-3 uppercase">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">
                         Portfólio realizácií
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Naše projekty</h2> {/* title */}
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Naše projekty</h2> {/* title */}
                 </div> {/* header block end */}
 
                 {/* Unified Portfolio */}
                 <div className="mb-16"> {/* portfolio wrapper */}
 
-                    <h3 className="text-2xl font-bold font-display text-gray-900 dark:text-white mb-6 border-l-4 border-amber-500 pl-4">
-                        Weby & <span className="text-amber-500">Aplikácie</span>
+                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4">
+                        Weby & <span className="text-[#00D26A]">Aplikácie</span>
                     </h3> {/* projects title */}
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"> {/* projects layout */}
                         {projectsData.map((proj) => ( // map projects
                             <div
                                 key={proj.id}
-                                className={`group relative aspect-square overflow-hidden rounded-2xl ${proj.bgClass || 'bg-black/5 dark:bg-white/5'} border border-black/10 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-amber-500/50 transition-all`}
+                                className={`group relative aspect-square overflow-hidden rounded-2xl ${proj.bgClass || 'bg-[#121214]'} border border-neutral-800 shadow-sm hover:shadow-xl hover:border-[#00D26A]/50 transition-all`}
                             >
                                 {/* Stretched link to project case study */}
                                 <Link
@@ -77,7 +77,7 @@ export default function Portfolio() { // export Portfolio component function
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5 z-10 pointer-events-none">
                                     <div className="w-full pointer-events-auto">
-                                        <p className="text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">{proj.category}</p>
+                                        <p className="text-[#FFB800] text-xs font-bold uppercase tracking-wider mb-1">{proj.category}</p>
                                         <h4 className="text-white font-bold font-display drop-shadow-md text-sm sm:text-base leading-tight mb-2.5">{proj.title}</h4>
                                         <div className="flex flex-wrap items-center gap-2">
                                             {proj.liveUrl && proj.liveUrl.startsWith('http') && (
@@ -85,7 +85,7 @@ export default function Portfolio() { // export Portfolio component function
                                                     href={proj.liveUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold font-display text-xs tracking-wide transition-all shadow-[0_0_10px_rgba(245,158,11,0.3)] flex items-center gap-1"
+                                                    className="px-2.5 py-1 rounded-lg bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-xs tracking-wide transition-all shadow-lg shadow-[#00D26A]/25 flex items-center gap-1"
                                                 >
                                                     <span>{proj.ctaText || 'Navštíviť ↗'}</span>
                                                 </a>
@@ -103,8 +103,8 @@ export default function Portfolio() { // export Portfolio component function
                         ))}
                     </div> {/* projects layout end */}
 
-                    <h3 className="text-2xl font-bold font-display text-gray-900 dark:text-white mb-6 border-l-4 border-emerald-500 pl-4">
-                        Foto & Video <span className="text-emerald-500">Galéria pozemkov</span>
+                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4">
+                        Foto & Video <span className="text-[#00D26A]">Galéria pozemkov</span>
                     </h3> {/* gallery title */}
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> {/* gallery layout */}
@@ -112,7 +112,7 @@ export default function Portfolio() { // export Portfolio component function
                             <div
                                 key={gal.id}
                                 onClick={() => openLightbox(idx)}
-                                className="group relative aspect-square overflow-hidden rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 cursor-pointer shadow-sm hover:shadow-xl transition-all"
+                                className="group relative aspect-square overflow-hidden rounded-2xl bg-[#121214] border border-neutral-800 cursor-pointer shadow-sm hover:shadow-xl hover:border-neutral-700 transition-all"
                             >
                                 <div className="relative w-full h-full">
                                     <Image
@@ -125,7 +125,7 @@ export default function Portfolio() { // export Portfolio component function
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"> {/* overlay */}
                                     <div className="p-5 w-full"> {/* padding wrapper */}
-                                        <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">{gal.category}</p> {/* category label */}
+                                        <p className="text-[#FFB800] text-xs font-bold uppercase tracking-wider mb-1">{gal.category}</p> {/* category label */}
                                         <h4 className="text-white font-bold font-display drop-shadow-md text-sm sm:text-base leading-tight">{gal.title}</h4> {/* title */}
                                     </div> {/* padding end */}
                                 </div> {/* overlay end */}

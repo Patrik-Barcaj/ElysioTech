@@ -93,14 +93,14 @@ export default function FAQ() { // export FAQ component function
         : faqs.filter(faq => faq.category === activeCategory);
 
     return ( // return JSX layout
-        <section id="faq" className="py-24 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
+        <section id="faq" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-12"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-3 uppercase">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-display font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
                         Otázky a odpovede
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Často kladené otázky</h2> {/* title */}
-                    <p className="text-gray-600 dark:text-gray-400 mt-3 text-base sm:text-lg">Prehľadné odpovede rozdelené podľa 3 hlavných oblastí našich služieb.</p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Často kladené otázky</h2> {/* title */}
+                    <p className="text-zinc-400 mt-3 text-base sm:text-lg">Prehľadné odpovede rozdelené podľa 3 hlavných oblastí našich služieb.</p>
                 </div> {/* header block end */}
 
                 {/* 3 Focus Area Category Switcher */}
@@ -113,8 +113,8 @@ export default function FAQ() { // export FAQ component function
                                 onClick={() => setActiveCategory(cat.id)}
                                 className={`px-4 py-2.5 rounded-xl font-display text-xs sm:text-sm font-semibold transition-all duration-300 ${
                                     isActive
-                                        ? 'bg-amber-500 text-black shadow-[0_0_15px_rgba(245,158,11,0.35)] scale-105'
-                                        : 'bg-white dark:bg-[#151C2C] text-gray-700 dark:text-gray-300 border border-black/10 dark:border-white/10 hover:border-amber-500/50'
+                                        ? 'bg-[#00D26A] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 scale-105'
+                                        : 'bg-[#121214] text-zinc-300 border border-neutral-800 hover:border-neutral-700 hover:text-white'
                                 }`}
                             >
                                 {cat.name}
@@ -129,26 +129,26 @@ export default function FAQ() { // export FAQ component function
                         const isOpen = openId === faq.id;
                         return (
                             <ScrollReveal key={faq.id} delay={index * 0.05}>
-                                <div className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-white dark:bg-[#151C2C] border-amber-500/50 shadow-[0_10px_25px_rgba(245,158,11,0.1)]' : 'bg-white/70 dark:bg-[#151C2C]/50 border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'}`}>
+                                <div className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-[#121214] border-[#00D26A]/50 shadow-[0_10px_25px_rgba(0,210,106,0.1)]' : 'bg-[#121214] border-neutral-800 hover:border-neutral-700'}`}>
                                     <button
                                         onClick={() => toggleFaq(faq.id)}
                                         className="w-full flex justify-between items-center p-6 text-left focus:outline-none gap-4"
                                     >
                                         <div>
-                                            <span className="text-[11px] font-bold font-display uppercase tracking-wider text-amber-600 dark:text-amber-400 block mb-1">
+                                            <span className="text-[11px] font-bold font-display uppercase tracking-wider text-[#FFB800] block mb-1">
                                                 {faq.categoryName}
                                             </span>
-                                            <span className={`text-base sm:text-lg font-bold font-display transition-colors ${isOpen ? 'text-amber-500 dark:text-amber-400' : 'text-gray-900 dark:text-white'}`}>
+                                            <span className={`text-base sm:text-lg font-bold font-display transition-colors ${isOpen ? 'text-[#00D26A]' : 'text-white'}`}>
                                                 {faq.q}
                                             </span>
                                         </div>
-                                        <span className={`text-2xl font-bold transition-transform duration-300 shrink-0 ${isOpen ? 'text-amber-500 rotate-45' : 'text-gray-400'}`}>
+                                        <span className={`text-2xl font-bold transition-transform duration-300 shrink-0 ${isOpen ? 'text-[#00D26A] rotate-45' : 'text-zinc-500'}`}>
                                             +
                                         </span>
                                     </button>
                                     
-                                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 border-t border-black/5 dark:border-white/10 p-6 pt-3 opacity-100' : 'max-h-0 p-0 opacity-0'}`}>
-                                        <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 border-t border-neutral-800 p-6 pt-3 opacity-100' : 'max-h-0 p-0 opacity-0'}`}>
+                                        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                                             {faq.a}
                                         </p>
                                     </div>

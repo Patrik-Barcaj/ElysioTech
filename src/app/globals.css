@@ -7,8 +7,9 @@
   --color-vivid-green: #00D26A;
   --color-vivid-green-hover: #00B85C;
   --color-industrial-yellow: #FFB800;
-  --font-sans: var(--font-inter), sans-serif;
-  --font-display: var(--font-orbitron), sans-serif;
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-display: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 html {

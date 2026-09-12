@@ -1,18 +1,18 @@
 import type { Metadata } from "next"; // import the metadata type
-import { Orbitron, Inter } from "next/font/google"; // import google fonts
+import { Geist, Geist_Mono } from "next/font/google"; // import google fonts
 import "./globals.css"; // import global css
 import AnimatedBackground from '@/components/ui/AnimatedBackground'; // import animated background component
 import { ThemeProvider } from "@/components/ThemeProvider"; // import theme provider
 
-const orbitron = Orbitron({ // start orbitron font config
-  variable: "--font-orbitron", // set css var name
+const geistSans = Geist({ // start geist sans font config
+  variable: "--font-geist-sans", // set css var name
   subsets: ["latin"], // set latin subset
-}); // end orbitron font config
+}); // end geist sans font config
 
-const inter = Inter({ // start inter font config
-  variable: "--font-inter", // set css var name
+const geistMono = Geist_Mono({ // start geist mono font config
+  variable: "--font-geist-mono", // set css var name
   subsets: ["latin"], // set latin subset
-}); // end inter font config
+}); // end geist mono font config
 
 export const metadata: Metadata = { // export metadata object
   title: "ELYSIO TECH | Dronové zábery pozemkov, veľkoformátová tlač a softvér na mieru (Západné Slovensko)", // set page title
@@ -25,7 +25,7 @@ export default function RootLayout({ // export root layout component
   children: React.ReactNode; // define typed children node
 }>) { // open function body
   return ( /* start component return */
-    <html lang="sk" suppressHydrationWarning className={`${orbitron.variable} ${inter.variable} dark h-full antialiased`} /* open html tag with language, styles, and font variables */ >
+    <html lang="sk" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`} /* open html tag with language, styles, and font variables */ >
       <body className="min-h-full flex flex-col font-sans selection:bg-[#00D26A] selection:text-black bg-[#080808] text-[#f4f4f5] relative transition-colors duration-300" /* open body tag with styling */ >
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}> {/* wrap in theme provider locked to dark */}
         <AnimatedBackground /> {/* render animated background globally */}

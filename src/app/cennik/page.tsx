@@ -40,13 +40,13 @@ export default function PricingPage() { // export pricing page component
                                         </span>
                                     </div>
                                     <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 290 €</span>
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 250 €</span>
                                         <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ projekt</span>
                                     </div>
                                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">
                                             <span className="text-amber-500 font-bold">•</span>
-                                            <span><strong>Prezentačné weby (od 290 €):</strong> Rýchly Next.js kód, mobilná responzivita a optimalizácia.</span>
+                                            <span><strong>Prezentačné weby (od 250 €):</strong> Rýchly Next.js kód, mobilná responzivita a optimalizácia.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
                                             <span className="text-amber-500 font-bold">•</span>
@@ -82,7 +82,7 @@ export default function PricingPage() { // export pricing page component
                                         </span>
                                     </div>
                                     <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 150 €</span>
+                                        <span className="text-3xl sm:text-4xl font-extrabold font-display text-gray-900 dark:text-white">od 75 €</span>
                                         <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ výjazd</span>
                                     </div>
                                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
@@ -124,8 +124,8 @@ export default function PricingPage() { // export pricing page component
                                         </span>
                                     </div>
                                     <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/10">
-                                        <span className="text-2xl sm:text-3xl font-extrabold font-display text-gray-900 dark:text-white">Podľa formátu</span>
-                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">/ m²</span>
+                                        <span className="text-2xl sm:text-3xl font-extrabold font-display text-gray-900 dark:text-white">od 25 € / hod.</span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 ml-2">(alebo podľa formátu)</span>
                                     </div>
                                     <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">

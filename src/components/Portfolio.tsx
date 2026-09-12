@@ -1,19 +1,15 @@
 "use client"; // use client directive
 import React, { useState } from 'react'; // import react library with useState
-import droneImg1 from '../assets/drone pics/DJI_0228.jpg'; // import drone image 1
-import droneImg2 from '../assets/drone pics/DJI_0234.jpg'; // import drone image 2
-import droneImg3 from '../assets/drone pics/DJI_0235.jpg'; // import drone image 3
-import droneImg4 from '../assets/drone pics/DJI_0236.jpg'; // import drone image 4
 import Link from 'next/link';
 import Image from 'next/image';
 import { projectsData } from '@/data/projects';
 
 export default function Portfolio() { // export Portfolio component function
     const gallery = [ // array of gallery images
-        { id: 'gal-drone-1', title: 'Letecké Zábery Pozemkov pre Developerov', category: 'Letecké Ortofoto & Video', src: droneImg1.src }, // gal 1
-        { id: 'gal-drone-2', title: 'Zameranie Parciálnych Hraníc', category: 'Vektorové Kóty & Siete', src: droneImg2.src }, // gal 2
-        { id: 'gal-drone-3', title: 'Prezentácia Stavebného Areálu', category: 'Veľkoformátový Zber Dát', src: droneImg3.src }, // gal 3
-        { id: 'gal-drone-4', title: 'Presná Ortofotomapa Pozemku (90°)', category: 'Geodézia & Kataster', src: droneImg4.src } // gal 4
+        { id: 'gal-drone-1', title: 'Letecké Zábery Pozemkov pre Developerov', category: 'Letecké Ortofoto & Video', src: '/drone/DJI_0228.jpg' }, // gal 1
+        { id: 'gal-drone-2', title: 'Zameranie Parciálnych Hraníc', category: 'Vektorové Kóty & Siete', src: '/drone/DJI_0234.jpg' }, // gal 2
+        { id: 'gal-drone-3', title: 'Prezentácia Stavebného Areálu', category: 'Veľkoformátový Zber Dát', src: '/drone/DJI_0235.jpg' }, // gal 3
+        { id: 'gal-drone-4', title: 'Presná Ortofotomapa Pozemku (90°)', category: 'Geodézia & Kataster', src: '/drone/DJI_0236.jpg' } // gal 4
     ]; // gallery end
 
     const [lightbox, setLightbox] = useState<number | null>(null); // lightbox state

@@ -55,7 +55,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-black/5 dark:border-white/10 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-gray-500 dark:text-gray-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-gray-900 dark:text-white">od 290 € / na mieru</span>
+                                    <span className="text-xl font-display font-bold text-gray-900 dark:text-white">od 250 €</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
                                     Next.js & React
@@ -99,7 +99,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-black/5 dark:border-white/10 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-gray-500 dark:text-gray-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-gray-900 dark:text-white">od 150 €</span>
+                                    <span className="text-xl font-display font-bold text-gray-900 dark:text-white">od 75 €</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
                                     Licencia EASA
@@ -143,7 +143,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-black/5 dark:border-white/10 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-gray-500 dark:text-gray-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-gray-900 dark:text-white">Podľa formátu</span>
+                                    <span className="text-xl font-display font-bold text-gray-900 dark:text-white">od 25 € / hod.</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
                                     Priama UV tlač

@@ -109,9 +109,9 @@ export const projectsData: ProjectItem[] = [
     slug: 'setdrift',
     title: 'SetDrift',
     subtitle: 'Dátovo riadený agregátor koncertných setlistov & Spotify kompilátor',
-    category: 'Webová Aplikácia & Music Tech',
+    category: 'Webová Aplikácia & API Integrácia',
     tagline: 'Dátovo riadený agregátor koncertných setlistov, ktorý v reálnom čase analyzuje turné zo Setlist.fm a okamžite zostavuje presné playlisty do Spotify prostredníctvom automatizovaného párovania skladieb.',
-    description: 'SetDrift je inovatívna webová aplikácia a PWA prepájajúca reálne živé setlisty zo Setlist.fm so službou Spotify. Analyzuje prebiehajúce turné v reálnom čase a automaticky generuje presné warm-up playlisty.',
+    description: 'Automatizácia a synchronizácia dát cez Spotify API a Setlist.fm.',
     longDescription: [
       'SetDrift vznikol ako odpoveď na potrebu hudobných fanúšikov a návštevníkov festivalov prísť na koncerty dokonale pripravení. Aplikácia inteligentne prepája komunitnú databázu Setlist.fm s oficiálnym Spotify Web API.',
       'Srdcom architektúry je pokročilý dátový parser a predikčný algoritmus, ktorý agreguje setlisty z posledných zastávok prebiehajúceho turné, odstraňuje duplicity a nezrovnalosti v názvoch skladieb pomocou fuzzy regex matching a rekonštruuje pravdepodobný koncertný set rozdelený na hlavnú časť a prídavky (Encores).',

@@ -45,15 +45,15 @@ export default function PricingPage() { // export pricing page component
                                     </div>
                                     <ul className="space-y-3 text-sm text-zinc-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Prezentačné weby (od 250 €):</strong> Rýchly Next.js kód, mobilná responzivita a optimalizácia.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>GIS a mapové aplikácie:</strong> Zákazkové mapové zobrazenia (MapLibre / MapTiler).</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Aplikácie na mieru:</strong> Interné nástroje, klientske zóny a administrácia podľa špecifikácie.</span>
                                         </li>
                                     </ul>
@@ -87,15 +87,15 @@ export default function PricingPage() { // export pricing page component
                                     </div>
                                     <ul className="space-y-3 text-sm text-zinc-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Ortofotomapy a snímky:</strong> Kolmé a šikmé zábery vo vysokom rozlíšení.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Vektorové zakreslenie:</strong> Kótovanie hraníc, výmer a inžinierskych sietí.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Certifikácia EASA (A1/A3):</strong> Bezpečná a plne legálna prevádzka.</span>
                                         </li>
                                     </ul>
@@ -129,15 +129,15 @@ export default function PricingPage() { // export pricing page component
                                     </div>
                                     <ul className="space-y-3 text-sm text-zinc-300 mb-8 leading-relaxed">
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Hliníkový Dibond:</strong> Kompozitné panely s dlhodobou stálosťou.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>PVC dosky Komatex:</strong> Ľahké panely s priamou UV potlačou.</span>
                                         </li>
                                         <li className="flex items-start gap-2.5">
-                                            <span className="text-[#00D26A] font-bold">•</span>
+                                            <span className="text-[#FFB800] font-bold">•</span>
                                             <span><strong>Spevnené PVC bannery:</strong> Opatrené kovovými očkami pre uchytenie na ploty a konštrukcie.</span>
                                         </li>
                                     </ul>

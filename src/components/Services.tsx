@@ -39,15 +39,15 @@ export default function Services() { // export Services component
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Moderný stack:</strong> Vývoj na mieru v Next.js, React a TypeScript s dôrazom na rýchlosť a čistú architektúru.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">GIS & Mapové aplikácie:</strong> Interaktívne zobrazenia a parcelné vrstvy (MapLibre / MapTiler).</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Firemné systémy:</strong> Klientske zóny, interné nástroje a prezentačné weby s načítaním do 0,5s.</span>
                                     </li>
                                 </ul>
@@ -83,15 +83,15 @@ export default function Services() { // export Services component
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Ortofotomapy:</strong> Kolmé (90°) a šikmé zábery vo vysokom rozlíšení <strong className="text-[#00D26A]">4K UHD</strong>.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Vektorové zakreslenie:</strong> Presné zobrazenie parcelných hraníc, výmer a inžinierskych sietí do fotografií.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Legislatívny súlad:</strong> Certifikovaná prevádzka podľa predpisov <strong className="text-[#00D26A]">EASA A1/A3</strong>.</span>
                                     </li>
                                 </ul>
@@ -127,15 +127,15 @@ export default function Services() { // export Services component
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white"><strong className="text-[#FFB800]">Dibond</strong> panely:</strong> Kompozitné hliníkové dosky s vysokou tvarovou stálosťou a dlhodobou odolnosťou v exteriéri.</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
+                                        <span><strong className="text-white">Dibond panely:</strong> Kompozitné hliníkové dosky s vysokou tvarovou stálosťou a dlhodobou odolnosťou v exteriéri.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Komatex dosky:</strong> Ľahké PVC panely s priamou UV potlačou pre pevnú montáž.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold mt-0.5">•</span>
+                                        <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">PVC Bannery:</strong> Spevnené bannery s kovovými očkami pre upevnenie na ploty a nosné konštrukcie.</span>
                                     </li>
                                 </ul>

@@ -71,7 +71,7 @@ export default function PricingPage() { // export pricing page component
 
                         {/* Pillar 2: Letecká vizualizácia & Zber dát */}
                         <ScrollReveal delay={0.2} className="h-full">
-                            <div className="h-full bg-[#121214] border border-neutral-800 border-t-2 border-t-[#FFB800] rounded-3xl p-8 shadow-[0_0_35px_rgba(255,184,0,0.08)] flex flex-col justify-between group relative overflow-hidden">
+                            <div className="h-full bg-[#121214] border border-neutral-800 border-t-2 border-t-[#00D26A] rounded-3xl p-8 shadow-[0_0_35px_rgba(0,210,106,0.12)] flex flex-col justify-between group relative overflow-hidden">
                                 <div>
                                     <div className="flex items-center justify-between mb-4">
                                         <h2 className="text-xl font-bold font-display text-white group-hover:text-[#00D26A] transition-colors">

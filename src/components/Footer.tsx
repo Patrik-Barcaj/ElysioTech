@@ -27,7 +27,6 @@ export default function Footer() { // export Footer component function
                             <li><Link href="/#services" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Služby</Link></li>
                             <li><Link href="/#why-elysio" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Prečo Elysio</Link></li>
                             <li><Link href="/#portfolio" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Naše projekty</Link></li>
-                            <li><Link href="/cennik" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Cenník</Link></li>
                             <li><Link href="/#faq" className="text-zinc-400 hover:text-[#00D26A] transition-colors">FAQ</Link></li>
                             <li><Link href="/#contact" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Kontakt</Link></li>
                         </ul> {/* list element end */}

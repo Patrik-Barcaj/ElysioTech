@@ -43,10 +43,10 @@ export default function Hero() { // export Hero component function
                                 <span>Rýchla kalkulácia cez WhatsApp</span>
                             </a>
                             <Link
-                                href="/#cennik"
+                                href="/#services"
                                 className="px-8 py-4 bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 rounded-xl font-bold font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
                             >
-                                Zobraziť cenník služieb
+                                Prehľad služieb a cien
                             </Link>
                         </div> {/* cta group end */}
 
@@ -59,19 +59,19 @@ export default function Hero() { // export Hero component function
                         <div className="pt-6 border-t border-neutral-800 text-left">
                             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
                                 <Link
-                                    href="/#cennik"
+                                    href="/#services"
                                     className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
                                 >
                                     <span>✈️</span> Dron od 75 €
                                 </Link>
                                 <Link
-                                    href="/#cennik"
+                                    href="/#services"
                                     className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
                                 >
                                     <span>🖨️</span> Priemyselná tlač od 25 €/h
                                 </Link>
                                 <Link
-                                    href="/#cennik"
+                                    href="/#services"
                                     className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
                                 >
                                     <span>💻</span> Bleskový Web od 250 €

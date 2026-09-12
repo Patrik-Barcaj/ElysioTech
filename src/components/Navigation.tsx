@@ -36,7 +36,6 @@ export default function Navigation() { // export default Navigation block
         { name: 'Služby', href: '/#services', id: 'services' }, // item
         { name: 'Prečo Elysio', href: '/#why-elysio', id: 'why-elysio' }, // item
         { name: 'Naše projekty', href: '/#portfolio', id: 'portfolio' }, // item
-        { name: 'Cenník', href: '/cennik', id: '' }, // item
         { name: 'FAQ', href: '/#faq', id: 'faq' }, // item
         { name: 'Kontakt', href: '/#contact', id: 'contact' }, // item
     ]; // end array

@@ -67,31 +67,54 @@ export default function Hero() { // export Hero component function
                         </div>
                     </div> {/* text content wrapper end */}
 
-                    {/* Right: Production & Tech Showcase Collage */}
-                    <div className="flex-1 relative w-full max-w-lg hidden lg:block"> {/* image collage wrapper */}
-                        <div className="relative w-full aspect-square"> {/* aspect ratio box */}
-                            {/* Photo 2: In-House Production & Drones */}
-                            <div className="absolute top-0 right-0 w-[82%] h-[78%] border border-[#FFB800]/30 rounded-3xl transform rotate-3 hover:rotate-6 hover:scale-105 transition-all duration-700 bg-[#121214] overflow-hidden shadow-[0_0_40px_rgba(255,184,0,0.2)] z-10 hover:z-30 group cursor-pointer"> {/* background card rotated */}
-                                <Image src="/drone-bg.png" alt="Letecké zábery a UV tlač" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* drone image */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"></div> {/* gradient overlay */}
-                                <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* text content */}
-                                    <h3 className="text-xl font-display font-bold text-white mb-1 drop-shadow-lg">Dron & <span className="text-[#FFB800]">UV Tlač</span></h3> {/* title */}
-                                    <p className="text-xs text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Letecké ortofoto, kótovanie sietí a odolné tabule na parcelu</p> {/* description */}
-                                </div> {/* text content end */}
-                            </div> {/* background card rotated end */}
+                    {/* Right: Flat Technical Telemetry Frame */}
+                    <div className="flex-1 relative w-full max-w-xl mx-auto lg:max-w-none">
+                        <div className="relative rounded-xl border border-neutral-800 bg-[#121214] overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] group">
+                            {/* Real Image Layer */}
+                            <Image
+                                src="/drone-preview.jpg"
+                                alt="Letecká 90° ortofotomapa pozemku dronom"
+                                fill
+                                priority
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
 
-                            {/* Photo 1: Software & GIS Solutions */}
-                            <div className="absolute bottom-0 left-0 w-[82%] h-[78%] border border-[#00D26A]/30 rounded-3xl transform -rotate-3 hover:-rotate-6 hover:scale-105 transition-all duration-700 bg-[#121214] overflow-hidden shadow-[0_0_50px_rgba(0,210,106,0.2)] z-20 hover:z-30 group cursor-pointer"> {/* foreground card rotated */}
-                                <Image src="/digital-bg.png" alt="Vývoj a GIS Riešenia" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* digital image */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"></div> {/* gradient overlay */}
-                                <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* text content */}
-                                    <h3 className="text-xl font-display font-bold text-white mb-1 drop-shadow-lg">Web & <span className="text-[#00D26A]">GIS Softvér</span></h3> {/* title */}
-                                    <p className="text-xs text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Interaktívne parcelné mapy, one-page vizitky a portály na mieru</p> {/* description */}
-                                </div> {/* text content end */}
-                            </div> {/* foreground card rotated end */}
-                            
-                        </div> {/* aspect ratio box end */}
-                    </div> {/* image collage wrapper end */}
+                            {/* Subtle dark vignette and fine grid overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.65)_100%)] pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+
+                            {/* Telemetry Overlay Badges (Top & Bottom Corners) */}
+                            {/* Top-left badge */}
+                            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex items-center">
+                                <span className="font-mono text-[11px] text-amber-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-amber-500/30 flex items-center gap-1.5 shadow-md">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></span>
+                                    ● LIVE SENSOR // 4K UHD
+                                </span>
+                            </div>
+
+                            {/* Top-right sensor status */}
+                            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 hidden sm:flex items-center">
+                                <span className="font-mono text-[10px] text-[#00D26A] bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-[#00D26A]/30 flex items-center gap-1">
+                                    GPS FIX • 18 SATS
+                                </span>
+                            </div>
+
+                            {/* Bottom-left metadata */}
+                            <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10">
+                                <span className="font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800 inline-block shadow-md">
+                                    EASA A1/A3 • 90° ORTHOPHOTO • BA-KRAJ
+                                </span>
+                            </div>
+
+                            {/* Bottom-right scale & resolution */}
+                            <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 hidden sm:flex items-center gap-1.5 font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800">
+                                <span className="w-3 h-[1px] bg-zinc-400 inline-block"></span>
+                                <span>GSD 1.2 CM/PX</span>
+                            </div>
+                        </div>
+                    </div>
 
                 </div> {/* asymmetric split end */}
             </div> {/* content container end */}

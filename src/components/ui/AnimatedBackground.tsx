@@ -22,7 +22,7 @@ export default function AnimatedBackground() { // export AnimatedBackground comp
         <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none"> {/* background wrapper */}
             {/* Base gradient blobs */}
             <motion.div  // animated blob
-                className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/[0.04] rounded-full blur-[120px]" // tailwind classes
+                className="absolute top-1/4 left-1/4 w-96 h-96 bg-aurora-purple/20 rounded-full blur-[100px]" // tailwind classes
                 animate={{ // animation definition
                     x: [0, 50, -50, 0], // x translation
                     y: [0, -50, 50, 0], // y translation
@@ -36,7 +36,7 @@ export default function AnimatedBackground() { // export AnimatedBackground comp
             /> {/* blob end */}
             
             <motion.div // animated blob
-                className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-emerald-500/[0.03] rounded-full blur-[140px]" // tailwind classes
+                className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-aurora-green/10 rounded-full blur-[120px]" // tailwind classes
                 animate={{ // animation definition
                     x: [0, -70, 70, 0], // x translation
                     y: [0, 70, -70, 0], // y translation
@@ -51,7 +51,7 @@ export default function AnimatedBackground() { // export AnimatedBackground comp
 
             {/* Mouse tracking subtle glow */}
             <motion.div // animated blob
-                className="absolute w-80 h-80 bg-zinc-800/20 rounded-full blur-[100px] pointer-events-none" // tailwind classes
+                className="absolute w-80 h-80 bg-aurora-indigo/15 rounded-full blur-[100px] pointer-events-none" // tailwind classes
                 animate={{ // animation definition
                     x: mousePosition.x - 160, // center on mouse x
                     y: mousePosition.y - 160, // center on mouse y

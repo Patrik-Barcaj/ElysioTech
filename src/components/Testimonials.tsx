@@ -56,13 +56,13 @@ export default function Testimonials() { // export Testimonials component functi
     };
 
     return ( // return JSX layout
-        <section id="testimonials" className="py-24 bg-zinc-950 relative border-t border-zinc-800"> {/* section wrapper */}
+        <section id="testimonials" className="py-24 bg-gray-50 dark:bg-[#0f1420] relative border-t border-black/5 dark:border-white/5"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-display tracking-widest text-amber-400 mb-3 uppercase">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-3 uppercase">
                         Hodnotenia
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-50 font-display">Čo hovoria naši klienti</h2> {/* title */}
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white font-display">Čo hovoria naši klienti</h2> {/* title */}
                 </div> {/* header block end */}
 
                 <div 
@@ -80,14 +80,14 @@ export default function Testimonials() { // export Testimonials component functi
                         > {/* slider flex container */}
                             {allReviews.map((r) => ( // map all reviews
                                 <div key={r.id} className="w-full shrink-0 px-2 sm:px-4 py-4 select-none"> {/* slide wrapper */}
-                                    <div className="max-w-md mx-auto bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-zinc-700 shadow-lg"> {/* card */}
-                                        <div className="flex mb-4 text-lg text-amber-400">
+                                    <div className="max-w-md mx-auto bg-white shadow-sm dark:shadow-none dark:bg-[#151C2C] border border-black/10 dark:border-white/10 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-amber-500/40 shadow-lg"> {/* card */}
+                                        <div className="flex mb-4 text-lg text-amber-500">
                                             ★★★★★
                                         </div> {/* stars rating */}
-                                        <p className="text-zinc-300 text-sm sm:text-base italic mb-6 leading-relaxed">&ldquo;{r.text}&rdquo;</p> {/* testimonial text */}
+                                        <p className="text-gray-800 dark:text-gray-200 text-sm sm:text-base italic mb-6 leading-relaxed">&ldquo;{r.text}&rdquo;</p> {/* testimonial text */}
                                         <div> {/* author wrapper */}
-                                            <p className="text-zinc-100 font-bold font-display text-base">{r.name}</p> {/* author name */}
-                                            <p className="text-xs sm:text-sm font-medium mt-1 text-emerald-400">{r.proj}</p> {/* author project */}
+                                            <p className="text-gray-900 dark:text-white font-bold font-display text-base">{r.name}</p> {/* author name */}
+                                            <p className="text-xs sm:text-sm font-medium mt-1 text-emerald-600 dark:text-emerald-400">{r.proj}</p> {/* author project */}
                                         </div> {/* author wrapper end */}
                                     </div> {/* card end */}
                                 </div> // slide wrapper end
@@ -99,14 +99,14 @@ export default function Testimonials() { // export Testimonials component functi
                     <button
                         onClick={prev}
                         aria-label="Predchádzajúce hodnotenie"
-                        className="absolute left-1 sm:left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-12 p-3 bg-zinc-900/90 backdrop-blur-sm text-zinc-100 rounded-full border border-zinc-800 hover:border-emerald-500/50 hover:text-emerald-400 transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
+                        className="absolute left-1 sm:left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-12 p-3 bg-white/90 dark:bg-[#151C2C]/90 backdrop-blur-sm text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 hover:text-amber-500 transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
                     </button>
                     <button
                         onClick={next}
                         aria-label="Ďalšie hodnotenie"
-                        className="absolute right-1 sm:right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-12 p-3 bg-zinc-900/90 backdrop-blur-sm text-zinc-100 rounded-full border border-zinc-800 hover:border-emerald-500/50 hover:text-emerald-400 transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
+                        className="absolute right-1 sm:right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-12 p-3 bg-white/90 dark:bg-[#151C2C]/90 backdrop-blur-sm text-gray-900 dark:text-white rounded-full border border-black/10 dark:border-white/10 hover:border-amber-500/50 hover:text-amber-500 transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
@@ -119,11 +119,11 @@ export default function Testimonials() { // export Testimonials component functi
                                     key={`dot-${r.id}`} 
                                     onClick={() => setCurrentIndex(i)} 
                                     aria-label={`Prejsť na hodnotenie ${i + 1}`}
-                                    className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-emerald-400 w-6' : 'bg-zinc-700 hover:bg-zinc-600 w-2'}`}
+                                    className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-amber-500 w-6' : 'bg-black/20 dark:bg-white/20 hover:bg-black/40 dark:hover:bg-white/40 w-2'}`}
                                 /> // dot
                             ))}
                         </div>
-                        <span className="text-[11px] text-zinc-500 sm:hidden">
+                        <span className="text-[11px] text-gray-500 dark:text-gray-400 sm:hidden">
                             Potiahnite prstom (swipe) alebo použite šípky
                         </span>
                     </div> {/* dots container end */}

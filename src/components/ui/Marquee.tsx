@@ -10,10 +10,10 @@ interface MarqueeProps { // define props
 
 export default function Marquee({ items, speed = 40 }: MarqueeProps) { // export Marquee component
     return ( // return JSX layout
-        <div className="relative w-full overflow-hidden bg-zinc-950/60 border-y border-zinc-800 py-6 flex items-center"> {/* marquee wrapper */}
+        <div className="relative w-full overflow-hidden dark:bg-aurora-dark/50 border-y border-black/5 dark:border-white/5 py-6 flex items-center"> {/* marquee wrapper */}
             {/* Fade edges */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-zinc-950 to-transparent z-10"></div> {/* left fade */}
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-zinc-950 to-transparent z-10"></div> {/* right fade */}
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-aurora-dark to-transparent z-10"></div> {/* left fade */}
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-aurora-dark to-transparent z-10"></div> {/* right fade */}
 
             <motion.div // animated track
                 className="flex whitespace-nowrap" // flex layout
@@ -29,10 +29,10 @@ export default function Marquee({ items, speed = 40 }: MarqueeProps) { // export
                 {/* Duplicate the items array twice to create seamless loop */}
                 {[...items, ...items, ...items, ...items].map((item, index) => ( // map duplicated items
                     <div key={index} className="flex items-center px-8"> {/* item wrapper */}
-                        <span className="text-2xl font-bold font-display text-zinc-500 uppercase tracking-widest hover:text-emerald-400 transition-colors duration-300"> {/* item text */}
+                        <span className="text-2xl font-bold font-display text-gray-900 dark:text-white/40 uppercase tracking-widest hover:text-aurora-purple transition-colors duration-300"> {/* item text */}
                             {item} {/* render text */}
                         </span> {/* text end */}
-                        <span className="w-2 h-2 rounded-full bg-emerald-500/40 mx-8"></span> {/* separator dot */}
+                        <span className="w-2 h-2 rounded-full bg-aurora-green/50 mx-8"></span> {/* separator dot */}
                     </div> // item wrapper end
                 ))} {/* map end */}
             </motion.div> {/* animated track end */}

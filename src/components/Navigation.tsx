@@ -49,14 +49,14 @@ export default function Navigation() { // export default Navigation block
     }; // end helper function
 
     return ( // start return block
-        <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#0B0F17]/85 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-all duration-300"> {/* header element */}
+        <header className="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 transition-all duration-300"> {/* header element */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> {/* container grid */}
                 <div className="flex items-center justify-between h-20"> {/* flex alignment row */}
                     <div className="flex-shrink-0"> {/* logo flex item */}
                         <Link href="/" className="flex items-center gap-2 group"> {/* logo link */}
-                            <svg className="h-8 w-auto text-gray-900 dark:text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 10L5 30H15L25 10H15Z" fill="#F59E0B" fillOpacity="0.2"/>
-                                <path d="M20 10L10 30H20L30 10H20Z" fill="#F59E0B"/>
+                            <svg className="h-8 w-auto text-zinc-50 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 10L5 30H15L25 10H15Z" fill="#10B981" fillOpacity="0.2"/>
+                                <path d="M20 10L10 30H20L30 10H20Z" fill="#10B981"/>
                                 <text x="40" y="28" fill="currentColor" className="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
                             </svg>
                         </Link> {/* end link */}
@@ -66,14 +66,14 @@ export default function Navigation() { // export default Navigation block
                             {navLinks.map((link) => { // map nav links
                                 const isActive = checkActive(link); // check if active
                                 return ( // return link
-                                    <Link key={link.name} href={link.href} className={`px-2 py-2 rounded-md text-sm font-medium transition-all duration-300 relative ${isActive ? 'text-amber-500 dark:text-amber-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}> {/* link item */}
+                                    <Link key={link.name} href={link.href} className={`px-2 py-2 rounded-md text-sm font-medium transition-all duration-300 relative ${isActive ? 'text-emerald-400 font-semibold' : 'text-zinc-400 hover:text-zinc-50'}`}> {/* link item */}
                                         {link.name} {/* item text */}
-                                        {isActive && <span className="absolute -bottom-1 left-2 right-2 h-0.5 bg-amber-500 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>} {/* active indicator */}
+                                        {isActive && <span className="absolute -bottom-1 left-2 right-2 h-0.5 bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>} {/* active indicator */}
                                     </Link> // end link
                                 ); // end return
                             })} {/* end map */}
                         </div> {/* nav row */}
-                        <div className="ml-4 pl-4 border-l border-gray-200 dark:border-white/10 flex items-center gap-3"> {/* Action CTA wrapper */}
+                        <div className="ml-4 pl-4 border-l border-zinc-800 flex items-center gap-3"> {/* Action CTA wrapper */}
                             <a
                                 href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                                 target="_blank"
@@ -97,7 +97,7 @@ export default function Navigation() { // export default Navigation block
                         </a>
                         <button // toggle button start
                             onClick={() => setIsOpen(!isOpen)} // toggle state click event
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-black/10 dark:bg-white/10 focus:outline-none" // toggle styles
+                            className="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-zinc-50 hover:bg-zinc-800/50 focus:outline-none" // toggle styles
                         >
                             <span className="sr-only">Otvoriť menu</span> {/* hide span text correctly */}
                             <svg className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> {/* closed svg icon */}
@@ -112,12 +112,12 @@ export default function Navigation() { // export default Navigation block
             </div> {/* container */}
 
             {isOpen && ( // open conditional for mobile drop
-                <div className="lg:hidden bg-slate-100/95 dark:bg-[#0B0F17]/95 border-b border-gray-200 dark:border-white/10"> {/* wrapper for mobile panel */}
+                <div className="lg:hidden bg-zinc-950/95 border-b border-zinc-800 backdrop-blur-md"> {/* wrapper for mobile panel */}
                     <div className="px-3 pt-2 pb-4 space-y-2 font-display text-center"> {/* inside mobile container */}
                         {navLinks.map((link) => { // map mobile links
                             const isActive = checkActive(link); // check active
                             return ( // return link
-                                <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className={`block px-3 py-3 text-base font-medium rounded-xl transition-colors ${isActive ? 'text-amber-500 dark:text-amber-400 bg-amber-500/10 font-bold' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'}`}> {/* link item */}
+                                <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className={`block px-3 py-3 text-base font-medium rounded-xl transition-colors ${isActive ? 'text-emerald-400 bg-emerald-950/50 font-bold' : 'text-zinc-400 hover:text-zinc-50 hover:bg-zinc-900/50'}`}> {/* link item */}
                                     {link.name} {/* item text */}
                                 </Link> // end link
                             ); // end return

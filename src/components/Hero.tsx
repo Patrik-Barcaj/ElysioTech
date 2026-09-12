@@ -6,9 +6,9 @@ export default function Hero() { // export Hero component function
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-16"> {/* base full screen wrapper */}
             {/* Dark background grid and gradients */}
             <div className="absolute inset-0 z-0 pointer-events-none"> {/* background glow graphics */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/[0.08] via-transparent to-transparent"></div> {/* radial center highlight */}
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-500/10 rounded-full filter blur-[140px] translate-x-1/3 -translate-y-1/3"></div> {/* top right amber glow */}
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full filter blur-[140px] -translate-x-1/3 translate-y-1/3"></div> {/* bottom left emerald glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-500/[0.04] via-transparent to-transparent"></div> {/* radial center highlight */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-500/5 rounded-full filter blur-[140px] translate-x-1/3 -translate-y-1/3"></div> {/* top right subtle emerald glow */}
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full filter blur-[140px] -translate-x-1/3 translate-y-1/3"></div> {/* bottom left emerald glow */}
                 {/* Subtle tech grid overlay */}
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik02MCAwaS0xdjYwaDFWMEpNMCA1OXYxaDYwdi0xSDB6IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDMiLz48L2c+PC9zdmc+')] opacity-50"></div> {/* subtle pattern */}
             </div> {/* background glow end */}
@@ -18,17 +18,17 @@ export default function Hero() { // export Hero component function
                     
                     {/* Left: Typography & Technical Pitch */}
                     <div className="flex-1 text-center lg:text-left mt-10 lg:mt-0"> {/* text content wrapper */}
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-display tracking-widest text-amber-500 dark:text-amber-400 mb-6"> {/* pre-heading badge */}
-                            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.85)]"></span> {/* glowing dot */}
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/50 border border-emerald-800/50 text-xs font-display tracking-widest text-emerald-400 mb-6"> {/* pre-heading badge */}
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.85)]"></span> {/* glowing dot */}
                             DIGITÁLNE A TECHNICKÉ ŠTÚDIO • BRATISLAVSKÝ KRAJ
                         </div> {/* pre-heading end */}
                         
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-gray-900 dark:text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-zinc-50 tracking-tight leading-[1.12] mb-6"> {/* main headline */}
                             Zákazkový softvér, <br className="hidden sm:inline" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400">letecké dáta a veľkoformátová tlač.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-zinc-200">letecké dáta a veľkoformátová tlač.</span>
                         </h1> {/* main headline end */}
                         
-                        <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"> {/* subheadline */}
+                        <p className="text-lg sm:text-xl text-zinc-400 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"> {/* subheadline */}
                             Vyvíjame moderné webové aplikácie a prezentačné weby, spracovávame letecké snímky dronom a zabezpečujeme priamu priemyselnú tlač. Všetko pod priamym technickým dohľadom od návrhu po finálny výstup.
                         </p> {/* subheadline end */}
                         
@@ -44,25 +44,25 @@ export default function Hero() { // export Hero component function
                             </a>
                             <Link
                                 href="/#services"
-                                className="px-8 py-4 bg-transparent border border-amber-500/40 text-gray-900 dark:text-white hover:border-amber-500 rounded-xl font-bold font-display hover:bg-amber-500/10 transition-all flex items-center justify-center"
+                                className="px-8 py-4 bg-zinc-900/40 border border-zinc-800 text-zinc-50 hover:border-zinc-700 hover:bg-zinc-900/70 rounded-xl font-bold font-display transition-all flex items-center justify-center"
                             >
                                 Prehľad služieb a riešení
                             </Link>
                         </div> {/* cta group end */}
 
                         {/* Trust Points */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gray-200 dark:border-white/10 text-left">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-zinc-800 text-left">
                             <div className="flex items-start gap-2.5">
-                                <span className="text-emerald-500 font-bold shrink-0">✓</span>
-                                <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-medium">Full-Stack softvérový vývoj</span>
+                                <span className="text-emerald-400 font-bold shrink-0">✓</span>
+                                <span className="text-xs sm:text-sm text-zinc-400 font-medium">Full-Stack softvérový vývoj</span>
                             </div>
                             <div className="flex items-start gap-2.5">
-                                <span className="text-emerald-500 font-bold shrink-0">✓</span>
-                                <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-medium">Certifikovaná prevádzka EASA A1/A3</span>
+                                <span className="text-emerald-400 font-bold shrink-0">✓</span>
+                                <span className="text-xs sm:text-sm text-zinc-400 font-medium">Certifikovaná prevádzka EASA A1/A3</span>
                             </div>
                             <div className="flex items-start gap-2.5">
-                                <span className="text-emerald-500 font-bold shrink-0">✓</span>
-                                <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-medium">Priama priemyselná UV tlač</span>
+                                <span className="text-emerald-400 font-bold shrink-0">✓</span>
+                                <span className="text-xs sm:text-sm text-zinc-400 font-medium">Priama priemyselná UV tlač</span>
                             </div>
                         </div>
                     </div> {/* text content wrapper end */}
@@ -71,22 +71,22 @@ export default function Hero() { // export Hero component function
                     <div className="flex-1 relative w-full max-w-lg hidden lg:block"> {/* image collage wrapper */}
                         <div className="relative w-full aspect-square"> {/* aspect ratio box */}
                             {/* Photo 2: In-House Production & Drones */}
-                            <div className="absolute top-0 right-0 w-[82%] h-[78%] border border-amber-500/30 rounded-3xl transform rotate-3 hover:rotate-6 hover:scale-105 transition-all duration-700 bg-gray-200 dark:bg-[#151C2C] overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.25)] z-10 hover:z-30 group cursor-pointer"> {/* background card rotated */}
+                            <div className="absolute top-0 right-0 w-[82%] h-[78%] border border-zinc-800 rounded-3xl transform rotate-3 hover:rotate-6 hover:scale-105 transition-all duration-700 bg-zinc-900/70 backdrop-blur-sm overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] z-10 hover:z-30 group cursor-pointer"> {/* background card rotated */}
                                 <Image src="/drone-bg.png" alt="Letecké zábery a UV tlač" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* drone image */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"></div> {/* gradient overlay */}
                                 <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* text content */}
-                                    <h3 className="text-xl font-display font-bold text-white mb-1 drop-shadow-lg">Dron & <span className="text-amber-400">UV Tlač</span></h3> {/* title */}
-                                    <p className="text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Letecké ortofoto, kótovanie sietí a odolné tabule na parcelu</p> {/* description */}
+                                    <h3 className="text-xl font-display font-bold text-white mb-1 drop-shadow-lg">Dron & <span className="text-emerald-400">UV Tlač</span></h3> {/* title */}
+                                    <p className="text-xs text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Letecké ortofoto, kótovanie sietí a odolné tabule na parcelu</p> {/* description */}
                                 </div> {/* text content end */}
                             </div> {/* background card rotated end */}
 
                             {/* Photo 1: Software & GIS Solutions */}
-                            <div className="absolute bottom-0 left-0 w-[82%] h-[78%] border border-emerald-500/30 rounded-3xl transform -rotate-3 hover:-rotate-6 hover:scale-105 transition-all duration-700 bg-gray-200 dark:bg-[#151C2C] overflow-hidden shadow-[0_0_50px_rgba(16,185,129,0.25)] z-20 hover:z-30 group cursor-pointer"> {/* foreground card rotated */}
+                            <div className="absolute bottom-0 left-0 w-[82%] h-[78%] border border-emerald-500/30 rounded-3xl transform -rotate-3 hover:-rotate-6 hover:scale-105 transition-all duration-700 bg-zinc-900/70 backdrop-blur-sm overflow-hidden shadow-[0_0_50px_rgba(16,185,129,0.15)] z-20 hover:z-30 group cursor-pointer"> {/* foreground card rotated */}
                                 <Image src="/digital-bg.png" alt="Vývoj a GIS Riešenia" fill className="object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-500" /> {/* digital image */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"></div> {/* gradient overlay */}
                                 <div className="absolute bottom-6 left-6 right-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500"> {/* text content */}
                                     <h3 className="text-xl font-display font-bold text-white mb-1 drop-shadow-lg">Web & <span className="text-emerald-400">GIS Softvér</span></h3> {/* title */}
-                                    <p className="text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Interaktívne parcelné mapy, one-page vizitky a portály na mieru</p> {/* description */}
+                                    <p className="text-xs text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">Interaktívne parcelné mapy, one-page vizitky a portály na mieru</p> {/* description */}
                                 </div> {/* text content end */}
                             </div> {/* foreground card rotated end */}
                             

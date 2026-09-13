@@ -37,14 +37,14 @@ export default function Hero() { // export Hero component function
                                 href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-8 py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
+                                className="px-5 py-3 rounded-lg text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
                             >
                                 <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
                                 <span>Rýchla kalkulácia cez WhatsApp</span>
                             </a>
                             <Link
                                 href="/#services"
-                                className="px-8 py-4 bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 rounded-xl font-bold font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
+                                className="px-5 py-3 rounded-lg text-sm font-semibold whitespace-nowrap bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
                             >
                                 Prehľad služieb a cien
                             </Link>
@@ -57,25 +57,19 @@ export default function Hero() { // export Hero component function
 
                         {/* Interactive Service Router */}
                         <div className="pt-6 border-t border-neutral-800 text-left">
-                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-                                <Link
-                                    href="/#services"
-                                    className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
-                                >
-                                    <span>✈️</span> Dron od 75 €
-                                </Link>
-                                <Link
-                                    href="/#services"
-                                    className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
-                                >
-                                    <span>🖨️</span> Priemyselná tlač od 25 €/h
-                                </Link>
-                                <Link
-                                    href="/#services"
-                                    className="text-xs font-mono font-medium px-3 py-1.5 rounded-full bg-zinc-900 border border-neutral-800 hover:border-neutral-600 hover:bg-zinc-800 text-zinc-300 transition-colors cursor-pointer inline-flex items-center gap-1.5"
-                                >
-                                    <span>💻</span> Bleskový Web od 250 €
-                                </Link>
+                            <div className="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
+                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    <span className="text-amber-400 font-bold">DRON</span>
+                                    <span className="text-zinc-500">od 75€</span>
+                                </a>
+                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    <span className="text-amber-400 font-bold">TLAČ</span>
+                                    <span className="text-zinc-500">od 25€/h</span>
+                                </a>
+                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    <span className="text-amber-400 font-bold">WEB</span>
+                                    <span className="text-zinc-500">od 250€</span>
+                                </a>
                             </div>
                         </div>
                     </div> {/* text content wrapper end */}

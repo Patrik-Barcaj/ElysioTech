@@ -23,59 +23,67 @@ export default function WhyElysio() {
         </div>
 
         {/* 3 Value Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          
-          {/* Card 1: Rýchlosť */}
-          <ScrollReveal delay={0.1} className="h-full">
-            <div className="h-full bg-[#121214] border border-neutral-800 p-6 rounded-xl hover:border-neutral-700 transition-all flex flex-col justify-between">
-              <div>
-                <span className="font-mono text-xs text-amber-400 font-semibold tracking-wider uppercase block mb-3">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            
+            {/* Card 1: Rýchlosť */}
+            <ScrollReveal delay={0.1} className="h-full">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg">
+                <div>
+                  <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                    ⚡ Rýchlosť do 48 hodín
+                  </h3>
+                  <div className="space-y-2.5 text-sm text-zinc-300">
+                    <p>• <strong className="text-white">Dáta do 2 dní:</strong> Surové zábery, ortofoto aj kód dodávam do 48 hodín.</p>
+                    <p>• <strong className="text-white">Cloudový odkaz:</strong> Okamžitý prístup k plnému rozlíšeniu bez čakania.</p>
+                    <p>• <strong className="text-white">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích procesov.</p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400">
                   GARANCIA TERMÍNU
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold font-display text-white mb-3">
-                  ⚡ Rýchlosť do 48 hodín
-                </h3>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Letecké dáta, technické vektorové podklady aj softvérové prototypy odovzdávam do dvoch pracovných dní od schválenia zadania.
-                </p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          {/* Card 2: 1:1 Priamy kontakt */}
-          <ScrollReveal delay={0.2} className="h-full">
-            <div className="h-full bg-[#121214] border border-neutral-800 p-6 rounded-xl hover:border-neutral-700 transition-all flex flex-col justify-between">
-              <div>
-                <span className="font-mono text-xs text-[#00D26A] font-semibold tracking-wider uppercase block mb-3">
+            {/* Card 2: 1:1 Priamy kontakt */}
+            <ScrollReveal delay={0.2} className="h-full">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg">
+                <div>
+                  <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                    👤 1:1 Priamy kontakt
+                  </h3>
+                  <div className="space-y-2.5 text-sm text-zinc-300">
+                    <p>• <strong className="text-white">Priamo s technikom:</strong> Riešite zadanie s človekom, čo lieta a kóduje.</p>
+                    <p>• <strong className="text-white">WhatsApp & telefón:</strong> Rýchle operatívne zmeny a konzultácie bez čakania.</p>
+                    <p>• <strong className="text-white">Nulový šum:</strong> Žiadne skreslené zadania cez account manažérov.</p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A]">
                   BEZ PROSTREDNÍKOV
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold font-display text-white mb-3">
-                  👤 1:1 Priamy kontakt
-                </h3>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Zadanie riešite priamo s človekom, ktorý lieta, kreslí a kóduje. Nulový šum, nulové skreslenie technických detailov.
-                </p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          {/* Card 3: Presnosť */}
-          <ScrollReveal delay={0.3} className="h-full">
-            <div className="h-full bg-[#121214] border border-neutral-800 p-6 rounded-xl hover:border-neutral-700 transition-all flex flex-col justify-between">
-              <div>
-                <span className="font-mono text-xs text-zinc-400 font-semibold tracking-wider uppercase block mb-3">
+            {/* Card 3: Presnosť */}
+            <ScrollReveal delay={0.3} className="h-full">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg">
+                <div>
+                  <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                    🎯 Výrobná & Technická presnosť
+                  </h3>
+                  <div className="space-y-2.5 text-sm text-zinc-300">
+                    <p>• <strong className="text-white">Výrobné formáty:</strong> Vektory pasujú presne do CNC, lasera aj plotra.</p>
+                    <p>• <strong className="text-white">Presné mapovanie:</strong> Zábery a ortofoto presne sedia na hranice parcely.</p>
+                    <p>• <strong className="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-zinc-400">
                   ČISTÉ DÁTA
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold font-display text-white mb-3">
-                  🎯 Výrobná & Technická presnosť
-                </h3>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  Vektory pasujú priamo do CNC/lasera, ortofotomapy sedia na kataster a aplikácie bežia na čistom, optimalizovanom kóde.
-                </p>
+                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
+          </div>
         </div>
 
       </div>

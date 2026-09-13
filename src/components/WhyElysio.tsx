@@ -77,7 +77,7 @@ export default function WhyElysio() {
                     <p>• <strong className="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-zinc-400">
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400">
                   ČISTÉ DÁTA
                 </div>
               </div>

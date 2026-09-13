@@ -25,11 +25,11 @@ export default function Hero() { // export Hero component function
                         
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}
                             Technické služby bez agentúrnej prirážky: <br className="hidden sm:inline" />
-                            <span className="text-[#FFB800]">Letecké dáta</span>, Tlač a <span className="text-[#00D26A]">Weby</span>.
+                            <span className="text-[#FFB800]">Letecké dáta</span>, Tlač a <span className="text-[#00D26A]">Aplikácie a weby.</span>
                         </h1> {/* main headline end */}
                         
                         <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"> {/* subheadline */}
-                            Potrebujete zamerať pozemok dronom, vyrobiť pevnú reklamnú tabuľu alebo spustiť bleskový web? Priama realizácia od špecialistu bez sprostredkovateľov, s dodaním do 48 hodín.
+                            Potrebujete zamerať pozemok dronom, vyrobiť pevnú reklamnú tabuľu alebo nasadiť modernú aplikáciu a web? Priama realizácia od špecialistu bez sprostredkovateľov, s dodaním do 48 hodín.
                         </p> {/* subheadline end */}
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3"> {/* cta group */}
@@ -67,7 +67,7 @@ export default function Hero() { // export Hero component function
                                     <span className="text-zinc-500">od 25€/h</span>
                                 </a>
                                 <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                                    <span className="text-amber-400 font-bold">WEB</span>
+                                    <span className="text-amber-400 font-bold">APP & WEB</span>
                                     <span className="text-zinc-500">od 250€</span>
                                 </a>
                             </div>

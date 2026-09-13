@@ -14,7 +14,7 @@ export default function Home() { // export default Home component function
     <main className="min-h-[100dvh] bg-[#080808] text-zinc-300 relative"> {/* main container wrapper */}
       <Navigation /> {/* render navigation header */}
       <Hero /> {/* render asymmetric minimalist hero */}
-      <Marquee items={['Letecké Ortofotomapy', 'Vektorové GIS Siete', 'Priama UV Tlač Dibond & Komatex', 'Veľkoformátové Bannery', 'Next.js & TypeScript Vývoj', 'MapLibre GIS Integrácia', 'Certifikácia EASA A1/A3', 'Expresná Realizácia']} /> {/* render infinite marquee */}
+      <Marquee items={['Letecké Ortofotomapy', 'Vektorové GIS Siete', 'Technická Grafika & Vektorizácia', 'DTP & Prepress Príprava', 'Next.js & TypeScript Vývoj', 'MapLibre GIS Integrácia', 'Certifikácia EASA A1/A3', 'Expresná Realizácia']} /> {/* render infinite marquee */}
       <Services /> {/* render services bento grid */}
       <WhyElysio /> {/* render solo operator advantage section */}
       <Portfolio /> {/* render portfolio section */}

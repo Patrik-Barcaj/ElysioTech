@@ -1,5 +1,6 @@
 import React from 'react'; // import react
 import ScrollReveal from './ui/ScrollReveal'; // import ScrollReveal
+import { PenTool } from 'lucide-react'; // import PenTool icon
 
 export default function Services() { // export Services component
     return ( // start return block
@@ -109,34 +110,34 @@ export default function Services() { // export Services component
                         </div>
                     </ScrollReveal>
 
-                    {/* Pillar 3: Priemyselná veľkoformátová tlač */}
+                    {/* Pillar 3: Technická grafika & Vektorizácia */}
                     <ScrollReveal delay={0.3} className="h-full">
                         <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-12 h-12 bg-[#FFB800]/10 rounded-2xl flex items-center justify-center border border-[#FFB800]/25 group-hover:scale-110 transition-all duration-300 shrink-0">
-                                        <svg className="w-6 h-6 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                                        <PenTool className="w-6 h-6 text-[#FFB800]" strokeWidth={1.5} />
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
-                                        Priemyselná veľkoformátová tlač
+                                        Technická grafika & Vektorizácia
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-[#FFB800] mb-5 leading-relaxed">
-                                    Výroba exteriérových a interiérových prezentačných médií s priamou UV technológiou.
+                                    Exaktné grafické spracovanie bez marketingu – plány, kótovanie a bezchybné vektorové podklady pre výrobu.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Dibond panely:</strong> Kompozitné hliníkové dosky s vysokou tvarovou stálosťou a dlhodobou odolnosťou v exteriéri.</span>
+                                        <span><strong className="text-white">Zákresy do máp & fotiek:</strong> Kótovanie hraníc parciel, inžinierskych sietí a prístupových ciest pre realitný predaj.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Komatex dosky:</strong> Ľahké PVC panely s priamou UV potlačou pre pevnú montáž.</span>
+                                        <span><strong className="text-white">Vektorizácia podkladov:</strong> Prevod skenov a technických náčrtov do formátov pre CNC, laser a rezacie plotre (SVG, DXF, PDF).</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">PVC Bannery:</strong> Spevnené bannery s kovovými očkami pre upevnenie na ploty a nosné konštrukcie.</span>
+                                        <span><strong className="text-white">DTP & Prepress audit:</strong> Generovanie validných tlačových dát (PDF/X, spadávky, CMYK profily) bez výrobných chýb.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -147,7 +148,7 @@ export default function Services() { // export Services component
                                     <span className="text-xl font-display font-bold text-white">od 25 € / hod.</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
-                                    Priama UV tlač
+                                    Projektová kalkulácia
                                 </span>
                             </div>
                         </div>

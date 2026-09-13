@@ -10,7 +10,7 @@ export default function FAQ() { // export FAQ component function
         { id: 'all', name: 'Všetky oblasti' },
         { id: 'software', name: 'Weby & Softvér' },
         { id: 'drone', name: 'Letecké zábery & Dáta' },
-        { id: 'print', name: 'Veľkoformátová tlač' }
+        { id: 'graphics', name: 'Technická grafika' }
     ];
 
     const faqs = [
@@ -60,27 +60,27 @@ export default function FAQ() { // export FAQ component function
             a: 'Fotografie dodávame v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).'
         },
 
-        // Category 3: Veľkoformátová tlač
+        // Category 3: Technická grafika
         {
-            id: 'faq-print-1',
-            category: 'print',
-            categoryName: 'Veľkoformátová tlač',
-            q: 'Aké materiály využívate pri výrobe reklamných tabúľ a bannerov?',
-            a: 'Používame sendvičové hliníkové panely (Dibond) s dlhodobou stálosťou, odľahčené tvrdené PVC dosky (Komatex) a spevnené PVC bannery s kovovými očkami pre uchytenie na ploty a konštrukcie.'
+            id: 'faq-graphics-1',
+            category: 'graphics',
+            categoryName: 'Technická grafika',
+            q: 'V akých formátoch dodávate vektorovú grafiku a plány?',
+            a: 'Podklady exportujeme vo formátoch pre CAD, laser a CNC rezanie (DXF, SVG, DWG) aj v tlačovom PDF/X so zachovaním presných mierok.'
         },
         {
-            id: 'faq-print-2',
-            category: 'print',
-            categoryName: 'Veľkoformátová tlač',
-            q: 'Aká je odolnosť tlačových materiálov voči poveternostným vplyvom?',
-            a: 'Priama priemyselná UV tlač využíva vytvrdzované UV atramenty, ktoré sú vysoko odolné voči dažďu, mrazu, vetru a UV žiareniu, čo zabraňuje blednutiu farieb na priamom slnku.'
+            id: 'faq-graphics-2',
+            category: 'graphics',
+            categoryName: 'Technická grafika',
+            q: 'Ako prebieha kótovanie a zakreslenie sietí do leteckej snímky?',
+            a: 'Na základe dodaného parcelného čísla alebo GPS súradníc zameriame pozemok dronom a do výslednej ortofotomapy presne zanesieme hranice pozemku a inžinierske siete.'
         },
         {
-            id: 'faq-print-3',
-            category: 'print',
-            categoryName: 'Veľkoformátová tlač',
-            q: 'Zabezpečujete aj grafickú prípravu a kótovanie do tlače?',
-            a: 'Áno. Grafické podklady, zakreslenie kót, výmer pozemkov či logo manuál pripravujeme priamo v požadovanom tlačovom CMYK farebnom profile a rozlíšení 300 DPI.'
+            id: 'faq-graphics-3',
+            category: 'graphics',
+            categoryName: 'Technická grafika',
+            q: 'Zabezpečujete aj DTP prípravu a predvýrobný audit podkladov?',
+            a: 'Áno. Grafické podklady, zakreslenie kót, výmer pozemkov či logo manuál pripravujeme priamo v požadovanom CMYK farebnom profile a rozlíšení 300 DPI pre bezchybnú výrobu.'
         }
     ];
 

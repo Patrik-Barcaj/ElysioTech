@@ -14,7 +14,7 @@ export default function Footer() { // export Footer component function
                             </svg>
                         </Link> {/* home link end */}
                         <p className="text-zinc-400 max-w-md text-sm leading-relaxed mb-4">
-                            Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, priama priemyselná UV tlač bannerov a zákazkový softvérový vývoj.
+                            Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu a zákazkový softvérový vývoj.
                         </p>
                         <p className="text-xs text-zinc-500">
                             <strong className="text-zinc-300">Lokalita pôsobenia:</strong> Oblasť západného Slovenska.
@@ -48,7 +48,7 @@ export default function Footer() { // export Footer component function
                         <span className="text-[#00D26A] font-bold">✓</span> Certifikácia EASA A1/A3
                     </span>
                     <span className="flex items-center gap-2">
-                        <span className="text-[#00D26A] font-bold">✓</span> In-house UV tlač
+                        <span className="text-[#00D26A] font-bold">✓</span> Technická grafika pre výrobu
                     </span>
                     <span className="flex items-center gap-2">
                         <span className="text-[#00D26A] font-bold">✓</span> Full-Stack Development

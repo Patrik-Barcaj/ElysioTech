@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({ // start geist mono font config
 }); // end geist mono font config
 
 export const metadata: Metadata = { // export metadata object
-  title: "ELYSIO TECH | Dronové zábery pozemkov, veľkoformátová tlač a softvér na mieru (Západné Slovensko)", // set page title
-  description: "Prezentácia nehnuteľností, stavebných projektov a firiem. Letecké snímky dronom, vektorové zakreslenie inžinierskych sietí, výroba reklamných bannerov a tabúľ, bleskový webový vývoj. Bez agentúrnych prirážok.", // set description
+  title: "ELYSIO TECH | Dronové zábery pozemkov, technická grafika a softvér na mieru (Západné Slovensko)", // set page title
+  description: "Prezentácia nehnuteľností, stavebných projektov a firiem. Letecké snímky dronom, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu, bleskový webový vývoj. Bez agentúrnych prirážok.", // set description
 }; // close metadata object
 
 export default function RootLayout({ // export root layout component

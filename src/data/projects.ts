@@ -55,8 +55,8 @@ export const projectsData: ProjectItem[] = [
     id: 'proj-zenpierce',
     slug: 'zen-pierce',
     title: 'Zen Pierce',
-    subtitle: 'Vizuálny & katalógový web pre prémiové piercing štúdio',
-    category: 'Vizuálny & Katalógový Web',
+    subtitle: 'Prezentačný & brand web pre prémiové piercing štúdio',
+    category: 'Prezentačný & Brand Web',
     tagline: 'Elegantná webová prezentácia s interaktívnym katalógom služieb, šperkov a online rezerváciou.',
     description: 'Zen Pierce je moderný prezentačný web vytvorený na mieru pre štúdio piercingu a body artu. Kombinuje čistý minimalistický vizuál s dôrazom na hygienické štandardy, portfólio prác a jednoduchú orientáciu zákazníka.',
     longDescription: [

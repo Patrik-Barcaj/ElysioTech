@@ -2,11 +2,23 @@
 import { useState, useEffect } from "react"; // import hooks
 import Link from "next/link"; // import Link component
 import { usePathname } from "next/navigation"; // import usePathname
+import { X } from "lucide-react"; // import X icon
 
 export default function Navigation() { // export default Navigation block
     const [isOpen, setIsOpen] = useState(false); // set state for mobile menu
     const [activeSection, setActiveSection] = useState(""); // state for active section
     const pathname = usePathname(); // get current pathname
+
+    useEffect(() => { // scroll lock effect
+        if (isOpen) {
+            document.body.classList.add("overflow-hidden");
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+        return () => {
+            document.body.classList.remove("overflow-hidden");
+        };
+    }, [isOpen]);
 
     useEffect(() => { // scrollspy effect
         if (pathname !== "/") return; // only track on homepage
@@ -35,7 +47,7 @@ export default function Navigation() { // export default Navigation block
     const navLinks = [ // array of navigation links
         { name: 'Služby', href: '/#services', id: 'services' }, // item
         { name: 'Prečo Elysio', href: '/#why-elysio', id: 'why-elysio' }, // item
-        { name: 'Naše projekty', href: '/#portfolio', id: 'portfolio' }, // item
+        { name: 'Projekty', href: '/#portfolio', id: 'portfolio' }, // item
         { name: 'FAQ', href: '/#faq', id: 'faq' }, // item
         { name: 'Kontakt', href: '/#contact', id: 'contact' }, // item
     ]; // end array
@@ -60,7 +72,7 @@ export default function Navigation() { // export default Navigation block
                             </svg>
                         </Link> {/* end link */}
                     </div> {/* end logo */}
-                    <div className="hidden lg:flex items-center"> {/* desktop menu wrapping */}
+                    <div className="hidden md:flex items-center"> {/* desktop menu wrapping */}
                         <div className="ml-6 flex items-baseline space-x-5 font-display"> {/* nav items row */}
                             {navLinks.map((link) => { // map nav links
                                 const isActive = checkActive(link); // check if active
@@ -84,7 +96,7 @@ export default function Navigation() { // export default Navigation block
                             </a>
                         </div> {/* end Action CTA wrapper */}
                     </div> {/* desktop nav */}
-                    <div className="-mr-2 flex items-center gap-2 lg:hidden"> {/* mobile hamburger wrapping */}
+                    <div className="-mr-2 flex items-center gap-2 md:hidden"> {/* mobile hamburger wrapping */}
                         <a
                             href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
                             target="_blank"
@@ -97,7 +109,7 @@ export default function Navigation() { // export default Navigation block
                         <button // toggle button start
                             onClick={() => setIsOpen(!isOpen)} // toggle state click event
                             className="inline-flex items-center justify-center p-2 rounded-md text-zinc-300 hover:text-white hover:bg-white/5 focus:outline-none" // toggle styles
-                            aria-expanded="false" // aria expanded state
+                            aria-expanded={isOpen} // aria expanded state
                         > {/* button element */}
                             <span className="sr-only">Open main menu</span> {/* screen reader label */}
                             {!isOpen ? ( // conditional render icon
@@ -105,46 +117,46 @@ export default function Navigation() { // export default Navigation block
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /> {/* paths */}
                                 </svg> // icon end
                             ) : (
-                                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> {/* close icon */}
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> {/* paths */}
-                                </svg> // icon end
+                                <X size={24} />
                             )}
                         </button> {/* toggle button end */}
                     </div> {/* mobile hamburger */}
                 </div> {/* flex row */}
             </div> {/* max width container */}
 
-            {/* Mobile menu container */}
-            {isOpen && ( // open menu conditional
-                <div className="lg:hidden bg-[#080808]/98 backdrop-blur-xl border-b border-neutral-800"> {/* dropdown container */}
-                    <div className="px-4 pt-4 pb-6 space-y-2 font-display"> {/* list wrapper */}
-                        {navLinks.map((link) => { // map mobile links
-                            const isActive = checkActive(link); // check if active
-                            return ( // return link
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)} // close menu
-                                    className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all ${isActive ? 'bg-[#FFB800]/15 text-[#FFB800] border border-[#FFB800]/30' : 'text-zinc-200 hover:text-white hover:bg-white/5'}`} // active styles
-                                >
-                                    {link.name}
-                                </Link> // end link
-                            ); // end return
-                        })} {/* end map */}
-                        <div className="pt-4 border-t border-neutral-800">
-                            <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-extrabold font-display uppercase tracking-wider bg-[#00D26A] hover:bg-[#00B85C] text-black shadow-lg shadow-[#00D26A]/20 transition-all"
-                            >
-                                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
-                                Zavolať / WhatsApp
-                            </a>
-                        </div>
-                    </div> {/* list wrapper */}
-                </div> // dropdown end
-            )} {/* end conditional */}
+            {/* Fullscreen Mobile Menu with Scroll Lock */}
+            <div className={`fixed inset-0 z-50 bg-[#080808]/98 backdrop-blur-xl flex flex-col justify-between p-6 transition-all duration-300 md:hidden ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                {/* Top Header inside Menu: Logo + Close 'X' button */}
+                <div className="flex items-center justify-between">
+                    <span className="font-bold text-lg text-white">ELYSIO</span>
+                    <button onClick={() => setIsOpen(false)} className="p-2 text-zinc-400 hover:text-white" aria-label="Zavrieť menu">
+                        <X size={24} />
+                    </button>
+                </div>
+
+                {/* Centered Navigation Links with large tap targets */}
+                <nav className="flex flex-col items-center gap-6 py-8">
+                    <a href="#sluzby" onClick={() => setIsOpen(false)} className="text-2xl font-bold text-zinc-200 hover:text-[#00D26A]">Služby & Cenník</a>
+                    <a href="#portfolio" onClick={() => setIsOpen(false)} className="text-2xl font-bold text-zinc-200 hover:text-[#00D26A]">Projekty</a>
+                    <a href="#faq" onClick={() => setIsOpen(false)} className="text-2xl font-bold text-zinc-200 hover:text-[#00D26A]">Časté otázky</a>
+                    <a href="#kontakt" onClick={() => setIsOpen(false)} className="text-2xl font-bold text-zinc-200 hover:text-[#00D26A]">Kontakt</a>
+                </nav>
+
+                {/* Bottom Quick Action */}
+                <div className="flex flex-col gap-3">
+                    <a 
+                        href="https://wa.me/421903406402"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-3.5 bg-[#00D26A] text-black font-extrabold text-center rounded-xl flex items-center justify-center gap-2"
+                    >
+                        WhatsApp Správa
+                    </a>
+                    <div className="text-center font-mono text-xs text-zinc-500">
+                        Patrik Barcaj • IČO: 56 802 544
+                    </div>
+                </div>
+            </div>
         </header> // end header
     ); // end return block
 } // end function block

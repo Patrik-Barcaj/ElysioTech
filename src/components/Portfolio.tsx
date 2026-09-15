@@ -43,7 +43,7 @@ export default function Portfolio() { // export Portfolio component function
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">
                         Portfólio realizácií
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Naše projekty</h2> {/* title */}
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Projekty</h2> {/* title */}
                 </div> {/* header block end */}
 
                 {/* Unified Portfolio */}

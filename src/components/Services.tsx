@@ -5,6 +5,7 @@ import { PenTool } from 'lucide-react'; // import PenTool icon
 export default function Services() { // export Services component
     return ( // start return block
         <section id="services" className="py-24 min-h-[100dvh] flex items-center relative border-t border-neutral-800 bg-[#080808]"> {/* main services section */}
+            <div id="sluzby" className="absolute -top-20 pointer-events-none"></div>
             <div id="cennik" className="absolute -top-12 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"> {/* container */}
                 <div className="text-center mb-16"> {/* header wrapper */}
@@ -36,7 +37,7 @@ export default function Services() { // export Services component
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-[#FFB800] mb-5 leading-relaxed">
-                                    Zákazkový full-stack vývoj moderných systémov, interaktívnych máp a prezentačných webov.
+                                    Vyvíjam moderné webové aplikácie na mieru, zákazkové systémy a interaktívne GIS mapové portály.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
@@ -80,7 +81,7 @@ export default function Services() { // export Services component
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-[#00D26A] mb-5 leading-relaxed">
-                                    Technické snímkovanie a grafické spracovanie dát z výšky pre stavebníctvo, reality a pozemky.
+                                    Lietam a spracovávam letecké dáta, ortofotomapy a technické zábery pre stavebníctvo a reality.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
@@ -124,7 +125,7 @@ export default function Services() { // export Services component
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-[#FFB800] mb-5 leading-relaxed">
-                                    Exaktné grafické spracovanie bez marketingu – plány, kótovanie a bezchybné vektorové podklady pre výrobu.
+                                    Pripravujem bezchybné vektorové podklady pre výrobu, technické kótovanie plánov a grafické zákresy.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">

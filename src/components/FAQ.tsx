@@ -20,21 +20,21 @@ export default function FAQ() { // export FAQ component function
             category: 'software',
             categoryName: 'Weby & Softvér',
             q: 'V akom technologickom stacku vyvíjate webové aplikácie a weby?',
-            a: 'Vyvíjame v modernom full-stack ekosystéme Next.js, React a TypeScript s integráciou GIS mapových vrstiev (MapLibre / MapTiler) a Tailwind CSS. Kód je optimalizovaný pre bleskové načítanie do 0,5s a vysoké SEO skóre.'
+            a: 'Vyvíjam v modernom full-stack ekosystéme Next.js, React a TypeScript s integráciou GIS mapových vrstiev (MapLibre / MapTiler) a Tailwind CSS. Kód optimalizujem pre bleskové načítanie do 0,5s a vysoké SEO skóre.'
         },
         {
             id: 'faq-soft-2',
             category: 'software',
             categoryName: 'Weby & Softvér',
             q: 'Získam po dokončení plné vlastníctvo zdrojových kódov?',
-            a: 'Áno. Po odovzdaní projektu získavate 100% vlastníctvo všetkých zdrojových kódov, assetov a prístupov bez akýchkoľvek skrytých licenčných poplatkov alebo viazanosti na našu správu.'
+            a: 'Áno. Po odovzdaní projektu získavate 100% vlastníctvo všetkých zdrojových kódov, assetov a prístupov bez akýchkoľvek skrytých licenčných poplatkov alebo viazanosti na moju správu.'
         },
         {
             id: 'faq-soft-3',
             category: 'software',
             categoryName: 'Weby & Softvér',
             q: 'Ako prebieha správa obsahu a údržba po spustení webu?',
-            a: 'Podľa požiadaviek pripravíme jednoduché a prehľadné administračné rozhranie alebo zabezpečíme dlhodobú technickú podporu a aktualizácie na základe dohody.'
+            a: 'Podľa požiadaviek pripravím jednoduché a prehľadné administračné rozhranie alebo zabezpečím dlhodobú technickú podporu a aktualizácie na základe dohody.'
         },
 
         // Category 2: Dronové dáta
@@ -43,21 +43,21 @@ export default function FAQ() { // export FAQ component function
             category: 'drone',
             categoryName: 'Letecké zábery & Dáta',
             q: 'Je prevádzka dronu legálna a certifikovaná?',
-            a: 'Áno. Disponujeme oficiálnou registráciou a pilotnou certifikáciou EASA pre kategórie Open A1/A3. Lety realizujeme bezpečne, zodpovedne a v plnom súlade s platnou leteckou legislatívou SR.'
+            a: 'Áno. Lietam s certifikáciou EASA pre kategórie Open A1/A3 a oficiálnou registráciou. Lety realizujem bezpečne, zodpovedne a v plnom súlade s platnou leteckou legislatívou SR.'
         },
         {
             id: 'faq-drone-2',
             category: 'drone',
             categoryName: 'Letecké zábery & Dáta',
             q: 'Je nutná moja osobná prítomnosť pri zbere leteckých dát?',
-            a: 'Nie. Zber dát realizujeme samostatne na základe parcelného čísla, katastrálneho územia alebo GPS súradníc. Výsledné digitálne náhľady a spracované dáta odovzdávame elektronicky.'
+            a: 'Nie. Zber dát realizujem samostatne na základe parcelného čísla, katastrálneho územia alebo GPS súradníc. Výsledné digitálne náhľady a spracované dáta odovzdávam cez cloudové úložisko.'
         },
         {
             id: 'faq-drone-3',
             category: 'drone',
             categoryName: 'Letecké zábery & Dáta',
             q: 'V akých formátoch a rozlíšení dodávate letecké výstupy?',
-            a: 'Fotografie dodávame v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).'
+            a: 'Fotografie dodávam v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).'
         },
 
         // Category 3: Technická grafika
@@ -66,21 +66,21 @@ export default function FAQ() { // export FAQ component function
             category: 'graphics',
             categoryName: 'Technická grafika',
             q: 'V akých formátoch dodávate vektorovú grafiku a plány?',
-            a: 'Podklady exportujeme vo formátoch pre CAD, laser a CNC rezanie (DXF, SVG, DWG) aj v tlačovom PDF/X so zachovaním presných mierok.'
+            a: 'Podklady exportujem vo formátoch pre CAD, laser a CNC rezanie (DXF, SVG, DWG) aj v tlačovom PDF/X so zachovaním presných mierok.'
         },
         {
             id: 'faq-graphics-2',
             category: 'graphics',
             categoryName: 'Technická grafika',
             q: 'Ako prebieha kótovanie a zakreslenie sietí do leteckej snímky?',
-            a: 'Na základe dodaného parcelného čísla alebo GPS súradníc zameriame pozemok dronom a do výslednej ortofotomapy presne zanesieme hranice pozemku a inžinierske siete.'
+            a: 'Na základe dodaného parcelného čísla alebo GPS súradníc zameriam pozemok dronom a do výslednej ortofotomapy presne zanesiem hranice pozemku a inžinierske siete.'
         },
         {
             id: 'faq-graphics-3',
             category: 'graphics',
             categoryName: 'Technická grafika',
             q: 'Zabezpečujete aj DTP prípravu a predvýrobný audit podkladov?',
-            a: 'Áno. Grafické podklady, zakreslenie kót, výmer pozemkov či logo manuál pripravujeme priamo v požadovanom CMYK farebnom profile a rozlíšení 300 DPI pre bezchybnú výrobu.'
+            a: 'Áno. Grafické podklady, zakreslenie kót, výmer pozemkov či logo manuál pripravujem priamo v požadovanom CMYK farebnom profile a rozlíšení 300 DPI pre bezchybnú výrobu.'
         }
     ];
 
@@ -100,7 +100,7 @@ export default function FAQ() { // export FAQ component function
                         Otázky a odpovede
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Často kladené otázky</h2> {/* title */}
-                    <p className="text-zinc-400 mt-3 text-base sm:text-lg">Prehľadné odpovede rozdelené podľa 3 hlavných oblastí našich služieb.</p>
+                    <p className="text-zinc-400 mt-3 text-base sm:text-lg">Prehľadné odpovede rozdelené podľa 3 hlavných oblastí služieb.</p>
                 </div> {/* header block end */}
 
                 {/* 3 Focus Area Category Switcher */}

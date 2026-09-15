@@ -19,6 +19,7 @@ export default function Contact() { // export Contact component function
 
     return ( // return JSX layout
         <section id="contact" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
+            <div id="kontakt" className="absolute -top-20 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="max-w-3xl mx-auto text-center mb-16"> {/* header wrapper */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-display font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
@@ -28,7 +29,7 @@ export default function Contact() { // export Contact component function
                         Získajte rýchlu cenovú ponuku
                     </h2> {/* title */}
                     <p className="text-zinc-300 text-base sm:text-lg">
-                        Napíšte nám na WhatsApp, zavolajte alebo pošlite správu cez formulár. Ozveme sa obratom.
+                        Napíšte mi na WhatsApp, zavolajte alebo pošlite správu cez formulár. Ozvem sa obratom.
                     </p> {/* description */}
                 </div> {/* header wrapper end */}
 
@@ -102,7 +103,7 @@ export default function Contact() { // export Contact component function
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg> {/* success icon */}
                             </div> {/* icon container end */}
                             <h3 className="text-2xl font-bold text-white mb-2">Správa odoslaná!</h3> {/* title */}
-                            <p className="text-zinc-300 mb-8 text-sm">Ďakujeme za vašu správu. Budeme vás kontaktovať obratom.</p> {/* text */}
+                            <p className="text-zinc-300 mb-8 text-sm">Ďakujem za vašu správu. Budem vás kontaktovať obratom.</p> {/* text */}
                             <button onClick={() => setIsSubmitted(false)} className="w-full py-3 bg-[#00D26A] hover:bg-[#00B85C] text-black rounded-xl font-extrabold transition-all"> {/* close button */}
                                 Zavrieť {/* button text */}
                             </button> {/* close button end */}

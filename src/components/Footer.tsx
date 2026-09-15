@@ -26,7 +26,7 @@ export default function Footer() { // export Footer component function
                         <ul className="space-y-2 text-sm"> {/* list element */}
                             <li><Link href="/#services" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Služby</Link></li>
                             <li><Link href="/#why-elysio" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Prečo Elysio</Link></li>
-                            <li><Link href="/#portfolio" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Naše projekty</Link></li>
+                            <li><Link href="/#portfolio" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Projekty</Link></li>
                             <li><Link href="/#faq" className="text-zinc-400 hover:text-[#00D26A] transition-colors">FAQ</Link></li>
                             <li><Link href="/#contact" className="text-zinc-400 hover:text-[#00D26A] transition-colors">Kontakt</Link></li>
                         </ul> {/* list element end */}
@@ -35,9 +35,9 @@ export default function Footer() { // export Footer component function
                     <div> {/* legal & trust column */}
                         <h4 className="text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Fakturačné údaje</h4> {/* header */}
                         <div className="text-xs text-zinc-400 space-y-1.5 leading-relaxed">
-                            <p className="font-semibold text-white">Patrik Barcaj - Elysio</p>
-                            <p>Bratislava, Slovenská republika</p>
-                            <p>IČO: 56 802 544</p>
+                            <p className="font-semibold text-white">ElysioTech • Patrik Barcaj</p>
+                            <p>Fyzická osoba zapísaná v Živnostenskom registri SR</p>
+                            <p>IČO: 56 802 544 • Bratislava & Západné Slovensko</p>
                         </div>
                     </div> {/* legal column end */}
                 </div> {/* layout grid end */}

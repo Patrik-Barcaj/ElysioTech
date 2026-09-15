@@ -29,7 +29,7 @@ export default function Hero() { // export Hero component function
                         </h1> {/* main headline end */}
                         
                         <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"> {/* subheadline */}
-                            Potrebujete zamerať pozemok dronom, pripraviť presné kótované plány a vektorové podklady, alebo nasadiť webovú aplikáciu na mieru? Priama realizácia od špecialistu bez sprostredkovateľov.
+                            Potrebujete zamerať pozemok dronom, pripraviť presné kótované podklady do výroby alebo naprogramovať webovú aplikáciu na mieru? Všetko riešite priamo so mnou – bez agentúrnych marží a s dodaním dát do 48 hodín.
                         </p> {/* subheadline end */}
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3"> {/* cta group */}
@@ -52,7 +52,7 @@ export default function Hero() { // export Hero component function
 
                         {/* Microcopy reassurance under buttons */}
                         <p className="font-mono text-xs text-zinc-400 mt-2 mb-8 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
-                            <span className="text-[#00D26A] font-bold">●</span> Odpovedáme do 15 minút • Stačí poslať lokalitu alebo zadanie
+                            <span className="text-[#00D26A] font-bold">●</span> Odpovedám do 15 minút • Stačí poslať lokalitu alebo zadanie
                         </p>
 
                         {/* Interactive Service Router */}

@@ -18,7 +18,7 @@ export default function Hero() { // export Hero component function
                     
                     {/* Left: Typography & Technical Pitch */}
                     <div className="flex-1 text-center lg:text-left mt-10 lg:mt-0"> {/* text content wrapper */}
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-[#FFB800]/40 bg-zinc-900/90 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6 shadow-inner"> {/* pre-heading badge */}
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6"> {/* pre-heading badge */}
                             <span className="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse shadow-[0_0_10px_rgba(255,184,0,0.85)]"></span> {/* glowing dot */}
                             [ 00 // STUDIO ] • BRATISLAVSKÝ KRAJ
                         </div> {/* pre-heading end */}
@@ -37,14 +37,14 @@ export default function Hero() { // export Hero component function
                                 href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-5 py-3 rounded-sm text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all border-t border-l border-emerald-300/60 border-b-2 border-r-2 border-emerald-950 shadow-[inset_1px_1px_0px_rgba(255,255,255,0.45),inset_-1px_-1px_0px_rgba(0,0,0,0.5),0_4px_16px_rgba(0,210,106,0.25)] active:translate-y-0.5 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.6)] flex items-center justify-center gap-3 text-center"
+                                className="px-5 py-3 rounded-lg text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
                             >
                                 <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
                                 <span>Rýchla kalkulácia cez WhatsApp</span>
                             </a>
                             <Link
                                 href="/#services"
-                                className="px-5 py-3 rounded-sm text-sm font-semibold whitespace-nowrap bg-zinc-900 border-t border-l border-zinc-700 border-b-2 border-r-2 border-black text-white hover:border-[#FFB800]/50 font-display hover:bg-zinc-800 transition-all flex items-center justify-center text-center shadow-[inset_1px_1px_0px_rgba(255,255,255,0.12),inset_-1px_-1px_0px_rgba(0,0,0,0.6)] active:translate-y-0.5"
+                                className="px-5 py-3 rounded-lg text-sm font-semibold whitespace-nowrap bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
                             >
                                 Prehľad služieb a cien
                             </Link>
@@ -58,17 +58,17 @@ export default function Hero() { // export Hero component function
                         {/* Interactive Service Router */}
                         <div className="pt-6 border-t border-neutral-800 text-left">
                             <div className="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
-                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-sm bg-black/80 border border-zinc-800 hover:border-emerald-500/50 text-[11px] font-mono text-zinc-300 transition-colors shadow-inner">
-                                    <span className="text-zinc-400 font-bold">DRON</span>
-                                    <span className="text-emerald-400 font-mono tracking-wider font-semibold">od 80€</span>
+                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    <span className="text-amber-400 font-bold">DRON</span>
+                                    <span className="text-zinc-500">od 80€</span>
                                 </a>
-                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-sm bg-black/80 border border-zinc-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors shadow-inner">
-                                    <span className="text-zinc-400 font-bold">GRAFIKA</span>
-                                    <span className="text-amber-400 font-mono tracking-wider font-semibold">od 20€/h</span>
+                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    <span className="text-amber-400 font-bold">GRAFIKA</span>
+                                    <span className="text-zinc-500">od 20€/h</span>
                                 </a>
-                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2.5 rounded-sm bg-black/80 border border-zinc-800 hover:border-emerald-500/50 text-[11px] font-mono text-zinc-300 transition-colors shadow-inner">
-                                    <span className="text-zinc-400 font-bold">APP & WEB</span>
-                                    <span className="text-emerald-400 font-mono tracking-wider font-semibold">od 350€</span>
+                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    <span className="text-amber-400 font-bold">APP & WEB</span>
+                                    <span className="text-zinc-500">od 350€</span>
                                 </a>
                             </div>
                         </div>

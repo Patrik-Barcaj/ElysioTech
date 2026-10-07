@@ -96,7 +96,7 @@ export default function FAQ() { // export FAQ component function
         <section id="faq" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-12"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-[#FFB800]/40 bg-zinc-900/90 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase shadow-inner">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
                         [ 05 // FAQ ] • OTÁZKY A ODPOVEDE
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Často kladené otázky</h2> {/* title */}
@@ -111,10 +111,10 @@ export default function FAQ() { // export FAQ component function
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveCategory(cat.id)}
-                                className={`px-4 py-2 rounded-sm font-display text-xs sm:text-sm font-semibold transition-all duration-300 active:translate-y-0.5 ${
+                                className={`px-4 py-2.5 rounded-xl font-display text-xs sm:text-sm font-semibold transition-all duration-300 ${
                                     isActive
-                                        ? 'bg-[#00D26A] text-black font-extrabold border-t border-l border-emerald-300/60 border-b-2 border-r-2 border-emerald-950 shadow-[inset_1px_1px_0px_rgba(255,255,255,0.45),inset_-1px_-1px_0px_rgba(0,0,0,0.5)]'
-                                        : 'bg-zinc-900 text-zinc-300 border-t border-l border-zinc-700 border-b-2 border-r-2 border-black hover:text-white shadow-[inset_1px_1px_0px_rgba(255,255,255,0.1),inset_-1px_-1px_0px_rgba(0,0,0,0.6)]'
+                                        ? 'bg-[#00D26A] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 scale-105'
+                                        : 'bg-[#121214] text-zinc-300 border border-neutral-800 hover:border-neutral-700 hover:text-white'
                                 }`}
                             >
                                 {cat.name}

@@ -40,7 +40,7 @@ export default function Portfolio() { // export Portfolio component function
         <section id="portfolio" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-[#FFB800]/40 bg-zinc-900/90 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase shadow-inner">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
                         [ 03 // PORTFOLIO ] • REALIZÁCIE
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Projekty</h2> {/* title */}
@@ -86,14 +86,14 @@ export default function Portfolio() { // export Portfolio component function
                                                     href={proj.liveUrl}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="px-2.5 py-1 rounded-sm bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-xs tracking-wide transition-all border-t border-l border-emerald-300/60 border-b border-r border-emerald-950 shadow-[inset_1px_1px_0px_rgba(255,255,255,0.45),inset_-1px_-1px_0px_rgba(0,0,0,0.5)] flex items-center gap-1 active:translate-y-0.5"
+                                                    className="px-2.5 py-1 rounded-lg bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-xs tracking-wide transition-all shadow-lg shadow-[#00D26A]/25 flex items-center gap-1"
                                                 >
                                                     <span>{proj.ctaText || 'Navštíviť ↗'}</span>
                                                 </a>
                                             )}
                                             <Link
                                                 href={`/projekty/${proj.slug}`}
-                                                className="px-2.5 py-1 rounded-sm bg-zinc-900/90 hover:bg-zinc-800 text-white font-semibold text-xs transition-colors border-t border-l border-zinc-700 border-b border-r border-black shadow-[inset_1px_1px_0px_rgba(255,255,255,0.12),inset_-1px_-1px_0px_rgba(0,0,0,0.6)] flex items-center gap-1 active:translate-y-0.5"
+                                                className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors flex items-center gap-1"
                                             >
                                                 <span>Detail ↗</span>
                                             </Link>

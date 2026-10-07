@@ -22,7 +22,7 @@ export default function Contact() { // export Contact component function
             <div id="kontakt" className="absolute -top-20 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="max-w-3xl mx-auto text-center mb-16"> {/* header wrapper */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-[#FFB800]/40 bg-zinc-900/90 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase shadow-inner">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
                         [ 06 // CONTACT ] • PRIAMY KONTAKT
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display mb-4 tracking-tight">
@@ -35,7 +35,7 @@ export default function Contact() { // export Contact component function
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch"> {/* split layout grid */}
                     <ScrollReveal delay={0.1} className="h-full"> {/* left side scroll reveal */}
-                        <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-8 lg:p-10 transition-all duration-300 hover:border-neutral-700 relative overflow-hidden group"> {/* form card container */}
+                        <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-8 lg:p-10 transition-all duration-300 hover:border-neutral-700 relative overflow-hidden group"> {/* form card container */}
                             {/* Coordinate cross accents */}
                             <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                             <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
@@ -43,19 +43,19 @@ export default function Contact() { // export Contact component function
                             <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                             <form onSubmit={handleSubmit} className="space-y-5 relative z-10"> {/* form wrapper */}
                                 <div> {/* name wrapper */}
-                                    <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-1.5 font-mono text-xs uppercase tracking-wider">Vaše meno / Spoločnosť</label> {/* label name */}
-                                    <input type="text" id="name" required className="w-full bg-black/80 border border-neutral-800 rounded-sm px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all shadow-inner font-mono text-sm" placeholder="Meno Priezvisko / Firma" /> {/* name input field */}
+                                    <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-1.5">Vaše meno / Spoločnosť</label> {/* label name */}
+                                    <input type="text" id="name" required className="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all" placeholder="Meno Priezvisko / Firma" /> {/* name input field */}
                                 </div> {/* name wrapper end */}
                                 <div> {/* email wrapper */}
-                                    <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-1.5 font-mono text-xs uppercase tracking-wider">Emailová adresa alebo telefón</label> {/* label email */}
-                                    <input type="text" id="email" required className="w-full bg-black/80 border border-neutral-800 rounded-sm px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all shadow-inner font-mono text-sm" placeholder="+421 9XX... / email@domena.sk" /> {/* email input field */}
+                                    <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-1.5">Emailová adresa alebo telefón</label> {/* label email */}
+                                    <input type="text" id="email" required className="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all" placeholder="+421 9XX... / email@domena.sk" /> {/* email input field */}
                                 </div> {/* email wrapper end */}
                                 <div> {/* message wrapper */}
-                                    <label htmlFor="msg" className="block text-sm font-medium text-zinc-300 mb-1.5 font-mono text-xs uppercase tracking-wider">Popis projektu alebo parcelné číslo</label> {/* label message */}
-                                    <textarea id="msg" rows={4} required className="w-full min-h-[140px] resize-y bg-black/80 border border-neutral-800 rounded-sm px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all shadow-inner font-mono text-sm" placeholder="Zábery pozemku / Kótovanie a vektorizácia / Webová aplikácia"></textarea> {/* message textarea field with min height */}
+                                    <label htmlFor="msg" className="block text-sm font-medium text-zinc-300 mb-1.5">Popis projektu alebo parcelné číslo</label> {/* label message */}
+                                    <textarea id="msg" rows={4} required className="w-full min-h-[140px] resize-y bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all" placeholder="Zábery pozemku / Kótovanie a vektorizácia / Webová aplikácia"></textarea> {/* message textarea field with min height */}
                                 </div> {/* message wrapper end */}
-                                <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-sm text-base tracking-wide transition-all border-t border-l border-emerald-300/60 border-b-2 border-r-2 border-emerald-950 shadow-[inset_1px_1px_0px_rgba(255,255,255,0.45),inset_-1px_-1px_0px_rgba(0,0,0,0.5),0_4px_16px_rgba(0,210,106,0.2)] active:translate-y-0.5 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.6)] disabled:opacity-50 disabled:cursor-not-allowed"> {/* submit button */}
-                                    {isSubmitting ? 'Odosielam...' : 'Odoslať správu'} {/* button label */}
+                                <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl text-base tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"> {/* submit button */}
+                                    {isSubmitting ? 'Odosielam...' : 'Odoslať'} {/* button label */}
                                 </button> {/* submit button end */}
                             </form> {/* form wrapper end */}
                         </div> {/* form card container end */}
@@ -66,15 +66,15 @@ export default function Contact() { // export Contact component function
                             <div> {/* support section */}
                                 <h3 className="text-xl font-bold text-white font-display mb-4">Priama komunikácia</h3> {/* title */}
                                 <ul className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed">
-                                    <li className="flex items-start gap-3 p-3.5 rounded-sm bg-[#00D26A]/5 border border-[#00D26A]/20">
+                                    <li className="flex items-start gap-3 p-3 rounded-2xl bg-[#00D26A]/5 border border-[#00D26A]/20">
                                         <span className="text-[#00D26A] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">WhatsApp & SMS:</strong> Najrýchlejšia odozva do niekoľkých minút počas celého dňa.</span>
                                     </li>
-                                    <li className="flex items-start gap-3 p-3.5 rounded-sm bg-[#FFB800]/5 border border-[#FFB800]/20">
+                                    <li className="flex items-start gap-3 p-3 rounded-2xl bg-[#FFB800]/5 border border-[#FFB800]/20">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Telefonický kontakt:</strong> Kedykoľvek cez pracovné dni aj cez víkendy.</span>
                                     </li>
-                                    <li className="flex items-start gap-3 p-3.5 rounded-sm bg-[#121214] border border-neutral-800">
+                                    <li className="flex items-start gap-3 p-3 rounded-2xl bg-[#121214] border border-neutral-800">
                                         <span className="text-zinc-500 font-bold mt-0.5">•</span>
                                         <span><strong className="text-white">Osobné stretnutia & Obhliadky:</strong> Oblasť západného Slovenska.</span>
                                     </li>
@@ -84,12 +84,12 @@ export default function Contact() { // export Contact component function
                             <div> {/* direct action buttons block */}
                                 <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-wider font-display mb-3">Rýchle spojenie</h3> {/* social title */}
                                 <div className="flex flex-col sm:flex-row gap-3"> {/* flex container */}
-                                    <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-sm bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold border-t border-l border-emerald-300/60 border-b-2 border-r-2 border-emerald-950 shadow-[inset_1px_1px_0px_rgba(255,255,255,0.45),inset_-1px_-1px_0px_rgba(0,0,0,0.5),0_4px_16px_rgba(0,210,106,0.2)] active:translate-y-0.5 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.6)] transition-all"> {/* whatsapp button */}
+                                    <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 transition-all"> {/* whatsapp button */}
                                         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
                                         <span>WhatsApp Správa</span>
                                     </a>
 
-                                    <a href="tel:+421903406402" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-sm bg-zinc-900 border-t border-l border-zinc-700 border-b-2 border-r-2 border-black text-white font-bold hover:border-[#FFB800]/50 shadow-[inset_1px_1px_0px_rgba(255,255,255,0.12),inset_-1px_-1px_0px_rgba(0,0,0,0.6)] active:translate-y-0.5 transition-all">
+                                    <a href="tel:+421903406402" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#121214] border border-neutral-800 text-white font-bold hover:border-[#FFB800]/50 transition-all">
                                         <svg className="w-5 h-5 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                         <span>+421 903 406 402</span>
                                     </a>

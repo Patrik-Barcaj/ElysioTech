@@ -42,24 +42,24 @@ export default function Services() { // export Services component
                                         <svg className="w-6 h-6 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
-                                        Vývoj webov & Aplikácií
+                                        Vývoj webov & aplikácií
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
-                                    Vývoj moderných webov a aplikácií v Next.js / TypeScript. Od interaktívnych rozhraní po kompletné klientske systémy bez zbytočného balastu.
+                                    Rýchle prezentačné weby a webové aplikácie na mieru s čistým kódom.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Moderný stack:</strong> Vývoj na mieru v Next.js, React a TypeScript s dôrazom na rýchlosť a čistú architektúru.</span>
+                                        <span>Moderný stack (Next.js, React, Tailwind)</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">GIS & Mapové aplikácie:</strong> Interaktívne zobrazenia a parcelné vrstvy (MapLibre / MapTiler).</span>
+                                        <span>Interaktívne rozhrania a klientske zóny</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Firemné systémy:</strong> Klientske zóny, interné nástroje a prezentačné weby s načítaním do 0,5s.</span>
+                                        <span>Plné odovzdanie zdrojového kódu</span>
                                     </li>
                                 </ul>
                             </div>
@@ -99,20 +99,20 @@ export default function Services() { // export Services component
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
-                                    Operatívna fotodokumentácia stavieb, časozberný dohľad a vizuálna kontrola striech bez nutnosti montáže plošín. Dodanie dát do 48 hodín.
+                                    Operatívna fotodokumentácia stavieb a kontrola objektov z výšky bez nutnosti plošín.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Ortofotomapy:</strong> Kolmé (90°) a šikmé zábery vo vysokom rozlíšení <strong className="text-[#00D26A]">4K UHD</strong>.</span>
+                                        <span>Časozberný dohľad stavby pre investorov a dozor</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Vektorové zakreslenie:</strong> Presné zobrazenie parcelných hraníc, výmer a inžinierskych sietí do fotografií.</span>
+                                        <span>Vizuálny audit striech a hál vo vysokom rozlíšení</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Legislatívny súlad:</strong> Certifikovaná prevádzka podľa predpisov <strong className="text-[#00D26A]">EASA A1/A3</strong>.</span>
+                                        <span>Orientačná inventarizácia plôch a skladových zásob</span>
                                     </li>
                                 </ul>
                             </div>
@@ -120,7 +120,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono">Cena a rozsah</span>
-                                    <span className="text-xl font-mono font-bold text-white">od 80 €</span>
+                                    <span className="text-xl font-mono font-bold text-white">od 80 € / výjazd</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/30">
                                     Licencia EASA A1/A3
@@ -148,24 +148,24 @@ export default function Services() { // export Services component
                                         <PenTool className="w-6 h-6 text-[#FFB800]" strokeWidth={1.5} />
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
-                                        Technická grafika
+                                        Technická grafika & Vektorizácia
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
-                                    Príprava a vektorizácia podkladov pre CNC, laserové delenie materiálov a technickú veľkoformátovú tlač. Formáty DXF, SVG, PDF.
+                                    Presná príprava digitálnych podkladov pre výrobu, tlač a CNC stroje.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Zákresy do máp & fotiek:</strong> Kótovanie hraníc parciel, inžinierskych sietí a prístupových ciest pre realitný predaj.</span>
+                                        <span>Vektorizácia podkladov do kriviek (DXF, DWG, SVG)</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Vektorizácia podkladov:</strong> Prevod skenov a technických náčrtov do formátov pre CNC, laser a rezacie plotre (SVG, DXF, PDF).</span>
+                                        <span>DTP príprava pre veľkoformátovú tlač a výrobu</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">DTP & Prepress audit:</strong> Generovanie validných tlačových dát (PDF/X, spadávky, CMYK profily) bez výrobných chýb.</span>
+                                        <span>Čistenie a optimalizácia dát pre CNC a lasery</span>
                                     </li>
                                 </ul>
                             </div>
@@ -173,7 +173,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono">Cena a rozsah</span>
-                                    <span className="text-xl font-mono font-bold text-white">od 20 € / hod.</span>
+                                    <span className="text-xl font-mono font-bold text-white">od 25 € / hod.</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
                                     Projektová kalkulácia

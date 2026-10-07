@@ -58,7 +58,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-zinc-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-white">od 250 €</span>
+                                    <span className="text-xl font-display font-bold text-white">od 350 €</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
                                     Next.js & React
@@ -77,7 +77,7 @@ export default function Services() { // export Services component
                                         <svg className="w-6 h-6 text-[#00D26A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#00D26A] transition-colors">
-                                        Letecká vizualizácia & Zber dát
+                                        Letecká kontrola & Technické dáta
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-[#00D26A] mb-5 leading-relaxed">
@@ -86,15 +86,15 @@ export default function Services() { // export Services component
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Ortofotomapy:</strong> Kolmé (90°) a šikmé zábery vo vysokom rozlíšení <strong className="text-[#00D26A]">4K UHD</strong>.</span>
+                                        <span><strong className="text-white">Dokumentácia stavieb a areálov:</strong> Detailný prehľad postupu prác, rozmiestnenia materiálu a stavu staveniska pre investorov a dozor.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Vektorové zakreslenie:</strong> Presné zobrazenie parcelných hraníc, výmer a inžinierskych sietí do fotografií.</span>
+                                        <span><strong className="text-white">Vizuálny audit striech a objektov:</strong> Bezpečná fotodokumentácia vo vysokom rozlíšení na odhalenie poškodení bez nutnosti plošín.</span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Legislatívny súlad:</strong> Certifikovaná prevádzka podľa predpisov <strong className="text-[#00D26A]">EASA A1/A3</strong>.</span>
+                                        <span><strong className="text-white">Orientačná volumetria:</strong> Rýchly operatívny odhad objemov sypkých hmôt a skládok pre interné skladové hospodárstvo.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -102,7 +102,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-zinc-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-white">od 75 €</span>
+                                    <span className="text-xl font-display font-bold text-white">od 80 € / výjazd</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/30">
                                     Licencia EASA A1/A3
@@ -146,7 +146,7 @@ export default function Services() { // export Services component
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-zinc-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-white">od 25 € / hod.</span>
+                                    <span className="text-xl font-display font-bold text-white">od 20 € / hod.</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
                                     Projektová kalkulácia

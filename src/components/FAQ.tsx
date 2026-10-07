@@ -59,6 +59,13 @@ export default function FAQ() { // export FAQ component function
             q: 'V akých formátoch a rozlíšení dodávate letecké výstupy?',
             a: 'Fotografie dodávam v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).'
         },
+        {
+            id: 'faq-drone-4',
+            category: 'drone',
+            categoryName: 'Letecké zábery & Dáta',
+            q: 'Poskytujete úradné geodetické zameranie pozemkov?',
+            a: 'Nie. Poskytujeme detailnú vizuálnu a technickú fotodokumentáciu pre interné riadenie projektov, kontrolu stavieb a facility management. Nenahrádzame autorizované geodetické merania na právne úkony a zápis do katastra.'
+        },
 
         // Category 3: Technická grafika
         {

@@ -104,7 +104,7 @@ export default function Portfolio() { // export Portfolio component function
                     </div> {/* projects layout end */}
 
                     <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4">
-                        Foto & Video <span className="text-[#00D26A]">Galéria pozemkov</span>
+                        Foto & Video <span className="text-[#00D26A]">Technické a stavebné objekty</span>
                     </h3> {/* gallery title */}
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> {/* gallery layout */}

@@ -62,6 +62,9 @@ export default function Footer() { // export Footer component function
                     <p>&copy; {new Date().getFullYear()} ELYSIO TECH. Všetky práva vyhradené.</p> {/* copyright text */}
                     <p className="mt-2 sm:mt-0">Digitálne a technické štúdio • Bratislavský kraj</p> {/* credit text */}
                 </div> {/* copyright row end */}
+                <p className="mt-4 text-center text-[11px] text-zinc-600">
+                    * Letecké a priestorové výstupy slúžia ako technický podklad pre internú správu a evidenciu.
+                </p>
             </div> {/* wrapper container end */}
         </footer> // footer element end
     ); // render return end

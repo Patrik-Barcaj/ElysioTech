@@ -66,6 +66,13 @@ export default function FAQ() { // export FAQ component function
             q: 'Poskytujete úradné geodetické zameranie pozemkov?',
             a: 'Nie. Poskytujeme detailnú vizuálnu a technickú fotodokumentáciu pre interné riadenie projektov, kontrolu stavieb a facility management. Nenahrádzame autorizované geodetické merania na právne úkony a zápis do katastra.'
         },
+        {
+            id: 'faq-drone-5',
+            category: 'drone',
+            categoryName: 'Letecké zábery & Dáta',
+            q: 'Ako funguje orientačná volumetria a výpočet objemov?',
+            a: 'Z fotogrametrických modelov vyhotovujeme operatívny odhad objemov sypkých hmôt, výkopov a skládok materiálu. Slúži ako rýchly technický podklad pre interné skladové hospodárstvo a stavebný dozor bez nutnosti zdĺhavých meraní.'
+        },
 
         // Category 3: Technická grafika
         {
@@ -80,7 +87,7 @@ export default function FAQ() { // export FAQ component function
             category: 'graphics',
             categoryName: 'Technická grafika',
             q: 'Ako prebieha kótovanie a zakreslenie sietí do leteckej snímky?',
-            a: 'Na základe dodaného parcelného čísla alebo GPS súradníc zameriam pozemok dronom a do výslednej ortofotomapy presne zanesiem hranice pozemku a inžinierske siete.'
+            a: 'Na základe dodaného parcelného čísla, areálu alebo GPS súradníc vyhotovím technickú snímku a do výslednej ortofotomapy graficky zanesiem orientačné hranice, kóty a inžinierske siete pre interné technické plánovanie.'
         },
         {
             id: 'faq-graphics-3',

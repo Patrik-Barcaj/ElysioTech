@@ -8,7 +8,7 @@ export default function WhyElysio() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-4 uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-[#FFB800]/40 bg-zinc-900/90 text-[#FFB800] text-xs font-mono tracking-widest mb-4 uppercase shadow-inner">
             [ 02 // WHY_ELYSIO ] • ŠTANDARD SPOLUPRÁCE
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight leading-tight">
@@ -32,7 +32,7 @@ export default function WhyElysio() {
             <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-              <div className="font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider shrink-0 uppercase">
+              <div className="font-mono text-xs text-[#00D26A] bg-zinc-900 border border-[#00D26A]/30 px-3 py-1 rounded-sm tracking-wider shrink-0 uppercase shadow-inner">
                 [ 00 // DIRECT_CONTACT ]
               </div>
               <p className="text-zinc-200 text-base sm:text-lg font-medium leading-relaxed">
@@ -70,7 +70,9 @@ export default function WhyElysio() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
                   <span>GARANCIA TERMÍNU</span>
-                  <span className="text-white font-bold font-mono">48H</span>
+                  <div className="bg-black/80 px-2 py-0.5 rounded-sm border border-zinc-800 shadow-inner">
+                    <span className="text-amber-400 font-bold font-mono tracking-wider">48H</span>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -99,7 +101,9 @@ export default function WhyElysio() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
                   <span>BEZ PROSTREDNÍKOV</span>
-                  <span className="text-white font-bold font-mono">1:1</span>
+                  <div className="bg-black/80 px-2 py-0.5 rounded-sm border border-zinc-800 shadow-inner">
+                    <span className="text-emerald-400 font-bold font-mono tracking-wider">1:1</span>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -128,7 +132,9 @@ export default function WhyElysio() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
                   <span>ČISTÉ DÁTA</span>
-                  <span className="text-white font-bold font-mono">0 CHÝB</span>
+                  <div className="bg-black/80 px-2 py-0.5 rounded-sm border border-zinc-800 shadow-inner">
+                    <span className="text-amber-400 font-bold font-mono tracking-wider">0 CHÝB</span>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

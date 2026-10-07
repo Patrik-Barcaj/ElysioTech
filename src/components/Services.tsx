@@ -1,24 +1,33 @@
 import React from 'react'; // import react
 import ScrollReveal from './ui/ScrollReveal'; // import ScrollReveal
 import { PenTool } from 'lucide-react'; // import PenTool icon
+import InteractiveComparison from './ui/InteractiveComparison'; // import interactive comparison
 
 export default function Services() { // export Services component
     return ( // start return block
-        <section id="services" className="py-24 min-h-[100dvh] flex items-center relative border-t border-neutral-800 bg-[#080808]"> {/* main services section */}
+        <section id="services" className="py-24 min-h-[100dvh] flex items-center relative border-t border-neutral-800 bg-[#080808] bg-blueprint-grid"> {/* main services section */}
             <div id="sluzby" className="absolute -top-20 pointer-events-none"></div>
             <div id="cennik" className="absolute -top-12 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"> {/* container */}
-                <div className="text-center mb-16"> {/* header wrapper */}
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">
-                        Technické služby
+                <div className="text-center mb-12"> {/* header wrapper */}
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#00D26A]/40 bg-[#00D26A]/10 text-[#00D26A] text-xs font-semibold font-mono tracking-widest mb-3 uppercase">
+                        REÁLNE DÁTA Z TERÉNU
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
-                        Tri hlavné smery <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">technickej realizácie</span>
+                        Od neprehľadného terénu k <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D26A] via-[#FFD066] to-[#FFB800]">čistým digitálnym dátam</span>
                     </h2> {/* main section title */}
                     <p className="text-zinc-300 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
-                        Prepojenie moderného softvérového vývoja, leteckého zberu dát a priamej priemyselnej výroby.
+                        Pozrite sa na rozdiel medzi neupravenou fotkou z terénu a presným digitálnym podkladom pripraveným pre vaše rozhodovanie.
                     </p>
                 </div> {/* header end */}
+
+                {/* Interactive Before/After Visual Showcase */}
+                <InteractiveComparison />
+
+                {/* 3 Pillars Grid Header */}
+                <div className="text-center mt-16 mb-10">
+                    <span className="font-mono text-xs uppercase tracking-widest text-zinc-500">{"// PREHĽAD TECHNICKÝCH SLUŽIEB"}</span>
+                </div>
 
                 {/* 3 Pillars Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">

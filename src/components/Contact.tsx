@@ -22,8 +22,8 @@ export default function Contact() { // export Contact component function
             <div id="kontakt" className="absolute -top-20 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="max-w-3xl mx-auto text-center mb-16"> {/* header wrapper */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-display font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
-                        Priamy kontakt
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
+                        [ 06 // CONTACT ] • PRIAMY KONTAKT
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display mb-4 tracking-tight">
                         Získajte rýchlu cenovú ponuku
@@ -36,6 +36,11 @@ export default function Contact() { // export Contact component function
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch"> {/* split layout grid */}
                     <ScrollReveal delay={0.1} className="h-full"> {/* left side scroll reveal */}
                         <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-8 lg:p-10 transition-all duration-300 hover:border-neutral-700 relative overflow-hidden group"> {/* form card container */}
+                            {/* Coordinate cross accents */}
+                            <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                             <form onSubmit={handleSubmit} className="space-y-5 relative z-10"> {/* form wrapper */}
                                 <div> {/* name wrapper */}
                                     <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-1.5">Vaše meno / Spoločnosť</label> {/* label name */}

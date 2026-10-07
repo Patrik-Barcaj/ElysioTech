@@ -9,8 +9,8 @@ export default function Services() { // export Services component
             <div id="cennik" className="absolute -top-12 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"> {/* container */}
                 <div className="text-center mb-16"> {/* header wrapper */}
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">
-                        Technické služby
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+                        [ 01 // SERVICES ] • TECHNICKÉ SLUŽBY
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
                         Tri hlavné smery <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">technickej realizácie</span>
@@ -23,21 +23,30 @@ export default function Services() { // export Services component
                 {/* 3 Pillars Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
                     
-                    {/* Pillar 1: Vývoj softvéru & Webové aplikácie */}
+                    {/* Pillar 1: Vývoj webov & Aplikácií */}
                     <ScrollReveal delay={0.1} className="h-full">
                         <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            {/* Coordinate cross accents */}
+                            <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
                             <div>
+                                <div className="font-mono text-xs font-semibold text-[#FFB800] tracking-wider mb-3">
+                                    [ 01 // DEV ]
+                                </div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-12 h-12 bg-[#FFB800]/10 rounded-2xl flex items-center justify-center border border-[#FFB800]/25 group-hover:scale-110 transition-all duration-300 shrink-0">
                                         <svg className="w-6 h-6 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
-                                        Vývoj softvéru & Webové aplikácie
+                                        Vývoj webov & Aplikácií
                                     </h3>
                                 </div>
-                                <p className="text-xs sm:text-sm font-medium text-[#FFB800] mb-5 leading-relaxed">
-                                    Vyvíjam moderné webové aplikácie na mieru, zákazkové systémy a interaktívne GIS mapové portály.
+                                <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
+                                    Vývoj moderných webov a aplikácií v Next.js / TypeScript. Od interaktívnych rozhraní po kompletné klientske systémy bez zbytočného balastu.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
@@ -57,31 +66,40 @@ export default function Services() { // export Services component
                             
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
-                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-white">od 250 €</span>
+                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono">Cena a rozsah</span>
+                                    <span className="text-xl font-mono font-bold text-white">od 350 €</span>
                                 </div>
-                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
+                                <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
                                     Next.js & React
                                 </span>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* Pillar 2: Letecká vizualizácia & Zber dát (Green Accent) */}
+                    {/* Pillar 2: Letecký monitoring & Vizuálne audity (Green Accent) */}
                     <ScrollReveal delay={0.2} className="h-full">
                         <div className="h-full bg-[#121214] border border-neutral-800 border-t-2 border-t-[#00D26A] rounded-3xl p-8 hover:border-[#00D26A]/50 hover:shadow-[0_0_30px_rgba(0,210,106,0.15)] transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            {/* Coordinate cross accents */}
+                            <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D26A]/5 rounded-full blur-3xl group-hover:bg-[#00D26A]/10 transition-colors"></div>
                             <div>
+                                <div className="font-mono text-xs font-semibold text-[#00D26A] tracking-wider mb-3">
+                                    [ 02 // AIR ]
+                                </div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-12 h-12 bg-[#00D26A]/10 rounded-2xl flex items-center justify-center border border-[#00D26A]/30 group-hover:scale-110 transition-all duration-300 shrink-0">
                                         <svg className="w-6 h-6 text-[#00D26A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#00D26A] transition-colors">
-                                        Letecká vizualizácia & Zber dát
+                                        Letecký monitoring & Vizuálne audity
                                     </h3>
                                 </div>
-                                <p className="text-xs sm:text-sm font-medium text-[#00D26A] mb-5 leading-relaxed">
-                                    Lietam a spracovávam letecké dáta, ortofotomapy a technické zábery pre stavebníctvo a reality.
+                                <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
+                                    Operatívna fotodokumentácia stavieb, časozberný dohľad a vizuálna kontrola striech bez nutnosti montáže plošín. Dodanie dát do 48 hodín.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
@@ -101,31 +119,40 @@ export default function Services() { // export Services component
                             
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
-                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-white">od 75 €</span>
+                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono">Cena a rozsah</span>
+                                    <span className="text-xl font-mono font-bold text-white">od 80 €</span>
                                 </div>
-                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/30">
+                                <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/30">
                                     Licencia EASA A1/A3
                                 </span>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* Pillar 3: Technická grafika & Vektorizácia */}
+                    {/* Pillar 3: Technická grafika */}
                     <ScrollReveal delay={0.3} className="h-full">
                         <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                            {/* Coordinate cross accents */}
+                            <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                            <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
                             <div>
+                                <div className="font-mono text-xs font-semibold text-[#FFB800] tracking-wider mb-3">
+                                    [ 03 // CAD ]
+                                </div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-12 h-12 bg-[#FFB800]/10 rounded-2xl flex items-center justify-center border border-[#FFB800]/25 group-hover:scale-110 transition-all duration-300 shrink-0">
                                         <PenTool className="w-6 h-6 text-[#FFB800]" strokeWidth={1.5} />
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
-                                        Technická grafika & Vektorizácia
+                                        Technická grafika
                                     </h3>
                                 </div>
-                                <p className="text-xs sm:text-sm font-medium text-[#FFB800] mb-5 leading-relaxed">
-                                    Pripravujem bezchybné vektorové podklady pre výrobu, technické kótovanie plánov a grafické zákresy.
+                                <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
+                                    Príprava a vektorizácia podkladov pre CNC, laserové delenie materiálov a technickú veľkoformátovú tlač. Formáty DXF, SVG, PDF.
                                 </p>
                                 <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
                                     <li className="flex items-start gap-2.5">
@@ -145,10 +172,10 @@ export default function Services() { // export Services component
                             
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
-                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider">Cena a rozsah</span>
-                                    <span className="text-xl font-display font-bold text-white">od 25 € / hod.</span>
+                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono">Cena a rozsah</span>
+                                    <span className="text-xl font-mono font-bold text-white">od 20 € / hod.</span>
                                 </div>
-                                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
+                                <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#FFB800]/10 text-[#FFB800] border border-[#FFB800]/30">
                                     Projektová kalkulácia
                                 </span>
                             </div>

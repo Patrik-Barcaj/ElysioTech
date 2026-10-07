@@ -59,8 +59,8 @@ export default function Testimonials() { // export Testimonials component functi
         <section id="testimonials" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">
-                        Hodnotenia
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+                        [ 04 // REVIEWS ] • REFERENCIE
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Čo hovoria naši klienti</h2> {/* title */}
                 </div> {/* header block end */}
@@ -80,7 +80,13 @@ export default function Testimonials() { // export Testimonials component functi
                         > {/* slider flex container */}
                             {allReviews.map((r) => ( // map all reviews
                                 <div key={r.id} className="w-full shrink-0 px-2 sm:px-4 py-4 select-none"> {/* slide wrapper */}
-                                    <div className="max-w-md mx-auto bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-neutral-700 shadow-2xl"> {/* card */}
+                                    <div className="max-w-md mx-auto bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-neutral-700 shadow-2xl relative overflow-hidden group"> {/* card */}
+                                        {/* Coordinate cross accents */}
+                                        <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                        <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                        <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                        <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                                         <div className="flex mb-4 text-lg text-[#FFB800]">
                                             ★★★★★
                                         </div> {/* stars rating */}

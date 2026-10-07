@@ -96,8 +96,8 @@ export default function FAQ() { // export FAQ component function
         <section id="faq" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-12"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-display font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
-                        Otázky a odpovede
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
+                        [ 05 // FAQ ] • OTÁZKY A ODPOVEDE
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Často kladené otázky</h2> {/* title */}
                     <p className="text-zinc-400 mt-3 text-base sm:text-lg">Prehľadné odpovede rozdelené podľa 3 hlavných oblastí služieb.</p>

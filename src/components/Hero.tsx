@@ -18,9 +18,9 @@ export default function Hero() { // export Hero component function
                     
                     {/* Left: Typography & Technical Pitch */}
                     <div className="flex-1 text-center lg:text-left mt-10 lg:mt-0"> {/* text content wrapper */}
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-display tracking-widest mb-6"> {/* pre-heading badge */}
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6"> {/* pre-heading badge */}
                             <span className="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse shadow-[0_0_10px_rgba(255,184,0,0.85)]"></span> {/* glowing dot */}
-                            DIGITÁLNE A TECHNICKÉ ŠTÚDIO • BRATISLAVSKÝ KRAJ
+                            [ 00 // STUDIO ] • BRATISLAVSKÝ KRAJ
                         </div> {/* pre-heading end */}
                         
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}
@@ -60,15 +60,15 @@ export default function Hero() { // export Hero component function
                             <div className="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
                                 <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                                     <span className="text-amber-400 font-bold">DRON</span>
-                                    <span className="text-zinc-500">od 75€</span>
+                                    <span className="text-zinc-500">od 80€</span>
                                 </a>
                                 <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                                     <span className="text-amber-400 font-bold">GRAFIKA</span>
-                                    <span className="text-zinc-500">od 25€/h</span>
+                                    <span className="text-zinc-500">od 20€/h</span>
                                 </a>
                                 <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                                     <span className="text-amber-400 font-bold">APP & WEB</span>
-                                    <span className="text-zinc-500">od 250€</span>
+                                    <span className="text-zinc-500">od 350€</span>
                                 </a>
                             </div>
                         </div>

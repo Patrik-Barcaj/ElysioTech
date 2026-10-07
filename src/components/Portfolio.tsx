@@ -40,8 +40,8 @@ export default function Portfolio() { // export Portfolio component function
         <section id="portfolio" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
                 <div className="text-center mb-16"> {/* header block */}
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-3 uppercase">
-                        Portfólio realizácií
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+                        [ 03 // PORTFOLIO ] • REALIZÁCIE
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Projekty</h2> {/* title */}
                 </div> {/* header block end */}
@@ -49,8 +49,9 @@ export default function Portfolio() { // export Portfolio component function
                 {/* Unified Portfolio */}
                 <div className="mb-16"> {/* portfolio wrapper */}
 
-                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4">
-                        Weby & <span className="text-[#00D26A]">Aplikácie</span>
+                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
+                        <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 01 // DEV ]</span>
+                        <span>Weby & <span className="text-[#00D26A]">Aplikácie</span></span>
                     </h3> {/* projects title */}
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"> {/* projects layout */}
@@ -103,8 +104,9 @@ export default function Portfolio() { // export Portfolio component function
                         ))}
                     </div> {/* projects layout end */}
 
-                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4">
-                        Foto & Video <span className="text-[#00D26A]">Galéria pozemkov</span>
+                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
+                        <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 02 // AIR ]</span>
+                        <span>Foto & Video <span className="text-[#00D26A]">Galéria pozemkov</span></span>
                     </h3> {/* gallery title */}
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> {/* gallery layout */}

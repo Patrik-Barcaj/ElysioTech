@@ -7,9 +7,9 @@ export default function WhyElysio() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold font-display tracking-widest mb-4 uppercase">
-            STANDARD SPOLUPRÁCE
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-4 uppercase">
+            [ 02 // WHY_ELYSIO ] • ŠTANDARD SPOLUPRÁCE
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight leading-tight">
             Inžiniersky prístup, <br className="hidden sm:inline" />
@@ -22,14 +22,43 @@ export default function WhyElysio() {
           </p>
         </div>
 
+        {/* Osobný inžiniersky blok */}
+        <ScrollReveal delay={0.05} className="max-w-4xl mx-auto mb-12">
+          <div className="relative bg-[#121214] border border-neutral-800 rounded-2xl p-6 sm:p-8 overflow-hidden group hover:border-[#00D26A]/40 transition-all">
+            {/* Coordinate cross accents */}
+            <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+            <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+            <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+            <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+              <div className="font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider shrink-0 uppercase">
+                [ 00 // DIRECT_CONTACT ]
+              </div>
+              <p className="text-zinc-200 text-base sm:text-lg font-medium leading-relaxed">
+                Jeden kontakt od zberu dát po kód. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
         {/* 3 Value Pillars Grid */}
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Card 1: Rýchlosť */}
             <ScrollReveal delay={0.1} className="h-full">
-              <div className="h-full bg-[#121214] border border-neutral-800 rounded-xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+                {/* Coordinate cross accents */}
+                <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                 <div>
+                  <div className="font-mono text-xs text-amber-400 tracking-wider mb-2">
+                    [ 01 // SPEED ]
+                  </div>
                   <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
                     ⚡ Rýchlosť do 48 hodín
                   </h3>
@@ -39,16 +68,26 @@ export default function WhyElysio() {
                     <p>• <strong className="text-white">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích procesov.</p>
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400">
-                  GARANCIA TERMÍNU
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
+                  <span>GARANCIA TERMÍNU</span>
+                  <span className="text-white font-bold font-mono">48H</span>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Card 2: 1:1 Priamy kontakt */}
             <ScrollReveal delay={0.2} className="h-full">
-              <div className="h-full bg-[#121214] border border-neutral-800 rounded-xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+                {/* Coordinate cross accents */}
+                <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                 <div>
+                  <div className="font-mono text-xs text-[#00D26A] tracking-wider mb-2">
+                    [ 02 // DIRECT ]
+                  </div>
                   <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
                     👤 1:1 Priamy kontakt
                   </h3>
@@ -58,16 +97,26 @@ export default function WhyElysio() {
                     <p>• <strong className="text-white">Nulový šum:</strong> Žiadne skreslené zadania cez account manažérov.</p>
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A]">
-                  BEZ PROSTREDNÍKOV
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
+                  <span>BEZ PROSTREDNÍKOV</span>
+                  <span className="text-white font-bold font-mono">1:1</span>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Card 3: Presnosť */}
             <ScrollReveal delay={0.3} className="h-full">
-              <div className="h-full bg-[#121214] border border-neutral-800 rounded-xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+                {/* Coordinate cross accents */}
+                <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
                 <div>
+                  <div className="font-mono text-xs text-amber-400 tracking-wider mb-2">
+                    [ 03 // PRECISION ]
+                  </div>
                   <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
                     🎯 Výrobná & Technická presnosť
                   </h3>
@@ -77,8 +126,9 @@ export default function WhyElysio() {
                     <p>• <strong className="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400">
-                  ČISTÉ DÁTA
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
+                  <span>ČISTÉ DÁTA</span>
+                  <span className="text-white font-bold font-mono">0 CHÝB</span>
                 </div>
               </div>
             </ScrollReveal>

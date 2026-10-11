@@ -1,5 +1,4 @@
 import React from 'react'; // import react
-import Image from 'next/image'; // import Next.js Image
 import ScrollReveal from './ui/ScrollReveal'; // import ScrollReveal
 import { PenTool } from 'lucide-react'; // import PenTool icon
 
@@ -35,37 +34,12 @@ export default function Services() { // export Services component
 
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
                             <div>
-                                {/* 16:9 Visual Placeholder */}
-                                <div className="aspect-video w-full rounded-2xl border border-zinc-800 overflow-hidden mb-4 relative bg-black/40">
-                                    <Image
-                                        src="https://placehold.co/640x360/121214/10b981?text=DEV+%2F%2F+Next.js+UI+System"
-                                        alt="DEV // Next.js UI System"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 400px"
-                                        className="object-cover"
-                                        unoptimized
-                                    />
-                                </div>
-
-                                {/* Format Badge Chips */}
-                                <div className="flex flex-wrap gap-1.5 mb-4">
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        Next.js 15
-                                    </span>
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        TypeScript
-                                    </span>
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        Tailwind
-                                    </span>
-                                </div>
-
                                 <div className="font-mono text-xs font-semibold text-[#FFB800] tracking-wider mb-3">
                                     [ 01 // DEV ]
                                 </div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-12 h-12 bg-[#FFB800]/10 rounded-2xl flex items-center justify-center border border-[#FFB800]/25 group-hover:scale-110 transition-all duration-300 shrink-0">
-                                        <svg className="w-6 h-6 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                        <svg className="w-6 h-6 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
                                         Vývoj webov & aplikácií
@@ -113,37 +87,12 @@ export default function Services() { // export Services component
 
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#00D26A]/5 rounded-full blur-3xl group-hover:bg-[#00D26A]/10 transition-colors"></div>
                             <div>
-                                {/* 16:9 Visual Placeholder */}
-                                <div className="aspect-video w-full rounded-2xl border border-zinc-800 overflow-hidden mb-4 relative bg-black/40">
-                                    <Image
-                                        src="https://placehold.co/640x360/121214/eab308?text=AIR+%2F%2F+Kataster+%2B+Inspekcia"
-                                        alt="AIR // Kataster + Inspekcia"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 400px"
-                                        className="object-cover"
-                                        unoptimized
-                                    />
-                                </div>
-
-                                {/* Format Badge Chips */}
-                                <div className="flex flex-wrap gap-1.5 mb-4">
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        48 MPx RAW
-                                    </span>
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        GeoTIFF
-                                    </span>
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        PDF Audit
-                                    </span>
-                                </div>
-
                                 <div className="font-mono text-xs font-semibold text-[#00D26A] tracking-wider mb-3">
                                     [ 02 // AIR ]
                                 </div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-12 h-12 bg-[#00D26A]/10 rounded-2xl flex items-center justify-center border border-[#00D26A]/30 group-hover:scale-110 transition-all duration-300 shrink-0">
-                                        <svg className="w-6 h-6 text-[#00D26A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                        <svg className="w-6 h-6 text-[#00D26A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#00D26A] transition-colors">
                                         Letecké dáta & Audity
@@ -197,31 +146,6 @@ export default function Services() { // export Services component
 
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
                             <div>
-                                {/* 16:9 Visual Placeholder */}
-                                <div className="aspect-video w-full rounded-2xl border border-zinc-800 overflow-hidden mb-4 relative bg-black/40">
-                                    <Image
-                                        src="https://placehold.co/640x360/121214/71717a?text=DTP+%2F%2F+Vektorove+Krivky+DXF"
-                                        alt="DTP // Vektorove Krivky DXF"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 400px"
-                                        className="object-cover"
-                                        unoptimized
-                                    />
-                                </div>
-
-                                {/* Format Badge Chips */}
-                                <div className="flex flex-wrap gap-1.5 mb-4">
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        DXF / DWG
-                                    </span>
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        SVG Krivky
-                                    </span>
-                                    <span className="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-white/5 text-zinc-300 border border-zinc-800/80">
-                                        CMYK DTP
-                                    </span>
-                                </div>
-
                                 <div className="font-mono text-xs font-semibold text-[#FFB800] tracking-wider mb-3">
                                     [ 03 // CAD ]
                                 </div>

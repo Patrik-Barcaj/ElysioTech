@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation'; // import Navigation component
 import Hero from '@/components/Hero'; // import Hero component
+import BeforeAfterSlider from '@/components/BeforeAfterSlider'; // import BeforeAfterSlider component
 import Services from '@/components/Services'; // import Services component
 import WhyElysio from '@/components/WhyElysio'; // import WhyElysio component
 import Portfolio from '@/components/Portfolio'; // import Portfolio component
@@ -14,6 +15,7 @@ export default function Home() { // export default Home component function
     <main className="min-h-[100dvh] bg-[#080808] text-zinc-300 relative"> {/* main container wrapper */}
       <Navigation /> {/* render navigation header */}
       <Hero /> {/* render asymmetric minimalist hero */}
+      <BeforeAfterSlider /> {/* render interactive comparison slider */}
       <Marquee items={['Letecké Ortofotomapy', 'Vektorové GIS Siete', 'Technická Grafika & Vektorizácia', 'DTP & Prepress Príprava', 'Next.js & TypeScript Vývoj', 'MapLibre GIS Integrácia', 'Certifikácia EASA A1/A3', 'Expresná Realizácia']} /> {/* render infinite marquee */}
       <Services /> {/* render services bento grid */}
       <WhyElysio /> {/* render solo operator advantage section */}

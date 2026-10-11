@@ -42,7 +42,6 @@ export default function Portfolio() {
         }
     ];
 
-    const [activeCaptureIdx, setActiveCaptureIdx] = useState(0);
     const [isTechModalOpen, setIsTechModalOpen] = useState(false);
     const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -133,10 +132,10 @@ export default function Portfolio() {
                         ))}
                     </div>
 
-                    {/* Section 02: Air (Interactive Drone Project Card) */}
+                    {/* Section 02: Air (Technický inšpekčný panel & Katastrálny zákres) */}
                     <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
                         <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 02 // AIR ]</span>
-                        <span>Letecké dáta & <span className="text-[#00D26A]">Technický audit</span></span>
+                        <span>Inšpekčný výstup & <span className="text-[#00D26A]">Katastrálny zákres</span></span>
                     </h3>
                     
                     <div className="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group hover:border-[#00D26A]/50 transition-all duration-300">
@@ -151,19 +150,19 @@ export default function Portfolio() {
 
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                             
-                            {/* Left: Interactive Preview + Switcher */}
-                            <div className="lg:col-span-6 flex flex-col gap-4">
-                                {/* Main image container */}
+                            {/* Ľavá strana (2/3 šírky) */}
+                            <div className="lg:col-span-8 flex flex-col gap-4">
                                 <div 
-                                    onClick={() => setLightbox(activeCaptureIdx)}
-                                    className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-black/60 border border-neutral-800 cursor-zoom-in group/img"
+                                    onClick={() => setLightbox(0)}
+                                    className="relative aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black/60 shadow-inner group/img cursor-zoom-in"
                                 >
                                     <Image
-                                        src={droneCaptures[activeCaptureIdx].src}
-                                        alt={droneCaptures[activeCaptureIdx].title}
+                                        src="https://placehold.co/960x540/121214/eab308?text=Letecka+Ortofotomapa+%2B+Katastralny+Zakres+[DEMO]"
+                                        alt="Letecká Ortofotomapa + Katastrálny Zákres [DEMO]"
                                         fill
-                                        sizes="(max-width: 768px) 100vw, 600px"
+                                        sizes="(max-width: 1024px) 100vw, 850px"
                                         className="object-cover transition-transform duration-700 group-hover/img:scale-105"
+                                        unoptimized
                                     />
                                     {/* Badges on image */}
                                     <div className="absolute top-3 left-3 flex items-center gap-2">
@@ -177,8 +176,8 @@ export default function Portfolio() {
                                     
                                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 flex items-end justify-between">
                                         <div>
-                                            <p className="text-[11px] font-mono text-[#FFB800] uppercase font-semibold">{droneCaptures[activeCaptureIdx].category}</p>
-                                            <p className="text-sm font-bold text-white font-display">{droneCaptures[activeCaptureIdx].title}</p>
+                                            <p className="text-[11px] font-mono text-[#FFB800] uppercase font-semibold">DEMO DÁTA // ORTOFOTO & KATASTER</p>
+                                            <p className="text-sm font-bold text-white font-display">Inšpekčný výstup & Katastrálny zákres</p>
                                         </div>
                                         <span className="text-xs text-zinc-400 font-mono bg-black/70 px-2 py-1 rounded border border-neutral-700 flex items-center gap-1 shrink-0">
                                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
@@ -186,75 +185,54 @@ export default function Portfolio() {
                                         </span>
                                     </div>
                                 </div>
-
-                                {/* Thumbnails switcher */}
-                                <div className="grid grid-cols-4 gap-2">
-                                    {droneCaptures.map((cap, idx) => (
-                                        <button
-                                            key={cap.id}
-                                            type="button"
-                                            onClick={() => setActiveCaptureIdx(idx)}
-                                            className={`relative aspect-[4/3] rounded-xl overflow-hidden border transition-all text-left group/thumb ${
-                                                activeCaptureIdx === idx 
-                                                    ? 'border-[#00D26A] ring-2 ring-[#00D26A]/30' 
-                                                    : 'border-neutral-800 opacity-60 hover:opacity-100 hover:border-neutral-700'
-                                            }`}
-                                        >
-                                            <Image
-                                                src={cap.src}
-                                                alt={cap.title}
-                                                fill
-                                                sizes="150px"
-                                                className="object-cover"
-                                            />
-                                            <div className="absolute inset-0 bg-black/40 group-hover/thumb:bg-transparent transition-colors"></div>
-                                            <span className="absolute bottom-1 left-1 right-1 text-[10px] font-mono font-bold text-white bg-black/80 px-1 py-0.5 rounded truncate block text-center">
-                                                {cap.tag}
-                                            </span>
-                                        </button>
-                                    ))}
-                                </div>
                             </div>
 
-                            {/* Right: Technical Specs & Information */}
-                            <div className="lg:col-span-6 flex flex-col justify-between h-full">
+                            {/* Pravá strana (1/3 šírky) */}
+                            <div className="lg:col-span-4 flex flex-col justify-between h-full">
                                 <div>
                                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00D26A]/40 bg-[#00D26A]/10 text-[#00D26A] text-xs font-mono tracking-widest mb-3 uppercase">
-                                        [ 02 // AIR ] • KATASTRÁLNY ZÁKRES & AUDIT
+                                        [ 02 // AIR ] • KATASTRÁLNY ZÁKRES
                                     </div>
-                                    <h4 className="text-2xl sm:text-3xl font-extrabold text-white font-display mb-3 tracking-tight">
-                                        Technická fotodokumentácia & Katastrálny zákres
+                                    <h4 className="text-2xl font-extrabold text-white font-display mb-3 tracking-tight">
+                                        Inšpekčný výstup & Katastrálny zákres
                                     </h4>
-                                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-medium">
+                                    <p className="text-sm text-zinc-300 leading-relaxed mb-5 font-medium">
                                         Operatívny letecký audit záujmového územia, generovanie detailnej ortofotomapy a vektorové osadenie hraníc parciel priamo do výstupných dát.
                                     </p>
 
-                                    {/* Kľúčové parametre Box */}
-                                    <div className="bg-[#090d0b] border border-neutral-800 rounded-2xl p-5 mb-6 space-y-3.5">
+                                    {/* Technický checklist parametrov */}
+                                    <div className="bg-[#090d0b] border border-neutral-800 rounded-2xl p-5 mb-5 space-y-3">
                                         <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#FFB800] border-b border-neutral-800/80 pb-2 flex items-center justify-between">
-                                            <span>Kľúčové parametre</span>
-                                            <span className="text-[#00D26A]">B2B ŠPECIFIKÁCIA</span>
+                                            <span>Technický checklist</span>
+                                            <span className="text-[#00D26A]">EASA A1/A3</span>
                                         </div>
-                                        <ul className="space-y-3 text-xs sm:text-sm text-zinc-200">
+                                        <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-200">
                                             <li className="flex items-start gap-2.5">
-                                                <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
+                                                <span className="text-[#00D26A] font-bold text-sm leading-none mt-0.5">✓</span>
                                                 <div>
-                                                    <strong className="text-white font-semibold">Typ senzora:</strong>{' '}
-                                                    <span className="text-zinc-300">48 MPx RGB snímač</span>
+                                                    <strong className="text-white font-semibold">Senzor:</strong>{' '}
+                                                    <span className="text-zinc-300">48 MPx RGB (f/1.7)</span>
                                                 </div>
                                             </li>
                                             <li className="flex items-start gap-2.5">
-                                                <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
+                                                <span className="text-[#00D26A] font-bold text-sm leading-none mt-0.5">✓</span>
                                                 <div>
-                                                    <strong className="text-white font-semibold">Spracovanie:</strong>{' '}
-                                                    <span className="text-zinc-300">Rekonštrukcia ortofotomapy na dedikovanom PC</span>
+                                                    <strong className="text-white font-semibold">Typ letu:</strong>{' '}
+                                                    <span className="text-zinc-300">Mriežkový fotogrametrický prelet</span>
                                                 </div>
                                             </li>
                                             <li className="flex items-start gap-2.5">
-                                                <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
+                                                <span className="text-[#00D26A] font-bold text-sm leading-none mt-0.5">✓</span>
                                                 <div>
                                                     <strong className="text-white font-semibold">Výstupy:</strong>{' '}
-                                                    <span className="text-zinc-300">Georeferencovaný ortofoto formát, vektorový zákres hraníc (SVG/PDF), detailné inšpekčné zábery</span>
+                                                    <span className="text-zinc-300">Ortofotomapa + PDF protokol defektov</span>
+                                                </div>
+                                            </li>
+                                            <li className="flex items-start gap-2.5">
+                                                <span className="text-[#00D26A] font-bold text-sm leading-none mt-0.5">✓</span>
+                                                <div>
+                                                    <strong className="text-white font-semibold">Dostupnosť:</strong>{' '}
+                                                    <span className="text-zinc-300">Výjazdy v týždni od 14:30 / víkendy</span>
                                                 </div>
                                             </li>
                                         </ul>
@@ -262,23 +240,32 @@ export default function Portfolio() {
                                 </div>
 
                                 {/* Actions */}
-                                <div className="pt-2 flex flex-wrap items-center gap-3">
+                                <div className="space-y-2 pt-1">
+                                    {/* Tlačidlo (outline): Stiahnuť vzorový PDF protokol */}
                                     <button
                                         type="button"
                                         onClick={() => setIsTechModalOpen(true)}
-                                        className="px-5 py-3 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-sm tracking-wide transition-all shadow-lg shadow-[#00D26A]/25 flex items-center gap-2 transform hover:-translate-y-0.5"
+                                        className="w-full py-3 px-4 rounded-xl border-2 border-[#00D26A] text-[#00D26A] hover:bg-[#00D26A]/10 font-bold font-display text-xs sm:text-sm tracking-wide transition-all flex items-center justify-center gap-2 text-center shadow-sm"
                                     >
-                                        <span>Zobraziť technické parametre</span>
-                                        <span className="text-base font-bold">↗</span>
+                                        <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                        <span>Stiahnuť vzorový PDF protokol</span>
                                     </button>
 
-                                    <Link
-                                        href="/projekty/katastralny-zakres"
-                                        className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold font-display text-sm transition-all border border-neutral-700 hover:border-neutral-600 flex items-center gap-2"
-                                    >
-                                        <span>Detail projektu</span>
-                                        <span>→</span>
-                                    </Link>
+                                    <div className="flex items-center gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={() => setIsTechModalOpen(true)}
+                                            className="flex-1 py-2.5 px-3 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-xs transition-all text-center"
+                                        >
+                                            Technické parametre ↗
+                                        </button>
+                                        <Link
+                                            href="/projekty/katastralny-zakres"
+                                            className="flex-1 py-2.5 px-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold font-display text-xs transition-all border border-neutral-700 text-center"
+                                        >
+                                            Detail projektu →
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
 
@@ -370,7 +357,6 @@ export default function Portfolio() {
                                     <div 
                                         key={`modal-cap-${cap.id}`}
                                         onClick={() => {
-                                            setActiveCaptureIdx(i);
                                             setLightbox(i);
                                         }}
                                         className="relative aspect-[4/3] rounded-xl overflow-hidden border border-neutral-800 cursor-pointer group/modal-img"
@@ -431,10 +417,11 @@ export default function Portfolio() {
 
                     <div className="relative max-h-[85vh] max-w-[85vw] w-[1200px] h-[800px]" onClick={(e) => e.stopPropagation()}>
                         <Image
-                            src={droneCaptures[lightbox].src}
-                            alt={droneCaptures[lightbox].title}
+                            src={lightbox === 0 ? "https://placehold.co/960x540/121214/eab308?text=Letecka+Ortofotomapa+%2B+Katastralny+Zakres+[DEMO]" : droneCaptures[lightbox].src}
+                            alt={lightbox === 0 ? "Inšpekčný výstup & Katastrálny zákres [DEMO]" : droneCaptures[lightbox].title}
                             fill
                             className="object-contain rounded-lg shadow-2xl"
+                            unoptimized
                         />
                     </div>
 
@@ -443,8 +430,10 @@ export default function Portfolio() {
                     </button>
 
                     <div className="absolute bottom-6 left-0 right-0 text-center text-white font-bold text-lg drop-shadow-lg pointer-events-none px-4">
-                        <p>{droneCaptures[lightbox].title}</p>
-                        <p className="text-xs text-zinc-400 font-mono mt-1 font-normal">{droneCaptures[lightbox].desc}</p>
+                        <p>{lightbox === 0 ? "Inšpekčný výstup & Katastrálny zákres [DEMO]" : droneCaptures[lightbox].title}</p>
+                        <p className="text-xs text-zinc-400 font-mono mt-1 font-normal">
+                            {lightbox === 0 ? "Operatívny letecký audit záujmového územia a vektorové osadenie hraníc." : droneCaptures[lightbox].desc}
+                        </p>
                     </div>
                 </div>
             )}

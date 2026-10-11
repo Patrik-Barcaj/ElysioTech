@@ -232,7 +232,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <h2 className="text-2xl font-bold font-display text-white mb-8">
               Ďalšie projekty
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {otherProjects.map((other) => (
                 <Link
                   key={other.id}

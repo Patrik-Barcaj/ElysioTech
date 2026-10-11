@@ -140,6 +140,47 @@ export const projectsData: ProjectItem[] = [
     ],
     role: 'Full-Stack architektúra, UI/UX dizajn, API integrácia',
     ctaText: 'Spustiť aplikáciu →'
+  },
+  {
+    id: 'proj-drone-cadastre',
+    slug: 'katastralny-zakres',
+    title: 'Technická fotodokumentácia & Katastrálny zákres',
+    subtitle: 'Operatívny letecký audit územia & ortofotomapa s vektorovým zákresom',
+    category: 'Letecké Dáta & Geodézia',
+    tagline: 'Operatívny letecký audit záujmového územia, generovanie detailnej ortofotomapy a vektorové osadenie hraníc parciel priamo do výstupných dát.',
+    description: 'Operatívny letecký audit záujmového územia, generovanie detailnej ortofotomapy a vektorové osadenie hraníc parciel priamo do výstupných dát.',
+    longDescription: [
+      'Komplexná technická služba kombinujúca bezpilotný letecký zber dát s pokročilým spracovaním na dedikovanej výpočtovej stanici bez závislosti na pomalých cloudových službách.',
+      'Snímanie prebieha pomocou 48 MPx RGB senzora v definovanej letovej hladine s vysokým pozdĺžnym a priečnym prekrytím snímok. Zo zozbieraných fotogrametrických dát je následne rekonštruovaná detailná ortofotomapa celého záujmového územia v reálnej mierke.',
+      'Finálnym krokom je vektorové osadenie platných hraníc parciel z katastra nehnuteľností (C-KN / E-KN) priamo do ortofotomapy a generovanie inšpekčných protokolov pripravených pre architektov, stavebný dozor, geodetov a investorov.'
+    ],
+    features: [
+      'Typ senzora: 48 MPx RGB snímač s vysokým dynamickým rozsahom a detailnou kresbou',
+      'Spracovanie: Rekonštrukcia ortofotomapy na dedikovanom PC (lokálny výpočet, maximálna bezpečnosť dát)',
+      'Výstupy: Georeferencovaný ortofoto formát, vektorový zákres hraníc (SVG/PDF), detailné inšpekčné zábery',
+      'Presné napasovanie katastrálnych parciel (C-KN / E-KN) na reálny terén',
+      'Certifikovaná prevádzka v kategórii EASA Open A1/A3 s platným poistením zodpovednosti'
+    ],
+    technologies: [
+      '48 MPx RGB Snímač',
+      'Lokálna PC Rekonštrukcia',
+      'Vektorový Zákres Hraníc',
+      'GeoTIFF & GIS Formáty',
+      'EASA A1/A3 Certifikácia',
+      'AutoCAD / DXF / SVG'
+    ],
+    liveUrl: 'https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20technickej%20fotodokumentacie%20a%20katastralneho%20zakresu',
+    image: '/drone/DJI_0236.jpg',
+    imageFit: 'cover',
+    bgClass: 'bg-[#09140f]',
+    deliverables: [
+      'Georeferencovaný ortofoto formát (GeoTIFF)',
+      'Vektorový zákres hraníc (SVG / PDF / DXF)',
+      'Sada detailných inšpekčných záberov (48 MPx)',
+      'Technický inšpekčný protokol'
+    ],
+    role: 'Letecký zber dát, fotogrametria, vektorový CAD/GIS zákres',
+    ctaText: 'Dopytovať technický audit →'
   }
 ];
 

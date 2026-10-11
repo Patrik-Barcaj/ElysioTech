@@ -1,142 +1,117 @@
-"use client"; // add client directive for state
+"use client";
 
-import React, { useState, useEffect } from 'react'; // import react and hooks
+import React from 'react';
+import ScrollReveal from './ui/ScrollReveal';
+import { Clock, Layers, ShieldCheck } from 'lucide-react';
 
-export default function Testimonials() { // export Testimonials component function
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isHovered, setIsHovered] = useState(false); // state for hover pause
-
-    const allReviews = [
-        { id: 'rev-violet-f', type: 'digital', name: 'Violet F.', proj: 'Úprava reklamného banneru', text: 'Veľmi rýchla a bezproblémová úprava fotiek na našom reklamnom banneri. Výmena fotky budovy a doplnenie loga prebehlo obratom a profesionálne.' },
-        { id: 'rev-marek-t', type: 'drone', name: 'Marek T.', proj: 'Zábery rodinného domu', text: 'Veľmi pekné fotky nášho domu a pozemku na predaj. Komunikácia bola rýchla, cena priateľská a zábery z výšky nám veľmi pomohli pri inzercii.' },
-        { id: 'rev-lucia-g', type: 'digital', name: 'Lucia G.', proj: 'Dizajn produktových etikiet', text: 'Ďakujem za skvelú prácu a veľmi príjemnú komunikáciu. Grafické podklady boli dodané precízne a navyše za férovú cenu.' },
-        { id: 'rev-jozef-m', type: 'drone', name: 'Jozef M.', proj: 'Video & foto vinohradu', text: 'Skvelé letecké video a fotky nášho vinohradu na web. Výborná komunikácia a výsledné 4K zábery vyzerajú naozaj reprezentatívne.' },
-        { id: 'rev-michaela-c', type: 'digital', name: 'Michaela C.', proj: 'Úprava webstránky', text: 'Veľmi oceňujem rýchlosť a ochotu pri úprave webovej stránky. Všetky požadované zmeny boli zapracované presne podľa predstáv a fungujú super.' },
-        { id: 'rev-anonym', type: 'drone', name: 'Anonymný klient', proj: 'Fotenie záhrady & statku', text: 'Naozaj nádherná práca, výsledné letecké fotky našej záhrady a statku vyzerajú úplne super a kvalitne. Odporúčam.' }
+export default function Testimonials() {
+    const guarantees = [
+        {
+            id: 'guarantee-expedition',
+            badge: '[ 48h Expedícia ]',
+            title: '48h Expedícia',
+            desc: 'Finálne dáta a spracované PDF protokoly doručené do 48 hodín od pristátia.',
+            icon: Clock,
+            accentColor: '#FFB800',
+            bgGlow: 'bg-[#FFB800]/5',
+            badgeBorder: 'border-[#FFB800]/40 text-[#FFB800] bg-[#FFB800]/10',
+            features: [
+                'Garantovaný SLA termín do 48 hodín',
+                'Digitálne odovzdanie cez privátny cloud'
+            ]
+        },
+        {
+            id: 'guarantee-formats',
+            badge: '[ Univerzálne formáty ]',
+            title: 'Univerzálne formáty',
+            desc: 'Dáta odovzdávame pripravené pre prax: GeoTIFF, DXF, SVG aj webové náhľady.',
+            icon: Layers,
+            accentColor: '#00D26A',
+            bgGlow: 'bg-[#00D26A]/5',
+            badgeBorder: 'border-[#00D26A]/40 text-[#00D26A] bg-[#00D26A]/10',
+            features: [
+                'Kompatibilita s CAD, GIS & Adobe nástrojmi',
+                'Georeferencované ortofotomapy v mierke 1:1'
+            ]
+        },
+        {
+            id: 'guarantee-legislation',
+            badge: '[ Legislatívna čistota ]',
+            title: 'Legislatívna čistota',
+            desc: 'Registrovaná prevádzka, EASA certifikácia A1/A3, poistenie a plný rešpekt k vzdušnému priestoru.',
+            icon: ShieldCheck,
+            accentColor: '#FFB800',
+            bgGlow: 'bg-[#FFB800]/5',
+            badgeBorder: 'border-[#FFB800]/40 text-[#FFB800] bg-[#FFB800]/10',
+            features: [
+                'Zmluvné poistenie zodpovednosti za škodu',
+                'Striktné dodržiavanie leteckých predpisov SR'
+            ]
+        }
     ];
 
-    // Auto-advance logic
-    useEffect(() => {
-        if (isHovered) return; // pause if hovered
-        const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % allReviews.length);
-        }, 5000); // 5 seconds per slide
-        return () => clearInterval(timer);
-    }, [allReviews.length, isHovered]);
-
-    const next = () => setCurrentIndex((prev) => (prev + 1) % allReviews.length);
-    const prev = () => setCurrentIndex((prev) => (prev - 1 + allReviews.length) % allReviews.length);
-
-    const [touchStart, setTouchStart] = useState<number | null>(null);
-    const [touchEnd, setTouchEnd] = useState<number | null>(null);
-
-    // Minimum swipe distance threshold (in px)
-    const minSwipeDistance = 50;
-
-    const onTouchStart = (e: React.TouchEvent) => {
-        setTouchEnd(null);
-        setTouchStart(e.targetTouches[0].clientX);
-    };
-
-    const onTouchMove = (e: React.TouchEvent) => {
-        setTouchEnd(e.targetTouches[0].clientX);
-    };
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return;
-        const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
-
-        if (isLeftSwipe) {
-            next();
-        } else if (isRightSwipe) {
-            prev();
-        }
-    };
-
-    return ( // return JSX layout
-        <section id="testimonials" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
-                <div className="text-center mb-16"> {/* header block */}
+    return (
+        <section id="testimonials" className="py-24 bg-[#080808] relative border-t border-neutral-800">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
-                        [ 04 // REVIEWS ] • REFERENCIE
+                        [ 04 // STANDARDS ] • GARANCIA KVALITY
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Čo hovoria naši klienti</h2> {/* title */}
-                </div> {/* header block end */}
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
+                        Garancia technického štandardu
+                    </h2>
+                    <p className="text-zinc-300 mt-4 max-w-2xl mx-auto text-base sm:text-lg font-medium">
+                        Nekompromisná presnosť, bezpečnosť a pripravenosť dát pre okamžité nasadenie v projekčnej a developerskej praxi.
+                    </p>
+                </div>
 
-                <div 
-                    className="relative group/carousel max-w-2xl mx-auto"
-                    onMouseEnter={() => setIsHovered(true)} // set hover true
-                    onMouseLeave={() => setIsHovered(false)} // set hover false
-                    onTouchStart={onTouchStart}
-                    onTouchMove={onTouchMove}
-                    onTouchEnd={onTouchEnd}
-                > {/* carousel container with constrained width */}
-                    <div className="overflow-hidden"> {/* mask */}
-                        <div 
-                            className="flex transition-transform duration-700 ease-in-out cursor-grab active:cursor-grabbing" 
-                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                        > {/* slider flex container */}
-                            {allReviews.map((r) => ( // map all reviews
-                                <div key={r.id} className="w-full shrink-0 px-2 sm:px-4 py-4 select-none"> {/* slide wrapper */}
-                                    <div className="max-w-md mx-auto bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:border-neutral-700 shadow-2xl relative overflow-hidden group"> {/* card */}
-                                        {/* Coordinate cross accents */}
-                                        <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                                        <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                                        <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                                        <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                    {guarantees.map((item, idx) => {
+                        const IconComponent = item.icon;
+                        return (
+                            <ScrollReveal key={item.id} delay={0.1 * (idx + 1)} className="h-full">
+                                <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                                    {/* Coordinate cross accents */}
+                                    <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                    <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                    <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                    <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
-                                        <div className="flex mb-4 text-lg text-[#FFB800]">
-                                            ★★★★★
-                                        </div> {/* stars rating */}
-                                        <p className="text-zinc-300 text-sm sm:text-base italic mb-6 leading-relaxed">&ldquo;{r.text}&rdquo;</p> {/* testimonial text */}
-                                        <div> {/* author wrapper */}
-                                            <p className="text-white font-bold font-display text-base">{r.name}</p> {/* author name */}
-                                            <p className="text-xs sm:text-sm font-medium mt-1 text-[#00D26A]">{r.proj}</p> {/* author project */}
-                                        </div> {/* author wrapper end */}
-                                    </div> {/* card end */}
-                                </div> // slide wrapper end
-                            ))}
-                        </div> {/* slider flex container end */}
-                    </div> {/* mask end */}
+                                    <div className={`absolute top-0 right-0 w-32 h-32 ${item.bgGlow} rounded-full blur-3xl group-hover:opacity-100 opacity-60 transition-opacity`}></div>
 
-                    {/* Navigation Buttons (Visible on mobile & desktop) */}
-                    <button
-                        onClick={prev}
-                        aria-label="Predchádzajúce hodnotenie"
-                        className="absolute left-1 sm:left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-12 p-3 bg-[#121214]/90 backdrop-blur-sm text-white rounded-full border border-neutral-800 hover:border-[#00D26A]/50 hover:text-[#00D26A] transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
-                    >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button
-                        onClick={next}
-                        aria-label="Ďalšie hodnotenie"
-                        className="absolute right-1 sm:right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-12 p-3 bg-[#121214]/90 backdrop-blur-sm text-white rounded-full border border-neutral-800 hover:border-[#00D26A]/50 hover:text-[#00D26A] transition-all z-20 shadow-xl opacity-90 sm:opacity-0 sm:group-hover/carousel:opacity-100 focus:opacity-100"
-                    >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
-                    </button>
+                                    <div>
+                                        <div className="flex items-center justify-between gap-3 mb-6">
+                                            <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-semibold border ${item.badgeBorder}`}>
+                                                {item.badge}
+                                            </span>
+                                            <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 group-hover:scale-110 transition-transform">
+                                                <IconComponent className="w-5 h-5" style={{ color: item.accentColor }} strokeWidth={1.75} />
+                                            </div>
+                                        </div>
 
-                    {/* Dots Navigation & Swipe hint on mobile */}
-                    <div className="flex flex-col items-center mt-6 gap-3">
-                        <div className="flex justify-center gap-2"> {/* dots container */}
-                            {allReviews.map((r, i) => ( // map dots
-                                <button 
-                                    key={`dot-${r.id}`} 
-                                    onClick={() => setCurrentIndex(i)} 
-                                    aria-label={`Prejsť na hodnotenie ${i + 1}`}
-                                    className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#00D26A] w-6' : 'bg-neutral-800 hover:bg-neutral-700 w-2'}`}
-                                /> // dot
-                            ))}
-                        </div>
-                        <span className="text-[11px] text-zinc-500 sm:hidden">
-                            Potiahnite prstom (swipe) alebo použite šípky
-                        </span>
-                    </div> {/* dots container end */}
+                                        <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-white transition-colors">
+                                            {item.title}
+                                        </h3>
 
-                </div> {/* carousel container end */}
+                                        <p className="text-sm text-zinc-300 leading-relaxed mb-6 font-medium">
+                                            {item.desc}
+                                        </p>
+                                    </div>
 
-            </div> {/* container block end */}
-        </section> // section wrapper end
-    ); // return statement end
-} // component function end
+                                    <div className="pt-6 border-t border-neutral-800/80 mt-auto space-y-2.5">
+                                        {item.features.map((feat) => (
+                                            <div key={feat} className="flex items-center gap-2 text-xs text-zinc-400 font-mono">
+                                                <span style={{ color: item.accentColor }} className="font-bold">✓</span>
+                                                <span>{feat}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </ScrollReveal>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+    );
+}

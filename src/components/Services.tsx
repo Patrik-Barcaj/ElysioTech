@@ -95,32 +95,38 @@ export default function Services() { // export Services component
                                         <svg className="w-6 h-6 text-[#00D26A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                                     </div>
                                     <h3 className="text-xl font-display font-bold text-white group-hover:text-[#00D26A] transition-colors">
-                                        Letecký monitoring & Vizuálne audity
+                                        Letecké dáta & Audity
                                     </h3>
                                 </div>
                                 <p className="text-xs sm:text-sm font-medium text-zinc-300 mb-5 leading-relaxed">
-                                    Operatívna fotodokumentácia stavieb a kontrola objektov z výšky bez nutnosti plošín.
+                                    Vizuálny monitoring stavieb, kontrola striech a pozemková dokumentácia.
                                 </p>
-                                <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-6">
+                                <ul className="text-zinc-300 text-sm leading-relaxed space-y-3 mb-5">
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span>Časozberný dohľad stavby pre investorov a dozor</span>
+                                        <span>Realitné foto s vektorovým zákresom hraníc z katastra <strong className="text-white font-mono text-xs font-semibold">(od 60 €)</strong></span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span>Vizuálny audit striech a hál vo vysokom rozlíšení</span>
+                                        <span>Vizuálny audit striech a žľabov pred zimou <strong className="text-white font-mono text-xs font-semibold">(od 90 €)</strong></span>
                                     </li>
                                     <li className="flex items-start gap-2.5">
                                         <span className="text-[#FFB800] font-bold mt-0.5">•</span>
-                                        <span>Orientačná inventarizácia plôch a skladových zásob</span>
+                                        <span>Časozberný monitoring stavieb pre investorov <strong className="text-white font-mono text-xs font-semibold">(od 120 €)</strong></span>
                                     </li>
                                 </ul>
+
+                                {/* Zvýraznený riadok dostupnosti */}
+                                <div className="p-3 rounded-2xl bg-[#00D26A]/10 border border-[#00D26A]/30 text-xs text-zinc-200 font-medium mb-6 flex items-center gap-2.5 shadow-sm">
+                                    <span className="text-sm shrink-0">⏱</span>
+                                    <span className="leading-snug">Výjazdy v týždni už od <strong className="text-white font-bold">14:30</strong> alebo cez víkendy bez prerušenia prevádzky.</span>
+                                </div>
                             </div>
                             
                             <div className="pt-6 border-t border-neutral-800 flex items-center justify-between mt-auto">
                                 <div>
                                     <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono">Cena a rozsah</span>
-                                    <span className="text-xl font-mono font-bold text-white">od 80 € / výjazd</span>
+                                    <span className="text-xl font-mono font-bold text-white">od 60 €</span>
                                 </div>
                                 <span className="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/30">
                                     Licencia EASA A1/A3

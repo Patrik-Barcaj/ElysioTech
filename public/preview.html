@@ -163,7 +163,7 @@
                 [ Priama spolupráca ]
               </a>
               <a href="#services" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                [ Zákazky od 80 € ]
+                [ Zákazky od 60 € ]
               </a>
             </div>
           </div>
@@ -278,6 +278,7 @@
   <section class="py-6 border-y border-neutral-800/80 bg-neutral-950 overflow-hidden select-none">
     <div class="animate-marquee flex items-center gap-8 text-xs sm:text-sm font-mono tracking-wider uppercase text-zinc-400">
       <span>• Letecké Ortofotomapy</span>
+      <span>• Interaktívne 3D Modely (Mesh)</span>
       <span>• Vektorové GIS Siete</span>
       <span>• Technická Grafika & Vektorizácia</span>
       <span>• DTP & Prepress Príprava</span>
@@ -287,6 +288,7 @@
       <span>• Expresná Realizácia do 48h</span>
       <!-- Duplicate for infinite seamless scroll -->
       <span>• Letecké Ortofotomapy</span>
+      <span>• Interaktívne 3D Modely (Mesh)</span>
       <span>• Vektorové GIS Siete</span>
       <span>• Technická Grafika & Vektorizácia</span>
       <span>• DTP & Prepress Príprava</span>
@@ -413,7 +415,7 @@
             </div>
 
             <!-- Max 3 bullets (≤4 words) -->
-            <ul class="text-zinc-300 text-sm leading-relaxed space-y-2.5 mb-6">
+            <ul class="text-zinc-300 text-sm leading-relaxed space-y-2.5 mb-4">
               <li class="flex items-center gap-2.5">
                 <span class="text-[#00D26A] font-bold text-base leading-none">•</span>
                 <span class="font-medium">Ortomapa a katastrálny zákres</span>
@@ -427,6 +429,12 @@
                 <span class="font-medium">Expresné dodanie do 48h</span>
               </li>
             </ul>
+
+            <!-- Informačný riadok o dostupnosti -->
+            <div class="mb-4 px-3 py-2 rounded-xl bg-neutral-900 border border-neutral-800 text-[11px] font-mono text-[#00D26A] flex items-center gap-2">
+              <span>⏱</span>
+              <span>Výjazdy v týždni už od 14:30 alebo cez víkendy</span>
+            </div>
           </div>
 
           <!-- Bottom Data Formats Strip -->
@@ -437,6 +445,7 @@
               <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.TIFF]</span>
               <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.DXF]</span>
               <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.PDF]</span>
+              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-[#FFB800]">[.GLB / .OBJ]</span>
             </div>
           </div>
         </div>
@@ -718,34 +727,87 @@
         <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <!-- Left: Interactive Inspection Gallery Preview -->
-            <div class="lg:col-span-7">
-              <div class="relative aspect-video rounded-2xl overflow-hidden border border-neutral-800 bg-[#09090b] shadow-inner">
-                <img
-                  id="drone-main-img"
-                  src="/drone/DJI_0236.jpg"
-                  alt="Ortofotomapa pozemku"
-                  class="w-full h-full object-cover transition-all duration-300"
+            <!-- Left: Interactive Inspection Gallery Preview & 3D Viewer -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+              <!-- View Mode Tabs (2D Ortofoto / 3D Model WebGL) -->
+              <div class="flex items-center gap-2 p-1 rounded-xl bg-black/60 border border-neutral-800 w-fit">
+                <button
+                  id="drone-tab-2d"
+                  type="button"
+                  onclick="setDroneView('2d')"
+                  class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 bg-[#00D26A] text-black shadow-md"
                 >
-                <div class="absolute bottom-3 left-3 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-neutral-800 text-xs font-mono text-zinc-300">
-                  <span id="drone-caption">Ortofoto 90° kolmý zber</span>
+                  <span>[ 2D Ortofoto ]</span>
+                </button>
+                <button
+                  id="drone-tab-3d"
+                  type="button"
+                  onclick="setDroneView('3d')"
+                  class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 text-zinc-400 hover:text-white"
+                >
+                  <span>🧊</span>
+                  <span>[ 3D Model // WebGL ]</span>
+                </button>
+              </div>
+
+              <!-- 2D View Container -->
+              <div id="drone-2d-container">
+                <div class="relative aspect-video rounded-2xl overflow-hidden border border-neutral-800 bg-[#09090b] shadow-inner">
+                  <img
+                    id="drone-main-img"
+                    src="/drone/DJI_0236.jpg"
+                    alt="Ortofotomapa pozemku"
+                    class="w-full h-full object-cover transition-all duration-300"
+                  >
+                  <div class="absolute bottom-3 left-3 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-neutral-800 text-xs font-mono text-zinc-300">
+                    <span id="drone-caption">Ortofoto 90° kolmý zber</span>
+                  </div>
+                </div>
+
+                <!-- 4 Thumbnails -->
+                <div class="grid grid-cols-4 gap-2 mt-3">
+                  <button onclick="setDronePreview('/drone/DJI_0236.jpg', 'Ortofoto 90° kolmý zber')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                    <img src="/drone/DJI_0236.jpg" alt="1" class="w-full h-full object-cover">
+                  </button>
+                  <button onclick="setDronePreview('/drone/DJI_0234.jpg', 'Katastrálny zákres C-KN')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                    <img src="/drone/DJI_0234.jpg" alt="2" class="w-full h-full object-cover">
+                  </button>
+                  <button onclick="setDronePreview('/drone/DJI_0235.jpg', 'Stavebný areál inšpekcia')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                    <img src="/drone/DJI_0235.jpg" alt="3" class="w-full h-full object-cover">
+                  </button>
+                  <button onclick="setDronePreview('/drone/DJI_0228.jpg', 'Letecký prehľad okolia')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                    <img src="/drone/DJI_0228.jpg" alt="4" class="w-full h-full object-cover">
+                  </button>
                 </div>
               </div>
 
-              <!-- 4 Thumbnails -->
-              <div class="grid grid-cols-4 gap-2 mt-3">
-                <button onclick="setDronePreview('/drone/DJI_0236.jpg', 'Ortofoto 90° kolmý zber')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
-                  <img src="/drone/DJI_0236.jpg" alt="1" class="w-full h-full object-cover">
-                </button>
-                <button onclick="setDronePreview('/drone/DJI_0234.jpg', 'Katastrálny zákres C-KN')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
-                  <img src="/drone/DJI_0234.jpg" alt="2" class="w-full h-full object-cover">
-                </button>
-                <button onclick="setDronePreview('/drone/DJI_0235.jpg', 'Stavebný areál inšpekcia')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
-                  <img src="/drone/DJI_0235.jpg" alt="3" class="w-full h-full object-cover">
-                </button>
-                <button onclick="setDronePreview('/drone/DJI_0228.jpg', 'Letecký prehľad okolia')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
-                  <img src="/drone/DJI_0228.jpg" alt="4" class="w-full h-full object-cover">
-                </button>
+              <!-- 3D Model Placeholder Container -->
+              <div id="drone-3d-container" class="hidden">
+                <div class="relative aspect-video rounded-2xl overflow-hidden bg-[#09090b] border border-[#FFB800]/50 shadow-2xl">
+                  <img
+                    src="https://placehold.co/960x540/09090b/FFB800?text=Interaktivny+3D+Model+[RealityScan+Mesh+WebGL]"
+                    alt="Interaktívny 3D Model [RealityScan Mesh WebGL]"
+                    class="w-full h-full object-cover"
+                  >
+                  <div class="absolute top-3 left-3 z-10">
+                    <span class="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-[#FFB800]/40 text-[11px] font-mono font-semibold text-[#FFB800] tracking-wider uppercase flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></span>
+                      WebGL 3D MESH
+                    </span>
+                  </div>
+                  <div class="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between gap-2">
+                    <span class="px-3 py-1.5 rounded-xl bg-black/90 backdrop-blur-md border border-neutral-700 text-[11px] font-mono text-zinc-300">
+                      Ovládanie: Rotácia 360° • Zoom • Geometrické meranie
+                    </span>
+                    <button
+                      type="button"
+                      onclick="setDroneView('2d')"
+                      class="px-2.5 py-1 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-mono text-zinc-400 hover:text-white shrink-0"
+                    >
+                      2D Pohľad ✕
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -778,7 +840,14 @@
                 </div>
               </div>
 
-              <div class="pt-2 flex gap-3">
+              <div class="pt-2 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onclick="setDroneView('3d')"
+                  class="px-5 py-3 rounded-xl bg-[#FFB800] hover:bg-[#e0a300] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#FFB800]/20 flex items-center gap-2"
+                >
+                  <span>🧊 Spustiť 3D prehliadač</span>
+                </button>
                 <a href="#protocol" class="px-5 py-3 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#00D26A]/20">
                   Inšpekčný protokol ↗
                 </a>
@@ -1260,12 +1329,39 @@
       }, { passive: true });
     }
 
-    // 3. Drone Gallery switcher
+    // 3. Drone Gallery switcher & View modes
     function setDronePreview(src, caption) {
       const img = document.getElementById('drone-main-img');
       const cap = document.getElementById('drone-caption');
       if (img) img.src = src;
       if (cap) cap.innerText = caption;
+    }
+
+    function setDroneView(mode) {
+      const container2D = document.getElementById('drone-2d-container');
+      const container3D = document.getElementById('drone-3d-container');
+      const tab2D = document.getElementById('drone-tab-2d');
+      const tab3D = document.getElementById('drone-tab-3d');
+
+      if (mode === '3d') {
+        if (container2D) container2D.classList.add('hidden');
+        if (container3D) container3D.classList.remove('hidden');
+        if (tab2D) {
+          tab2D.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 text-zinc-400 hover:text-white';
+        }
+        if (tab3D) {
+          tab3D.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 bg-[#FFB800] text-black shadow-md';
+        }
+      } else {
+        if (container2D) container2D.classList.remove('hidden');
+        if (container3D) container3D.classList.add('hidden');
+        if (tab2D) {
+          tab2D.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 bg-[#00D26A] text-black shadow-md';
+        }
+        if (tab3D) {
+          tab3D.className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 text-zinc-400 hover:text-white';
+        }
+      }
     }
 
     // 4. Modal logic

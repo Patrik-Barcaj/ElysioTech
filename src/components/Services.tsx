@@ -162,6 +162,12 @@ export default function Services() { // export Services component
                                         <span className="font-medium">Expresné dodanie do 48h</span>
                                     </li>
                                 </ul>
+
+                                {/* Informačný riadok o dostupnosti */}
+                                <div className="mb-4 px-3 py-2 rounded-xl bg-neutral-900 border border-neutral-800 text-[11px] font-mono text-[#00D26A] flex items-center gap-2">
+                                    <span>⏱</span>
+                                    <span>Výjazdy v týždni už od 14:30 alebo cez víkendy</span>
+                                </div>
                             </div>
                             
                             {/* Bottom Data Formats Strip */}
@@ -173,6 +179,7 @@ export default function Services() { // export Services component
                                             {fmt}
                                         </span>
                                     ))}
+                                    <span className="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-[#FFB800]">[.GLB / .OBJ]</span>
                                 </div>
                             </div>
                         </div>

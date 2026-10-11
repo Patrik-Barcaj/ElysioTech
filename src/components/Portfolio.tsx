@@ -43,6 +43,7 @@ export default function Portfolio() {
     ];
 
     const [activeCaptureIdx, setActiveCaptureIdx] = useState(0);
+    const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d');
     const [isTechModalOpen, setIsTechModalOpen] = useState(false);
     const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -153,67 +154,128 @@ export default function Portfolio() {
                             
                             {/* Left: Interactive Preview + Switcher */}
                             <div className="lg:col-span-6 flex flex-col gap-4">
-                                {/* Main image container */}
-                                <div 
-                                    onClick={() => setLightbox(activeCaptureIdx)}
-                                    className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-black/60 border border-neutral-800 cursor-zoom-in group/img"
-                                >
-                                    <Image
-                                        src={droneCaptures[activeCaptureIdx].src}
-                                        alt={droneCaptures[activeCaptureIdx].title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 600px"
-                                        className="object-cover transition-transform duration-700 group-hover/img:scale-105"
-                                    />
-                                    {/* Badges on image */}
-                                    <div className="absolute top-3 left-3 flex items-center gap-2">
-                                        <span className="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-white/10 text-[11px] font-mono font-semibold text-[#FFB800] tracking-wider uppercase">
-                                            48 MPx RGB
-                                        </span>
-                                        <span className="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-[#00D26A]/30 text-[11px] font-mono font-semibold text-[#00D26A] tracking-wider uppercase">
-                                            EASA A1/A3
-                                        </span>
-                                    </div>
-                                    
-                                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 flex items-end justify-between">
-                                        <div>
-                                            <p className="text-[11px] font-mono text-[#FFB800] uppercase font-semibold">{droneCaptures[activeCaptureIdx].category}</p>
-                                            <p className="text-sm font-bold text-white font-display">{droneCaptures[activeCaptureIdx].title}</p>
-                                        </div>
-                                        <span className="text-xs text-zinc-400 font-mono bg-black/70 px-2 py-1 rounded border border-neutral-700 flex items-center gap-1 shrink-0">
-                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                                            Zväčšiť
-                                        </span>
-                                    </div>
+                                {/* View Mode Tabs (2D Ortofoto / 3D Model WebGL) */}
+                                <div className="flex items-center gap-2 p-1 rounded-xl bg-black/60 border border-neutral-800 w-fit">
+                                    <button
+                                        type="button"
+                                        onClick={() => setViewMode('2d')}
+                                        className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 ${
+                                            viewMode === '2d'
+                                                ? 'bg-[#00D26A] text-black shadow-md'
+                                                : 'text-zinc-400 hover:text-white'
+                                        }`}
+                                    >
+                                        <span>[ 2D Ortofoto ]</span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setViewMode('3d')}
+                                        className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all flex items-center gap-1.5 ${
+                                            viewMode === '3d'
+                                                ? 'bg-[#FFB800] text-black shadow-md'
+                                                : 'text-zinc-400 hover:text-white'
+                                        }`}
+                                    >
+                                        <span>🧊</span>
+                                        <span>[ 3D Model // WebGL ]</span>
+                                    </button>
                                 </div>
 
-                                {/* Thumbnails switcher */}
-                                <div className="grid grid-cols-4 gap-2">
-                                    {droneCaptures.map((cap, idx) => (
-                                        <button
-                                            key={cap.id}
-                                            type="button"
-                                            onClick={() => setActiveCaptureIdx(idx)}
-                                            className={`relative aspect-[4/3] rounded-xl overflow-hidden border transition-all text-left group/thumb ${
-                                                activeCaptureIdx === idx 
-                                                    ? 'border-[#00D26A] ring-2 ring-[#00D26A]/30' 
-                                                    : 'border-neutral-800 opacity-60 hover:opacity-100 hover:border-neutral-700'
-                                            }`}
+                                {viewMode === '3d' ? (
+                                    /* 3D Model Placeholder Container */
+                                    <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-[#09090b] border border-[#FFB800]/50 shadow-2xl group/3d">
+                                        <Image
+                                            src="https://placehold.co/960x540/09090b/FFB800?text=Interaktivny+3D+Model+[RealityScan+Mesh+WebGL]"
+                                            alt="Interaktívny 3D Model [RealityScan Mesh WebGL]"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 600px"
+                                            className="object-cover"
+                                            unoptimized
+                                        />
+                                        <div className="absolute top-3 left-3 z-10">
+                                            <span className="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-[#FFB800]/40 text-[11px] font-mono font-semibold text-[#FFB800] tracking-wider uppercase flex items-center gap-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></span>
+                                                WebGL 3D MESH
+                                            </span>
+                                        </div>
+                                        <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between gap-2">
+                                            <span className="px-3 py-1.5 rounded-xl bg-black/90 backdrop-blur-md border border-neutral-700 text-[11px] font-mono text-zinc-300">
+                                                Ovládanie: Rotácia 360° • Zoom • Geometrické meranie
+                                            </span>
+                                            <button
+                                                type="button"
+                                                onClick={() => setViewMode('2d')}
+                                                className="px-2.5 py-1 rounded-lg bg-neutral-900 border border-neutral-700 text-xs font-mono text-zinc-400 hover:text-white shrink-0"
+                                            >
+                                                2D Pohľad ✕
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    /* 2D View: Main Image + Thumbnails */
+                                    <>
+                                        <div 
+                                            onClick={() => setLightbox(activeCaptureIdx)}
+                                            className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-black/60 border border-neutral-800 cursor-zoom-in group/img"
                                         >
                                             <Image
-                                                src={cap.src}
-                                                alt={cap.title}
+                                                src={droneCaptures[activeCaptureIdx].src}
+                                                alt={droneCaptures[activeCaptureIdx].title}
                                                 fill
-                                                sizes="150px"
-                                                className="object-cover"
+                                                sizes="(max-width: 768px) 100vw, 600px"
+                                                className="object-cover transition-transform duration-700 group-hover/img:scale-105"
                                             />
-                                            <div className="absolute inset-0 bg-black/40 group-hover/thumb:bg-transparent transition-colors"></div>
-                                            <span className="absolute bottom-1 left-1 right-1 text-[10px] font-mono font-bold text-white bg-black/80 px-1 py-0.5 rounded truncate block text-center">
-                                                {cap.tag}
-                                            </span>
-                                        </button>
-                                    ))}
-                                </div>
+                                            {/* Badges on image */}
+                                            <div className="absolute top-3 left-3 flex items-center gap-2">
+                                                <span className="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-white/10 text-[11px] font-mono font-semibold text-[#FFB800] tracking-wider uppercase">
+                                                    48 MPx RGB
+                                                </span>
+                                                <span className="px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md border border-[#00D26A]/30 text-[11px] font-mono font-semibold text-[#00D26A] tracking-wider uppercase">
+                                                    EASA A1/A3
+                                                </span>
+                                            </div>
+                                            
+                                            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 flex items-end justify-between">
+                                                <div>
+                                                    <p className="text-[11px] font-mono text-[#FFB800] uppercase font-semibold">{droneCaptures[activeCaptureIdx].category}</p>
+                                                    <p className="text-sm font-bold text-white font-display">{droneCaptures[activeCaptureIdx].title}</p>
+                                                </div>
+                                                <span className="text-xs text-zinc-400 font-mono bg-black/70 px-2 py-1 rounded border border-neutral-700 flex items-center gap-1 shrink-0">
+                                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                                                    Zväčšiť
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* Thumbnails switcher */}
+                                        <div className="grid grid-cols-4 gap-2">
+                                            {droneCaptures.map((cap, idx) => (
+                                                <button
+                                                    key={cap.id}
+                                                    type="button"
+                                                    onClick={() => setActiveCaptureIdx(idx)}
+                                                    className={`relative aspect-[4/3] rounded-xl overflow-hidden border transition-all text-left group/thumb ${
+                                                        activeCaptureIdx === idx 
+                                                            ? 'border-[#00D26A] ring-2 ring-[#00D26A]/30' 
+                                                            : 'border-neutral-800 opacity-60 hover:opacity-100 hover:border-neutral-700'
+                                                    }`}
+                                                >
+                                                    <Image
+                                                        src={cap.src}
+                                                        alt={cap.title}
+                                                        fill
+                                                        sizes="150px"
+                                                        className="object-cover"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/40 group-hover/thumb:bg-transparent transition-colors"></div>
+                                                    <span className="absolute bottom-1 left-1 right-1 text-[10px] font-mono font-bold text-white bg-black/80 px-1 py-0.5 rounded truncate block text-center">
+                                                        {cap.tag}
+                                                    </span>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
                             </div>
 
                             {/* Right: Technical Specs & Information */}
@@ -263,6 +325,14 @@ export default function Portfolio() {
 
                                 {/* Actions */}
                                 <div className="pt-2 flex flex-wrap items-center gap-3">
+                                    <button
+                                        type="button"
+                                        onClick={() => setViewMode('3d')}
+                                        className="px-5 py-3 rounded-xl bg-[#FFB800] hover:bg-[#e0a300] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#FFB800]/20 flex items-center gap-2"
+                                    >
+                                        <span>🧊 Spustiť 3D prehliadač</span>
+                                    </button>
+
                                     <button
                                         type="button"
                                         onClick={() => setIsTechModalOpen(true)}

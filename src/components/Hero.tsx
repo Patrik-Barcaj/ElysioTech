@@ -64,7 +64,7 @@ export default function Hero() { // export Hero component function
                                     [ Priama spolupráca ]
                                 </a>
                                 <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                                    [ Zákazky od 80 € ]
+                                    [ Zákazky od 60 € ]
                                 </a>
                             </div>
                         </div>

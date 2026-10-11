@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sk" class="dark">
+<html lang="sk" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -24,6 +24,7 @@
           },
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace'],
           }
         }
@@ -39,63 +40,181 @@
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
     }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 <body class="bg-[#080808] text-zinc-300 min-h-screen selection:bg-[#FFB800]/30 selection:text-white">
 
-  <!-- NAVIGATION -->
+  <!-- 1. NAVIGATION -->
   <header class="sticky top-0 z-40 bg-[#080808]/90 backdrop-blur-md border-b border-neutral-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <a href="#hero" class="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
-          <span>Elysio<span class="text-[#FFB800]">Tech</span></span>
+        <a href="#hero" class="group flex items-center gap-2 text-white font-display font-extrabold text-2xl tracking-wider">
+          <svg class="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 10L5 30H15L25 10H15Z" fill="#FFB800" fill-opacity="0.2" />
+            <path d="M20 10L10 30H20L30 10H20Z" fill="#FFB800" />
+            <text x="40" y="28" fill="currentColor" class="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
+          </svg>
         </a>
-        <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
+        <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A] hidden sm:inline-block">
           v2.4 // ONLINE
         </span>
       </div>
+
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#slider" class="text-zinc-400 hover:text-white transition-colors">Porovnanie</a>
-        <a href="#services" class="text-zinc-400 hover:text-white transition-colors">Služby</a>
-        <a href="#protocol" class="text-zinc-400 hover:text-white transition-colors">Inšpekčný protokol</a>
-        <a href="#contact" class="text-zinc-400 hover:text-white transition-colors">Kontakt</a>
+        <a href="#services" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Služby</a>
+        <a href="#why-elysio" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Prečo Elysio</a>
+        <a href="#portfolio" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Projekty</a>
+        <a href="#protocol" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Inšpekčný protokol</a>
+        <a href="#faq" class="text-zinc-300 hover:text-[#00D26A] transition-colors">FAQ</a>
+        <a href="#contact" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Kontakt</a>
       </nav>
+
       <div class="flex items-center gap-3">
-        <a href="#services" class="px-4 py-2 rounded-xl bg-[#FFB800] hover:bg-[#e5a600] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#FFB800]/20">
-          Cenník & Služby
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#00D26A]/20">
+          Kalkulácia
         </a>
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080808] border-b border-neutral-800 space-y-3 font-medium text-sm">
+      <a href="#services" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Služby</a>
+      <a href="#why-elysio" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Prečo Elysio</a>
+      <a href="#portfolio" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Projekty</a>
+      <a href="#protocol" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Inšpekčný protokol</a>
+      <a href="#faq" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">FAQ</a>
+      <a href="#contact" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Kontakt</a>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="py-20 sm:py-28 relative overflow-hidden border-b border-neutral-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-6 uppercase">
-        [ SYSTEM v2.4 ] • HARDWARE & KÓD
-      </div>
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight max-w-4xl mx-auto leading-tight">
-        Technická realizácia <br class="hidden sm:inline" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">
-          digitálnych & fyzických dát
-        </span>
-      </h1>
-      <p class="text-zinc-300 mt-6 max-w-2xl mx-auto text-base sm:text-lg">
-        Spájame moderný webový vývoj s leteckým fotogrametrickým zberom dát a precíznou technickou vektorizáciou pre projekčnú prax.
-      </p>
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a href="#slider" class="px-6 py-3.5 rounded-2xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold text-sm transition-all shadow-lg shadow-[#00D26A]/25">
-          Porovnať presnosť dát ↘
-        </a>
-        <a href="#protocol" class="px-6 py-3.5 rounded-2xl bg-[#121214] hover:bg-neutral-800 text-white font-bold text-sm border border-neutral-700 transition-all">
-          Inšpekčný protokol [Náhľad]
-        </a>
+  <!-- 2. HERO SECTION -->
+  <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 pb-20">
+    <!-- Dark background grid and gradients -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/[0.08] via-transparent to-transparent"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-500/10 rounded-full filter blur-[140px] translate-x-1/3 -translate-y-1/3"></div>
+      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full filter blur-[140px] -translate-x-1/3 translate-y-1/3"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        
+        <!-- Left: Typography & Technical Pitch -->
+        <div class="flex-1 text-center lg:text-left mt-6 lg:mt-0">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6">
+            <span class="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse shadow-[0_0_10px_rgba(255,184,0,0.85)]"></span>
+            [ 00 // STUDIO ] • BRATISLAVSKÝ KRAJ
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6">
+            Letecké dáta, <span class="text-[#FFB800]">Technická grafika</span> a <span class="text-[#00D26A]">Webové aplikácie.</span>
+          </h1>
+          
+          <p class="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
+            Rýchly vizuálny monitoring stavieb, detailná kontrola striech a softvér na mieru. Zákazky riešite priamo so mnou – bez agentúrnych prirážok, flexibilne a s dodaním podkladov do 48 hodín.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3">
+            <a
+              href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
+            >
+              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+              <span>Rýchla kalkulácia cez WhatsApp</span>
+            </a>
+            <a
+              href="#services"
+              class="px-5 py-3 rounded-lg text-sm font-semibold whitespace-nowrap bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
+            >
+              Prehľad služieb a cien
+            </a>
+          </div>
+
+          <!-- Microcopy reassurance under buttons -->
+          <p class="font-mono text-xs text-zinc-400 mt-2 mb-8 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
+            <span class="text-[#00D26A] font-bold">●</span> Odpovedám do 15 minút • Stačí poslať lokalitu alebo zadanie
+          </p>
+
+          <!-- Interactive Service Router -->
+          <div class="pt-6 border-t border-neutral-800 text-left">
+            <div class="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
+              <a href="#services" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                [ Dodanie do 48h ]
+              </a>
+              <a href="#why-elysio" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                [ Priama spolupráca ]
+              </a>
+              <a href="#services" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                [ Zákazky od 80 € ]
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Flat Technical Telemetry Frame -->
+        <div class="flex-1 relative w-full max-w-xl mx-auto lg:max-w-none">
+          <div class="relative rounded-xl border border-neutral-800 bg-[#121214] overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] group">
+            <img
+              src="/drone-preview.jpg"
+              alt="Letecká 90° ortofotomapa pozemku dronom"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            >
+
+            <!-- Vignette & Tech Grid -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.65)_100%)] pointer-events-none"></div>
+
+            <!-- Telemetry Overlay Badges -->
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex items-center">
+              <span class="font-mono text-[11px] text-amber-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-amber-500/30 flex items-center gap-1.5 shadow-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></span>
+                ● LIVE SENSOR // 4K UHD
+              </span>
+            </div>
+
+            <div class="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 hidden sm:flex items-center">
+              <span class="font-mono text-[10px] text-[#00D26A] bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-[#00D26A]/30 flex items-center gap-1">
+                GPS FIX • 18 SATS
+              </span>
+            </div>
+
+            <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10">
+              <span class="font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800 inline-block shadow-md">
+                EASA A1/A3 • 90° ORTHOPHOTO • BA-KRAJ
+              </span>
+            </div>
+
+            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 hidden sm:flex items-center gap-1.5 font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800">
+              <span class="w-3 h-[1px] bg-zinc-400 inline-block"></span>
+              <span>GSD 1.2 CM/PX</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 1. BEFORE / AFTER COMPARISON SLIDER -->
-  <section id="slider" class="py-16 bg-[#080808] relative border-b border-neutral-800 overflow-hidden">
+  <!-- 3. BEFORE / AFTER COMPARISON SLIDER -->
+  <section id="slider" class="py-16 bg-[#080808] relative border-t border-neutral-800 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-8">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-2 uppercase">
@@ -148,7 +267,6 @@
           </div>
         </div>
 
-        <!-- Single-line text below slider -->
         <p class="mt-4 text-center text-xs sm:text-sm font-mono text-zinc-400 tracking-wide">
           Posuňte stred pre porovnanie rozlíšenia a presnosti dát.
         </p>
@@ -156,7 +274,30 @@
     </div>
   </section>
 
-  <!-- 2. SERVICES SECTION -->
+  <!-- 4. INFINITE MARQUEE -->
+  <section class="py-6 border-y border-neutral-800/80 bg-neutral-950 overflow-hidden select-none">
+    <div class="animate-marquee flex items-center gap-8 text-xs sm:text-sm font-mono tracking-wider uppercase text-zinc-400">
+      <span>• Letecké Ortofotomapy</span>
+      <span>• Vektorové GIS Siete</span>
+      <span>• Technická Grafika & Vektorizácia</span>
+      <span>• DTP & Prepress Príprava</span>
+      <span>• Next.js & TypeScript Vývoj</span>
+      <span>• MapLibre GIS Integrácia</span>
+      <span>• Certifikácia EASA A1/A3</span>
+      <span>• Expresná Realizácia do 48h</span>
+      <!-- Duplicate for infinite seamless scroll -->
+      <span>• Letecké Ortofotomapy</span>
+      <span>• Vektorové GIS Siete</span>
+      <span>• Technická Grafika & Vektorizácia</span>
+      <span>• DTP & Prepress Príprava</span>
+      <span>• Next.js & TypeScript Vývoj</span>
+      <span>• MapLibre GIS Integrácia</span>
+      <span>• Certifikácia EASA A1/A3</span>
+      <span>• Expresná Realizácia do 48h</span>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES SECTION -->
   <section id="services" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
       <div class="text-center mb-16">
@@ -367,7 +508,294 @@
     </div>
   </section>
 
-  <!-- 3. TECHNICKÝ INŠPEKČNÝ PROTOKOL (NÁHĽAD) -->
+  <!-- 6. WHY ELYSIO SECTION -->
+  <section id="why-elysio" class="py-24 bg-[#080808] relative border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-4 uppercase">
+          [ 02 // WHY_ELYSIO ] • ŠTANDARD SPOLUPRÁCE
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight leading-tight">
+          Inžiniersky prístup, <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">
+            priame dodanie.
+          </span>
+        </h2>
+        <p class="text-zinc-300 mt-4 text-base sm:text-lg leading-relaxed">
+          Žiadne medzičlánky, zbytočná réžia ani nafúknuté termíny.
+        </p>
+      </div>
+
+      <!-- Osobný inžiniersky blok -->
+      <div class="max-w-4xl mx-auto mb-12">
+        <div class="relative bg-[#121214] border border-neutral-800 rounded-2xl p-6 sm:p-8 overflow-hidden group hover:border-[#00D26A]/40 transition-all">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+            <div class="font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider shrink-0 uppercase">
+              [ 00 // DIRECT_CONTACT ]
+            </div>
+            <p class="text-zinc-200 text-base sm:text-lg font-medium leading-relaxed">
+              Jeden kontakt od zberu dát po kód. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Value Pillars Grid -->
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1: Rýchlosť -->
+          <div class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+            <div>
+              <div class="font-mono text-xs text-amber-400 tracking-wider mb-2">
+                [ 01 // SPEED ]
+              </div>
+              <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                ⚡ Rýchlosť do 48 hodín
+              </h3>
+              <div class="space-y-2.5 text-sm text-zinc-300">
+                <p>• <strong class="text-white">Dáta do 2 dní:</strong> Surové zábery, ortofoto aj kód dodávam do 48 hodín.</p>
+                <p>• <strong class="text-white">Cloudový odkaz:</strong> Okamžitý prístup k plnému rozlíšeniu bez čakania.</p>
+                <p>• <strong class="text-white">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích procesov.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
+              <span>GARANCIA TERMÍNU</span>
+              <span class="text-white font-bold font-mono">48H</span>
+            </div>
+          </div>
+
+          <!-- Card 2: 1:1 Priamy kontakt -->
+          <div class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+            <div>
+              <div class="font-mono text-xs text-[#00D26A] tracking-wider mb-2">
+                [ 02 // DIRECT ]
+              </div>
+              <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                👤 1:1 Priamy kontakt
+              </h3>
+              <div class="space-y-2.5 text-sm text-zinc-300">
+                <p>• <strong class="text-white">Priamo s technikom:</strong> Riešite zadanie s človekom, čo lieta a kóduje.</p>
+                <p>• <strong class="text-white">WhatsApp & telefón:</strong> Rýchle operatívne zmeny a konzultácie bez čakania.</p>
+                <p>• <strong class="text-white">Nulový šum:</strong> Žiadne skreslené zadania cez account manažérov.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
+              <span>BEZ PROSTREDNÍKOV</span>
+              <span class="text-white font-bold font-mono">1:1</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Presnosť -->
+          <div class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+            <div>
+              <div class="font-mono text-xs text-amber-400 tracking-wider mb-2">
+                [ 03 // PRECISION ]
+              </div>
+              <h3 class="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                🎯 Výrobná & Technická presnosť
+              </h3>
+              <div class="space-y-2.5 text-sm text-zinc-300">
+                <p>• <strong class="text-white">Výrobné formáty:</strong> Vektory pasujú presne do CNC, lasera aj plotra.</p>
+                <p>• <strong class="text-white">Presné mapovanie:</strong> Zábery a ortofoto presne sedia na hranice parcely.</p>
+                <p>• <strong class="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
+              <span>ČISTÉ DÁTA</span>
+              <span class="text-white font-bold font-mono">0 CHÝB</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. PORTFOLIO & REALIZÁCIE SECTION -->
+  <section id="portfolio" class="py-24 bg-[#080808] relative border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+          [ 03 // PORTFOLIO ] • REALIZÁCIE
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Projekty</h2>
+      </div>
+
+      <!-- Section 01: Dev -->
+      <div class="mb-16">
+        <h3 class="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
+          <span class="font-mono text-xs text-[#00D26A] font-semibold">[ 01 // DEV ]</span>
+          <span>Weby & <span class="text-[#00D26A]">Aplikácie</span></span>
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Project 1: PixelCraft -->
+          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-black/90 border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+            <div>
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
+                Webová Appka
+              </span>
+              <h4 class="text-xl font-bold text-white mt-4 font-display">PixelCraft</h4>
+              <p class="text-xs text-zinc-400 mt-2 line-clamp-3">
+                Interaktívny generátor & canvas editor pixel-art grafiky stavaný v Next.js s exportom bez straty kvality.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+              <span class="text-zinc-500">React • Canvas</span>
+              <span class="text-[#00D26A] font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
+            </div>
+          </div>
+
+          <!-- Project 2: SetDrift -->
+          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-[#0a0f18] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+            <div>
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#FFB800]">
+                API Integrácia & PWA
+              </span>
+              <h4 class="text-xl font-bold text-white mt-4 font-display">SetDrift</h4>
+              <p class="text-xs text-zinc-400 mt-2 line-clamp-3">
+                Dátovo riadený agregátor koncertných setlistov, prepojenie so Spotify API a festivalový warm-up compiler.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+              <span class="text-zinc-500">Spotify • PWA</span>
+              <span class="text-[#FFB800] font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Zen Pierce -->
+          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-[#111111] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+            <div>
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
+                Brand Prezentácia
+              </span>
+              <h4 class="text-xl font-bold text-white mt-4 font-display">Zen Pierce</h4>
+              <p class="text-xs text-zinc-400 mt-2 line-clamp-3">
+                Prémiový prezentačný web piercing štúdia s interaktívnym katalógom a rýchlou WhatsApp rezerváciou.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+              <span class="text-zinc-500">Next.js • UI</span>
+              <span class="text-[#00D26A] font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
+            </div>
+          </div>
+
+          <!-- Project 4: Echo -->
+          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-[#0f172a] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+            <div>
+              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-blue-400">
+                Web Audio Player
+              </span>
+              <h4 class="text-xl font-bold text-white mt-4 font-display">Echo</h4>
+              <p class="text-xs text-zinc-400 mt-2 line-clamp-3">
+                Digitálny archív fyzickej audio zbierky s vlastným webovým waveform prehrávačom a vizualizáciami.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+              <span class="text-zinc-500">Web Audio API</span>
+              <span class="text-blue-400 font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Section 02: Letecký monitoring & Pozemky -->
+      <div>
+        <h3 class="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#FFB800] pl-4 flex items-center gap-2">
+          <span class="font-mono text-xs text-[#FFB800] font-semibold">[ 02 // AIR ]</span>
+          <span>Letecký monitoring & <span class="text-[#FFB800]">Pozemky</span></span>
+        </h3>
+
+        <!-- Full Case Study Card -->
+        <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left: Interactive Inspection Gallery Preview -->
+            <div class="lg:col-span-7">
+              <div class="relative aspect-video rounded-2xl overflow-hidden border border-neutral-800 bg-[#09090b] shadow-inner">
+                <img
+                  id="drone-main-img"
+                  src="/drone/DJI_0236.jpg"
+                  alt="Ortofotomapa pozemku"
+                  class="w-full h-full object-cover transition-all duration-300"
+                >
+                <div class="absolute bottom-3 left-3 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-neutral-800 text-xs font-mono text-zinc-300">
+                  <span id="drone-caption">Ortofoto 90° kolmý zber</span>
+                </div>
+              </div>
+
+              <!-- 4 Thumbnails -->
+              <div class="grid grid-cols-4 gap-2 mt-3">
+                <button onclick="setDronePreview('/drone/DJI_0236.jpg', 'Ortofoto 90° kolmý zber')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                  <img src="/drone/DJI_0236.jpg" alt="1" class="w-full h-full object-cover">
+                </button>
+                <button onclick="setDronePreview('/drone/DJI_0234.jpg', 'Katastrálny zákres C-KN')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                  <img src="/drone/DJI_0234.jpg" alt="2" class="w-full h-full object-cover">
+                </button>
+                <button onclick="setDronePreview('/drone/DJI_0235.jpg', 'Stavebný areál inšpekcia')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                  <img src="/drone/DJI_0235.jpg" alt="3" class="w-full h-full object-cover">
+                </button>
+                <button onclick="setDronePreview('/drone/DJI_0228.jpg', 'Letecký prehľad okolia')" class="aspect-[4/3] rounded-lg overflow-hidden border border-neutral-700 hover:border-[#FFB800] focus:border-[#FFB800] transition-colors">
+                  <img src="/drone/DJI_0228.jpg" alt="4" class="w-full h-full object-cover">
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Technical Specs & Parameters -->
+            <div class="lg:col-span-5 space-y-5">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00D26A]/40 bg-[#00D26A]/10 text-[#00D26A] text-xs font-mono uppercase">
+                [ CASE STUDY // 48 MPx ]
+              </div>
+              
+              <h4 class="text-2xl font-bold font-display text-white">
+                Technická fotodokumentácia & Katastrálny zákres
+              </h4>
+              
+              <p class="text-sm text-zinc-300 leading-relaxed">
+                Operatívny letecký audit záujmového územia, generovanie detailnej ortofotomapy a vektorové osadenie hraníc parciel priamo do výstupných dát.
+              </p>
+
+              <div class="space-y-2.5 text-xs font-mono text-zinc-300 pt-2 border-t border-neutral-800">
+                <div class="flex items-center justify-between py-1 border-b border-neutral-800/60">
+                  <span class="text-zinc-500">Typ senzora:</span>
+                  <span class="text-white font-bold">48 MPx RGB snímač</span>
+                </div>
+                <div class="flex items-center justify-between py-1 border-b border-neutral-800/60">
+                  <span class="text-zinc-500">Spracovanie:</span>
+                  <span class="text-white font-bold">Fotogrametria na dedikovanom PC</span>
+                </div>
+                <div class="flex items-center justify-between py-1 border-b border-neutral-800/60">
+                  <span class="text-zinc-500">Výstupy:</span>
+                  <span class="text-[#00D26A] font-bold">GeoTIFF, DXF, SVG, PDF</span>
+                </div>
+              </div>
+
+              <div class="pt-2 flex gap-3">
+                <a href="#protocol" class="px-5 py-3 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#00D26A]/20">
+                  Inšpekčný protokol ↗
+                </a>
+                <a href="https://wa.me/421903406402?text=Dobry%20den,%20mame%20zaujem%20o%20technicku%20fotodokumentaciu" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs border border-neutral-700 transition-all">
+                  Dopytovať audit
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. TECHNICKÝ INŠPEKČNÝ PROTOKOL (NÁHĽAD) -->
   <section id="protocol" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
@@ -420,7 +848,7 @@
           <div class="space-y-3.5 mb-6">
             <!-- Param 1 -->
             <div class="bg-[#121214] border border-neutral-800 rounded-2xl p-4 sm:p-5 hover:border-neutral-700 transition-all duration-200 flex items-start gap-4">
-              <div class="w-11 h-11 rounded-xl bg-[#FFB800]/10 border border-[#FFB800]/30 flex items-center justify-center shrink-0 text-[#FFB800] text-lg">
+              <div class="w-11 h-11 rounded-xl bg-[#FFB800]/10 border border-[#FFB800]/30 flex items-center justify-center shrink-0 text-[#FFB800] text-lg font-mono">
                 ⏱
               </div>
               <div class="flex-1 min-w-0">
@@ -432,7 +860,7 @@
 
             <!-- Param 2 -->
             <div class="bg-[#121214] border border-neutral-800 rounded-2xl p-4 sm:p-5 hover:border-neutral-700 transition-all duration-200 flex items-start gap-4">
-              <div class="w-11 h-11 rounded-xl bg-[#00D26A]/10 border border-[#00D26A]/30 flex items-center justify-center shrink-0 text-[#00D26A] text-lg">
+              <div class="w-11 h-11 rounded-xl bg-[#00D26A]/10 border border-[#00D26A]/30 flex items-center justify-center shrink-0 text-[#00D26A] text-lg font-mono">
                 📐
               </div>
               <div class="flex-1 min-w-0">
@@ -444,7 +872,7 @@
 
             <!-- Param 3 -->
             <div class="bg-[#121214] border border-neutral-800 rounded-2xl p-4 sm:p-5 hover:border-neutral-700 transition-all duration-200 flex items-start gap-4">
-              <div class="w-11 h-11 rounded-xl bg-[#FFB800]/10 border border-[#FFB800]/30 flex items-center justify-center shrink-0 text-[#FFB800] text-lg">
+              <div class="w-11 h-11 rounded-xl bg-[#FFB800]/10 border border-[#FFB800]/30 flex items-center justify-center shrink-0 text-[#FFB800] text-lg font-mono">
                 📁
               </div>
               <div class="flex-1 min-w-0">
@@ -473,6 +901,252 @@
       </div>
     </div>
   </section>
+
+  <!-- 9. FAQ SECTION -->
+  <section id="faq" class="py-24 bg-[#080808] relative border-b border-neutral-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+          [ 05 // FAQ ] • ČASTÉ OTÁZKY
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
+          Často kladené otázky
+        </h2>
+        <p class="text-zinc-300 mt-4 text-base sm:text-lg">
+          Odpovede na najčastejšie otázky k technickým detailom, legislatíve a dodacím lehotám.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <button onclick="filterFaq('all')" class="faq-tab active px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#FFB800] text-black transition-all">Všetky oblasti</button>
+        <button onclick="filterFaq('software')" class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Weby & Softvér</button>
+        <button onclick="filterFaq('drone')" class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Letecké zábery & Dáta</button>
+        <button onclick="filterFaq('graphics')" class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Technická grafika</button>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div class="space-y-3" id="faq-list">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="software">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-bold text-white text-base sm:text-lg">V akom technologickom stacku vyvíjate webové aplikácie a weby?</span>
+            <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+            Vyvíjam v modernom full-stack ekosystéme Next.js, React a TypeScript s integráciou GIS mapových vrstiev (MapLibre / MapTiler) a Tailwind CSS. Kód optimalizujem pre bleskové načítanie do 0,5s a vysoké SEO skóre.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="software">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-bold text-white text-base sm:text-lg">Získam po dokončení plné vlastníctvo zdrojových kódov?</span>
+            <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+            Áno. Po odovzdaní projektu získavate 100% vlastníctvo všetkých zdrojových kódov, assetov a prístupov bez akýchkoľvek skrytých licenčných poplatkov alebo viazanosti na moju správu.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="drone">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-bold text-white text-base sm:text-lg">Je prevádzka dronu legálna a certifikovaná?</span>
+            <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+            Áno. Lietam s certifikáciou EASA pre kategórie Open A1/A3 a oficiálnou registráciou. Lety realizujem bezpečne, zodpovedne a v plnom súlade s platnou leteckou legislatívou SR.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="drone">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-bold text-white text-base sm:text-lg">Je nutná moja osobná prítomnosť pri zbere leteckých dát?</span>
+            <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+            Nie. Zber dát realizujem samostatne na základe parcelného čísla, katastrálneho územia alebo GPS súradníc. Výsledné digitálne náhľady a spracované dáta odovzdávam cez cloudové úložisko.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="drone">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-bold text-white text-base sm:text-lg">V akých formátoch a rozlíšení dodávate letecké výstupy?</span>
+            <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+            Fotografie dodávam v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="graphics">
+          <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-bold text-white text-base sm:text-lg">V akých formátoch dodávate vektorovú grafiku a plány?</span>
+            <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+            Podklady exportujem vo formátoch pre CAD, laser a CNC rezanie (DXF, SVG, DWG) aj v tlačovom PDF/X so zachovaním presných mierok.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. CONTACT SECTION -->
+  <section id="contact" class="py-24 bg-[#080808] relative border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
+          [ 06 // CONTACT ] • PRIAMY KONTAKT
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display mb-4 tracking-tight">
+          Získajte rýchlu cenovú ponuku
+        </h2>
+        <p class="text-zinc-300 text-base sm:text-lg">
+          Napíšte mi na WhatsApp, zavolajte alebo pošlite správu cez formulár. Ozvem sa obratom.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
+        
+        <!-- Form -->
+        <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-8 lg:p-10 relative overflow-hidden group">
+          <form onsubmit="handleContactSubmit(event)" class="space-y-5 relative z-10">
+            <div>
+              <label class="block text-sm font-medium text-zinc-300 mb-1.5">Vaše meno / Spoločnosť</label>
+              <input type="text" required class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all" placeholder="Meno Priezvisko / Firma">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-zinc-300 mb-1.5">Emailová adresa alebo telefón</label>
+              <input type="text" required class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all" placeholder="+421 9XX... / email@domena.sk">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-zinc-300 mb-1.5">Popis projektu alebo parcelné číslo</label>
+              <textarea rows="4" required class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all" placeholder="Zábery pozemku / Kótovanie a vektorizácia / Webová aplikácia"></textarea>
+            </div>
+            <button type="submit" id="contact-btn" class="w-full py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl text-base tracking-wide transition-all shadow-lg shadow-[#00D26A]/20">
+              Odoslať dopyt
+            </button>
+            <p id="contact-msg" class="text-center text-xs font-mono text-[#00D26A] hidden">
+              ✓ Ďakujeme, správa bola úspešne zaznamenaná.
+            </p>
+          </form>
+        </div>
+
+        <!-- Info & WhatsApp/Phone -->
+        <div class="flex flex-col justify-between space-y-8 p-4">
+          <div>
+            <h3 class="text-xl font-bold text-white font-display mb-4">Priama komunikácia</h3>
+            <ul class="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed">
+              <li class="flex items-start gap-3 p-3 rounded-2xl bg-[#00D26A]/5 border border-[#00D26A]/20">
+                <span class="text-[#00D26A] font-bold mt-0.5">•</span>
+                <span><strong class="text-white">WhatsApp & SMS:</strong> Najrýchlejšia odozva do niekoľkých minút počas celého dňa.</span>
+              </li>
+              <li class="flex items-start gap-3 p-3 rounded-2xl bg-[#FFB800]/5 border border-[#FFB800]/20">
+                <span class="text-[#FFB800] font-bold mt-0.5">•</span>
+                <span><strong class="text-white">Telefonický kontakt:</strong> Kedykoľvek cez pracovné dni aj cez víkendy.</span>
+              </li>
+              <li class="flex items-start gap-3 p-3 rounded-2xl bg-[#121214] border border-neutral-800">
+                <span class="text-zinc-500 font-bold mt-0.5">•</span>
+                <span><strong class="text-white">Osobné stretnutia & Obhliadky:</strong> Oblasť západného Slovenska.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-bold text-zinc-400 uppercase tracking-wider font-display mb-3">Rýchle spojenie</h3>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 transition-all">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+                <span>WhatsApp Správa</span>
+              </a>
+
+              <a href="tel:+421903406402" class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#121214] border border-neutral-800 text-white font-bold hover:border-[#FFB800]/50 transition-all">
+                <svg class="w-5 h-5 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                <span>+421 903 406 402</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. FOOTER SECTION -->
+  <footer class="bg-[#080808] border-t border-neutral-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="#hero" class="inline-block group mb-4">
+            <svg class="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 10L5 30H15L25 10H15Z" fill="#FFB800" fill-opacity="0.2" />
+              <path d="M20 10L10 30H20L30 10H20Z" fill="#FFB800" />
+              <text x="40" y="28" fill="currentColor" class="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
+            </svg>
+          </a>
+          <p class="text-zinc-400 max-w-md text-sm leading-relaxed mb-4">
+            Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu a zákazkový softvérový vývoj.
+          </p>
+          <p class="text-xs text-zinc-500">
+            <strong class="text-zinc-300">Lokalita pôsobenia:</strong> Oblasť západného Slovenska.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Navigácia</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#services" class="text-zinc-400 hover:text-[#00D26A] transition-colors">Služby</a></li>
+            <li><a href="#why-elysio" class="text-zinc-400 hover:text-[#00D26A] transition-colors">Prečo Elysio</a></li>
+            <li><a href="#portfolio" class="text-zinc-400 hover:text-[#00D26A] transition-colors">Projekty</a></li>
+            <li><a href="#protocol" class="text-zinc-400 hover:text-[#00D26A] transition-colors">Inšpekčný protokol</a></li>
+            <li><a href="#faq" class="text-zinc-400 hover:text-[#00D26A] transition-colors">FAQ</a></li>
+            <li><a href="#contact" class="text-zinc-400 hover:text-[#00D26A] transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Fakturačné údaje</h4>
+          <div class="text-xs text-zinc-400 space-y-1.5 leading-relaxed">
+            <p class="font-semibold text-white">ElysioTech • Patrik Barcaj</p>
+            <p>Fyzická osoba zapísaná v Živnostenskom registri SR</p>
+            <p>IČO: 56 802 544 • Bratislava & Západné Slovensko</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Badges Bar -->
+      <div class="py-4 px-6 rounded-2xl bg-[#121214] border border-neutral-800 flex flex-wrap items-center justify-between gap-4 mb-8 text-xs font-semibold text-zinc-300">
+        <span class="flex items-center gap-2">
+          <span class="text-[#00D26A] font-bold">✓</span> Certifikácia EASA A1/A3
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="text-[#00D26A] font-bold">✓</span> Technická grafika pre výrobu
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="text-[#00D26A] font-bold">✓</span> Full-Stack Development
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="text-[#00D26A] font-bold">✓</span> Lokalita: Oblasť západného Slovenska
+        </span>
+      </div>
+
+      <div class="border-t border-neutral-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500">
+        <p>&copy; 2026 ELYSIO TECH. Všetky práva vyhradené.</p>
+        <p class="mt-2 sm:mt-0">Digitálne a technické štúdio • Bratislavský kraj</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- MODAL FOR PROTOCOL PREVIEW -->
   <div id="protocol-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-6" onclick="closeProtocolModal()">
@@ -537,24 +1211,19 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer id="contact" class="py-12 bg-[#050505] border-t border-neutral-800 text-xs font-mono text-zinc-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        © 2026 ElysioTech. Všetky práva vyhradené. EASA Open A1/A3 certifikovaný operátor.
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="#services" class="hover:text-white transition-colors">Služby</a>
-        <a href="#slider" class="hover:text-white transition-colors">Porovnanie</a>
-        <a href="#protocol" class="hover:text-white transition-colors">Protokol</a>
-        <a href="mailto:info@elysiotech.sk" class="text-[#FFB800] hover:underline">info@elysiotech.sk</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- SCRIPT PRE BEFORE / AFTER SLIDER A MODAL -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Before/After comparison slider logic
+    // 1. Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // 2. Before/After slider logic
     const container = document.getElementById('comparison-container');
     const clip = document.getElementById('comparison-clip');
     const handleLine = document.getElementById('comparison-handle-line');
@@ -569,42 +1238,47 @@
       handleLine.style.left = `${percentage}%`;
     }
 
-    container.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      updateSlider(e.clientX);
-    });
+    if (container) {
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        updateSlider(e.clientX);
+      });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        updateSlider(e.clientX);
+      });
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
 
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      updateSlider(e.clientX);
-    });
+      // Mobile Touch
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) updateSlider(e.touches[0].clientX);
+      }, { passive: true });
+      container.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) updateSlider(e.touches[0].clientX);
+      }, { passive: true });
+    }
 
-    window.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
+    // 3. Drone Gallery switcher
+    function setDronePreview(src, caption) {
+      const img = document.getElementById('drone-main-img');
+      const cap = document.getElementById('drone-caption');
+      if (img) img.src = src;
+      if (cap) cap.innerText = caption;
+    }
 
-    // Touch events for mobile
-    container.addEventListener('touchstart', (e) => {
-      if (e.touches.length > 0) {
-        updateSlider(e.touches[0].clientX);
-      }
-    }, { passive: true });
-
-    container.addEventListener('touchmove', (e) => {
-      if (e.touches.length > 0) {
-        updateSlider(e.touches[0].clientX);
-      }
-    }, { passive: true });
-
-    // Modal logic
+    // 4. Modal logic
     const modal = document.getElementById('protocol-modal');
     function openProtocolModal() {
+      if (!modal) return;
       modal.classList.remove('hidden');
       modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
     }
 
     function closeProtocolModal() {
+      if (!modal) return;
       modal.classList.add('hidden');
       modal.classList.remove('flex');
       document.body.style.overflow = '';
@@ -613,6 +1287,47 @@
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeProtocolModal();
     });
+
+    // 5. FAQ Accordion & Filter
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const plus = btn.querySelector('span:last-child');
+      if (!answer) return;
+      const isHidden = answer.classList.contains('hidden');
+      answer.classList.toggle('hidden');
+      if (plus) plus.innerText = isHidden ? '−' : '+';
+    }
+
+    function filterFaq(category) {
+      const tabs = document.querySelectorAll('.faq-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-[#FFB800]', 'text-black');
+        tab.classList.add('bg-[#121214]', 'text-zinc-400');
+      });
+      event.target.classList.remove('bg-[#121214]', 'text-zinc-400');
+      event.target.classList.add('bg-[#FFB800]', 'text-black');
+
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // 6. Contact Form fake submit
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contact-btn');
+      const msg = document.getElementById('contact-msg');
+      if (btn) btn.innerText = 'Odosielam...';
+      setTimeout(() => {
+        if (btn) btn.classList.add('hidden');
+        if (msg) msg.classList.remove('hidden');
+      }, 700);
+    }
   </script>
 </body>
 </html>

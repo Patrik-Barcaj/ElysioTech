@@ -1,0 +1,76 @@
+================================================================================
+ELYSIOTECH // AI CHATBOT CONTEXT & ARCHITECTURAL SPECIFICATION
+================================================================================
+Autor & Zakladateľ: Patrik Barcaj
+Projekt: ElysioTech (Technická realizácia digitálnych & leteckých dát)
+Právna forma: Fyzická osoba v Živnostenskom registri SR, IČO: 56 802 544
+Pôsobenie: Bratislava & Západné Slovensko
+Telefón: +421 903 406 402
+Certifikácia: EASA Open A1/A3 certifikovaný pilot dronu
+
+--------------------------------------------------------------------------------
+1. AKO STRÁNKA VYZERÁ (VIZUÁLNY DIZAJN & DESIGN SYSTEM)
+--------------------------------------------------------------------------------
+- Estetika: Dark industrial high-tech, kybernetická telemetria, HUD prvky, sklenený efekt (glassmorphism), čistá inžinierska typografia.
+- Farebná paleta:
+  * Pozadie webu: #080808 (hlboká matná čierna)
+  * Karty & panely: #121214 (antracitový tón s jemným okrajom)
+  * Primárny akcent: #00D26A (neónová terminálová zelená – signalizuje online status, úspech, rýchlu kalkuláciu a tlačidlá)
+  * Sekundárny akcent: #FFB800 (výstražná inžinierska žltá – telemetria, štítky [ 01 // DEV ], rozlíšenie dát, rámy)
+  * Ohraničenia: #27272a (decentný neutrálny tmavý border)
+  * Text: #ffffff (nadpisy), #d4d4d8 (telo), #71717a (tlmené technické popisy)
+- Typografia:
+  * Plus Jakarta Sans (čistý moderný geometrický sans-serif na nadpisy a UI)
+  * JetBrains Mono (monospace font pre súradnice, GSD 1.2 cm/px, technické štítky a SLA parametre)
+- Vizuálne detaily a podpis:
+  * Rohové zameriavacie krížiky '+' v rohoch kariet simulujúce technické výkresy
+  * Pulzujúce LED diódy pri LIVE senzoroch a online indikátoroch
+  * Telemetrický rám s údajmi: GPS FIX • 18 SATS, GSD 1.2 CM/PX, 4K UHD, EASA A1/A3
+  * Asymetrický bento grid layout s vysokým kontrastom
+
+--------------------------------------------------------------------------------
+2. ČO STRÁNKA ROBÍ (FUNKCIONALITA & BIZNIS LOGIKA)
+--------------------------------------------------------------------------------
+ElysioTech poskytuje priamu technickú realizáciu v troch kľúčových oblastiach:
+
+A) [ 01 // DEV ] VÝVOJ WEBOV & APLIKÁCIÍ (od 350 € / projekt)
+   - Stack: Next.js, React, TypeScript, Tailwind CSS, MapLibre GIS
+   - Bleskové načítanie do 0.5s, 100% odovzdanie zdrojového kódu klientovi
+   - Žiadne viazanosti na pomalé WordPress/CMS šablóny
+   - Výstupné dáta: .TSX, .NEXT, .TAILWIND, .GIT
+
+B) [ 02 // AIR ] LETECKÉ DÁTA, FOTOGRAMETRIA & KATASTER (od 60 € / zásah)
+   - 48 MPx RGB senzor s vysokým dynamickým rozsahom
+   - Ortofotomapy s detailom 1.2 cm/px, vektorové osadenie hraníc parciel C-KN
+   - Vizuálny monitoring stavieb a technická kontrola striech
+   - Expresné dodanie surových dát a ortofotomáp do 48 hodín
+   - Výjazdy v týždni už od 14:30 alebo cez víkendy
+   - Výstupné dáta: .RAW, .TIFF, .DXF, .PDF, .GLB / .OBJ (3D Mesh)
+
+C) [ 03 // DTP ] TECHNICKÁ GRAFIKA & CAD (od 25 € / hodina)
+   - Vektorizácia pre priemyselné CNC stroje, laserové rezanie a plotre
+   - Bezchybné bezierove krivky bez samo-kríženia a otvorených ciest
+   - Tlačová DTP príprava (PDF/X) so zachovaním mierok
+   - Výstupné dáta: .DXF, .DWG, .SVG, .PDF
+
+HLAVNÉ HODNOTOVÉ PILIERE:
+- SLA 48H: Garancia dodania podkladov a kódu do 48 hodín
+- 1:1 PRIAMY KONTAKT: Klient komunikuje priamo s technikom/pilotom, nie s account manažérmi (0 agentúrnych prirážok)
+- VÝROBNÁ PRESNOSŤ: Čisté dáta, nulové chyby, súlad s legislatívou EASA Open A1/A3
+
+--------------------------------------------------------------------------------
+3. INTERAKTÍVNE PRVKY NA STRÁNKE
+--------------------------------------------------------------------------------
+1. Porovnávací posuvník (Before/After):
+   - Interaktívne potiahnutie myšou/dotykom
+   - Porovnáva bežný satelitný snímok (15m/px) s leteckým 48 MPx ortofotom ElysioTech s katastrálnym polygonóm C-KN (1.2cm/px).
+2. Letecká galéria & 3D WebGL Viewer:
+   - Prepínanie medzi 2D ortofotomapou (so 4 fotonáhľadmi) a interaktívnym 3D Mesh modelom.
+3. Technický inšpekčný protokol:
+   - Náhľad a vyskakovací modal s ukážkou štandardizovaného PDF protokolu (SLA 48h, 48 MPx, GeoTIFF, DXF, PDF).
+4. FAQ akordeóny s kategóriami:
+   - Prepínanie záložiek (Všetky, Weby & Softvér, Letecké zábery, Technická grafika) s rozbaľovaním odpovedí (+ / −).
+5. Lead-Gen formulár & WhatsApp integrácia:
+   - Okamžité odoslanie dopytu s potvrdením.
+   - Priame tlačidlá pre otvorenie WhatsApp konverzácie (+421 903 406 402) s predvyplnenou správou.
+================================================================================

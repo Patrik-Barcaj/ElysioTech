@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"; // import hooks
 import Link from "next/link"; // import Link component
 import { usePathname } from "next/navigation"; // import usePathname
 import { Menu, X } from "lucide-react"; // import Menu and X icons
+import { FEATURES } from "@/config/features";
 
 export default function Navigation() { // export default Navigation block
     const [isOpen, setIsOpen] = useState(false); // set state for mobile menu
@@ -51,6 +52,7 @@ export default function Navigation() { // export default Navigation block
         { name: 'Služby', href: '/#services', id: 'services' }, // item
         { name: 'Prečo Elysio', href: '/#why-elysio', id: 'why-elysio' }, // item
         { name: 'Projekty', href: '/#portfolio', id: 'portfolio' }, // item
+        ...(FEATURES.ENABLE_DRONE_SERVICES ? [{ name: 'Inšpekčný protokol', href: '/#protocol', id: 'protocol' }] : []),
         { name: 'FAQ', href: '/#faq', id: 'faq' }, // item
         { name: 'Kontakt', href: '/#contact', id: 'contact' }, // item
     ]; // end array

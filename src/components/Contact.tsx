@@ -1,6 +1,7 @@
 "use client"; // mark as client component
 import React, { useState } from 'react'; // import react library and useState
 import ScrollReveal from './ui/ScrollReveal'; // import scroll reveal
+import { FEATURES } from '@/config/features';
 
 export default function Contact() { // export Contact component function
     const [isSubmitted, setIsSubmitted] = useState(false); // form submission state
@@ -51,8 +52,16 @@ export default function Contact() { // export Contact component function
                                     <input type="text" id="email" required className="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all" placeholder="+421 9XX... / email@domena.sk" /> {/* email input field */}
                                 </div> {/* email wrapper end */}
                                 <div> {/* message wrapper */}
-                                    <label htmlFor="msg" className="block text-sm font-medium text-zinc-300 mb-1.5">Popis projektu alebo parcelné číslo</label> {/* label message */}
-                                    <textarea id="msg" rows={4} required className="w-full min-h-[140px] resize-y bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all" placeholder="Zábery pozemku / Kótovanie a vektorizácia / Webová aplikácia"></textarea> {/* message textarea field with min height */}
+                                    <label htmlFor="msg" className="block text-sm font-medium text-zinc-300 mb-1.5">
+                                        {FEATURES.ENABLE_DRONE_SERVICES ? 'Popis projektu alebo parcelné číslo' : 'Popis projektu alebo požiadavky'}
+                                    </label> {/* label message */}
+                                    <textarea
+                                        id="msg"
+                                        rows={4}
+                                        required
+                                        className="w-full min-h-[140px] resize-y bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 focus:ring-1 focus:ring-[#00D26A]/30 transition-all"
+                                        placeholder={FEATURES.ENABLE_DRONE_SERVICES ? 'Zábery pozemku / Kótovanie a vektorizácia / Webová aplikácia' : 'Webová aplikácia / Automatizácia procesov / DTP a vektorizácia'}
+                                    ></textarea> {/* message textarea field with min height */}
                                 </div> {/* message wrapper end */}
                                 <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl text-base tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"> {/* submit button */}
                                     {isSubmitting ? 'Odosielam...' : 'Odoslať'} {/* button label */}

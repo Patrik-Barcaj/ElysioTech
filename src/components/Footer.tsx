@@ -1,4 +1,5 @@
 import Link from 'next/link'; // import Link component
+import { FEATURES } from '@/config/features';
 
 export default function Footer() { // export Footer component function
     return ( // render return block
@@ -14,7 +15,10 @@ export default function Footer() { // export Footer component function
                             </svg>
                         </Link> {/* home link end */}
                         <p className="text-zinc-400 max-w-md text-sm leading-relaxed mb-4">
-                            Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu a zákazkový softvérový vývoj.
+                            {FEATURES.ENABLE_DRONE_SERVICES 
+                                ? 'Letecká fotogrametria a zábery pozemkov, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu a zákazkový softvérový vývoj.'
+                                : 'Firemná automatizácia, moderný softvérový vývoj, technická grafika pre výrobu a vektorizácia podkladov.'
+                            }
                         </p>
                         <p className="text-xs text-zinc-500">
                             <strong className="text-zinc-300">Lokalita pôsobenia:</strong> Oblasť západného Slovenska.
@@ -45,7 +49,7 @@ export default function Footer() { // export Footer component function
                 {/* Trust Badges Bar */}
                 <div className="py-4 px-6 rounded-2xl bg-[#121214] border border-neutral-800 flex flex-wrap items-center justify-between gap-4 mb-8 text-xs font-semibold text-zinc-300">
                     <span className="flex items-center gap-2">
-                        <span className="text-[#00D26A] font-bold">✓</span> Certifikácia EASA A1/A3
+                        <span className="text-[#00D26A] font-bold">✓</span> {FEATURES.ENABLE_DRONE_SERVICES ? 'Certifikácia EASA A1/A3' : 'Automatizácia firemných procesov'}
                     </span>
                     <span className="flex items-center gap-2">
                         <span className="text-[#00D26A] font-bold">✓</span> Technická grafika pre výrobu

@@ -4,9 +4,14 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from './ui/ScrollReveal';
 import { Clock, Eye, FileDown, Layers, CheckCircle2, X } from 'lucide-react';
+import { FEATURES } from '@/config/features';
 
 export default function Testimonials() {
     const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
+
+    if (!FEATURES.ENABLE_DRONE_SERVICES) {
+        return null;
+    }
 
     const protocolParams = [
         {

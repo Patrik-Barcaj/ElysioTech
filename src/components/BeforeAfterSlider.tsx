@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { FEATURES } from '@/config/features';
 
 export default function BeforeAfterSlider() {
     const [sliderPosition, setSliderPosition] = useState<number>(50);
@@ -47,6 +48,10 @@ export default function BeforeAfterSlider() {
             window.removeEventListener('mouseup', handleMouseUp);
         };
     }, [isDragging, updateSlider]);
+
+    if (!FEATURES.ENABLE_DRONE_SERVICES) {
+        return null;
+    }
 
     return (
         <section className="py-16 bg-[#080808] relative border-t border-neutral-800 overflow-hidden">

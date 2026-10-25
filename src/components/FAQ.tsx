@@ -1,19 +1,20 @@
 "use client"; // use client directive
 import React, { useState } from 'react'; // import react and useState
 import ScrollReveal from './ui/ScrollReveal'; // import scroll reveal
+import { FEATURES } from '@/config/features';
 
 export default function FAQ() { // export FAQ component function
     const [activeCategory, setActiveCategory] = useState<string>('all');
     const [openId, setOpenId] = useState<string | null>('faq-soft-1'); // state for open question id
 
-    const categories = [
+    const allCategories = [
         { id: 'all', name: 'Všetky oblasti' },
         { id: 'software', name: 'Weby & Softvér' },
-        { id: 'drone', name: 'Letecké zábery & Dáta' },
+        ...(FEATURES.ENABLE_DRONE_SERVICES ? [{ id: 'drone', name: 'Letecké zábery & Dáta' }] : []),
         { id: 'graphics', name: 'Technická grafika' }
     ];
 
-    const faqs = [
+    const rawFaqs = [
         // Category 1: Weby & Softvér
         {
             id: 'faq-soft-1',
@@ -38,34 +39,36 @@ export default function FAQ() { // export FAQ component function
         },
 
         // Category 2: Dronové dáta
-        {
-            id: 'faq-drone-1',
-            category: 'drone',
-            categoryName: 'Letecké zábery & Dáta',
-            q: 'Je prevádzka dronu legálna a certifikovaná?',
-            a: 'Áno. Lietam s certifikáciou EASA pre kategórie Open A1/A3 a oficiálnou registráciou. Lety realizujem bezpečne, zodpovedne a v plnom súlade s platnou leteckou legislatívou SR.'
-        },
-        {
-            id: 'faq-drone-2',
-            category: 'drone',
-            categoryName: 'Letecké zábery & Dáta',
-            q: 'Je nutná moja osobná prítomnosť pri zbere leteckých dát?',
-            a: 'Nie. Zber dát realizujem samostatne na základe parcelného čísla, katastrálneho územia alebo GPS súradníc. Výsledné digitálne náhľady a spracované dáta odovzdávam cez cloudové úložisko.'
-        },
-        {
-            id: 'faq-drone-3',
-            category: 'drone',
-            categoryName: 'Letecké zábery & Dáta',
-            q: 'V akých formátoch a rozlíšení dodávate letecké výstupy?',
-            a: 'Fotografie dodávam v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).'
-        },
-        {
-            id: 'faq-drone-4',
-            category: 'drone',
-            categoryName: 'Letecké zábery & Dáta',
-            q: 'Nahrádzajú vaše letecké výstupy autorizované geodetické meranie?',
-            a: 'Nie. Naše výstupy slúžia ako detailný technický a vizuálny podklad pre projektový manažment, kontrolu stavby, internú logistiku a správu majetku. Nenahrádzajú úradné geodetické zameranie na zápis do katastra nehnuteľností podľa zákona NR SR č. 215/1995 Z. z.'
-        },
+        ...(FEATURES.ENABLE_DRONE_SERVICES ? [
+            {
+                id: 'faq-drone-1',
+                category: 'drone',
+                categoryName: 'Letecké zábery & Dáta',
+                q: 'Je prevádzka dronu legálna a certifikovaná?',
+                a: 'Áno. Lietam s certifikáciou EASA pre kategórie Open A1/A3 a oficiálnou registráciou. Lety realizujem bezpečne, zodpovedne a v plnom súlade s platnou leteckou legislatívou SR.'
+            },
+            {
+                id: 'faq-drone-2',
+                category: 'drone',
+                categoryName: 'Letecké zábery & Dáta',
+                q: 'Je nutná moja osobná prítomnosť pri zbere leteckých dát?',
+                a: 'Nie. Zber dát realizujem samostatne na základe parcelného čísla, katastrálneho územia alebo GPS súradníc. Výsledné digitálne náhľady a spracované dáta odovzdávam cez cloudové úložisko.'
+            },
+            {
+                id: 'faq-drone-3',
+                category: 'drone',
+                categoryName: 'Letecké zábery & Dáta',
+                q: 'V akých formátoch a rozlíšení dodávate letecké výstupy?',
+                a: 'Fotografie dodávam v 4K/RAW (DNG/JPG) rozlíšení s vysokým dynamickým rozsahom, videosekvencie v plynulom 4K formáte a ortofotomapy v georeferencovaných vrstvách (GeoTIFF, GeoJSON, PNG).'
+            },
+            {
+                id: 'faq-drone-4',
+                category: 'drone',
+                categoryName: 'Letecké zábery & Dáta',
+                q: 'Nahrádzajú vaše letecké výstupy autorizované geodetické meranie?',
+                a: 'Nie. Naše výstupy slúžia ako detailný technický a vizuálny podklad pre projektový manažment, kontrolu stavby, internú logistiku a správu majetku. Nenahrádzajú úradné geodetické zameranie na zápis do katastra nehnuteľností podľa zákona NR SR č. 215/1995 Z. z.'
+            }
+        ] : []),
 
         // Category 3: Technická grafika
         {
@@ -75,13 +78,23 @@ export default function FAQ() { // export FAQ component function
             q: 'V akých formátoch dodávate vektorovú grafiku a plány?',
             a: 'Podklady exportujem vo formátoch pre CAD, laser a CNC rezanie (DXF, SVG, DWG) aj v tlačovom PDF/X so zachovaním presných mierok.'
         },
-        {
-            id: 'faq-graphics-2',
-            category: 'graphics',
-            categoryName: 'Technická grafika',
-            q: 'Ako prebieha kótovanie a zakreslenie sietí do leteckej snímky?',
-            a: 'Na základe dodaného parcelného čísla alebo GPS súradníc zameriam pozemok dronom a do výslednej ortofotomapy presne zanesiem hranice pozemku a inžinierske siete.'
-        },
+        ...(FEATURES.ENABLE_DRONE_SERVICES ? [
+            {
+                id: 'faq-graphics-2',
+                category: 'graphics',
+                categoryName: 'Technická grafika',
+                q: 'Ako prebieha kótovanie a zakreslenie sietí do leteckej snímky?',
+                a: 'Na základe dodaného parcelného čísla alebo GPS súradníc zameriam pozemok dronom a do výslednej ortofotomapy presne zanesiem hranice pozemku a inžinierske siete.'
+            }
+        ] : [
+            {
+                id: 'faq-automation-1',
+                category: 'software',
+                categoryName: 'Automatizácia',
+                q: 'Ako funguje automatizácia firemných procesov a dátové skripty?',
+                a: 'Pripravím na mieru vytvorené skripty a prepojenia systémov (API, klientske zóny, databázy), ktoré eliminujú manuálnu prácu s dátami, znižujú chybovosť a šetria desiatky hodín mesačne.'
+            }
+        ]),
         {
             id: 'faq-graphics-3',
             category: 'graphics',
@@ -96,8 +109,8 @@ export default function FAQ() { // export FAQ component function
     };
 
     const filteredFaqs = activeCategory === 'all' 
-        ? faqs 
-        : faqs.filter(faq => faq.category === activeCategory);
+        ? rawFaqs 
+        : rawFaqs.filter(faq => faq.category === activeCategory);
 
     return ( // return JSX layout
         <section id="faq" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
@@ -107,12 +120,17 @@ export default function FAQ() { // export FAQ component function
                         [ 05 // FAQ ] • OTÁZKY A ODPOVEDE
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Často kladené otázky</h2> {/* title */}
-                    <p className="text-zinc-400 mt-3 text-base sm:text-lg">Prehľadné odpovede rozdelené podľa 3 hlavných oblastí služieb.</p>
+                    <p className="text-zinc-400 mt-3 text-base sm:text-lg">
+                        {FEATURES.ENABLE_DRONE_SERVICES 
+                            ? 'Prehľadné odpovede rozdelené podľa 3 hlavných oblastí služieb.'
+                            : 'Prehľadné odpovede rozdelené podľa hlavných oblastí technických služieb.'
+                        }
+                    </p>
                 </div> {/* header block end */}
 
-                {/* 3 Focus Area Category Switcher */}
+                {/* Focus Area Category Switcher */}
                 <div className="flex flex-wrap justify-center gap-2 mb-10">
-                    {categories.map((cat) => {
+                    {allCategories.map((cat) => {
                         const isActive = activeCategory === cat.id;
                         return (
                             <button

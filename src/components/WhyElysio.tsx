@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollReveal from './ui/ScrollReveal';
+import { FEATURES } from '@/config/features';
 
 export default function WhyElysio() {
   return (
@@ -36,7 +37,10 @@ export default function WhyElysio() {
                 [ 00 // DIRECT_CONTACT ]
               </div>
               <p className="text-zinc-200 text-base sm:text-lg font-medium leading-relaxed">
-                Jeden kontakt od zberu dát po kód. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.
+                {FEATURES.ENABLE_DRONE_SERVICES
+                  ? 'Jeden kontakt od zberu dát po kód. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.'
+                  : 'Jeden kontakt od analýzy zadania po kód a výrobu. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.'
+                }
               </p>
             </div>
           </div>
@@ -63,7 +67,7 @@ export default function WhyElysio() {
                     ⚡ Rýchlosť do 48 hodín
                   </h3>
                   <div className="space-y-2.5 text-sm text-zinc-300">
-                    <p>• <strong className="text-white">Dáta do 2 dní:</strong> Surové zábery, ortofoto aj kód dodávam do 48 hodín.</p>
+                    <p>• <strong className="text-white">Dáta do 2 dní:</strong> {FEATURES.ENABLE_DRONE_SERVICES ? 'Surové zábery, ortofoto aj kód dodávam do 48 hodín.' : 'Kód, automatizačné skripty aj grafické podklady dodávam do 48 hodín.'}</p>
                     <p>• <strong className="text-white">Cloudový odkaz:</strong> Okamžitý prístup k plnému rozlíšeniu bez čakania.</p>
                     <p>• <strong className="text-white">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích procesov.</p>
                   </div>
@@ -92,7 +96,7 @@ export default function WhyElysio() {
                     👤 1:1 Priamy kontakt
                   </h3>
                   <div className="space-y-2.5 text-sm text-zinc-300">
-                    <p>• <strong className="text-white">Priamo s technikom:</strong> Riešite zadanie s človekom, čo lieta a kóduje.</p>
+                    <p>• <strong className="text-white">Priamo s technikom:</strong> {FEATURES.ENABLE_DRONE_SERVICES ? 'Riešite zadanie s človekom, čo lieta a kóduje.' : 'Riešite zadanie s človekom, čo navrhuje a kóduje.'}</p>
                     <p>• <strong className="text-white">WhatsApp & telefón:</strong> Rýchle operatívne zmeny a konzultácie bez čakania.</p>
                     <p>• <strong className="text-white">Nulový šum:</strong> Žiadne skreslené zadania cez account manažérov.</p>
                   </div>
@@ -122,7 +126,11 @@ export default function WhyElysio() {
                   </h3>
                   <div className="space-y-2.5 text-sm text-zinc-300">
                     <p>• <strong className="text-white">Výrobné formáty:</strong> Vektory pasujú presne do CNC, lasera aj plotra.</p>
-                    <p>• <strong className="text-white">Presné mapovanie:</strong> Zábery a ortofoto presne sedia na hranice parcely.</p>
+                    {FEATURES.ENABLE_DRONE_SERVICES ? (
+                      <p>• <strong className="text-white">Presné mapovanie:</strong> Zábery a ortofoto presne sedia na hranice parcely.</p>
+                    ) : (
+                      <p>• <strong className="text-white">Stabilná automatizácia:</strong> Skripty a procesy bežia spoľahlivo a bez výpadkov.</p>
+                    )}
                     <p>• <strong className="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react'; // import react library with useState
 import Link from 'next/link';
 import Image from 'next/image';
 import { projectsData } from '@/data/projects';
+import { FEATURES } from '@/config/features';
 
 export default function Portfolio() {
     const devProjects = projectsData.filter((p) => p.slug !== 'katastralny-zakres');
@@ -76,7 +77,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Unified Portfolio */}
-                <div className="mb-16">
+                <div className={FEATURES.ENABLE_DRONE_SERVICES ? 'mb-16' : 'mb-0'}>
 
                     {/* Section 01: Dev */}
                     <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
@@ -84,7 +85,7 @@ export default function Portfolio() {
                         <span>Weby & <span className="text-[#00D26A]">Aplikácie</span></span>
                     </h3>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ${FEATURES.ENABLE_DRONE_SERVICES ? 'mb-16' : 'mb-0'}`}>
                         {devProjects.map((proj) => (
                             <div
                                 key={proj.id}
@@ -135,12 +136,14 @@ export default function Portfolio() {
                     </div>
 
                     {/* Section 02: Air (Interactive Drone Project Card) */}
-                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
-                        <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 02 // AIR ]</span>
-                        <span>Letecké dáta & <span className="text-[#00D26A]">Technický audit</span></span>
-                    </h3>
-                    
-                    <div className="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group hover:border-[#00D26A]/50 transition-all duration-300">
+                    {FEATURES.ENABLE_DRONE_SERVICES && (
+                        <>
+                            <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
+                                <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 02 // AIR ]</span>
+                                <span>Letecké dáta & <span className="text-[#00D26A]">Technický audit</span></span>
+                            </h3>
+                            
+                            <div className="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group hover:border-[#00D26A]/50 transition-all duration-300">
                         {/* Coordinate cross accents */}
                         <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                         <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
@@ -354,13 +357,15 @@ export default function Portfolio() {
 
                         </div>
                     </div>
+                        </>
+                    )}
 
                 </div>
 
             </div>
 
             {/* Technical Parameters Modal */}
-            {isTechModalOpen && (
+            {FEATURES.ENABLE_DRONE_SERVICES && isTechModalOpen && (
                 <div 
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 sm:p-6"
                     onClick={() => setIsTechModalOpen(false)}
@@ -489,7 +494,7 @@ export default function Portfolio() {
             )}
 
             {/* Lightbox Modal */}
-            {lightbox !== null && (
+            {FEATURES.ENABLE_DRONE_SERVICES && lightbox !== null && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onClick={closeLightbox}>
                     <button onClick={closeLightbox} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-50 p-2">
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>

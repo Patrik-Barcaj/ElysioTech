@@ -1,5 +1,6 @@
 import Link from 'next/link'; // import Link component
 import Image from 'next/image'; // import Image component
+import { FEATURES } from '@/config/features';
 
 export default function Hero() { // export Hero component function
     return ( // return JSX markup
@@ -23,13 +24,25 @@ export default function Hero() { // export Hero component function
                             [ 00 // STUDIO ] • BRATISLAVSKÝ KRAJ
                         </div> {/* pre-heading end */}
                         
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6"> {/* main headline */}
-                            Letecké dáta, <span className="text-[#FFB800]">Technická grafika</span> a <span className="text-[#00D26A]">Webové aplikácie.</span>
-                        </h1> {/* main headline end */}
+                        {FEATURES.ENABLE_DRONE_SERVICES ? (
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6">
+                                Letecké dáta, <span className="text-[#FFB800]">Technická grafika</span> a <span className="text-[#00D26A]">Webové aplikácie.</span>
+                            </h1>
+                        ) : (
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6">
+                                Firemná automatizácia, <span className="text-[#FFB800]">Technická grafika</span> a <span className="text-[#00D26A]">Webové aplikácie.</span>
+                            </h1>
+                        )}
                         
-                        <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0"> {/* subheadline */}
-                            Rýchly vizuálny monitoring stavieb, detailná kontrola striech a softvér na mieru. Zákazky riešite priamo so mnou – bez agentúrnych prirážok, flexibilne a s dodaním podkladov do 48 hodín.
-                        </p> {/* subheadline end */}
+                        {FEATURES.ENABLE_DRONE_SERVICES ? (
+                            <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
+                                Rýchly vizuálny monitoring stavieb, detailná kontrola striech a softvér na mieru. Zákazky riešite priamo so mnou – bez agentúrnych prirážok, flexibilne a s dodaním podkladov do 48 hodín.
+                            </p>
+                        ) : (
+                            <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
+                                Optimalizácia procesov pre malé firmy, moderný softvér na mieru a presná vektorová príprava pre výrobu. Spolupráca priamo s technikom bez agentúrnych prirážok a s garanciou dodania do 48 hodín.
+                            </p>
+                        )}
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3"> {/* cta group */}
                             <a
@@ -51,72 +64,124 @@ export default function Hero() { // export Hero component function
 
                         {/* Microcopy reassurance under buttons */}
                         <p className="font-mono text-xs text-zinc-400 mt-2 mb-8 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
-                            <span className="text-[#00D26A] font-bold">●</span> Odpovedám do 15 minút • Stačí poslať lokalitu alebo zadanie
+                            <span className="text-[#00D26A] font-bold">●</span> Odpovedám do 15 minút • Stačí poslať zadanie
                         </p>
 
                         {/* Interactive Service Router */}
                         <div className="pt-6 border-t border-neutral-800 text-left">
                             <div className="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
-                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                <a href="#services" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                                     [ Dodanie do 48h ]
                                 </a>
-                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                <a href="#why-elysio" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                                     [ Priama spolupráca ]
                                 </a>
-                                <a href="#cennik" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                                    [ Zákazky od 60 € ]
+                                <a href="#services" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+                                    {FEATURES.ENABLE_DRONE_SERVICES ? '[ Zákazky od 60 € ]' : '[ Sadzba od 25 €/h ]'}
                                 </a>
                             </div>
                         </div>
                     </div> {/* text content wrapper end */}
 
-                    {/* Right: Flat Technical Telemetry Frame */}
+                    {/* Right: Technical Visual Panel */}
                     <div className="flex-1 relative w-full max-w-xl mx-auto lg:max-w-none">
-                        <div className="relative rounded-xl border border-neutral-800 bg-[#121214] overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] group">
-                            {/* Real Image Layer */}
-                            <Image
-                                src="/drone-preview.jpg"
-                                alt="Letecká 90° ortofotomapa pozemku dronom"
-                                fill
-                                priority
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
+                        {FEATURES.ENABLE_DRONE_SERVICES ? (
+                            <div className="relative rounded-xl border border-neutral-800 bg-[#121214] overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] group">
+                                {/* Real Image Layer */}
+                                <Image
+                                    src="/drone-preview.jpg"
+                                    alt="Letecká 90° ortofotomapa pozemku dronom"
+                                    fill
+                                    priority
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
 
-                            {/* Subtle dark vignette and fine grid overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none"></div>
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.65)_100%)] pointer-events-none"></div>
-                            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+                                {/* Subtle dark vignette and fine grid overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none"></div>
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.65)_100%)] pointer-events-none"></div>
+                                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
 
-                            {/* Telemetry Overlay Badges (Top & Bottom Corners) */}
-                            {/* Top-left badge */}
-                            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex items-center">
-                                <span className="font-mono text-[11px] text-amber-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-amber-500/30 flex items-center gap-1.5 shadow-md">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></span>
-                                    ● LIVE SENSOR // 4K UHD
-                                </span>
+                                {/* Telemetry Overlay Badges */}
+                                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex items-center">
+                                    <span className="font-mono text-[11px] text-amber-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-amber-500/30 flex items-center gap-1.5 shadow-md">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse"></span>
+                                        ● LIVE SENSOR // 4K UHD
+                                    </span>
+                                </div>
+
+                                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 hidden sm:flex items-center">
+                                    <span className="font-mono text-[10px] text-[#00D26A] bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-[#00D26A]/30 flex items-center gap-1">
+                                        GPS FIX • 18 SATS
+                                    </span>
+                                </div>
+
+                                <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10">
+                                    <span className="font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800 inline-block shadow-md">
+                                        EASA A1/A3 • 90° ORTHOPHOTO • BA-KRAJ
+                                    </span>
+                                </div>
+
+                                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 hidden sm:flex items-center gap-1.5 font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800">
+                                    <span className="w-3 h-[1px] bg-zinc-400 inline-block"></span>
+                                    <span>GSD 1.2 CM/PX</span>
+                                </div>
                             </div>
+                        ) : (
+                            <div className="relative rounded-xl border border-neutral-800 bg-[#121214] p-5 sm:p-6 overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] flex flex-col justify-between group">
+                                {/* Coordinate cross accents */}
+                                <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                                <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
-                            {/* Top-right sensor status */}
-                            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 hidden sm:flex items-center">
-                                <span className="font-mono text-[10px] text-[#00D26A] bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-[#00D26A]/30 flex items-center gap-1">
-                                    GPS FIX • 18 SATS
-                                </span>
-                            </div>
+                                {/* Ambient tech grid overlay */}
+                                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
 
-                            {/* Bottom-left metadata */}
-                            <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10">
-                                <span className="font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800 inline-block shadow-md">
-                                    EASA A1/A3 • 90° ORTHOPHOTO • BA-KRAJ
-                                </span>
-                            </div>
+                                {/* Top HUD Header */}
+                                <div className="relative z-10 flex items-center justify-between pb-3 border-b border-neutral-800/80">
+                                    <div className="flex items-center gap-2 font-mono text-[11px] text-zinc-300">
+                                        <span className="w-2 h-2 rounded-full bg-[#00D26A] animate-pulse shadow-[0_0_8px_rgba(0,210,106,0.8)]"></span>
+                                        <span className="text-[#00D26A] font-bold">STATUS: ONLINE</span>
+                                        <span className="text-zinc-600">{'//'}</span>
+                                        <span className="text-white font-semibold">NEXT.JS</span>
+                                    </div>
+                                    <span className="px-2 py-0.5 rounded font-mono text-[10px] bg-[#00D26A]/10 border border-[#00D26A]/30 text-[#00D26A] tracking-wider uppercase">
+                                        AUTOMATION RUNNING
+                                    </span>
+                                </div>
 
-                            {/* Bottom-right scale & resolution */}
-                            <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10 hidden sm:flex items-center gap-1.5 font-mono text-[10px] text-zinc-400 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded border border-neutral-800">
-                                <span className="w-3 h-[1px] bg-zinc-400 inline-block"></span>
-                                <span>GSD 1.2 CM/PX</span>
+                                {/* Code / Automation Pipeline Mockup */}
+                                <div className="relative z-10 my-auto py-2 font-mono text-xs leading-relaxed text-zinc-300 space-y-1 select-none">
+                                    <div className="text-zinc-500">{'// 01 // WORKFLOW_AUTOMATION_PIPELINE'}</div>
+                                    <div>
+                                        <span className="text-[#FFB800]">const</span> <span className="text-white">pipeline</span> = <span className="text-[#FFB800]">await</span> <span className="text-[#00D26A]">ElysioEngine</span>.<span className="text-sky-400">deploy</span>({'{'}
+                                    </div>
+                                    <div className="pl-4 text-zinc-400">
+                                        stack: <span className="text-emerald-400">&apos;Next.js + TypeScript&apos;</span>,
+                                    </div>
+                                    <div className="pl-4 text-zinc-400">
+                                        automation: <span className="text-emerald-400">&apos;API &amp; Data Workflows&apos;</span>,
+                                    </div>
+                                    <div className="pl-4 text-zinc-400">
+                                        sla: <span className="text-[#FFB800]">&apos;48h_Guaranteed&apos;</span>,
+                                    </div>
+                                    <div>{'}'});</div>
+                                    <div className="pt-1 text-[#00D26A] flex items-center gap-1.5">
+                                        <span>✓</span> <span>Pipeline initialized • 0 errors • 100% code ownership</span>
+                                    </div>
+                                </div>
+
+                                {/* Bottom HUD Telemetry Strip */}
+                                <div className="relative z-10 pt-3 border-t border-neutral-800/80 flex items-center justify-between text-[10px] font-mono text-zinc-400">
+                                    <span className="flex items-center gap-1.5">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800]"></span>
+                                        CORE // PROCESS_OPTIMIZATION
+                                    </span>
+                                    <span className="text-zinc-500">LATENCY &lt; 0.5s</span>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
 
                 </div> {/* asymmetric split end */}

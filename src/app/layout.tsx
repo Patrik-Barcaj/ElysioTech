@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"; // import google fonts
 import "./globals.css"; // import global css
 import AnimatedBackground from '@/components/ui/AnimatedBackground'; // import animated background component
 import { ThemeProvider } from "@/components/ThemeProvider"; // import theme provider
+import { FEATURES } from "@/config/features";
 
 const geistSans = Geist({ // start geist sans font config
   variable: "--font-geist-sans", // set css var name
@@ -15,8 +16,12 @@ const geistMono = Geist_Mono({ // start geist mono font config
 }); // end geist mono font config
 
 export const metadata: Metadata = { // export metadata object
-  title: "ELYSIO TECH | Dronové zábery pozemkov, technická grafika a softvér na mieru (Západné Slovensko)", // set page title
-  description: "Prezentácia nehnuteľností, stavebných projektov a firiem. Letecké snímky dronom, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu, bleskový webový vývoj. Bez agentúrnych prirážok.", // set description
+  title: FEATURES.ENABLE_DRONE_SERVICES
+    ? "ELYSIO TECH | Dronové zábery pozemkov, technická grafika a softvér na mieru (Západné Slovensko)"
+    : "ELYSIO TECH | Firemná automatizácia, technická grafika a webové aplikácie",
+  description: FEATURES.ENABLE_DRONE_SERVICES
+    ? "Prezentácia nehnuteľností, stavebných projektov a firiem. Letecké snímky dronom, vektorové zakreslenie inžinierskych sietí, technická grafika pre výrobu, bleskový webový vývoj. Bez agentúrnych prirážok."
+    : "Optimalizácia procesov pre malé firmy, moderný softvér na mieru a presná vektorová príprava pre výrobu. Spolupráca priamo s technikom bez agentúrnych prirážok a s garanciou dodania do 48 hodín.",
 }; // close metadata object
 
 export default function RootLayout({ // export root layout component

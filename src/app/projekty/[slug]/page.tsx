@@ -6,19 +6,28 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { projectsData, getProjectBySlug } from '@/data/projects';
+import { FEATURES } from '@/config/features';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return projectsData.map((project) => ({
+  const activeProjects = FEATURES.ENABLE_DRONE_SERVICES
+    ? projectsData
+    : projectsData.filter((p) => p.slug !== 'katastralny-zakres');
+  return activeProjects.map((project) => ({
     slug: project.slug,
   }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === 'katastralny-zakres' && !FEATURES.ENABLE_DRONE_SERVICES) {
+    return {
+      title: 'Projekt nenájdený | ELYSIO TECH',
+    };
+  }
   const project = getProjectBySlug(slug);
 
   if (!project) {
@@ -35,6 +44,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
+  if (slug === 'katastralny-zakres' && !FEATURES.ENABLE_DRONE_SERVICES) {
+    notFound();
+  }
   const project = getProjectBySlug(slug);
 
   if (!project) {
@@ -42,7 +54,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const isExternalLink = project.liveUrl.startsWith('http');
-  const otherProjects = projectsData.filter((p) => p.slug !== project.slug);
+  const otherProjects = projectsData.filter(
+    (p) => p.slug !== project.slug && (FEATURES.ENABLE_DRONE_SERVICES || p.slug !== 'katastralny-zakres')
+  );
 
   return (
     <main className="bg-[#080808] min-h-[100dvh] text-zinc-300 relative">

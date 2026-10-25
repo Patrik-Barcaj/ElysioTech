@@ -1,0 +1,96 @@
+================================================================================
+ELYSIOTECH // AI CHATBOT CONTEXT & ARCHITECTURAL SPECIFICATION
+================================================================================
+Autor & Zakladateľ: Patrik Barcaj
+Projekt: ElysioTech (Technická realizácia: Firemná automatizácia, Webový vývoj & DTP grafika)
+Právna forma: Fyzická osoba zapísaná v Živnostenskom registri SR, IČO: 56 802 544
+Pôsobenie: Bratislava & Západné Slovensko
+Telefón: +421 903 406 402
+WhatsApp: https://wa.me/421903406402
+Stav sezóny (Winter Status): Zimná prevádzka – zameranie na automatizáciu procesov, Next.js weby a DTP/CAD grafiku.
+Feature Flag architektúra: FEATURES.ENABLE_DRONE_SERVICES = false (Letecké služby dočasne skryté v UI; 100% kódu zachovaných pre jarné spustenie).
+
+--------------------------------------------------------------------------------
+1. AKO STRÁNKA VYZERÁ (VIZUÁLNY DIZAJN & DESIGN SYSTEM)
+--------------------------------------------------------------------------------
+- Estetika: Dark industrial high-tech, telemetrický HUD, sklenený efekt (glassmorphism), inžinierska typografia a precízne ohraničenia.
+- Farebná paleta:
+  * Pozadie webu: #080808 (hlboká matná čierna)
+  * Karty & panely: #121214 (antracitový tón s jemným okrajom)
+  * Primárny akcent: #00D26A (neónová terminálová zelená – signalizuje online status, úspech, rýchlu kalkuláciu a akčné tlačidlá)
+  * Sekundárny akcent: #FFB800 (výstražná inžinierska žltá – telemetria, kategórie [ 01 // DEV ], rozlíšenie dát, rámy)
+  * Ohraničenia: #27272a (decentný neutrálny tmavý border)
+  * Text: #ffffff (nadpisy), #d4d4d8 (telo), #71717a (tlmené technické popisy)
+- Typografia:
+  * Plus Jakarta Sans (čistý moderný geometrický sans-serif na nadpisy a UI)
+  * JetBrains Mono (monospace font pre telemetriu, súradnice, kódové ukážky, štítky a SLA parametre)
+- Vizuálne detaily a podpis:
+  * Rohové zameriavacie krížiky '+' v rohoch kariet simulujúce technické CAD výkresy
+  * Pulzujúce LED diódy pri LIVE indikátoroch stavu a procesov
+  * Hero HUD panel simulujúci nasadenie Next.js automatizačnej pipeline
+  * Asymetrický bento grid layout s vysokým kontrastom
+
+--------------------------------------------------------------------------------
+2. ČO STRÁNKA ROBÍ (FUNKCIONALITA & BIZNIS LOGIKA)
+--------------------------------------------------------------------------------
+ElysioTech poskytuje priamu technickú realizáciu pre firmy, podnikateľov a výrobné prevádzky:
+
+A) [ 01 // DEV ] VÝVOJ WEBOV & FIREMNÁ AUTOMATIZÁCIA (od 350 € / projekt)
+   - Stack: Next.js, React, TypeScript, Tailwind CSS, REST/GraphQL API
+   - Bleskové načítanie do 0.5s, 100% odovzdanie zdrojového kódu klientovi (plné vlastníctvo)
+   - Automatizácia firemných procesov, prepájanie databáz, dátové skripty, eliminácia manuálnej práce
+   - Žiadne viazanosti na pomalé WordPress/CMS šablóny
+   - Výstupné dáta: .TSX, .NEXT, .AUTOMATION, .GIT
+
+B) [ 02 // DTP ] TECHNICKÁ GRAFIKA, CAD & PREPRESS (od 25 € / hodina)
+   - Vektorizácia pre priemyselné CNC stroje, laserové rezanie a rezacie plotre
+   - Bezchybné bezierove krivky bez samo-kríženia, prekryvov a otvorených ciest
+   - Tlačová DTP príprava a predvýrobný audit (PDF/X, CMYK 300 DPI, spadávky a orezové značky)
+   - Výstupné dáta: .DXF, .DWG, .SVG, .PDF
+
+C) [ PAUSED // AIR ] LETECKÉ DÁTA & FOTOGRAMETRIA (od 60 € / zásah)
+   - STAV: Dočasne pozastavené počas zimy (Feature flag: ENABLE_DRONE_SERVICES = false).
+   - Kompletná infraštruktúra (48 MPx RGB, ortofotomapy, 3D WebGL mesh, inšpekčný protokol, kataster C-KN) ostáva v kóde pre jarné spustenie.
+
+HLAVNÉ HODNOTOVÉ PILIERE:
+- SLA 48H: Garancia dodania kódu, automatizačných skriptov a grafických podkladov do 48 hodín
+- 1:1 PRIAMY KONTAKT: Klient komunikuje priamo s technikom/vývojárom (0 agentúrnych prirážok, reakcia na WhatsApp do 15 minút)
+- VÝROBNÁ PRESNOSŤ: Čisté dáta, 0 chýb, žiadne skryté poplatky
+
+--------------------------------------------------------------------------------
+3. INTERAKTÍVNE PRVKY A ŠTRUKTÚRA STRÁNKY
+--------------------------------------------------------------------------------
+1. Navigácia & Mobilné menu:
+   - Sticky header so skleneným efektom, scrollspy indikátorom aktívnej sekcie a mobilným vysúvacím drawerom
+   - Odkazy: Služby (#services), Prečo Elysio (#why-elysio), Projekty (#portfolio), FAQ (#faq), Kontakt (#contact)
+   - Akčné tlačidlo: Zavolať / WhatsApp (+421 903 406 402)
+2. Hero sekcia:
+   - Asymetrický split: vľavo inžiniersky headline s CTA tlačidlami a mikro-garanciami; vpravo telemetrický HUD panel s kódom automatizácie
+3. Nekonečný Marquee pás:
+   - Plynulý horizontálny ticker s technickými kľúčovými slovami (Next.js & TypeScript, Automatizácia firemných procesov, DTP & Prepress...)
+4. Služby (Bento Grid):
+   - 2 aktívne inžinierske piliere (DEV od 350 €, DTP od 25 €/h) s badgeami výstupných formátov
+5. Prečo Elysio (Hodnotový blok):
+   - Priamy 1:1 kontakt, rýchlosť do 48 hodín, stabilná automatizácia a presné výrobné formáty
+6. Projekty (Portfolio):
+   - 4 aktívne produkčné realizácie:
+     * PixelCraft: Canvas engine & pixel-art generátor
+     * Zen Pierce: Prezentačný brand web s interaktívnym katalógom
+     * Echo Web: Interaktívny digitálny portál a systém
+     * SetDrift: Webová aplikácia a workflow manažment
+7. FAQ (Často kladené otázky):
+   - Interaktívny filter kategórií (Všetky, Weby & Softvér, Technická grafika) s plynulým akordeónom (+ / −)
+8. Kontaktný formulár & WhatsApp integrácia:
+   - Okamžitý dopytový formulár s interaktívnym modal potvrdením a priame tlačidlá na WhatsApp / telefón
+9. Pätička (Footer):
+   - Fakturačné údaje (Patrik Barcaj, IČO: 56 802 544), trust badge lišta a copyright
+
+--------------------------------------------------------------------------------
+4. POKYNY PRE AI ASISTENTOV / CHATBOTOV
+--------------------------------------------------------------------------------
+- Tón komunikácie: Priamy, vecný, technický, inžiniersky, transparentný.
+- Cenotvorba: Vývoj webu od 350 €, grafika od 25 €/hod. Cenové ponuky sa kalkulujú individuálne podľa zadania.
+- Rýchlosť odozvy: Do 15 minút cez WhatsApp (+421 903 406 402).
+- Vlastníctvo: Klient má 100% vlastníctvo zdrojového kódu a assetov.
+- Zimná sezóna: Dronové služby sú dočasne pozastavené; primárne ponuky sa týkajú webového vývoja, firemnej automatizácie a DTP/CAD grafiky.
+================================================================================

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="sk" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ElysioTech // Firemná automatizácia, technická grafika a webové aplikácie</title>
-  <meta name="description" content="Optimalizácia procesov pre malé firmy, moderný softvér na mieru a presná vektorová príprava pre výrobu.">
+  <meta name="description"
+    content="Optimalizácia procesov pre malé firmy, moderný softvér na mieru a presná vektorová príprava pre výrobu.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -37,42 +41,57 @@
       color: #d4d4d8;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
+
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
     }
+
     @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
+
     .animate-marquee {
       display: flex;
       width: max-content;
-      animation: marquee 30s linear infinite;
+      animation: marquee 28s linear infinite;
     }
+
     .animate-marquee:hover {
       animation-play-state: paused;
     }
   </style>
 </head>
+
 <body class="bg-[#080808] text-zinc-300 min-h-screen selection:bg-[#FFB800]/30 selection:text-white">
 
   <!-- 1. NAVIGATION -->
-  <header class="sticky top-0 z-40 bg-[#080808]/90 backdrop-blur-md border-b border-neutral-800">
+  <header class="fixed top-0 w-full z-50 bg-[#080808]/95 backdrop-blur-md border-b border-neutral-800 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <a href="#hero" class="group flex items-center gap-2 text-white font-display font-extrabold text-2xl tracking-wider">
-          <svg class="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#hero"
+          class="group flex items-center gap-2 text-white font-display font-extrabold text-2xl tracking-wider">
+          <svg class="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300"
+            viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 10L5 30H15L25 10H15Z" fill="#FFB800" fill-opacity="0.2" />
             <path d="M20 10L10 30H20L30 10H20Z" fill="#FFB800" />
-            <text x="40" y="28" fill="currentColor" class="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
+            <text x="40" y="28" fill="currentColor"
+              class="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
           </svg>
         </a>
-        <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A] hidden sm:inline-block">
+        <span
+          class="px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A] hidden sm:inline-block">
           v2.4 // ONLINE
         </span>
       </div>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium font-display">
         <a href="#services" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Služby</a>
         <a href="#why-elysio" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Prečo Elysio</a>
         <a href="#portfolio" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Projekty</a>
@@ -80,19 +99,24 @@
         <a href="#contact" class="text-zinc-300 hover:text-[#00D26A] transition-colors">Kontakt</a>
       </nav>
 
+      <!-- CTA Button -->
       <div class="flex items-center gap-3">
-        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#00D26A]/20">
+        <a href="#contact"
+          class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#00D26A]/20">
           Kalkulácia
         </a>
         <!-- Mobile hamburger -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white" aria-label="Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080808] border-b border-neutral-800 space-y-3 font-medium text-sm">
+    <div id="mobile-menu"
+      class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080808] border-b border-neutral-800 space-y-3 font-medium text-sm">
       <a href="#services" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Služby</a>
       <a href="#why-elysio" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Prečo Elysio</a>
       <a href="#portfolio" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Projekty</a>
@@ -105,62 +129,73 @@
   <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 pb-20">
     <!-- Dark background grid and gradients -->
     <div class="absolute inset-0 z-0 pointer-events-none">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/[0.08] via-transparent to-transparent"></div>
-      <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-500/10 rounded-full filter blur-[140px] translate-x-1/3 -translate-y-1/3"></div>
-      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full filter blur-[140px] -translate-x-1/3 translate-y-1/3"></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/[0.08] via-transparent to-transparent">
+      </div>
+      <div
+        class="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-500/10 rounded-full filter blur-[140px] translate-x-1/3 -translate-y-1/3">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full filter blur-[140px] -translate-x-1/3 translate-y-1/3">
+      </div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-        
+
         <!-- Left: Typography & Technical Pitch -->
         <div class="flex-1 text-center lg:text-left mt-6 lg:mt-0">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6">
             <span class="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse shadow-[0_0_10px_rgba(255,184,0,0.85)]"></span>
             [ 00 // STUDIO ] • BRATISLAVSKÝ KRAJ
           </div>
-          
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6">
+
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight leading-[1.12] mb-6">
             Firemná automatizácia, <span class="text-[#FFB800]">Technická grafika</span> a <span class="text-[#00D26A]">Webové aplikácie.</span>
           </h1>
-          
-          <p class="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
+
+          <p
+            class="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
             Optimalizácia procesov pre malé firmy, moderný softvér na mieru a presná vektorová príprava pre výrobu. Spolupráca priamo s technikom bez agentúrnych prirážok a s garanciou dodania do 48 hodín.
           </p>
-          
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3">
-            <a
-              href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-3 rounded-lg text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
-            >
-              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+            <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
+              target="_blank" rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center">
+              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" />
+              </svg>
               <span>Rýchla kalkulácia cez WhatsApp</span>
             </a>
-            <a
-              href="#services"
-              class="px-5 py-3 rounded-lg text-sm font-semibold whitespace-nowrap bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center"
-            >
-              Technické služby
+            <a href="#services"
+              class="px-5 py-3 rounded-lg text-sm font-semibold whitespace-nowrap bg-[#121214] border border-neutral-800 text-white hover:border-[#FFB800]/50 font-display hover:bg-[#18181b] transition-all flex items-center justify-center text-center">
+              Prehľad služieb a cien
             </a>
           </div>
 
           <!-- Microcopy reassurance under buttons -->
-          <p class="font-mono text-xs text-zinc-400 mt-2 mb-8 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
+          <p
+            class="font-mono text-xs text-zinc-400 mt-2 mb-8 text-center lg:text-left flex items-center justify-center lg:justify-start gap-1.5">
             <span class="text-[#00D26A] font-bold">●</span> Odpovedám do 15 minút • Stačí poslať zadanie alebo podklady
           </p>
 
           <!-- Interactive Service Router -->
           <div class="pt-6 border-t border-neutral-800 text-left">
             <div class="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
-              <a href="#services" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+              <a href="#services"
+                class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                 [ Dodanie do 48h ]
               </a>
-              <a href="#why-elysio" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+              <a href="#why-elysio"
+                class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                 [ Priama spolupráca ]
               </a>
-              <a href="#services" class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
+              <a href="#services"
+                class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
                 [ Zákazky od 25 €/h ]
               </a>
             </div>
@@ -169,7 +204,8 @@
 
         <!-- Right: Technology & Automation HUD Frame -->
         <div class="flex-1 relative w-full max-w-xl mx-auto lg:max-w-none">
-          <div class="relative rounded-2xl border border-neutral-800 bg-[#121214] p-6 sm:p-8 overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] flex flex-col justify-between group">
+          <div
+            class="relative rounded-2xl border border-neutral-800 bg-[#121214] p-6 sm:p-8 overflow-hidden shadow-2xl shadow-black/80 aspect-[16/10] flex flex-col justify-between group">
             <!-- Coordinate crosses -->
             <span class="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
             <span class="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
@@ -226,7 +262,8 @@
 
   <!-- 3. INFINITE MARQUEE -->
   <section class="py-6 border-y border-neutral-800/80 bg-neutral-950 overflow-hidden select-none">
-    <div class="animate-marquee flex items-center gap-8 text-xs sm:text-sm font-mono tracking-wider uppercase text-zinc-400">
+    <div
+      class="animate-marquee flex items-center gap-8 text-xs sm:text-sm font-mono tracking-wider uppercase text-zinc-400">
       <span>• Next.js & TypeScript</span>
       <span>• Automatizácia firemných procesov</span>
       <span>• DTP & Prepress</span>
@@ -247,11 +284,14 @@
   <section id="services" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
       <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
           [ 01 // SERVICES ] • TECHNICKÉ SLUŽBY
         </div>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-          Dva hlavné smery <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">technickej realizácie</span>
+          Dva hlavné smery <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">technickej
+            realizácie</span>
         </h2>
         <p class="text-zinc-300 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
           Moderný softvérový vývoj, automatizácia firemných procesov a presná technická grafika pre výrobu.
@@ -260,28 +300,32 @@
 
       <!-- 2 Pillars Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
-        
+
         <!-- Pillar 1: DEV -->
-        <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-          <span class="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-          <span class="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-          <span class="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-          <span class="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+        <div
+          class="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+          <span
+            class="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+          <span
+            class="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+          <span
+            class="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+          <span
+            class="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
           <div>
             <!-- 16:9 Banner -->
-            <div class="relative aspect-video w-full rounded-2xl overflow-hidden border border-neutral-800 mb-6 bg-[#09090b] shadow-inner">
-              <img
-                src="https://placehold.co/600x338/121214/10b981?text=APP+%2F%2F+One-Page+Next.js"
+            <div
+              class="relative aspect-video w-full rounded-2xl overflow-hidden border border-neutral-800 mb-6 bg-[#09090b] shadow-inner">
+              <img src="https://placehold.co/600x338/121214/10b981?text=APP+%2F%2F+One-Page+Next.js"
                 alt="DEV // One-Page Next.js"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              >
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
 
             <div class="font-mono text-xs font-semibold text-[#FFB800] tracking-wider mb-2">
               [ 01 // DEV ]
             </div>
-            
+
             <h3 class="text-xl font-bold text-white group-hover:text-[#FFB800] transition-colors mb-4">
               Vývoj webov & Automatizácia
             </h3>
@@ -320,35 +364,43 @@
           <div class="pt-4 border-t border-neutral-800 mt-auto">
             <div class="text-[11px] text-zinc-400 uppercase tracking-wider font-mono mb-2">Výstupné dáta</div>
             <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.TSX]</span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.NEXT]</span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.AUTOMATION]</span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.GIT]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.TSX]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.NEXT]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.AUTOMATION]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.GIT]</span>
             </div>
           </div>
         </div>
 
         <!-- Pillar 2: DTP -->
-        <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-          <span class="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-          <span class="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-          <span class="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-          <span class="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+        <div
+          class="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+          <span
+            class="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+          <span
+            class="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+          <span
+            class="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+          <span
+            class="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
           <div>
             <!-- 16:9 Banner -->
-            <div class="relative aspect-video w-full rounded-2xl overflow-hidden border border-neutral-800 mb-6 bg-[#09090b] shadow-inner">
-              <img
-                src="https://placehold.co/600x338/121214/3b82f6?text=DTP+%2F%2F+Vektorove+Krivky"
+            <div
+              class="relative aspect-video w-full rounded-2xl overflow-hidden border border-neutral-800 mb-6 bg-[#09090b] shadow-inner">
+              <img src="https://placehold.co/600x338/121214/3b82f6?text=DTP+%2F%2F+Vektorove+Krivky"
                 alt="DTP // Vektorove Krivky"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              >
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
 
             <div class="font-mono text-xs font-semibold text-[#FFB800] tracking-wider mb-2">
               [ 02 // DTP ]
             </div>
-            
+
             <h3 class="text-xl font-bold text-white group-hover:text-[#FFB800] transition-colors mb-4">
               Technická grafika, CAD & Prepress
             </h3>
@@ -383,10 +435,14 @@
           <div class="pt-4 border-t border-neutral-800 mt-auto">
             <div class="text-[11px] text-zinc-400 uppercase tracking-wider font-mono mb-2">Výstupné dáta</div>
             <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.DXF]</span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.DWG]</span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.SVG]</span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.PDF]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.DXF]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.DWG]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.SVG]</span>
+              <span
+                class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.PDF]</span>
             </div>
           </div>
         </div>
@@ -394,25 +450,19 @@
       </div>
     </div>
   </section>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400">[.PDF]</span>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. WHY ELYSIO SECTION -->
+  <!-- 5. WHY ELYSIO SECTION -->
   <section id="why-elysio" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-4 uppercase">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-4 uppercase">
           [ 02 // WHY_ELYSIO ] • ŠTANDARD SPOLUPRÁCE
         </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight leading-tight">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight leading-tight">
           Inžiniersky prístup, <br class="hidden sm:inline" />
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">
             priame dodanie.
@@ -425,9 +475,11 @@
 
       <!-- Osobný inžiniersky blok -->
       <div class="max-w-4xl mx-auto mb-12">
-        <div class="relative bg-[#121214] border border-neutral-800 rounded-2xl p-6 sm:p-8 overflow-hidden group hover:border-[#00D26A]/40 transition-all">
+        <div
+          class="relative bg-[#121214] border border-neutral-800 rounded-2xl p-6 sm:p-8 overflow-hidden group hover:border-[#00D26A]/40 transition-all">
           <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <div class="font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider shrink-0 uppercase">
+            <div
+              class="font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider shrink-0 uppercase">
               [ 00 // DIRECT_CONTACT ]
             </div>
             <p class="text-zinc-200 text-base sm:text-lg font-medium leading-relaxed">
@@ -440,9 +492,10 @@
       <!-- 3 Value Pillars Grid -->
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
+
           <!-- Card 1: Rýchlosť -->
-          <div class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+          <div
+            class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
             <div>
               <div class="font-mono text-xs text-amber-400 tracking-wider mb-2">
                 [ 01 // SPEED ]
@@ -456,14 +509,16 @@
                 <p>• <strong class="text-white">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích procesov.</p>
               </div>
             </div>
-            <div class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
+            <div
+              class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
               <span>GARANCIA TERMÍNU</span>
               <span class="text-white font-bold font-mono">48H</span>
             </div>
           </div>
 
           <!-- Card 2: 1:1 Priamy kontakt -->
-          <div class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+          <div
+            class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
             <div>
               <div class="font-mono text-xs text-[#00D26A] tracking-wider mb-2">
                 [ 02 // DIRECT ]
@@ -477,14 +532,16 @@
                 <p>• <strong class="text-white">Nulový šum:</strong> Žiadne skreslené zadania cez account manažérov.</p>
               </div>
             </div>
-            <div class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
+            <div
+              class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
               <span>BEZ PROSTREDNÍKOV</span>
               <span class="text-white font-bold font-mono">1:1</span>
             </div>
           </div>
 
           <!-- Card 3: Presnosť -->
-          <div class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+          <div
+            class="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
             <div>
               <div class="font-mono text-xs text-amber-400 tracking-wider mb-2">
                 [ 03 // PRECISION ]
@@ -498,7 +555,8 @@
                 <p>• <strong class="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
               </div>
             </div>
-            <div class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
+            <div
+              class="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
               <span>ČISTÉ DÁTA</span>
               <span class="text-white font-bold font-mono">0 CHÝB</span>
             </div>
@@ -510,31 +568,35 @@
     </div>
   </section>
 
-  <!-- 7. PORTFOLIO & REALIZÁCIE SECTION -->
+  <!-- 6. PORTFOLIO SECTION -->
   <section id="portfolio" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
           [ 03 // PORTFOLIO ] • REALIZÁCIE
         </div>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Projekty</h2>
       </div>
 
       <!-- Section 01: Dev -->
-      <div class="mb-16">
-        <h3 class="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
+      <div>
+        <h3
+          class="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
           <span class="font-mono text-xs text-[#00D26A] font-semibold">[ 01 // DEV ]</span>
           <span>Weby & <span class="text-[#00D26A]">Aplikácie</span></span>
         </h3>
-        
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          
+
           <!-- Project 1: PixelCraft -->
-          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-black/90 border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+          <div
+            class="group relative aspect-square overflow-hidden rounded-2xl bg-black/90 border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
             <div>
-              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
+              <span
+                class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
                 Webová Appka
               </span>
               <h4 class="text-xl font-bold text-white mt-4 font-display">PixelCraft</h4>
@@ -543,15 +605,17 @@
               </p>
             </div>
             <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
-              <span class="text-zinc-500">React • Canvas</span>
+              <span class="text-zinc-500">Next.js • Canvas</span>
               <span class="text-[#00D26A] font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
             </div>
           </div>
 
           <!-- Project 2: SetDrift -->
-          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-[#0a0f18] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+          <div
+            class="group relative aspect-square overflow-hidden rounded-2xl bg-[#0a0f18] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
             <div>
-              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#FFB800]">
+              <span
+                class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#FFB800]">
                 API Integrácia & PWA
               </span>
               <h4 class="text-xl font-bold text-white mt-4 font-display">SetDrift</h4>
@@ -560,15 +624,17 @@
               </p>
             </div>
             <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
-              <span class="text-zinc-500">Spotify • PWA</span>
+              <span class="text-zinc-500">Spotify API • Next</span>
               <span class="text-[#FFB800] font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
             </div>
           </div>
 
           <!-- Project 3: Zen Pierce -->
-          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-[#111111] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+          <div
+            class="group relative aspect-square overflow-hidden rounded-2xl bg-[#111111] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
             <div>
-              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
+              <span
+                class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-[#00D26A]">
                 Brand Prezentácia
               </span>
               <h4 class="text-xl font-bold text-white mt-4 font-display">Zen Pierce</h4>
@@ -583,9 +649,11 @@
           </div>
 
           <!-- Project 4: Echo -->
-          <div class="group relative aspect-square overflow-hidden rounded-2xl bg-[#0f172a] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
+          <div
+            class="group relative aspect-square overflow-hidden rounded-2xl bg-[#0f172a] border border-neutral-800 p-6 flex flex-col justify-between hover:border-[#00D26A]/50 transition-all shadow-lg">
             <div>
-              <span class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-blue-400">
+              <span
+                class="px-2.5 py-1 rounded text-[11px] font-mono bg-neutral-900 border border-neutral-800 text-blue-400">
                 Web Audio Player
               </span>
               <h4 class="text-xl font-bold text-white mt-4 font-display">Echo</h4>
@@ -593,15 +661,25 @@
                 Digitálny archív fyzickej audio zbierky s vlastným webovým waveform prehrávačom a vizualizáciami.
               </p>
             </div>
-            <div class="pt    </div>
+            <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-mono">
+              <span class="text-zinc-500">Web Audio API</span>
+              <span class="text-blue-400 font-bold group-hover:translate-x-1 transition-transform">Detail →</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <!-- 5. FAQ SECTION -->
+  <!-- 7. FAQ SECTION -->
   <section id="faq" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <div class="text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
           [ 05 // FAQ ] • ČASTÉ OTÁZKY
         </div>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -614,65 +692,78 @@
 
       <!-- Category Filter Tabs -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
-        <button onclick="filterFaq('all')" class="faq-tab active px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#FFB800] text-black transition-all">Všetky oblasti</button>
-        <button onclick="filterFaq('software')" class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Weby & Softvér</button>
-        <button onclick="filterFaq('graphics')" class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Technická grafika</button>
+        <button onclick="filterFaq('all')"
+          class="faq-tab active px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#FFB800] text-black transition-all">Všetky oblasti</button>
+        <button onclick="filterFaq('software')"
+          class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Weby & Softvér</button>
+        <button onclick="filterFaq('graphics')"
+          class="faq-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-[#121214] text-zinc-400 border border-neutral-800 hover:border-neutral-700 transition-all">Technická grafika</button>
       </div>
 
       <!-- FAQ Accordion List -->
-      <div class="space-y-3" id="faq-list">
-        
+      <div class="space-y-4">
+
         <!-- FAQ 1 -->
-        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="software">
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all"
+          data-category="software">
           <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
             <span class="font-bold text-white text-base sm:text-lg">V akom technologickom stacku vyvíjate webové aplikácie a weby?</span>
             <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+          <div
+            class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
             Vyvíjam v modernom full-stack ekosystéme Next.js, React a TypeScript s integráciou GIS mapových vrstiev (MapLibre / MapTiler) a Tailwind CSS. Kód optimalizujem pre bleskové načítanie do 0,5s a vysoké SEO skóre.
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="software">
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all"
+          data-category="software">
           <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
             <span class="font-bold text-white text-base sm:text-lg">Získam po dokončení plné vlastníctvo zdrojových kódov?</span>
             <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+          <div
+            class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
             Áno. Po odovzdaní projektu získavate 100% vlastníctvo všetkých zdrojových kódov, assetov a prístupov bez akýchkoľvek skrytých licenčných poplatkov alebo viazanosti na moju správu.
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="software">
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all"
+          data-category="software">
           <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
             <span class="font-bold text-white text-base sm:text-lg">Ako funguje automatizácia firemných procesov a dátové skripty?</span>
             <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+          <div
+            class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
             Pripravím na mieru vytvorené skripty a prepojenia systémov (API, klientske zóny, databázy), ktoré eliminujú manuálnu prácu s dátami, znižujú chybovosť a šetria desiatky hodín mesačne.
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="graphics">
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all"
+          data-category="graphics">
           <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
             <span class="font-bold text-white text-base sm:text-lg">V akých formátoch dodávate vektorovú grafiku a plány?</span>
             <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+          <div
+            class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
             Podklady exportujem vo formátoch pre CAD, laser a CNC rezanie (DXF, SVG, DWG) aj v tlačovom PDF/X so zachovaním presných mierok.
           </div>
         </div>
 
         <!-- FAQ 5 -->
-        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all" data-category="graphics">
+        <div class="faq-item bg-[#121214] border border-neutral-800 rounded-2xl overflow-hidden transition-all"
+          data-category="graphics">
           <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between gap-4">
             <span class="font-bold text-white text-base sm:text-lg">Zabezpečujete aj DTP prípravu a predvýrobný audit podkladov?</span>
             <span class="text-xl text-[#00D26A] font-mono shrink-0">+</span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
+          <div
+            class="faq-answer hidden px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-neutral-800/80 pt-4">
             Áno. Grafické podklady, zakreslenie kót, výmer či logo manuál pripravujem priamo v požadovanom CMYK farebnom profile a rozlíšení 300 DPI pre bezchybnú výrobu.
           </div>
         </div>
@@ -682,12 +773,13 @@
     </div>
   </section>
 
-  <!-- 6. CONTACT SECTION -->
+  <!-- 8. CONTACT SECTION -->
   <section id="contact" class="py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
           [ 06 // CONTACT ] • PRIAMY KONTAKT
         </div>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display mb-4 tracking-tight">
@@ -699,32 +791,39 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
-        
+
         <!-- Form -->
         <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-8 lg:p-10 relative overflow-hidden group">
           <form onsubmit="handleContactSubmit(event)" class="space-y-5 relative z-10">
             <div>
               <label class="block text-sm font-medium text-zinc-300 mb-1.5">Vaše meno / Spoločnosť</label>
-              <input type="text" required class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all" placeholder="Meno Priezvisko / Firma">
+              <input type="text" required
+                class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all"
+                placeholder="Meno Priezvisko / Firma">
             </div>
             <div>
               <label class="block text-sm font-medium text-zinc-300 mb-1.5">Emailová adresa alebo telefón</label>
-              <input type="text" required class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all" placeholder="+421 9XX... / email@domena.sk">
+              <input type="text" required
+                class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all"
+                placeholder="+421 9XX... / email@domena.sk">
             </div>
             <div>
-              <label class="block text-sm font-medium text-zinc-300 mb-1.5">Popis projektu alebo zadanie</label>
-              <textarea rows="4" required class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all" placeholder="Webová aplikácia / Automatizácia procesov / DTP a vektorizácia"></textarea>
+              <label class="block text-sm font-medium text-zinc-300 mb-1.5">Popis projektu alebo požiadavky</label>
+              <textarea rows="4" required
+                class="w-full bg-[#080808] border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#00D26A]/60 transition-all"
+                placeholder="Webová aplikácia / Automatizácia procesov / DTP a vektorizácia"></textarea>
             </div>
-            <button type="submit" id="contact-btn" class="w-full py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl text-base tracking-wide transition-all shadow-lg shadow-[#00D26A]/20">
+            <button type="submit" id="contact-btn"
+              class="w-full py-4 bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display rounded-xl text-base tracking-wide transition-all shadow-lg shadow-[#00D26A]/20">
               Odoslať dopyt
             </button>
             <p id="contact-msg" class="text-center text-xs font-mono text-[#00D26A] hidden">
-              ✓ Ďakujeme, správa bola úspešne zaznamenaná.
+              ✓ Správa bola úspešne odoslaná. Ozvem sa do 15 minút.
             </p>
           </form>
         </div>
 
-        <!-- Info & WhatsApp/Phone -->
+        <!-- Direct Contact Details -->
         <div class="flex flex-col justify-between space-y-8 p-4">
           <div>
             <h3 class="text-xl font-bold text-white font-display mb-4">Priama komunikácia</h3>
@@ -747,13 +846,23 @@
           <div>
             <h3 class="text-sm font-bold text-zinc-400 uppercase tracking-wider font-display mb-3">Rýchle spojenie</h3>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 transition-all">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+              <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
+                target="_blank" rel="noopener noreferrer"
+                class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 transition-all">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" />
+                </svg>
                 <span>WhatsApp Správa</span>
               </a>
 
-              <a href="tel:+421903406402" class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#121214] border border-neutral-800 text-white font-bold hover:border-[#FFB800]/50 transition-all">
-                <svg class="w-5 h-5 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <a href="tel:+421903406402"
+                class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#121214] border border-neutral-800 text-white font-bold hover:border-[#FFB800]/50 transition-all">
+                <svg class="w-5 h-5 text-[#FFB800]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                  </path>
+                </svg>
                 <span>+421 903 406 402</span>
               </a>
             </div>
@@ -761,20 +870,21 @@
         </div>
 
       </div>
-
     </div>
   </section>
 
-  <!-- 7. FOOTER SECTION -->
+  <!-- 9. FOOTER SECTION -->
   <footer class="bg-[#080808] border-t border-neutral-800 pt-16 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
         <div class="col-span-1 md:col-span-2">
           <a href="#hero" class="inline-block group mb-4">
-            <svg class="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300" viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="h-8 w-auto text-white group-hover:scale-105 transition-transform duration-300"
+              viewBox="0 0 150 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 10L5 30H15L25 10H15Z" fill="#FFB800" fill-opacity="0.2" />
               <path d="M20 10L10 30H20L30 10H20Z" fill="#FFB800" />
-              <text x="40" y="28" fill="currentColor" class="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
+              <text x="40" y="28" fill="currentColor"
+                class="font-display font-bold text-2xl tracking-[0.2em]">ELYSIO</text>
             </svg>
           </a>
           <p class="text-zinc-400 max-w-md text-sm leading-relaxed mb-4">
@@ -784,7 +894,7 @@
             <strong class="text-zinc-300">Lokalita pôsobenia:</strong> Oblasť západného Slovenska.
           </p>
         </div>
-        
+
         <div>
           <h4 class="text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Navigácia</h4>
           <ul class="space-y-2 text-sm">
@@ -795,11 +905,11 @@
             <li><a href="#contact" class="text-zinc-400 hover:text-[#00D26A] transition-colors">Kontakt</a></li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="text-white font-bold font-display text-sm uppercase tracking-wider mb-4">Fakturačné údaje</h4>
           <div class="text-xs text-zinc-400 space-y-1.5 leading-relaxed">
-            <p className="font-semibold text-white">ElysioTech • Patrik Barcaj</p>
+            <p class="font-semibold text-white">ElysioTech • Patrik Barcaj</p>
             <p>Fyzická osoba zapísaná v Živnostenskom registri SR</p>
             <p>IČO: 56 802 544 • Bratislava & Západné Slovensko</p>
           </div>
@@ -807,7 +917,8 @@
       </div>
 
       <!-- Trust Badges Bar -->
-      <div class="py-4 px-6 rounded-2xl bg-[#121214] border border-neutral-800 flex flex-wrap items-center justify-between gap-4 mb-8 text-xs font-semibold text-zinc-300">
+      <div
+        class="py-4 px-6 rounded-2xl bg-[#121214] border border-neutral-800 flex flex-wrap items-center justify-between gap-4 mb-8 text-xs font-semibold text-zinc-300">
         <span class="flex items-center gap-2">
           <span class="text-[#00D26A] font-bold">✓</span> Automatizácia firemných procesov
         </span>
@@ -822,7 +933,8 @@
         </span>
       </div>
 
-      <div class="border-t border-neutral-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500">
+      <div
+        class="border-t border-neutral-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500">
         <p>&copy; 2026 ELYSIO TECH. Všetky práva vyhradené.</p>
         <p class="mt-2 sm:mt-0">Digitálne a technické štúdio • Bratislavský kraj</p>
       </div>
@@ -835,6 +947,7 @@
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     function toggleMobileMenu() {
+      if (!mobileMenu) return;
       mobileMenu.classList.toggle('hidden');
     }
     if (mobileMenuBtn) {
@@ -857,8 +970,10 @@
         tab.classList.remove('bg-[#FFB800]', 'text-black');
         tab.classList.add('bg-[#121214]', 'text-zinc-400');
       });
-      event.target.classList.remove('bg-[#121214]', 'text-zinc-400');
-      event.target.classList.add('bg-[#FFB800]', 'text-black');
+      if (window.event && window.event.target) {
+        window.event.target.classList.remove('bg-[#121214]', 'text-zinc-400');
+        window.event.target.classList.add('bg-[#FFB800]', 'text-black');
+      }
 
       const items = document.querySelectorAll('.faq-item');
       items.forEach(item => {
@@ -870,7 +985,7 @@
       });
     }
 
-    // 6. Contact Form fake submit
+    // 3. Contact Form fake submit
     function handleContactSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('contact-btn');
@@ -883,4 +998,5 @@
     }
   </script>
 </body>
+
 </html>

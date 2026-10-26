@@ -70,65 +70,74 @@ export default function Portfolio() {
         <section id="portfolio" className="py-24 bg-[#080808] relative border-t border-neutral-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
-                        [ 03 // PORTFOLIO ] • REALIZÁCIE
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-800 bg-[#121214] text-zinc-300 text-xs sm:text-sm font-medium mb-4 shadow-sm">
+                        <span>Vybrané realizácie</span>
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">Projekty</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+                        Reálne projekty a <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-[#00D26A]">funkčné riešenia</span>
+                    </h2>
+                    <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+                        Každý projekt je vytvorený na mieru bez ťažkých CMS šablón s maximálnym dôrazom na rýchlosť, dizajn a spoľahlivosť.
+                    </p>
                 </div>
 
                 {/* Unified Portfolio */}
                 <div className={FEATURES.ENABLE_DRONE_SERVICES ? 'mb-16' : 'mb-0'}>
-
-                    {/* Section 01: Dev */}
-                    <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
-                        <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 01 // DEV ]</span>
-                        <span>Weby & <span className="text-[#00D26A]">Aplikácie</span></span>
-                    </h3>
-                    
-                    <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ${FEATURES.ENABLE_DRONE_SERVICES ? 'mb-16' : 'mb-0'}`}>
+                    <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${FEATURES.ENABLE_DRONE_SERVICES ? 'mb-16' : 'mb-0'}`}>
                         {devProjects.map((proj) => (
                             <div
                                 key={proj.id}
-                                className={`group relative aspect-square overflow-hidden rounded-2xl ${proj.bgClass || 'bg-[#121214]'} border border-neutral-800 shadow-sm hover:shadow-xl hover:border-[#00D26A]/50 transition-all`}
+                                className="bg-[#121214] border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg"
                             >
-                                {/* Stretched link to project case study */}
-                                <Link
-                                    href={`/projekty/${proj.slug}`}
-                                    className="absolute inset-0 z-0"
-                                    aria-label={`Detail projektu ${proj.title}`}
-                                />
-
-                                <div className={`relative w-full h-full ${proj.imageFit === 'cover' ? 'p-0' : 'p-4'} flex items-center justify-center pointer-events-none`}>
-                                    <Image
-                                        src={proj.image}
-                                        alt={proj.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                                        className={`${proj.imageFit === 'cover' ? 'object-cover object-center' : 'object-contain'} transform transition-transform duration-700 group-hover:scale-105`}
-                                    />
+                                {/* Top Visual Screenshot / Mockup Preview */}
+                                <div className="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex items-center justify-center p-8">
+                                    <div className="absolute top-4 right-4 z-10">
+                                        <span className="px-3 py-1 rounded-full text-xs bg-neutral-900/90 border border-neutral-800 text-zinc-300 backdrop-blur-sm">
+                                            {proj.category}
+                                        </span>
+                                    </div>
+                                    <div className="relative w-full h-full flex items-center justify-center">
+                                        <Image
+                                            src={proj.image}
+                                            alt={proj.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-contain p-4 transform transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    </div>
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5 z-10 pointer-events-none">
-                                    <div className="w-full pointer-events-auto">
-                                        <p className="text-[#FFB800] text-xs font-bold uppercase tracking-wider mb-1">{proj.category}</p>
-                                        <h4 className="text-white font-bold font-display drop-shadow-md text-sm sm:text-base leading-tight mb-2.5">{proj.title}</h4>
-                                        <div className="flex flex-wrap items-center gap-2">
-                                            {proj.liveUrl && proj.liveUrl.startsWith('http') && (
-                                                <a
-                                                    href={proj.liveUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="px-2.5 py-1 rounded-lg bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-xs tracking-wide transition-all shadow-lg shadow-[#00D26A]/25 flex items-center gap-1"
-                                                >
-                                                    <span>{proj.ctaText || 'Navštíviť ↗'}</span>
-                                                </a>
-                                            )}
-                                            <Link
-                                                href={`/projekty/${proj.slug}`}
-                                                className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors flex items-center gap-1"
+
+                                {/* Content Details */}
+                                <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-white transition-colors">
+                                            {proj.title}
+                                        </h3>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-2">
+                                            {proj.tagline || proj.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Footer Actions */}
+                                    <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between gap-4 mt-auto">
+                                        {proj.liveUrl && proj.liveUrl.startsWith('http') ? (
+                                            <a
+                                                href={proj.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-semibold text-xs tracking-wide transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-1.5"
                                             >
-                                                <span>Detail ↗</span>
-                                            </Link>
-                                        </div>
+                                                <span>Spustiť appku ↗</span>
+                                            </a>
+                                        ) : (
+                                            <span className="text-xs text-zinc-500">Interný projekt</span>
+                                        )}
+                                        <Link
+                                            href={`/projekty/${proj.slug}`}
+                                            className="text-xs text-zinc-400 hover:text-white transition-colors flex items-center gap-1"
+                                        >
+                                            <span>Detail riešenia →</span>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -139,16 +148,11 @@ export default function Portfolio() {
                     {FEATURES.ENABLE_DRONE_SERVICES && (
                         <>
                             <h3 className="text-2xl font-bold font-display text-white mb-6 border-l-4 border-[#00D26A] pl-4 flex items-center gap-2">
-                                <span className="font-mono text-xs text-[#00D26A] font-semibold">[ 02 // AIR ]</span>
-                                <span>Letecké dáta & <span className="text-[#00D26A]">Technický audit</span></span>
+                                <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#00D26A]/10 text-[#00D26A] text-xs font-semibold">Letecké dáta</span>
+                                <span>Technický audit & <span className="text-[#00D26A]">Ortofotomapy</span></span>
                             </h3>
                             
                             <div className="bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden group hover:border-[#00D26A]/50 transition-all duration-300">
-                        {/* Coordinate cross accents */}
-                        <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                        <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                        <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                        <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
                         {/* Ambient Glow */}
                         <div className="absolute top-0 right-0 w-80 h-80 bg-[#00D26A]/5 rounded-full blur-3xl pointer-events-none group-hover:bg-[#00D26A]/10 transition-colors"></div>
@@ -284,8 +288,8 @@ export default function Portfolio() {
                             {/* Right: Technical Specs & Information */}
                             <div className="lg:col-span-6 flex flex-col justify-between h-full">
                                 <div>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00D26A]/40 bg-[#00D26A]/10 text-[#00D26A] text-xs font-mono tracking-widest mb-3 uppercase">
-                                        [ 02 // AIR ] • KATASTRÁLNY ZÁKRES & AUDIT
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00D26A]/30 bg-[#00D26A]/10 text-[#00D26A] text-xs font-semibold mb-3">
+                                        Letecký audit & Katastrálny zákres
                                     </div>
                                     <h4 className="text-2xl sm:text-3xl font-extrabold text-white font-display mb-3 tracking-tight">
                                         Technická fotodokumentácia & Katastrálny zákres

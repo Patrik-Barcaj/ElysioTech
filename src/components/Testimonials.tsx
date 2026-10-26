@@ -52,8 +52,8 @@ export default function Testimonials() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
-                        [ 04 // PROTOCOL ] • VÝSTUPNÝ AUDIT
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/30 bg-[#FFB800]/10 text-[#FFB800] text-xs font-semibold mb-3">
+                        Výstupný inšpekčný audit
                     </div>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
                         Technický inšpekčný protokol <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">(Náhľad)</span>
@@ -72,11 +72,6 @@ export default function Testimonials() {
                                 onClick={() => setIsPreviewModalOpen(true)}
                                 className="group relative aspect-video w-full rounded-3xl overflow-hidden border border-neutral-800 bg-[#121214] shadow-2xl cursor-pointer hover:border-[#FFB800]/60 transition-all duration-300"
                             >
-                                {/* Coordinate cross accents */}
-                                <span className="absolute top-3 left-3 z-20 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                                <span className="absolute top-3 right-3 z-20 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                                <span className="absolute bottom-3 left-3 z-20 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                                <span className="absolute bottom-3 right-3 z-20 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
                                 {/* 16:9 Image */}
                                 <Image

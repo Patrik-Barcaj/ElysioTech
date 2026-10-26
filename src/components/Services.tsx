@@ -1,261 +1,256 @@
 import React from 'react';
 import ScrollReveal from './ui/ScrollReveal';
-import { Cpu, Globe, Zap } from 'lucide-react';
 
 export default function Services() {
     return (
-        <section id="services" className="py-24 min-h-[100dvh] flex items-center relative border-t border-neutral-800 bg-[#080808]">
+        <section id="services" className="py-24 relative border-t border-neutral-800 bg-[#080808]">
             <div id="sluzby" className="absolute -top-20 pointer-events-none"></div>
             <div id="cennik" className="absolute -top-12 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                
+                {/* Section Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] text-xs font-mono tracking-widest mb-3 uppercase">
-                        [ 01 // SERVICES ] • TECHNICKÉ SLUŽBY NA KĽÚČ
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-800 bg-[#121214] text-zinc-300 text-xs sm:text-sm font-medium mb-4 shadow-sm">
+                        <span>Služby &amp; Cenník</span>
                     </div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
-                        3-úrovňový cenník <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB800] via-[#FFD066] to-[#00D26A]">realizácie na kľúč</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+                        Prehľadný cenník <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-[#00D26A]">realizácie na kľúč</span>
                     </h2>
-                    <p className="text-zinc-300 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
-                        Žiadne skryté poplatky ani nafúknutá agentúrna réžia. Od bleskových opráv až po automatizáciu procesov a moderné webové aplikácie.
+                    <p className="text-zinc-400 mt-4 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+                        Žiadne skryté poplatky ani agentúrna réžia. Od bleskových opráv až po automatizáciu procesov a moderné webové aplikácie.
                     </p>
                 </div>
 
-                {/* 3-Tier Pricing Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto items-stretch max-w-7xl">
+                {/* 3-Tier Visual Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-7xl mx-auto">
                     
-                    {/* Karta 1: [ 01 // QUICK_FIX ] */}
+                    {/* Karta 1: Bleskový zásah & DTP */}
                     <ScrollReveal delay={0.1} className="h-full">
-                        <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-                            {/* Coordinate cross accents */}
-                            <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                            <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                            <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                            <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
-                            
+                        <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-7 hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg">
                             <div>
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="font-mono text-xs font-semibold text-[#FFB800] tracking-wider">
-                                        [ 01 // QUICK_FIX ]
+                                {/* Visual 1: Blurry JPG vs Sharp Vector Comparison */}
+                                <div className="w-full h-40 rounded-2xl bg-[#080808] border border-neutral-800/80 p-4 mb-6 relative overflow-hidden flex items-center justify-between">
+                                    {/* Left: Pixelated raster representation */}
+                                    <div className="flex-1 text-center pr-2">
+                                        <div className="w-14 h-14 mx-auto mb-2 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-center relative overflow-hidden">
+                                            {/* Pixelated grid effect */}
+                                            <div className="grid grid-cols-4 gap-1 p-2 opacity-50">
+                                                <div className="w-2 h-2 bg-amber-500/80"></div>
+                                                <div className="w-2 h-2 bg-amber-500/40"></div>
+                                                <div className="w-2 h-2 bg-amber-500/60"></div>
+                                                <div className="w-2 h-2 bg-amber-500/20"></div>
+                                                <div className="w-2 h-2 bg-amber-500/50"></div>
+                                                <div className="w-2 h-2 bg-amber-500"></div>
+                                                <div className="w-2 h-2 bg-amber-500/30"></div>
+                                                <div className="w-2 h-2 bg-amber-500/70"></div>
+                                            </div>
+                                        </div>
+                                        <span className="text-[11px] text-zinc-500 block">Rozmazané JPG</span>
                                     </div>
-                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#FFB800]/10 border border-[#FFB800]/30 text-[#FFB800] font-semibold">
-                                        Vyriešené do 24 hodín
-                                    </span>
+
+                                    {/* Arrow */}
+                                    <div className="text-zinc-600 font-bold px-1 text-sm">→</div>
+
+                                    {/* Right: Sharp Bezier Vector curves */}
+                                    <div className="flex-1 text-center pl-2">
+                                        <div className="w-14 h-14 mx-auto mb-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center relative">
+                                            <svg className="w-8 h-8 text-[#00D26A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
+                                                <circle cx="12" cy="12" r="2" fill="#00D26A" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-[11px] text-[#00D26A] font-semibold block">Ostré CNC krivky</span>
+                                    </div>
                                 </div>
-                                
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 bg-[#FFB800]/10 rounded-xl flex items-center justify-center border border-[#FFB800]/25 group-hover:scale-110 transition-all duration-300 shrink-0">
-                                        <Zap className="w-5 h-5 text-[#FFB800]" />
-                                    </div>
-                                    <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
+
+                                {/* Title & Price */}
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
                                         Bleskový zásah &amp; DTP
                                     </h3>
+                                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-zinc-300">
+                                        Do 24h
+                                    </span>
                                 </div>
 
-                                {/* Prominent Price Tag */}
                                 <div className="mb-4 pb-4 border-b border-neutral-800/80">
-                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono mb-1">Cena realizácie</span>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-tight">od 25 €</span>
-                                        <span className="text-xs text-zinc-500 font-mono">/ zásah (alebo 25 € / h)</span>
+                                        <span className="text-3xl font-extrabold text-white">od 25 €</span>
+                                        <span className="text-xs text-zinc-500">/ zásah (alebo 25 € / h)</span>
                                     </div>
                                 </div>
 
-                                <p className="text-zinc-300 text-sm mb-5 leading-relaxed">
-                                    Pošlite rozbité logo, nefungujúci formulár alebo chybu. Sadnem k tomu a obratom vám pošlem opravené dáta.
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                                    Rýchla oprava chýb na webe, nastavenie domény alebo prekreslenie loga do vektorov pre tlač a laser.
                                 </p>
-
-                                {/* Bullets */}
-                                <ul className="text-zinc-300 text-sm leading-relaxed space-y-2.5 mb-6">
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Vektorizácia loga do ostrých kriviek pre CNC, laser a ploter</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Rýchla oprava chýb na existujúcom webe bez migrácie hostingu</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Predtlačová DTP kontrola a vyčistenie dát pre tlačiarne</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Nastavenie domény, DNS záznamov a firemných emailov</span>
-                                    </li>
-                                </ul>
                             </div>
-                            
-                            {/* Bottom Data Formats Strip */}
+
+                            {/* 3 Clean Pill Tags & Button */}
                             <div className="pt-4 border-t border-neutral-800 mt-auto">
-                                <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-mono mb-2">Výstupné dáta</div>
-                                <div className="flex flex-wrap gap-1.5">
-                                    {['[.SVG]', '[.DXF]', '[.PDF]', '[.PATCH]'].map((fmt) => (
-                                        <span key={fmt} className="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400 group-hover:border-neutral-700 transition-colors">
-                                            {fmt}
-                                        </span>
-                                    ))}
+                                <div className="flex flex-wrap gap-1.5 mb-5">
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                                        Vektorizácia
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                                        Opravy webu
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                                        Do 24 hodín
+                                    </span>
                                 </div>
+                                <a
+                                    href="#contact"
+                                    className="w-full py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-xs tracking-wide transition-all border border-neutral-800 hover:border-neutral-700 flex items-center justify-center text-center"
+                                >
+                                    Objednať bleskový zásah
+                                </a>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* Karta 2: [ 02 // AUTO_FLOW ] (Highlighted Middle Card) */}
+                    {/* Karta 2: Firemná automatizácia (Highlighted Middle Card) */}
                     <ScrollReveal delay={0.2} className="h-full">
-                        <div className="h-full bg-[#121214] border-2 border-[#00D26A]/50 rounded-3xl p-6 sm:p-8 shadow-[0_0_30px_rgba(0,210,106,0.15)] hover:shadow-[0_0_40px_rgba(0,210,106,0.25)] transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-                            {/* Coordinate cross accents */}
-                            <span className="absolute top-3 left-3 text-[#00D26A] font-mono text-xs select-none pointer-events-none leading-none opacity-80">+</span>
-                            <span className="absolute top-3 right-3 text-[#00D26A] font-mono text-xs select-none pointer-events-none leading-none opacity-80">+</span>
-                            <span className="absolute bottom-3 left-3 text-[#00D26A] font-mono text-xs select-none pointer-events-none leading-none opacity-80">+</span>
-                            <span className="absolute bottom-3 right-3 text-[#00D26A] font-mono text-xs select-none pointer-events-none leading-none opacity-80">+</span>
-
-                            <div className="absolute top-0 right-0 w-40 h-40 bg-[#00D26A]/10 rounded-full blur-3xl group-hover:bg-[#00D26A]/15 transition-colors"></div>
-                            
+                        <div className="h-full bg-[#121214] border-2 border-[#00D26A]/50 rounded-3xl p-6 sm:p-7 shadow-[0_0_35px_rgba(0,210,106,0.12)] hover:shadow-[0_0_45px_rgba(0,210,106,0.2)] transition-all duration-300 flex flex-col justify-between group relative">
                             <div>
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="font-mono text-xs font-semibold text-[#00D26A] tracking-wider">
-                                        [ 02 // AUTO_FLOW ]
+                                {/* Visual 2: Data Flow Pipeline Scheme */}
+                                <div className="w-full h-40 rounded-2xl bg-[#080808] border border-[#00D26A]/20 p-3.5 mb-6 relative overflow-hidden flex flex-col justify-between">
+                                    <div className="flex items-center justify-between text-[11px] text-zinc-400 pb-2 border-b border-neutral-800/80">
+                                        <span>Schéma toku dát</span>
+                                        <span className="text-[#00D26A] font-semibold">100% automatizované</span>
                                     </div>
-                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-[#00D26A]/20 border border-[#00D26A]/40 text-[#00D26A] font-extrabold uppercase tracking-wider">
-                                        NAJŽIADANEJŠIE PRE FIRMY
+                                    <div className="flex items-center justify-between gap-1 my-auto">
+                                        <div className="text-center p-2 rounded-lg bg-neutral-900 border border-neutral-800 flex-1">
+                                            <div className="text-base mb-1">🛒</div>
+                                            <div className="text-[10px] text-white font-semibold leading-tight">Nová objednávka</div>
+                                        </div>
+                                        <div className="text-[#00D26A] font-bold text-xs">→</div>
+                                        <div className="text-center p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex-1">
+                                            <div className="text-base mb-1">📊</div>
+                                            <div className="text-[10px] text-[#00D26A] font-semibold leading-tight">Sheets / Notion</div>
+                                        </div>
+                                        <div className="text-[#00D26A] font-bold text-xs">→</div>
+                                        <div className="text-center p-2 rounded-lg bg-neutral-900 border border-neutral-800 flex-1">
+                                            <div className="text-base mb-1">📄</div>
+                                            <div className="text-[10px] text-white font-semibold leading-tight">PDF doklad</div>
+                                        </div>
+                                    </div>
+                                    <div className="text-center text-[10px] text-zinc-500 pt-1">
+                                        Okamžité párovanie a nulová ručná práca
+                                    </div>
+                                </div>
+
+                                {/* Title & Price */}
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-xl font-bold text-white group-hover:text-[#00D26A] transition-colors">
+                                        Firemná automatizácia
+                                    </h3>
+                                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#00D26A]/20 border border-[#00D26A]/40 text-[#00D26A]">
+                                        Najobľúbenejšie
                                     </span>
                                 </div>
-                                
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 bg-[#00D26A]/10 rounded-xl flex items-center justify-center border border-[#00D26A]/30 group-hover:scale-110 transition-all duration-300 shrink-0">
-                                        <Cpu className="w-5 h-5 text-[#00D26A]" />
-                                    </div>
-                                    <h3 className="text-xl font-display font-bold text-white group-hover:text-[#00D26A] transition-colors">
-                                        Automatizácia na kľúč
-                                    </h3>
-                                </div>
 
-                                {/* Prominent Price Tag */}
                                 <div className="mb-4 pb-4 border-b border-neutral-800/80">
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono mb-1">Cena riešenia</span>
-                                        <span className="text-[10px] font-mono text-[#00D26A]">Úspora desiatok hodín mesačne</span>
-                                    </div>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-mono text-[#00D26A] tracking-tight">od 120 €</span>
-                                        <span className="text-xs text-zinc-500 font-mono">/ riešenie</span>
+                                        <span className="text-3xl font-extrabold text-[#00D26A]">od 120 €</span>
+                                        <span className="text-xs text-zinc-400">/ riešenie</span>
                                     </div>
                                 </div>
 
-                                <p className="text-zinc-300 text-sm mb-5 leading-relaxed">
-                                    Ukážte mi, kde manuálne prepisujete tabuľky alebo strácate čas. Postavím skript, ktorý to spraví za vás.
+                                <p className="text-zinc-300 text-sm leading-relaxed mb-6">
+                                    Dátové skripty a prepojenia systémov. Ušetria vám desiatky hodín otravného manuálneho prepisovania.
                                 </p>
-
-                                {/* Bullets */}
-                                <ul className="text-zinc-300 text-sm leading-relaxed space-y-2.5 mb-6">
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Prepojenie objednávok, formulárov a tabuliek (Google Sheets / Notion)</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Skripty na generovanie PDF ponúk a párovanie faktúr</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Okamžité notifikácie bez nutnosti manuálnej kontroly dát</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#00D26A] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Kompletné nasadenie a otestovanie z mojej strany</span>
-                                    </li>
-                                </ul>
                             </div>
-                            
-                            {/* Bottom Data Formats Strip */}
+
+                            {/* 3 Clean Pill Tags & Button */}
                             <div className="pt-4 border-t border-neutral-800 mt-auto">
-                                <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-mono mb-2">Výstupné dáta</div>
-                                <div className="flex flex-wrap gap-1.5">
-                                    {['[.AUTOMATION]', '[.API]', '[.SHEETS]', '[.NOTION]'].map((fmt) => (
-                                        <span key={fmt} className="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-[#00D26A]/30 text-[#00D26A] transition-colors">
-                                            {fmt}
-                                        </span>
-                                    ))}
+                                <div className="flex flex-wrap gap-1.5 mb-5">
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-[#00D26A]/30 text-[#00D26A] font-medium">
+                                        Prepojenie tabuliek
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-[#00D26A]/30 text-[#00D26A] font-medium">
+                                        Automatické faktúry
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-[#00D26A]/30 text-[#00D26A] font-medium">
+                                        Bez chýb
+                                    </span>
                                 </div>
+                                <a
+                                    href="#contact"
+                                    className="w-full py-3 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-bold text-xs tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center text-center"
+                                >
+                                    Automatizovať procesy
+                                </a>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* Karta 3: [ 03 // FULL_DEV ] */}
+                    {/* Karta 3: Webové aplikácie */}
                     <ScrollReveal delay={0.3} className="h-full">
-                        <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 hover:border-neutral-700 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-                            {/* Coordinate cross accents */}
-                            <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                            <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                            <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                            <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors"></div>
-                            
+                        <div className="h-full bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-7 hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg">
                             <div>
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="font-mono text-xs font-semibold text-[#FFB800] tracking-wider">
-                                        [ 03 // FULL_DEV ]
+                                {/* Visual 3: Responsive Desktop + Mobile Mockup */}
+                                <div className="w-full h-40 rounded-2xl bg-[#080808] border border-neutral-800/80 p-3 mb-6 relative overflow-hidden flex items-end justify-center gap-3">
+                                    {/* Desktop Frame */}
+                                    <div className="w-36 h-28 rounded-t-lg bg-neutral-900 border-t border-x border-neutral-700/80 p-2 flex flex-col shadow-md">
+                                        <div className="flex items-center gap-1 mb-2">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-600"></div>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-600"></div>
+                                            <div className="w-1.5 h-1.5 rounded-full bg-neutral-600"></div>
+                                        </div>
+                                        <div className="w-full h-3 rounded bg-zinc-800 mb-1.5"></div>
+                                        <div className="w-3/4 h-2 rounded bg-zinc-800 mb-2"></div>
+                                        <div className="w-12 h-3 rounded bg-[#00D26A]/80 mt-auto"></div>
                                     </div>
-                                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-neutral-900 border border-neutral-800 text-zinc-400 font-semibold">
-                                        Bez agentúrnej réžie
+
+                                    {/* Smartphone Frame */}
+                                    <div className="w-16 h-24 rounded-t-lg bg-neutral-900 border-t border-x border-neutral-700/80 p-1.5 flex flex-col shadow-md">
+                                        <div className="w-6 h-1 rounded-full bg-neutral-700 mx-auto mb-1.5"></div>
+                                        <div className="w-full h-2 rounded bg-zinc-800 mb-1"></div>
+                                        <div className="w-full h-8 rounded bg-gradient-to-br from-emerald-500/20 to-amber-500/20 mt-auto"></div>
+                                    </div>
+                                </div>
+
+                                {/* Title & Price */}
+                                <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
+                                        Webové aplikácie
+                                    </h3>
+                                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-zinc-300">
+                                        Next.js
                                     </span>
                                 </div>
-                                
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 bg-[#FFB800]/10 rounded-xl flex items-center justify-center border border-[#FFB800]/25 group-hover:scale-110 transition-all duration-300 shrink-0">
-                                        <Globe className="w-5 h-5 text-[#FFB800]" />
-                                    </div>
-                                    <h3 className="text-xl font-display font-bold text-white group-hover:text-[#FFB800] transition-colors">
-                                        Webová aplikácia na mieru
-                                    </h3>
-                                </div>
 
-                                {/* Prominent Price Tag */}
                                 <div className="mb-4 pb-4 border-b border-neutral-800/80">
-                                    <span className="text-xs text-zinc-400 block uppercase tracking-wider font-mono mb-1">Cena projektu</span>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-tight">od 350 €</span>
-                                        <span className="text-xs text-zinc-500 font-mono">/ projekt</span>
+                                        <span className="text-3xl font-extrabold text-white">od 350 €</span>
+                                        <span className="text-xs text-zinc-500">/ projekt</span>
                                     </div>
                                 </div>
 
-                                <p className="text-zinc-300 text-sm mb-5 leading-relaxed">
-                                    Nemusíte písať technickú špecifikáciu. Povedzte mi, čo robíte, a ja vám postavím moderný a funkčný web.
+                                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                                    Rýchly a reprezentatívny web na Next.js so 100% odovzdaním kódu a bez viazanosti na CMS.
                                 </p>
-
-                                {/* Bullets */}
-                                <ul className="text-zinc-300 text-sm leading-relaxed space-y-2.5 mb-6">
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Bleskový One-Page web alebo klientska zóna v Next.js</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Vlastný dizajn, formuláre a priame napojenie na WhatsApp / e-mail</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>Blesková rýchlosť do 0.5s a optimalizované SEO</span>
-                                    </li>
-                                    <li className="flex items-start gap-2.5">
-                                        <span className="text-[#FFB800] font-bold text-base leading-none mt-0.5">•</span>
-                                        <span>100% vlastníctvo zdrojového kódu bez mesačných CMS poplatkov</span>
-                                    </li>
-                                </ul>
                             </div>
-                            
-                            {/* Bottom Data Formats Strip */}
+
+                            {/* 3 Clean Pill Tags & Button */}
                             <div className="pt-4 border-t border-neutral-800 mt-auto">
-                                <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-mono mb-2">Výstupné dáta</div>
-                                <div className="flex flex-wrap gap-1.5">
-                                    {['[.TSX]', '[.NEXT]', '[.TAILWIND]', '[.GIT]'].map((fmt) => (
-                                        <span key={fmt} className="px-2 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-neutral-900 border border-neutral-800 text-zinc-400 group-hover:border-neutral-700 transition-colors">
-                                            {fmt}
-                                        </span>
-                                    ))}
+                                <div className="flex flex-wrap gap-1.5 mb-5">
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                                        Rýchlosť do 0.5s
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                                        Vlastný dizajn
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                                        Bez CMS poplatkov
+                                    </span>
                                 </div>
+                                <a
+                                    href="#contact"
+                                    className="w-full py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-xs tracking-wide transition-all border border-neutral-800 hover:border-neutral-700 flex items-center justify-center text-center"
+                                >
+                                    Konzultovať web na mieru
+                                </a>
                             </div>
                         </div>
                     </ScrollReveal>
@@ -265,4 +260,3 @@ export default function Services() {
         </section>
     );
 }
-

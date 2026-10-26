@@ -1,19 +1,14 @@
 import type { Metadata } from "next"; // import the metadata type
-import { Geist, Geist_Mono } from "next/font/google"; // import google fonts
+import { Plus_Jakarta_Sans } from "next/font/google"; // import Plus Jakarta Sans font
 import "./globals.css"; // import global css
 import AnimatedBackground from '@/components/ui/AnimatedBackground'; // import animated background component
 import { ThemeProvider } from "@/components/ThemeProvider"; // import theme provider
 import { FEATURES } from "@/config/features";
 
-const geistSans = Geist({ // start geist sans font config
-  variable: "--font-geist-sans", // set css var name
+const plusJakartaSans = Plus_Jakarta_Sans({ // start plus jakarta sans font config
+  variable: "--font-sans", // set css var name
   subsets: ["latin"], // set latin subset
-}); // end geist sans font config
-
-const geistMono = Geist_Mono({ // start geist mono font config
-  variable: "--font-geist-mono", // set css var name
-  subsets: ["latin"], // set latin subset
-}); // end geist mono font config
+}); // end plus jakarta sans font config
 
 export const metadata: Metadata = { // export metadata object
   title: FEATURES.ENABLE_DRONE_SERVICES
@@ -30,7 +25,7 @@ export default function RootLayout({ // export root layout component
   children: React.ReactNode; // define typed children node
 }>) { // open function body
   return ( /* start component return */
-    <html lang="sk" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`} /* open html tag with language, styles, and font variables */ >
+    <html lang="sk" suppressHydrationWarning className={`${plusJakartaSans.variable} dark h-full antialiased`} /* open html tag with language, styles, and font variables */ >
       <body className="min-h-full flex flex-col font-sans selection:bg-[#00D26A] selection:text-black bg-[#080808] text-[#f4f4f5] relative transition-colors duration-300" /* open body tag with styling */ >
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}> {/* wrap in theme provider locked to dark */}
         <AnimatedBackground /> {/* render animated background globally */}

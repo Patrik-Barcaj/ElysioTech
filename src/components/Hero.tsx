@@ -5,7 +5,7 @@ import { FEATURES } from '@/config/features';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[92dvh] flex items-center justify-center overflow-hidden pt-28 pb-20">
+        <section className="relative min-h-[85dvh] lg:min-h-[90dvh] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-16 sm:pb-20">
             {/* Ambient gradients */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-500/[0.06] via-transparent to-transparent"></div>

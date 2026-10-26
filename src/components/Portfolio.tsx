@@ -89,33 +89,198 @@ export default function Portfolio() {
                                 key={proj.id}
                                 className="bg-[#121214] border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg"
                             >
-                                {/* Top Visual Screenshot / Mockup Preview */}
-                                <div className="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex items-center justify-center p-8">
-                                    <div className="absolute top-4 right-4 z-10">
-                                        <span className="px-3 py-1 rounded-full text-xs bg-neutral-900/90 border border-neutral-800 text-zinc-300 backdrop-blur-sm">
-                                            {proj.category}
+                                {/* Top Visual App Window Mockup */}
+                                <div className="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex flex-col justify-between p-4 sm:p-5">
+                                    {/* Window Header */}
+                                    <div className="flex items-center justify-between pb-2.5 border-b border-neutral-800/80 relative z-10">
+                                        <div className="flex items-center gap-1.5">
+                                            <div className="w-2 h-2 rounded-full bg-neutral-700"></div>
+                                            <div className="w-2 h-2 rounded-full bg-neutral-700"></div>
+                                            <div className="w-2 h-2 rounded-full bg-neutral-700"></div>
+                                            <span className="ml-1 text-[11px] text-zinc-400 font-mono">
+                                                {proj.liveUrl.replace('https://', '')}
+                                            </span>
+                                        </div>
+                                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/20">
+                                            ● Live
                                         </span>
                                     </div>
-                                    <div className="relative w-full h-full flex items-center justify-center">
-                                        <Image
-                                            src={proj.image}
-                                            alt={proj.title}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 50vw"
-                                            className="object-contain p-4 transform transition-transform duration-500 group-hover:scale-105"
-                                        />
+
+                                    {/* Mockup Body Customized per Project */}
+                                    <div className="my-auto py-2 flex items-center justify-center relative">
+                                        {proj.slug === 'pixelcraft' && (
+                                            <div className="w-full max-w-sm rounded-xl bg-neutral-950 border border-neutral-800 p-3 shadow-inner">
+                                                <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-neutral-900 text-[10px] text-zinc-500 font-mono">
+                                                    <span>Canvas 32x32</span>
+                                                    <span className="text-amber-400">Zoom 400%</span>
+                                                </div>
+                                                {/* Pixel Grid Preview */}
+                                                <div className="grid grid-cols-8 gap-1 w-32 h-16 mx-auto mb-2.5 opacity-90">
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-transparent"></div>
+                                                    
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-transparent"></div>
+
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-cyan-400 rounded-sm"></div>
+                                                    <div className="bg-white rounded-sm"></div>
+                                                    <div className="bg-cyan-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-transparent"></div>
+
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-emerald-400 rounded-sm"></div>
+                                                    <div className="bg-amber-400 rounded-sm"></div>
+                                                    <div className="bg-transparent"></div>
+                                                    <div className="bg-transparent"></div>
+                                                </div>
+                                                {/* Palette bar */}
+                                                <div className="flex items-center justify-center gap-1.5 pt-1">
+                                                    <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                                                    <span className="w-3 h-3 rounded-full bg-amber-400"></span>
+                                                    <span className="w-3 h-3 rounded-full bg-[#00D26A]"></span>
+                                                    <span className="w-3 h-3 rounded-full bg-cyan-400"></span>
+                                                    <span className="w-3 h-3 rounded-full bg-purple-500"></span>
+                                                    <span className="w-3 h-3 rounded-full bg-white"></span>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {proj.slug === 'setdrift' && (
+                                            <div className="w-full max-w-sm rounded-xl bg-[#0a0f18] border border-cyan-950/60 p-3 shadow-inner">
+                                                <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-cyan-950/80 text-[10px] text-cyan-400 font-mono">
+                                                    <span>Tour Live Sync</span>
+                                                    <span className="text-[#00D26A]">18/18 Skladieb</span>
+                                                </div>
+                                                <div className="space-y-1.5">
+                                                    <div className="flex items-center justify-between p-1.5 rounded bg-black/40 text-[10px]">
+                                                        <span className="text-white font-medium truncate">1. Neon Skyline (Encore)</span>
+                                                        <span className="text-[#00D26A] font-mono shrink-0 ml-2">Spotify ✓</span>
+                                                    </div>
+                                                    <div className="flex items-center justify-between p-1.5 rounded bg-black/40 text-[10px]">
+                                                        <span className="text-zinc-400 truncate">2. Midnight Circuit</span>
+                                                        <span className="text-[#00D26A] font-mono shrink-0 ml-2">Spotify ✓</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex items-center justify-between pt-2 mt-1 text-[9px] text-zinc-500 font-mono">
+                                                    <span>Setlist.fm API</span>
+                                                    <span className="text-cyan-400">Upstash Redis</span>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {proj.slug === 'zen-pierce' && (
+                                            <div className="w-full max-w-sm rounded-xl bg-[#111111] border border-neutral-800 p-3.5 shadow-inner">
+                                                <div className="flex items-center justify-between mb-2.5 pb-1.5 border-b border-neutral-800 text-[10px] text-zinc-400">
+                                                    <span className="tracking-widest uppercase font-serif text-white">Zen Studio Collection</span>
+                                                    <span className="text-[#00D26A]">Boutique</span>
+                                                </div>
+                                                <div className="flex items-center gap-3 bg-black/60 p-2.5 rounded-lg border border-neutral-800/80">
+                                                    <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400/20 via-neutral-800 to-amber-200/40 border border-amber-400/30 flex items-center justify-center shrink-0">
+                                                        <span className="text-amber-300 text-xs font-serif">✦</span>
+                                                    </div>
+                                                    <div className="text-left">
+                                                        <div className="text-xs font-medium text-white">Titanium Helix &amp; Opal Stud</div>
+                                                        <div className="text-[10px] text-zinc-400">Implant Grade Titanium ASTM F-136</div>
+                                                    </div>
+                                                    <div className="ml-auto text-xs font-bold text-amber-400 shrink-0">
+                                                        35 €
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {proj.slug === 'echo' && (
+                                            <div className="w-full max-w-sm rounded-xl bg-[#0b101b] border border-indigo-950/60 p-3 shadow-inner">
+                                                <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-indigo-950/80 text-[10px] text-indigo-300 font-mono">
+                                                    <span>Web Audio Engine</span>
+                                                    <span className="text-[#00D26A]">Vinyl Archive</span>
+                                                </div>
+                                                {/* Waveform Equalizer Mockup */}
+                                                <div className="flex items-end justify-center gap-1 h-10 my-2 px-2 bg-black/50 rounded-lg p-1.5">
+                                                    <span className="w-1.5 h-3 bg-indigo-500 rounded-full"></span>
+                                                    <span className="w-1.5 h-6 bg-indigo-400 rounded-full"></span>
+                                                    <span className="w-1.5 h-8 bg-[#00D26A] rounded-full"></span>
+                                                    <span className="w-1.5 h-5 bg-indigo-400 rounded-full"></span>
+                                                    <span className="w-1.5 h-9 bg-[#00D26A] rounded-full"></span>
+                                                    <span className="w-1.5 h-4 bg-indigo-500 rounded-full"></span>
+                                                    <span className="w-1.5 h-7 bg-indigo-400 rounded-full"></span>
+                                                    <span className="w-1.5 h-9 bg-[#00D26A] rounded-full"></span>
+                                                    <span className="w-1.5 h-5 bg-indigo-400 rounded-full"></span>
+                                                    <span className="w-1.5 h-3 bg-indigo-500 rounded-full"></span>
+                                                </div>
+                                                <div className="flex items-center justify-between text-[10px] text-zinc-400">
+                                                    <span className="text-white font-medium truncate">Analog Waveforms • Vol. 1</span>
+                                                    <span className="text-indigo-400 font-mono text-[9px]">02:41 / 04:15</span>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Fallback if another project */}
+                                        {proj.slug !== 'pixelcraft' && proj.slug !== 'setdrift' && proj.slug !== 'zen-pierce' && proj.slug !== 'echo' && (
+                                            <div className="relative w-24 h-24 flex items-center justify-center">
+                                                <Image
+                                                    src={proj.image}
+                                                    alt={proj.title}
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                                    className="object-contain p-2"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Mockup Footer Line */}
+                                    <div className="flex items-center justify-between pt-2 border-t border-neutral-800/80 text-[10px] text-zinc-500">
+                                        <span>{proj.category}</span>
+                                        <span className="text-zinc-300">100% kód na mieru</span>
                                     </div>
                                 </div>
 
                                 {/* Content Details */}
                                 <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-white transition-colors">
-                                            {proj.title}
-                                        </h3>
-                                        <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-2">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h3 className="text-2xl font-bold text-white group-hover:text-white transition-colors">
+                                                {proj.title}
+                                            </h3>
+                                            <span className="text-xs text-zinc-500 font-medium">
+                                                {proj.subtitle.split('&')[0]}
+                                            </span>
+                                        </div>
+                                        <p className="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-2">
                                             {proj.tagline || proj.description}
                                         </p>
+
+                                        {/* Technology Pills */}
+                                        <div className="flex flex-wrap gap-1.5 mb-6">
+                                            {proj.technologies.slice(0, 4).map((tech, idx) => (
+                                                <span
+                                                    key={`${proj.id}-tech-${idx}`}
+                                                    className="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     {/* Footer Actions */}
@@ -127,14 +292,14 @@ export default function Portfolio() {
                                                 rel="noopener noreferrer"
                                                 className="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-semibold text-xs tracking-wide transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-1.5"
                                             >
-                                                <span>Spustiť appku ↗</span>
+                                                <span>{proj.ctaText || 'Spustiť appku ↗'}</span>
                                             </a>
                                         ) : (
                                             <span className="text-xs text-zinc-500">Interný projekt</span>
                                         )}
                                         <Link
                                             href={`/projekty/${proj.slug}`}
-                                            className="text-xs text-zinc-400 hover:text-white transition-colors flex items-center gap-1"
+                                            className="text-xs text-zinc-400 hover:text-white transition-colors flex items-center gap-1 font-medium"
                                         >
                                             <span>Detail riešenia →</span>
                                         </Link>

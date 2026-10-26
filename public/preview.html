@@ -107,7 +107,7 @@
 
     <!-- Mobile Drawer -->
     <div id="mobile-menu"
-      class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080808] border-b border-neutral-800 space-y-3 font-medium text-sm">
+      class="hidden md:hidden px-4 pt-2 pb-6 bg-[#080808] border-b border-neutral-800 space-y-3 font-medium text-sm max-h-[calc(100vh-5rem)] overflow-y-auto">
       <a href="#services" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Služby</a>
       <a href="#why-elysio" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Prečo Elysio</a>
       <a href="#portfolio" class="block py-2 text-zinc-300 hover:text-[#00D26A]" onclick="toggleMobileMenu()">Projekty</a>
@@ -117,7 +117,7 @@
   </header>
 
   <!-- 2. HERO SECTION -->
-  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-28 pb-20">
+  <section id="hero" class="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 pb-16 sm:pb-20">
     <!-- Dark background gradients -->
     <div class="absolute inset-0 z-0 pointer-events-none">
       <div
@@ -534,7 +534,7 @@
   </section>
 
   <!-- 5. WHY ELYSIO SECTION -->
-  <section id="why-elysio" class="py-24 bg-[#080808] relative border-b border-neutral-800">
+  <section id="why-elysio" class="py-20 sm:py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <div class="text-center max-w-3xl mx-auto mb-14">
@@ -554,61 +554,227 @@
         </p>
       </div>
 
-      <!-- Single Clean Horizontal Panel with 3 Pillars -->
-      <div class="max-w-5xl mx-auto">
-        <div class="bg-[#121214] border border-neutral-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 relative z-10">
+      <!-- 3 Visual Bento Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto items-stretch mb-10">
 
-            <!-- Pillar 1 -->
-            <div class="flex flex-col justify-between">
-              <div>
-                <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-sm font-bold text-[#00D26A] mb-5">
-                  01
+        <!-- Card 1: Inžiniersky základ (VUT FIT) -->
+        <div class="bg-[#121214] border border-neutral-800 hover:border-neutral-700 rounded-3xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between h-full group shadow-lg">
+          <div>
+            <!-- Visual Header: Software Architecture & Code Blueprint -->
+            <div class="w-full h-44 rounded-2xl bg-[#080808] border border-neutral-800/80 p-3.5 mb-6 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between pb-2 border-b border-neutral-800/80 text-[11px] text-zinc-400">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                  <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                  <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                  <span class="ml-1 text-zinc-400 font-mono text-[10px]">vut_fit_core.ts</span>
                 </div>
-                <h3 class="text-lg font-bold text-white mb-2.5">
-                  Inžiniersky základ (VUT FIT)
-                </h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">
-                  Pevné algoritmické a softvérové základy bez amatérskych riešení. Čistý moderný kód bez zbytočných CMS závislostí.
-                </p>
+                <span class="px-2 py-0.5 rounded bg-[#00D26A]/10 text-[#00D26A] text-[10px] font-semibold">
+                  0ms overhead
+                </span>
+              </div>
+
+              <div class="font-mono text-[11px] leading-relaxed text-zinc-400 my-auto space-y-1">
+                <p class="text-zinc-500">// FIT VUT Brno • Softvérové inžinierstvo</p>
+                <p><span class="text-[#00D26A]">const</span> stack = {</p>
+                <p class="pl-3 text-zinc-300">speed: <span class="text-amber-400">'&lt; 0.5s'</span>,</p>
+                <p class="pl-3 text-zinc-300">architecture: <span class="text-[#00D26A]">'Clean Code'</span>,</p>
+                <p class="pl-3 text-zinc-300">cmsBloat: <span class="text-red-400">false</span></p>
+                <p>};</p>
+              </div>
+
+              <div class="flex items-center justify-between pt-2 border-t border-neutral-800/60 text-[10px] text-zinc-500">
+                <span>Typovo bezpečný vývoj</span>
+                <span class="text-zinc-300 font-medium">Algoritmická efektivita</span>
               </div>
             </div>
 
-            <!-- Pillar 2 -->
-            <div class="flex flex-col justify-between md:border-x md:border-neutral-800/80 md:px-8">
-              <div>
-                <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-sm font-bold text-[#FFB800] mb-5">
-                  02
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2.5">
-                  Polygrafická prax
-                </h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">
-                  Reálne skúsenosti z fyzickej výroby a tlače. Vektorové dáta a rezacie krivky pre CNC, laser a plotre sedia na desatinu milimetra.
-                </p>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-xs font-bold text-[#00D26A]">
+                01
               </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-white transition-colors">
+                Inžiniersky základ (VUT FIT)
+              </h3>
             </div>
 
-            <!-- Pillar 3 -->
-            <div class="flex flex-col justify-between">
-              <div>
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-sm font-bold text-[#00D26A] mb-5">
-                  03
-                </div>
-                <h3 class="text-lg font-bold text-white mb-2.5">
-                  Done-For-You záruka
-                </h3>
-                <p class="text-zinc-400 text-sm leading-relaxed">
-                  Žiadna byrokracia ani technické pojmy. Komunikujete priamo so mnou a hotový výsledok dostanete na kľúč do 48 hodín.
-                </p>
-              </div>
-            </div>
-
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              Pevné algoritmické a softvérové základy bez amatérskych riešení. Čistý moderný kód bez zbytočných CMS závislostí a pomalých pluginov.
+            </p>
           </div>
 
-          <div class="mt-10 pt-6 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-400 text-center sm:text-left">
-            <span>Patrik Barcaj • Samostatný inžinier a vývojár</span>
-            <span class="text-[#00D26A] font-medium">Garancia dodania do 48 hodín</span>
+          <div class="pt-4 border-t border-neutral-800 mt-auto">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                VUT FIT Brno
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                TypeScript
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                Čistý kód
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Polygrafická prax -->
+        <div class="bg-[#121214] border border-neutral-800 hover:border-neutral-700 rounded-3xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between h-full group shadow-lg">
+          <div>
+            <!-- Visual Header: Technical Blueprint & Vector Calipers -->
+            <div class="w-full h-44 rounded-2xl bg-[#080808] border border-neutral-800/80 p-3.5 mb-6 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between pb-2 border-b border-neutral-800/80 text-[11px] text-zinc-400">
+                <span class="text-[10px] text-zinc-400 font-mono">cad_prepress_cut.dxf</span>
+                <span class="px-2 py-0.5 rounded bg-amber-500/10 text-[#FFB800] text-[10px] font-semibold">
+                  Presnosť ±0.1mm
+                </span>
+              </div>
+
+              {/* Vector Drawing Schema */}
+              <div class="my-auto py-1 relative">
+                <div class="flex items-center justify-center gap-4">
+                  <div class="relative border border-dashed border-[#FFB800]/50 rounded-lg p-3 bg-neutral-900/60 text-center">
+                    <div class="absolute -top-2 left-1/2 -translate-x-1/2 px-1.5 py-0.2 bg-[#080808] text-[9px] font-mono text-[#FFB800]">
+                      100.00 mm
+                    </div>
+                    <svg class="w-20 h-10 mx-auto text-[#FFB800]" viewBox="0 0 80 40" fill="none">
+                      <path d="M5 35 Q40 5 75 35" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" />
+                      <circle cx="5" cy="35" r="2.5" fill="#FFB800" />
+                      <circle cx="40" cy="20" r="2.5" fill="#00D26A" />
+                      <circle cx="75" cy="35" r="2.5" fill="#FFB800" />
+                    </svg>
+                    <div class="text-[9px] text-zinc-400 font-mono mt-1">Bézier curves &amp; CNC</div>
+                  </div>
+
+                  <div class="space-y-1.5 text-left text-[10px] text-zinc-400 font-mono">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#00D26A]"></span>
+                      <span>CMYK 300 DPI</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#FFB800]"></span>
+                      <span>Spadávka 3 mm</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                      <span>Plotrový rez</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-2 border-t border-neutral-800/60 text-[10px] text-zinc-500">
+                <span>Reálna výroba &amp; tlač</span>
+                <span class="text-zinc-300 font-medium">Bez chýb v merke</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-xs font-bold text-[#FFB800]">
+                02
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-white transition-colors">
+                Polygrafická prax
+              </h3>
+            </div>
+
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              Reálne skúsenosti z fyzickej výroby a tlače. Vektorové dáta a rezacie krivky pre CNC, laser a plotre sedia na desatinu milimetra.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-neutral-800 mt-auto">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                DTP &amp; Prepress
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                Rezacie plotre
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                Presnosť 0.1mm
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Done-For-You záruka -->
+        <div class="bg-[#121214] border border-neutral-800 hover:border-neutral-700 rounded-3xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between h-full group shadow-lg">
+          <div>
+            <!-- Visual Header: Direct 1:1 Timeline Tracker -->
+            <div class="w-full h-44 rounded-2xl bg-[#080808] border border-emerald-500/20 p-3.5 mb-6 relative overflow-hidden flex flex-col justify-between bg-emerald-500/[0.01]">
+              <div class="flex items-center justify-between pb-2 border-b border-neutral-800/80 text-[11px] text-zinc-400">
+                <span class="text-[10px] text-zinc-400">1:1 priama spolupráca</span>
+                <span class="px-2 py-0.5 rounded bg-[#00D26A] text-black text-[10px] font-bold">
+                  ✓ 100% na kľúč
+                </span>
+              </div>
+
+              <!-- 3 Step Timeline -->
+              <div class="my-auto space-y-2 py-1">
+                <div class="flex items-center justify-between p-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-[10px]">
+                  <span class="text-zinc-400">1. Hrubé podklady (audio / foto)</span>
+                  <span class="text-[#00D26A] font-semibold">Klient</span>
+                </div>
+                <div class="flex justify-center -my-1 text-zinc-600 text-[10px]">↓</div>
+                <div class="flex items-center justify-between p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-[10px]">
+                  <span class="text-white font-medium">2. Kompletná realizácia &amp; kód</span>
+                  <span class="text-[#00D26A] font-bold">Patrik Barcaj</span>
+                </div>
+                <div class="flex justify-center -my-1 text-zinc-600 text-[10px]">↓</div>
+                <div class="flex items-center justify-between p-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-[10px]">
+                  <span class="text-zinc-400">3. Hotový výstup do 48 hodín</span>
+                  <span class="text-white font-semibold">Hotovo ✓</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-2 border-t border-neutral-800/60 text-[10px] text-zinc-500">
+                <span>Nulový agentúrny žargón</span>
+                <span class="text-[#00D26A] font-medium">Dodanie do 48 hodín</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xs font-bold text-[#00D26A]">
+                03
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-[#00D26A] transition-colors">
+                Done-For-You záruka
+              </h3>
+            </div>
+
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              Žiadna byrokracia, nafúknuté agentúrne marže ani technické pojmy. Komunikujete priamo so mnou a hotový výsledok dostanete na kľúč do 48 hodín.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-neutral-800 mt-auto">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                Priama spolupráca
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                Garancia 48h
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300">
+                Bez agentúr
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Horizontal Trust Bar -->
+      <div class="max-w-6xl mx-auto">
+        <div class="p-5 sm:p-6 rounded-2xl bg-[#121214] border border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 text-center sm:text-left">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#00D26A]"></span>
+            <span>Patrik Barcaj • Samostatný inžinier a vývojár (Bratislava &amp; Západné Slovensko)</span>
+          </div>
+          <div class="inline-flex items-center gap-2 text-white font-medium">
+            <span class="text-[#00D26A]">✓</span>
+            <span>Garancia dodania do 48 hodín &amp; 100% odovzdanie zdrojových kódov</span>
           </div>
         </div>
       </div>
@@ -617,7 +783,7 @@
   </section>
 
   <!-- 6. PORTFOLIO SECTION -->
-  <section id="portfolio" class="py-24 bg-[#080808] relative border-b border-neutral-800">
+  <section id="portfolio" class="py-20 sm:py-24 bg-[#080808] relative border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Section Header -->
@@ -638,116 +804,319 @@
 
         <!-- Project 1: PixelCraft -->
         <div class="bg-[#121214] border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg">
-          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex items-center justify-center p-8">
-            <div class="absolute top-4 right-4 z-10">
-              <span class="px-3 py-1 rounded-full text-xs bg-neutral-900/90 border border-neutral-800 text-zinc-300 backdrop-blur-sm">
-                Webová Appka
+          <!-- Top Visual App Window Mockup -->
+          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex flex-col justify-between p-4 sm:p-5">
+            <div class="flex items-center justify-between pb-2.5 border-b border-neutral-800/80 relative z-10">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <span class="ml-1 text-[11px] text-zinc-400 font-mono">pixelcraft.elysiotech.com</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/20">
+                ● Live
               </span>
             </div>
-            <div class="w-24 h-24 rounded-2xl bg-black border border-neutral-800 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
-              <span class="text-4xl">🎨</span>
+
+            <!-- PixelCraft Canvas Mockup -->
+            <div class="my-auto py-2 flex items-center justify-center relative">
+              <div class="w-full max-w-sm rounded-xl bg-neutral-950 border border-neutral-800 p-3 shadow-inner">
+                <div class="flex items-center justify-between mb-2 pb-1.5 border-b border-neutral-900 text-[10px] text-zinc-500 font-mono">
+                  <span>Canvas 32x32</span>
+                  <span class="text-amber-400">Zoom 400%</span>
+                </div>
+                <div class="grid grid-cols-8 gap-1 w-32 h-16 mx-auto mb-2.5 opacity-90">
+                  <div class="bg-transparent"></div>
+                  <div class="bg-transparent"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-transparent"></div>
+                  <div class="bg-transparent"></div>
+                  <div class="bg-transparent"></div>
+                  
+                  <div class="bg-transparent"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-transparent"></div>
+                  <div class="bg-transparent"></div>
+
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-cyan-400 rounded-sm"></div>
+                  <div class="bg-white rounded-sm"></div>
+                  <div class="bg-cyan-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-transparent"></div>
+
+                  <div class="bg-transparent"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-amber-400 rounded-sm"></div>
+                  <div class="bg-transparent"></div>
+                  <div class="bg-transparent"></div>
+                </div>
+                <div class="flex items-center justify-center gap-1.5 pt-1">
+                  <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-[#00D26A]"></span>
+                  <span class="w-3 h-3 rounded-full bg-cyan-400"></span>
+                  <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                  <span class="w-3 h-3 rounded-full bg-white"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-neutral-800/80 text-[10px] text-zinc-500">
+              <span>Webová Aplikácia &amp; Systém</span>
+              <span class="text-zinc-300">100% kód na mieru</span>
             </div>
           </div>
+
           <div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
             <div>
-              <h3 class="text-2xl font-bold text-white mb-2">PixelCraft</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white group-hover:text-white transition-colors">PixelCraft</h3>
+                <span class="text-xs text-zinc-500 font-medium">Interaktívny generátor</span>
+              </div>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-2">
                 Interaktívny webový generátor a canvas editor pixel-art grafiky stavaný v Next.js s exportom bez straty kvality.
               </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Next.js</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">React</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Canvas API</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">TypeScript</span>
+              </div>
             </div>
             <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between gap-4 mt-auto">
               <a href="https://pixelcraft.elysiotech.com" target="_blank" rel="noopener noreferrer"
                 class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-semibold text-xs tracking-wide transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-1.5">
                 <span>Spustiť appku ↗</span>
               </a>
-              <span class="text-xs text-zinc-500">Next.js • Canvas API</span>
+              <span class="text-xs text-zinc-400 font-mono">pixelcraft.elysiotech.com</span>
             </div>
           </div>
         </div>
 
         <!-- Project 2: SetDrift -->
         <div class="bg-[#121214] border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg">
-          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex items-center justify-center p-8">
-            <div class="absolute top-4 right-4 z-10">
-              <span class="px-3 py-1 rounded-full text-xs bg-neutral-900/90 border border-neutral-800 text-zinc-300 backdrop-blur-sm">
-                Motorsport Analytics
+          <!-- Top Visual App Window Mockup -->
+          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex flex-col justify-between p-4 sm:p-5">
+            <div class="flex items-center justify-between pb-2.5 border-b border-neutral-800/80 relative z-10">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <span class="ml-1 text-[11px] text-zinc-400 font-mono">setdrift.elysiotech.com</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/20">
+                ● Live
               </span>
             </div>
-            <div class="w-24 h-24 rounded-2xl bg-[#0a0f18] border border-neutral-800 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
-              <span class="text-4xl">🏎️</span>
+
+            <!-- SetDrift Live Sync Mockup -->
+            <div class="my-auto py-2 flex items-center justify-center relative">
+              <div class="w-full max-w-sm rounded-xl bg-[#0a0f18] border border-cyan-950/60 p-3 shadow-inner">
+                <div class="flex items-center justify-between mb-2 pb-1.5 border-b border-cyan-950/80 text-[10px] text-cyan-400 font-mono">
+                  <span>Tour Live Sync</span>
+                  <span class="text-[#00D26A]">18/18 Skladieb</span>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between p-1.5 rounded bg-black/40 text-[10px]">
+                    <span class="text-white font-medium truncate">1. Neon Skyline (Encore)</span>
+                    <span class="text-[#00D26A] font-mono shrink-0 ml-2">Spotify ✓</span>
+                  </div>
+                  <div class="flex items-center justify-between p-1.5 rounded bg-black/40 text-[10px]">
+                    <span class="text-zinc-400 truncate">2. Midnight Circuit</span>
+                    <span class="text-[#00D26A] font-mono shrink-0 ml-2">Spotify ✓</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 mt-1 text-[9px] text-zinc-500 font-mono">
+                  <span>Setlist.fm API</span>
+                  <span class="text-cyan-400">Upstash Redis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-neutral-800/80 text-[10px] text-zinc-500">
+              <span>Webová Aplikácia &amp; API Integrácia</span>
+              <span class="text-zinc-300">100% kód na mieru</span>
             </div>
           </div>
+
           <div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
             <div>
-              <h3 class="text-2xl font-bold text-white mb-2">SetDrift</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                Telemetrická a analytická webová aplikácia s prepojením na dáta a optimalizovaným mobilným rozhraním.
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white group-hover:text-white transition-colors">SetDrift</h3>
+                <span class="text-xs text-zinc-500 font-medium">Agregátor setlistov</span>
+              </div>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-2">
+                Dátovo riadený agregátor koncertných setlistov, ktorý v reálnom čase analyzuje turné a páruje playlisty do Spotify.
               </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Next.js</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Spotify API</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Redis</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">PWA</span>
+              </div>
             </div>
             <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between gap-4 mt-auto">
               <a href="https://setdrift.elysiotech.com" target="_blank" rel="noopener noreferrer"
                 class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-semibold text-xs tracking-wide transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-1.5">
                 <span>Spustiť appku ↗</span>
               </a>
-              <span class="text-xs text-zinc-500">TypeScript • Analytics</span>
+              <span class="text-xs text-zinc-400 font-mono">setdrift.elysiotech.com</span>
             </div>
           </div>
         </div>
 
         <!-- Project 3: Zen Pierce -->
         <div class="bg-[#121214] border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg">
-          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex items-center justify-center p-8">
-            <div class="absolute top-4 right-4 z-10">
-              <span class="px-3 py-1 rounded-full text-xs bg-neutral-900/90 border border-neutral-800 text-zinc-300 backdrop-blur-sm">
-                Brand Prezentácia
+          <!-- Top Visual App Window Mockup -->
+          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex flex-col justify-between p-4 sm:p-5">
+            <div class="flex items-center justify-between pb-2.5 border-b border-neutral-800/80 relative z-10">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <span class="ml-1 text-[11px] text-zinc-400 font-mono">zenpierce.elysiotech.com</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/20">
+                ● Live
               </span>
             </div>
-            <div class="w-24 h-24 rounded-2xl bg-[#111111] border border-neutral-800 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
-              <span class="text-4xl">💎</span>
+
+            <!-- Zen Pierce Jewelry Showcase Mockup -->
+            <div class="my-auto py-2 flex items-center justify-center relative">
+              <div class="w-full max-w-sm rounded-xl bg-[#111111] border border-neutral-800 p-3.5 shadow-inner">
+                <div class="flex items-center justify-between mb-2.5 pb-1.5 border-b border-neutral-800 text-[10px] text-zinc-400">
+                  <span class="tracking-widest uppercase font-serif text-white">Zen Studio Collection</span>
+                  <span class="text-[#00D26A]">Boutique</span>
+                </div>
+                <div class="flex items-center gap-3 bg-black/60 p-2.5 rounded-lg border border-neutral-800/80">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400/20 via-neutral-800 to-amber-200/40 border border-amber-400/30 flex items-center justify-center shrink-0">
+                    <span class="text-amber-300 text-xs font-serif">✦</span>
+                  </div>
+                  <div class="text-left">
+                    <div class="text-xs font-medium text-white">Titanium Helix &amp; Opal Stud</div>
+                    <div class="text-[10px] text-zinc-400">Implant Grade Titanium ASTM F-136</div>
+                  </div>
+                  <div class="ml-auto text-xs font-bold text-amber-400 shrink-0">
+                    35 €
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-neutral-800/80 text-[10px] text-zinc-500">
+              <span>Prezentačný &amp; Brand Web</span>
+              <span class="text-zinc-300">100% kód na mieru</span>
             </div>
           </div>
+
           <div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
             <div>
-              <h3 class="text-2xl font-bold text-white mb-2">Zen Pierce</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white group-hover:text-white transition-colors">Zen Pierce</h3>
+                <span class="text-xs text-zinc-500 font-medium">Brand web &amp; štúdio</span>
+              </div>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-2">
                 Prémiový prezentačný web piercing štúdia s interaktívnym katalógom a rýchlou WhatsApp rezerváciou.
               </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Next.js</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Tailwind CSS</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Framer Motion</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">UI/UX</span>
+              </div>
             </div>
             <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between gap-4 mt-auto">
               <a href="https://zenpierce.elysiotech.com" target="_blank" rel="noopener noreferrer"
                 class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-semibold text-xs tracking-wide transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-1.5">
                 <span>Navštíviť web ↗</span>
               </a>
-              <span class="text-xs text-zinc-500">Next.js • UI/UX</span>
+              <span class="text-xs text-zinc-400 font-mono">zenpierce.elysiotech.com</span>
             </div>
           </div>
         </div>
 
         <!-- Project 4: Echo -->
         <div class="bg-[#121214] border border-neutral-800 rounded-3xl overflow-hidden hover:border-neutral-700 transition-all duration-300 flex flex-col justify-between group shadow-lg">
-          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex items-center justify-center p-8">
-            <div class="absolute top-4 right-4 z-10">
-              <span class="px-3 py-1 rounded-full text-xs bg-neutral-900/90 border border-neutral-800 text-zinc-300 backdrop-blur-sm">
-                Web Audio Player
+          <!-- Top Visual App Window Mockup -->
+          <div class="relative w-full aspect-[16/10] bg-[#080808] border-b border-neutral-800/80 overflow-hidden flex flex-col justify-between p-4 sm:p-5">
+            <div class="flex items-center justify-between pb-2.5 border-b border-neutral-800/80 relative z-10">
+              <div class="flex items-center gap-1.5">
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
+                <span class="ml-1 text-[11px] text-zinc-400 font-mono">echo.elysiotech.com</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[#00D26A]/10 text-[#00D26A] border border-[#00D26A]/20">
+                ● Live
               </span>
             </div>
-            <div class="w-24 h-24 rounded-2xl bg-[#0f172a] border border-neutral-800 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
-              <span class="text-4xl">🎵</span>
+
+            <!-- Echo Audio Waveform Mockup -->
+            <div class="my-auto py-2 flex items-center justify-center relative">
+              <div class="w-full max-w-sm rounded-xl bg-[#0b101b] border border-indigo-950/60 p-3 shadow-inner">
+                <div class="flex items-center justify-between mb-2 pb-1.5 border-b border-indigo-950/80 text-[10px] text-indigo-300 font-mono">
+                  <span>Web Audio Engine</span>
+                  <span class="text-[#00D26A]">Vinyl Archive</span>
+                </div>
+                <div class="flex items-end justify-center gap-1 h-10 my-2 px-2 bg-black/50 rounded-lg p-1.5">
+                  <span class="w-1.5 h-3 bg-indigo-500 rounded-full"></span>
+                  <span class="w-1.5 h-6 bg-indigo-400 rounded-full"></span>
+                  <span class="w-1.5 h-8 bg-[#00D26A] rounded-full"></span>
+                  <span class="w-1.5 h-5 bg-indigo-400 rounded-full"></span>
+                  <span class="w-1.5 h-9 bg-[#00D26A] rounded-full"></span>
+                  <span class="w-1.5 h-4 bg-indigo-500 rounded-full"></span>
+                  <span class="w-1.5 h-7 bg-indigo-400 rounded-full"></span>
+                  <span class="w-1.5 h-9 bg-[#00D26A] rounded-full"></span>
+                  <span class="w-1.5 h-5 bg-indigo-400 rounded-full"></span>
+                  <span class="w-1.5 h-3 bg-indigo-500 rounded-full"></span>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-zinc-400">
+                  <span class="text-white font-medium truncate">Analog Waveforms • Vol. 1</span>
+                  <span class="text-indigo-400 font-mono text-[9px]">02:41 / 04:15</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-neutral-800/80 text-[10px] text-zinc-500">
+              <span>Fyzická Zbierka &amp; Prehrávač</span>
+              <span class="text-zinc-300">100% kód na mieru</span>
             </div>
           </div>
+
           <div class="p-6 sm:p-7 flex flex-col justify-between flex-grow">
             <div>
-              <h3 class="text-2xl font-bold text-white mb-2">Echo</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-2xl font-bold text-white group-hover:text-white transition-colors">Echo</h3>
+                <span class="text-xs text-zinc-500 font-medium">Audio archív</span>
+              </div>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-2">
                 Digitálny archív fyzickej audio zbierky s vlastným webovým waveform prehrávačom a vizualizáciami.
               </p>
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Next.js</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Web Audio API</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">TypeScript</span>
+                <span class="px-2.5 py-1 rounded-full text-xs bg-[#080808] border border-neutral-800 text-zinc-300 font-medium">Waveforms</span>
+              </div>
             </div>
             <div class="pt-4 border-t border-neutral-800/80 flex items-center justify-between gap-4 mt-auto">
               <a href="https://echo.elysiotech.com" target="_blank" rel="noopener noreferrer"
                 class="px-5 py-2.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-semibold text-xs tracking-wide transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-1.5">
                 <span>Spustiť appku ↗</span>
               </a>
-              <span class="text-xs text-zinc-500">Web Audio API</span>
+              <span class="text-xs text-zinc-400 font-mono">echo.elysiotech.com</span>
             </div>
           </div>
         </div>

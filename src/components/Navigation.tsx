@@ -92,7 +92,7 @@ export default function Navigation() { // export default Navigation block
                             </div> {/* nav row */}
                             <div className="ml-4 pl-4 border-l border-neutral-800 flex items-center gap-3"> {/* Action CTA wrapper */}
                                 <a
-                                    href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
+                                    href="https://wa.me/421903406402?text=Ahoj%20Patrik,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20sluzieb"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-extrabold font-display uppercase tracking-wider bg-[#00D26A] hover:bg-[#00B85C] text-black shadow-lg shadow-[#00D26A]/20 transition-all transform hover:-translate-y-0.5"
@@ -161,7 +161,7 @@ export default function Navigation() { // export default Navigation block
 
                         <div className="pt-3 border-t border-neutral-800/80 flex flex-col gap-3">
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb"
+                                href="https://wa.me/421903406402?text=Ahoj%20Patrik,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20sluzieb"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => setIsOpen(false)}

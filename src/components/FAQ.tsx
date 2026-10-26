@@ -66,7 +66,7 @@ export default function FAQ() { // export FAQ component function
                 category: 'drone',
                 categoryName: 'Letecké zábery & Dáta',
                 q: 'Nahrádzajú vaše letecké výstupy autorizované geodetické meranie?',
-                a: 'Nie. Naše výstupy slúžia ako detailný technický a vizuálny podklad pre projektový manažment, kontrolu stavby, internú logistiku a správu majetku. Nenahrádzajú úradné geodetické zameranie na zápis do katastra nehnuteľností podľa zákona NR SR č. 215/1995 Z. z.'
+                a: 'Nie. Moje výstupy slúžia ako detailný technický a vizuálny podklad pre projektový manažment, kontrolu stavby, internú logistiku a správu majetku. Nenahrádzajú úradné geodetické zameranie na zápis do katastra nehnuteľností podľa zákona NR SR č. 215/1995 Z. z.'
             }
         ] : []),
 

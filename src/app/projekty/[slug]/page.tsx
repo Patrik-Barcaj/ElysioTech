@@ -76,7 +76,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500">
               <Link href="/" className="hover:text-[#00D26A] transition-colors">Domov</Link>
               <span>/</span>
-              <Link href="/#portfolio" className="hover:text-[#00D26A] transition-colors">Naše projekty</Link>
+              <Link href="/#portfolio" className="hover:text-[#00D26A] transition-colors">Projekty</Link>
               <span>/</span>
               <span className="text-white font-medium">{project.title}</span>
             </nav>

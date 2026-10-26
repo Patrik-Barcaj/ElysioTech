@@ -64,7 +64,7 @@ export default function Footer() { // export Footer component function
 
                 <div className="border-t border-neutral-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500"> {/* copyright row */}
                     <p>&copy; {new Date().getFullYear()} ELYSIO TECH. Všetky práva vyhradené.</p> {/* copyright text */}
-                    <p className="mt-2 sm:mt-0">Digitálne a technické štúdio • Bratislavský kraj</p> {/* credit text */}
+                    <p className="mt-2 sm:mt-0">Technický špecialista &amp; Inžinier • Patrik Barcaj</p> {/* credit text */}
                 </div> {/* copyright row end */}
             </div> {/* wrapper container end */}
         </footer> // footer element end

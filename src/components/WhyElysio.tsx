@@ -1,6 +1,5 @@
 import React from 'react';
 import ScrollReveal from './ui/ScrollReveal';
-import { FEATURES } from '@/config/features';
 
 export default function WhyElysio() {
   return (
@@ -23,66 +22,45 @@ export default function WhyElysio() {
           </p>
         </div>
 
-        {/* Osobný inžiniersky blok */}
-        <ScrollReveal delay={0.05} className="max-w-4xl mx-auto mb-12">
-          <div className="relative bg-[#121214] border border-neutral-800 rounded-2xl p-6 sm:p-8 overflow-hidden group hover:border-[#00D26A]/40 transition-all">
+        {/* Osobný inžiniersky blok: Kto za tým stojí */}
+        <ScrollReveal delay={0.05} className="max-w-4xl mx-auto mb-16">
+          <div className="relative bg-[#121214] border border-neutral-800 rounded-2xl p-6 sm:p-9 overflow-hidden group hover:border-[#00D26A]/40 transition-all shadow-xl">
             {/* Coordinate cross accents */}
             <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
             <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
             <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
             <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-              <div className="font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider shrink-0 uppercase">
-                [ 00 // DIRECT_CONTACT ]
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 font-mono text-xs text-[#00D26A] bg-[#00D26A]/10 border border-[#00D26A]/30 px-3 py-1.5 rounded tracking-wider uppercase mb-5">
+                <span className="w-2 h-2 rounded-full bg-[#00D26A] animate-pulse"></span>
+                [ 00 // KTO ZA TÝM STOJÍ ] • OD KÓDU PO VÝROBU
               </div>
-              <p className="text-zinc-200 text-base sm:text-lg font-medium leading-relaxed">
-                {FEATURES.ENABLE_DRONE_SERVICES
-                  ? 'Jeden kontakt od zberu dát po kód. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.'
-                  : 'Jeden kontakt od analýzy zadania po kód a výrobu. Žiadni account manažéri ani agentúrne marže – technické riešenia komunikujete priamo s človekom, ktorý ich realizuje.'
-                }
-              </p>
+              
+              <div className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                  Nezačínal som včera a nevypadol som z rýchlokurzu programovania. Pevný inžiniersky základ som postavil počas štúdia informatiky na <strong className="text-white">VUT v Brne (FIT)</strong>, kde som pričuchol k poctivému softvérovému vývoju. Odtiaľ viedla moja cesta cez grafiku až priamo do polygrafickej a výrobnej praxe.
+                </p>
+                <p>
+                  Práve spojenie algoritmického myslenia s každodennou realitou výroby ma naučilo dve zásadné veci: <strong className="text-white">softvér musí fungovať spoľahlivo</strong> a <strong className="text-white">dáta do výroby musia sedieť na desatinu milimetra</strong>. Keď mi pošlete zadanie, nepozerám sa naň ako teoretik. Viem, ako ho naprogramovať, ako ho zautomatizovať a ako ho pripraviť tak, aby v praxi nevznikla ani jedna chyba.
+                </p>
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-neutral-800/80 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-400">
+                <span className="text-[#FFB800] font-semibold">PATRIK BARCAJ // SOLO INŽINIER &amp; VÝVOJÁR</span>
+                <span className="text-zinc-500">VUT V BRNE (FIT) • POLYGRAFIA • NEXT.JS</span>
+              </div>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* 3 Value Pillars Grid */}
+        {/* 3 Value Pillars Grid (1:1 Vzťah) */}
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Card 1: Rýchlosť */}
+            {/* Card 1: Žiadny šum */}
             <ScrollReveal delay={0.1} className="h-full">
               <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
-                {/* Coordinate cross accents */}
-                <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-                <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
-
-                <div>
-                  <div className="font-mono text-xs text-amber-400 tracking-wider mb-2">
-                    [ 01 // SPEED ]
-                  </div>
-                  <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
-                    ⚡ Rýchlosť do 48 hodín
-                  </h3>
-                  <div className="space-y-2.5 text-sm text-zinc-300">
-                    <p>• <strong className="text-white">Dáta do 2 dní:</strong> {FEATURES.ENABLE_DRONE_SERVICES ? 'Surové zábery, ortofoto aj kód dodávam do 48 hodín.' : 'Kód, automatizačné skripty aj grafické podklady dodávam do 48 hodín.'}</p>
-                    <p>• <strong className="text-white">Cloudový odkaz:</strong> Okamžitý prístup k plnému rozlíšeniu bez čakania.</p>
-                    <p>• <strong className="text-white">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích procesov.</p>
-                  </div>
-                </div>
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
-                  <span>GARANCIA TERMÍNU</span>
-                  <span className="text-white font-bold font-mono">48H</span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Card 2: 1:1 Priamy kontakt */}
-            <ScrollReveal delay={0.2} className="h-full">
-              <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
-                {/* Coordinate cross accents */}
                 <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                 <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                 <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
@@ -90,15 +68,17 @@ export default function WhyElysio() {
 
                 <div>
                   <div className="font-mono text-xs text-[#00D26A] tracking-wider mb-2">
-                    [ 02 // DIRECT ]
+                    [ 01 // ŽIADNY ŠUM ]
                   </div>
                   <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
-                    👤 1:1 Priamy kontakt
+                    👤 Žiadny komunikačný šum
                   </h3>
-                  <div className="space-y-2.5 text-sm text-zinc-300">
-                    <p>• <strong className="text-white">Priamo s technikom:</strong> {FEATURES.ENABLE_DRONE_SERVICES ? 'Riešite zadanie s človekom, čo lieta a kóduje.' : 'Riešite zadanie s človekom, čo navrhuje a kóduje.'}</p>
-                    <p>• <strong className="text-white">WhatsApp & telefón:</strong> Rýchle operatívne zmeny a konzultácie bez čakania.</p>
-                    <p>• <strong className="text-white">Nulový šum:</strong> Žiadne skreslené zadania cez account manažérov.</p>
+                  <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                    Riešite zadanie priamo s človekom, čo kóduje a pripravuje dáta. Žiadni account manažéri ani skreslené informácie.
+                  </p>
+                  <div className="space-y-2 text-xs text-zinc-400">
+                    <p>• <strong className="text-zinc-200">Priamy kontakt:</strong> Konzultácie cez WhatsApp a telefón bez filtrov.</p>
+                    <p>• <strong className="text-zinc-200">Nulové skreslenie:</strong> Od požiadavky k realizácii bez sprostredkovateľov.</p>
                   </div>
                 </div>
                 <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
@@ -108,35 +88,62 @@ export default function WhyElysio() {
               </div>
             </ScrollReveal>
 
-            {/* Card 3: Presnosť */}
-            <ScrollReveal delay={0.3} className="h-full">
+            {/* Card 2: Všetko zariadim */}
+            <ScrollReveal delay={0.2} className="h-full">
               <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
-                {/* Coordinate cross accents */}
                 <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                 <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                 <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
                 <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
 
                 <div>
-                  <div className="font-mono text-xs text-amber-400 tracking-wider mb-2">
-                    [ 03 // PRECISION ]
+                  <div className="font-mono text-xs text-[#FFB800] tracking-wider mb-2">
+                    [ 02 // VŠETKO ZARIADIM ]
                   </div>
                   <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
-                    🎯 Výrobná & Technická presnosť
+                    🛠️ Všetko vyriešim na kľúč
                   </h3>
-                  <div className="space-y-2.5 text-sm text-zinc-300">
-                    <p>• <strong className="text-white">Výrobné formáty:</strong> Vektory pasujú presne do CNC, lasera aj plotra.</p>
-                    {FEATURES.ENABLE_DRONE_SERVICES ? (
-                      <p>• <strong className="text-white">Presné mapovanie:</strong> Zábery a ortofoto presne sedia na hranice parcely.</p>
-                    ) : (
-                      <p>• <strong className="text-white">Stabilná automatizácia:</strong> Skripty a procesy bežia spoľahlivo a bez výpadkov.</p>
-                    )}
-                    <p>• <strong className="text-white">Vlastný kód:</strong> Aplikácie bežia bez závislostí na ťažkých CMS šablónach.</p>
+                  <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                    Nemusíte ovládať technické pojmy. Prevezmem surové podklady a odovzdám hotovú vec na kľúč.
+                  </p>
+                  <div className="space-y-2 text-xs text-zinc-400">
+                    <p>• <strong className="text-zinc-200">Hrubé vstupy:</strong> Stačí náčrt na papieri, sken, fotka či audio správa.</p>
+                    <p>• <strong className="text-zinc-200">Zero-Effort:</strong> Nemusíte písať špecifikáciu, riešim všetko za vás.</p>
                   </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-amber-400 flex justify-between items-center">
-                  <span>ČISTÉ DÁTA</span>
-                  <span className="text-white font-bold font-mono">0 CHÝB</span>
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#FFB800] flex justify-between items-center">
+                  <span>DONE-FOR-YOU</span>
+                  <span className="text-white font-bold font-mono">0 STAROSTÍ</span>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Card 3: Dodanie do 48h */}
+            <ScrollReveal delay={0.3} className="h-full">
+              <div className="h-full bg-[#121214] border border-neutral-800 rounded-2xl p-7 flex flex-col justify-between hover:border-neutral-700 transition-all shadow-lg relative overflow-hidden group">
+                <span className="absolute top-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute top-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 left-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                <span className="absolute bottom-2.5 right-2.5 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
+                <div>
+                  <div className="font-mono text-xs text-[#00D26A] tracking-wider mb-2">
+                    [ 03 // DODANIE DO 48H ]
+                  </div>
+                  <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                    ⚡ Expresná realizácia
+                  </h3>
+                  <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                    Expresná realizácia menších zásahov a automatizácií bez zbytočnej firemnej byrokracie.
+                  </p>
+                  <div className="space-y-2 text-xs text-zinc-400">
+                    <p>• <strong className="text-zinc-200">Okamžitý štart:</strong> Realizácia bez interných schvaľovacích reťazcov.</p>
+                    <p>• <strong className="text-zinc-200">Garancia termínu:</strong> Dohodnutý termín dodania podkladov a kódu platí.</p>
+                  </div>
+                </div>
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 font-mono text-xs text-[#00D26A] flex justify-between items-center">
+                  <span>GARANCIA TERMÍNU</span>
+                  <span className="text-white font-bold font-mono">DO 48H</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -148,3 +155,4 @@ export default function WhyElysio() {
     </section>
   );
 }
+

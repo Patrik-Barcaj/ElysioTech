@@ -1,8 +1,14 @@
+"use client";
+import { useState } from 'react';
 import Link from 'next/link'; // import Link component
 import Image from 'next/image'; // import Image component
 import { FEATURES } from '@/config/features';
 
+type TerminalTab = 'workflow' | 'prepress' | 'webhook';
+
 export default function Hero() { // export Hero component function
+    const [activeTab, setActiveTab] = useState<TerminalTab>('workflow');
+
     return ( // return JSX markup
         <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 pb-16"> {/* base full screen wrapper */}
             {/* Dark background grid and gradients */}
@@ -21,7 +27,7 @@ export default function Hero() { // export Hero component function
                     <div className="flex-1 text-center lg:text-left mt-10 lg:mt-0"> {/* text content wrapper */}
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-[#FFB800] font-semibold text-xs font-mono tracking-widest mb-6"> {/* pre-heading badge */}
                             <span className="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse shadow-[0_0_10px_rgba(255,184,0,0.85)]"></span> {/* glowing dot */}
-                            [ 00 // STUDIO ] • BRATISLAVSKÝ KRAJ
+                            [ 00 // SOLO INŽINIER & VÝVOJÁR ] • PATRIK BARCAJ
                         </div> {/* pre-heading end */}
                         
                         {FEATURES.ENABLE_DRONE_SERVICES ? (
@@ -36,17 +42,17 @@ export default function Hero() { // export Hero component function
                         
                         {FEATURES.ENABLE_DRONE_SERVICES ? (
                             <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
-                                Rýchly vizuálny monitoring stavieb, detailná kontrola striech a softvér na mieru. Zákazky riešite priamo so mnou – bez agentúrnych prirážok, flexibilne a s dodaním podkladov do 48 hodín.
+                                Žiadne písanie zložitých zadaní ani zbytočná réžia. Pošlite mi podklady, fotku náčrtu alebo hlasovú správu – o kód, automatizáciu a výrobnú prípravu sa postarám ja. Spolupráca 1:1 priamo s technikom s garantovaným dodaním do 48 hodín.
                             </p>
                         ) : (
                             <p className="text-lg sm:text-xl text-zinc-300 font-normal mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
-                                Optimalizácia procesov pre malé firmy, moderný softvér na mieru a presná vektorová príprava pre výrobu. Spolupráca priamo s technikom bez agentúrnych prirážok a s garanciou dodania do 48 hodín.
+                                Žiadne písanie zložitých zadaní ani zbytočná réžia. Pošlite mi podklady, fotku náčrtu alebo hlasovú správu – o kód, automatizáciu a výrobnú prípravu sa postarám ja. Spolupráca 1:1 priamo s technikom s garantovaným dodaním do 48 hodín.
                             </p>
                         )}
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-3"> {/* cta group */}
                             <a
-                                href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
+                                href="https://wa.me/421903406402?text=Ahoj%20Patrik,%20chcem%20sa%20nezavazne%20informovat%20o%20sluzbach..."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-5 py-3 rounded-lg text-sm font-semibold bg-[#00D26A] hover:bg-[#00B85C] text-black font-display tracking-wide transition-all shadow-lg shadow-[#00D26A]/20 flex items-center justify-center gap-3 transform hover:-translate-y-0.5 text-center"
@@ -69,15 +75,15 @@ export default function Hero() { // export Hero component function
 
                         {/* Interactive Service Router */}
                         <div className="pt-6 border-t border-neutral-800 text-left">
-                            <div className="grid grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
-                                <a href="#services" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                                    [ Dodanie do 48h ]
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 max-w-md mx-auto lg:mx-0">
+                                <a href="#why-elysio" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors text-center">
+                                    [ Všetko riešim za vás ]
                                 </a>
-                                <a href="#why-elysio" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                                    [ Priama spolupráca ]
+                                <a href="#why-elysio" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors text-center">
+                                    [ Spolupráca priamo s technikom ]
                                 </a>
-                                <a href="#services" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors">
-                                    {FEATURES.ENABLE_DRONE_SERVICES ? '[ Zákazky od 60 € ]' : '[ Sadzba od 25 €/h ]'}
+                                <a href="#services" className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-zinc-900/80 border border-neutral-800 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 transition-colors text-center">
+                                    [ Zákazky už od 25 € ]
                                 </a>
                             </div>
                         </div>
@@ -138,47 +144,109 @@ export default function Hero() { // export Hero component function
                                 {/* Ambient tech grid overlay */}
                                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
 
-                                {/* Top HUD Header */}
-                                <div className="relative z-10 flex items-center justify-between pb-3 border-b border-neutral-800/80">
+                                {/* Top HUD Header with 3 Tabs */}
+                                <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 pb-3 border-b border-neutral-800/80">
                                     <div className="flex items-center gap-2 font-mono text-[11px] text-zinc-300">
                                         <span className="w-2 h-2 rounded-full bg-[#00D26A] animate-pulse shadow-[0_0_8px_rgba(0,210,106,0.8)]"></span>
                                         <span className="text-[#00D26A] font-bold">STATUS: ONLINE</span>
                                         <span className="text-zinc-600">{'//'}</span>
-                                        <span className="text-white font-semibold">NEXT.JS</span>
+                                        <span className="text-white font-semibold">TERMINAL</span>
                                     </div>
-                                    <span className="px-2 py-0.5 rounded font-mono text-[10px] bg-[#00D26A]/10 border border-[#00D26A]/30 text-[#00D26A] tracking-wider uppercase">
-                                        AUTOMATION RUNNING
-                                    </span>
+                                    <div className="flex items-center gap-1 bg-[#080808] p-1 rounded-lg border border-neutral-800 text-[10px] font-mono">
+                                        <button
+                                            type="button"
+                                            onClick={() => setActiveTab('workflow')}
+                                            className={`px-2 py-1 rounded transition-colors ${activeTab === 'workflow' ? 'bg-[#00D26A]/20 text-[#00D26A] font-bold border border-[#00D26A]/40' : 'text-zinc-400 hover:text-white'}`}
+                                        >
+                                            [ 01 // WORKFLOW.ts ]
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setActiveTab('prepress')}
+                                            className={`px-2 py-1 rounded transition-colors ${activeTab === 'prepress' ? 'bg-[#FFB800]/20 text-[#FFB800] font-bold border border-[#FFB800]/40' : 'text-zinc-400 hover:text-white'}`}
+                                        >
+                                            [ 02 // PREPRESS.dxf ]
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setActiveTab('webhook')}
+                                            className={`px-2 py-1 rounded transition-colors ${activeTab === 'webhook' ? 'bg-[#00D26A]/20 text-[#00D26A] font-bold border border-[#00D26A]/40' : 'text-zinc-400 hover:text-white'}`}
+                                        >
+                                            [ 03 // WEBHOOK.sh ]
+                                        </button>
+                                    </div>
                                 </div>
 
-                                {/* Code / Automation Pipeline Mockup */}
-                                <div className="relative z-10 my-auto py-2 font-mono text-xs leading-relaxed text-zinc-300 space-y-1 select-none">
-                                    <div className="text-zinc-500">{'// 01 // WORKFLOW_AUTOMATION_PIPELINE'}</div>
-                                    <div>
-                                        <span className="text-[#FFB800]">const</span> <span className="text-white">pipeline</span> = <span className="text-[#FFB800]">await</span> <span className="text-[#00D26A]">ElysioEngine</span>.<span className="text-sky-400">deploy</span>({'{'}
-                                    </div>
-                                    <div className="pl-4 text-zinc-400">
-                                        stack: <span className="text-emerald-400">&apos;Next.js + TypeScript&apos;</span>,
-                                    </div>
-                                    <div className="pl-4 text-zinc-400">
-                                        automation: <span className="text-emerald-400">&apos;API &amp; Data Workflows&apos;</span>,
-                                    </div>
-                                    <div className="pl-4 text-zinc-400">
-                                        sla: <span className="text-[#FFB800]">&apos;48h_Guaranteed&apos;</span>,
-                                    </div>
-                                    <div>{'}'});</div>
-                                    <div className="pt-1 text-[#00D26A] flex items-center gap-1.5">
-                                        <span>✓</span> <span>Pipeline initialized • 0 errors • 100% code ownership</span>
-                                    </div>
+                                {/* Dynamic Code Display with JetBrains Mono font */}
+                                <div className="relative z-10 my-auto py-2 font-mono text-xs leading-relaxed text-zinc-300 select-none min-h-[140px] flex flex-col justify-center">
+                                    {activeTab === 'workflow' && (
+                                        <div className="space-y-1">
+                                            <div className="text-zinc-500">{'// 01 // WORKFLOW.ts • Done-For-You automatizácia'}</div>
+                                            <div>
+                                                <span className="text-[#FFB800]">const</span> <span className="text-white">pipeline</span> = <span className="text-[#FFB800]">await</span> <span className="text-[#00D26A]">SoloDev</span>.<span className="text-sky-400">deliver</span>({'{'}
+                                            </div>
+                                            <div className="pl-4 text-zinc-400">
+                                                clientInput: <span className="text-emerald-400">&apos;Hrubé dáta / podklady&apos;</span>,
+                                            </div>
+                                            <div className="pl-4 text-zinc-400">
+                                                execution: <span className="text-emerald-400">&apos;100% riešené mnou na kľúč&apos;</span>,
+                                            </div>
+                                            <div className="pl-4 text-zinc-400">
+                                                result: <span className="text-[#FFB800]">&apos;Plne funkčná automatizácia (0 starostí)&apos;</span>
+                                            </div>
+                                            <div>{'}'});</div>
+                                            <div className="pt-1 text-[#00D26A] flex items-center gap-1.5 text-[11px]">
+                                                <span>✓</span> <span>Hotovo • 0 starostí pre klienta • 100% vlastníctvo</span>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {activeTab === 'prepress' && (
+                                        <div className="space-y-1">
+                                            <div className="text-zinc-500">{'// 02 // PREPRESS.dxf • Presná výrobná príprava'}</div>
+                                            <div>
+                                                <span className="text-[#FFB800]">const</span> <span className="text-white">prepress</span> = <span className="text-[#FFB800]">await</span> <span className="text-[#FFB800]">VectorAudit</span>.<span className="text-sky-400">verify</span>({'{'}
+                                            </div>
+                                            <div className="pl-4 text-zinc-400">
+                                                source: <span className="text-emerald-400">&apos;Rozmazané JPG / sken&apos;</span>,
+                                            </div>
+                                            <div className="pl-4 text-zinc-400">
+                                                output: <span className="text-emerald-400">&apos;Ostré CNC krivky &amp; CMYK 300 DPI&apos;</span>,
+                                            </div>
+                                            <div className="pl-4 text-zinc-400">
+                                                status: <span className="text-[#FFB800]">&apos;Výrobne overené v polygrafii&apos;</span>
+                                            </div>
+                                            <div>{'}'});</div>
+                                            <div className="pt-1 text-[#00D26A] flex items-center gap-1.5 text-[11px]">
+                                                <span>✓</span> <span>100% pripravené do výroby • Tolerancia &lt; 0.1mm</span>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {activeTab === 'webhook' && (
+                                        <div className="space-y-1">
+                                            <div className="text-zinc-500">{'# 03 // WEBHOOK.sh • Blesková synchronizácia'}</div>
+                                            <div className="text-sky-400 break-all">
+                                                curl -X POST https://api.elysiotech.sk/v1/auto-sync \
+                                            </div>
+                                            <div className="pl-4 text-zinc-300 break-all">
+                                                -d <span className="text-emerald-400">&apos;{`{"client":"zero_effort","status":"delivered_in_48h"}`}&apos;</span>
+                                            </div>
+                                            <div className="pt-2 text-zinc-500">{'// 200 OK • Dodané načas'}</div>
+                                            <div className="text-[#00D26A] flex items-center gap-1.5 text-[11px]">
+                                                <span>✓</span> <span>Synchronizácia úspešná • Latencia 18ms</span>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Bottom HUD Telemetry Strip */}
                                 <div className="relative z-10 pt-3 border-t border-neutral-800/80 flex items-center justify-between text-[10px] font-mono text-zinc-400">
                                     <span className="flex items-center gap-1.5">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#FFB800]"></span>
-                                        CORE // PROCESS_OPTIMIZATION
+                                        CORE // PATRIK_BARCAJ • SOLO_ENGINEER
                                     </span>
-                                    <span className="text-zinc-500">LATENCY &lt; 0.5s</span>
+                                    <span className="text-zinc-500">DODANIE &lt; 48H</span>
                                 </div>
                             </div>
                         )}

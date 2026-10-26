@@ -1,11 +1,27 @@
 "use client"; // mark as client component
-import React, { useState } from 'react'; // import react library and useState
+import React, { useState, useMemo } from 'react'; // import react hooks
 import ScrollReveal from './ui/ScrollReveal'; // import scroll reveal
 import { FEATURES } from '@/config/features';
 
+const CALCULATOR_OPTIONS = [
+    { id: 'quick-fix', name: 'Bleskový zásah / Grafika (od 25 €)', label: 'bleskovým zásahom / grafikou (od 25 €)' },
+    { id: 'auto-flow', name: 'Firemná automatizácia (od 120 €)', label: 'firemnou automatizáciou (od 120 €)' },
+    { id: 'full-dev', name: 'Webová aplikácia na kľúč (od 350 €)', label: 'webovou aplikáciou na kľúč (od 350 €)' },
+] as const;
+
 export default function Contact() { // export Contact component function
+    const [selectedOption, setSelectedOption] = useState<string>('auto-flow'); // calculator option state
     const [isSubmitted, setIsSubmitted] = useState(false); // form submission state
     const [isSubmitting, setIsSubmitting] = useState(false); // form loading state
+
+    const selectedService = useMemo(() => {
+        return CALCULATOR_OPTIONS.find(opt => opt.id === selectedOption) || CALCULATOR_OPTIONS[1];
+    }, [selectedOption]);
+
+    const whatsappUrl = useMemo(() => {
+        const text = `Ahoj Patrik, potrebujem pomôcť s ${selectedService.label}. Pošlem ti podklady a chcem to nechať celé na teba.`;
+        return `https://wa.me/421903406402?text=${encodeURIComponent(text)}`;
+    }, [selectedService]);
 
     const handleSubmit = (e: React.FormEvent) => { // handle form submit
         e.preventDefault(); // prevent page reload
@@ -22,7 +38,7 @@ export default function Contact() { // export Contact component function
         <section id="contact" className="py-24 bg-[#080808] relative border-t border-neutral-800"> {/* section wrapper */}
             <div id="kontakt" className="absolute -top-20 pointer-events-none"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"> {/* container block */}
-                <div className="max-w-3xl mx-auto text-center mb-16"> {/* header wrapper */}
+                <div className="max-w-3xl mx-auto text-center mb-12"> {/* header wrapper */}
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#FFB800]/40 bg-[#FFB800]/10 text-xs font-mono font-semibold tracking-widest text-[#FFB800] mb-3 uppercase">
                         [ 06 // CONTACT ] • PRIAMY KONTAKT
                     </div>
@@ -33,6 +49,75 @@ export default function Contact() { // export Contact component function
                         Napíšte mi na WhatsApp, zavolajte alebo pošlite správu cez formulár. Ozvem sa obratom.
                     </p> {/* description */}
                 </div> {/* header wrapper end */}
+
+                {/* Interactive Micro-Configurator */}
+                <ScrollReveal delay={0.05} className="max-w-4xl mx-auto mb-16">
+                    <div className="relative bg-[#121214] border border-neutral-800 rounded-3xl p-6 sm:p-8 overflow-hidden shadow-2xl group hover:border-[#00D26A]/40 transition-all">
+                        {/* Coordinate cross accents */}
+                        <span className="absolute top-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                        <span className="absolute top-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                        <span className="absolute bottom-3 left-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+                        <span className="absolute bottom-3 right-3 text-neutral-600 font-mono text-xs select-none pointer-events-none leading-none opacity-60">+</span>
+
+                        <div className="relative z-10">
+                            <div className="text-center mb-6">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00D26A]/30 bg-[#00D26A]/10 text-xs font-mono font-semibold tracking-wider text-[#00D26A] mb-3 uppercase">
+                                    [ RÝCHLA KALKULÁCIA // ZADAJTE POŽIADAVKU ]
+                                </div>
+                                <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                                    Vyberte si požadovanú úroveň realizácie
+                                </h3>
+                                <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+                                    Vyberte kategóriu a pošlite zadanie priamo na WhatsApp jedným kliknutím:
+                                </p>
+                            </div>
+
+                            {/* 3 Selectable Radio Options */}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                                {CALCULATOR_OPTIONS.map((opt) => {
+                                    const isSelected = selectedOption === opt.id;
+                                    return (
+                                        <button
+                                            key={opt.id}
+                                            type="button"
+                                            onClick={() => setSelectedOption(opt.id)}
+                                            className={`p-4 rounded-2xl border text-left transition-all duration-200 flex items-center gap-3 relative ${
+                                                isSelected
+                                                    ? 'bg-[#00D26A]/10 border-[#00D26A] shadow-[0_0_20px_rgba(0,210,106,0.15)] text-white'
+                                                    : 'bg-[#080808] border-neutral-800 text-zinc-300 hover:border-neutral-700'
+                                            }`}
+                                        >
+                                            <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
+                                                isSelected ? 'border-[#00D26A] bg-[#00D26A]' : 'border-neutral-700 bg-neutral-900'
+                                            }`}>
+                                                {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-black"></span>}
+                                            </span>
+                                            <span className="font-mono text-xs sm:text-sm font-semibold leading-tight">
+                                                {opt.name}
+                                            </span>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Dynamic WhatsApp CTA button */}
+                            <div className="text-center">
+                                <a
+                                    href={whatsappUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold font-display text-base tracking-wide transition-all shadow-xl shadow-[#00D26A]/20 transform hover:-translate-y-0.5"
+                                >
+                                    <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
+                                    <span>Odoslať dopyt cez WhatsApp</span>
+                                </a>
+                                <p className="text-xs text-zinc-400 font-mono mt-3">
+                                    Alebo mi napíšte cez formulár nižšie.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </ScrollReveal>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch"> {/* split layout grid */}
                     <ScrollReveal delay={0.1} className="h-full"> {/* left side scroll reveal */}
@@ -85,7 +170,7 @@ export default function Contact() { // export Contact component function
                                     </li>
                                     <li className="flex items-start gap-3 p-3 rounded-2xl bg-[#121214] border border-neutral-800">
                                         <span className="text-zinc-500 font-bold mt-0.5">•</span>
-                                        <span><strong className="text-white">Osobné stretnutia & Obhliadky:</strong> Oblasť západného Slovenska.</span>
+                                        <span><strong className="text-white">Osobné stretnutia & Konzultácie:</strong> Oblasť západného Slovenska.</span>
                                     </li>
                                 </ul>
                             </div> {/* support section end */}
@@ -93,7 +178,7 @@ export default function Contact() { // export Contact component function
                             <div> {/* direct action buttons block */}
                                 <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-wider font-display mb-3">Rýchle spojenie</h3> {/* social title */}
                                 <div className="flex flex-col sm:flex-row gap-3"> {/* flex container */}
-                                    <a href="https://wa.me/421903406402?text=Dobry%20den,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20vasich%20sluzieb" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 transition-all"> {/* whatsapp button */}
+                                    <a href="https://wa.me/421903406402?text=Ahoj%20Patrik,%20chcem%20sa%20informovat%20ohladom%20spoluprace%20a%20sluzieb" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl bg-[#00D26A] hover:bg-[#00B85C] text-black font-extrabold shadow-lg shadow-[#00D26A]/20 transition-all"> {/* whatsapp button */}
                                         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.573-10.564 5.824 0 10.569 4.743 10.571 10.564.002 5.82-4.747 10.564-10.571 10.564z" /></svg>
                                         <span>WhatsApp Správa</span>
                                     </a>
